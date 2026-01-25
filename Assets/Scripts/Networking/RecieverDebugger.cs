@@ -4,7 +4,7 @@ namespace GGL
 {
     public class RecieverDebugger : MonoBehaviour
     {
-        private int[] scores;
+        [SerializeField] private int[] scores;
 
         public void SetScores(int[] scores)
         {

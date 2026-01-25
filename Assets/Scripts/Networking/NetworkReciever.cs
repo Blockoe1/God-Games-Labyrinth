@@ -6,12 +6,14 @@
 //
 // Brief Description : Handles recieving messages from the network and broadcasting them locally.
 *****************************************************************************/
+using NaughtyAttributes;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace GGL.Networking
 {
+    [RequireComponent(typeof(NetworkManager))]
     public class NetworkReciever : MonoBehaviour
     {
         #region Consts
@@ -19,31 +21,50 @@ namespace GGL.Networking
         #endregion
 
         [SerializeField] private UnityEvent<int[]> OnMessageRecieved;
- 
+
+        #region Component References
+        [Header("Components")]
+        [SerializeReference, ReadOnly] private NetworkManager networkManager;
+
+        /// <summary>
+        /// Get components on reset.
+        /// </summary>
+        [ContextMenu("Get Component References")]
+        private void Reset()
+        {
+            networkManager = GetComponent<NetworkManager>();
+        }
+        #endregion
+
         /// <summary>
         /// Setup Events to register message recieving.
         /// </summary>
         private void Start()
         {
-            NetworkManager.Singleton.OnClientStarted += OnClientConnected;
-            NetworkManager.Singleton.OnClientStopped += OnClientDisconnected;
+            networkManager.OnServerStarted += RegisterMessages;
+            networkManager.OnPreShutdown += UnregisterMessages;
         }
         private void OnDestroy()
         {
-            NetworkManager.Singleton.OnClientStarted -= OnClientConnected;
-            NetworkManager.Singleton.OnClientStopped -= OnClientDisconnected;
+            networkManager.OnServerStarted -= RegisterMessages;
+            networkManager.OnPreShutdown -= UnregisterMessages;
         }
 
         /// <summary>
         /// Register/Unregister the message reciever when the client connects/disconnects.
         /// </summary>
-        private void OnClientConnected()
+        private void RegisterMessages()
         {
-            NetworkManager.Singleton.CustomMessagingManager.RegisterNamedMessageHandler(MESSAGE_NAME, RecieveMessage);
+            networkManager.CustomMessagingManager.RegisterNamedMessageHandler(MESSAGE_NAME, RecieveMessage);
+            Debug.Log("Registered the message reciever.");
         }
-        private void OnClientDisconnected(bool hostMode)
+        private void UnregisterMessages()
         {
-            NetworkManager.Singleton.CustomMessagingManager.UnregisterNamedMessageHandler(MESSAGE_NAME);
+            if (networkManager.CustomMessagingManager != null)
+            {
+                networkManager.CustomMessagingManager.UnregisterNamedMessageHandler(MESSAGE_NAME);
+                Debug.Log("Unregistered the message reciever.");
+            }
         }
 
         /// <summary>

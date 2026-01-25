@@ -12,7 +12,7 @@ namespace GGL
         /// <returns></returns>
         public static int[] GetScoreboardArray()
         {
-            int godNum = (int)(Enum.GetValues(typeof(GodID)).Cast<GodID>().Max());
+            int godNum = (int)(Enum.GetValues(typeof(GodID)).Cast<GodID>().Max()) + 1;
             int[] returnVal = new int[godNum];
             return returnVal;
         }

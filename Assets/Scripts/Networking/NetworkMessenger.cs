@@ -6,6 +6,7 @@
 //
 // Brief Description : Handles sending scores across the network.
 *****************************************************************************/
+using NUnit.Framework.Constraints;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -19,6 +20,12 @@ namespace GGL.Networking
         /// <param name="message">The message to send.</param>
         public void SendNetMessage(int[] message)
         {
+            if (NetworkManager.Singleton.CustomMessagingManager == null)
+            {
+                throw new System.NotSupportedException
+                    ("Cannot send a message over the network as the client is not connected.");
+            }
+
             // Create a buffer writer to write the contents of the message.
             var writer = new FastBufferWriter(FastBufferWriter.GetWriteSize(message), Unity.Collections.Allocator.Temp);
 
@@ -26,7 +33,7 @@ namespace GGL.Networking
             {
                 writer.WriteValueSafe(message);
                 NetworkManager.Singleton.CustomMessagingManager.SendNamedMessage(NetworkReciever.MESSAGE_NAME, 
-                    NetworkManager.ServerClientId, writer);
+                    NetworkManager.ServerClientId, writer, NetworkDelivery.Reliable);
             }
         }
 

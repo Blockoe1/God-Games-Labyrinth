@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 1483957818}
   - component: {fileID: 1483957817}
   - component: {fileID: 1483957816}
+  - component: {fileID: 1483957822}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -152,11 +153,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a12def51fe95d4f4c889f0f78878d244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Champions.ChampionMovement
-  maxSpeed: 10
-  acceleration: 8
-  positionSnap: 1
   rb: {fileID: 1483957818}
   input: {fileID: 1483957819}
+  maxSpeed: 10
+  acceleration: 30
+  positionSnap: 1
+  OnDirectionChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!58 &1483957817
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -323,6 +327,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1483957822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483957815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb2346a2e2d32c54f8878b79d2a186d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Champions.ChampionDash
+  rb: {fileID: 1483957818}
+  input: {fileID: 1483957819}
+  dashSpeed: 20
+  dashDuration: 0.5
+  movement: {fileID: 1483957816}
 --- !u!1 &1764953047
 GameObject:
   m_ObjectHideFlags: 0

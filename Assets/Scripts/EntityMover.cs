@@ -1,68 +1,68 @@
 /*****************************************************************************
 // File Name : ChampionMovement.cs
 // Author : Brandon Koederitz
-// Creation Date : 1/24/2026
-// Last Modified : 1/24/2026
+// Creation Date : 1/26/2026
+// Last Modified : 1/26/2026
 //
 // Brief Description : Handles base champion movement.
 *****************************************************************************/
 using NaughtyAttributes;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
-namespace GGL.Champions
+namespace GGL
 {
-    [RequireComponent(typeof(PlayerInput))]
-    [RequireComponent(typeof(Rigidbody2D))]
-    public class ChampionMovement : MonoBehaviour
+    public class EntityMover : MonoBehaviour
     {
         #region CONSTS
         private const string MOVE_ACTION_NAME = "Move";
         #endregion
 
+        [Header("Movement settings")]
         [SerializeField] private float maxSpeed;
         [SerializeField] private float acceleration;
         [SerializeField] private bool positionSnap;
+        [SerializeField] private UnityEvent<Vector2> OnDirectionChanged;
 
-        private InputAction moveAction;
-
+        private float targetSpeed;
         private float speed;
-        private Vector2 moveInput;
+        private Vector2 direction = Vector2.up;
         private bool markForSnap;
-       
+
+        private bool isMoving;
+
         #region Component References
         [Header("Components")]
         [SerializeReference, ReadOnly] private Rigidbody2D rb;
-        [SerializeReference, ReadOnly] private PlayerInput input;
-
-
 
         /// <summary>
         /// Get components on reset.
         /// </summary>
         [ContextMenu("Get Component References")]
-        private void Reset()
+        protected virtual void Reset()
         {
             rb = GetComponent<Rigidbody2D>();
-            input = GetComponent<PlayerInput>();
         }
         #endregion
 
-        /// <summary>
-        /// Subscribe/Unsubscribe input.
-        /// </summary>
-        private void Awake()
+        #region Properties
+        public bool IsMoving
         {
-            moveAction = input.actions.FindAction(MOVE_ACTION_NAME);
-            moveAction.performed += MoveAction_performed;
-            moveAction.canceled += MoveAction_canceled;
+            get { return isMoving; }
+            set { isMoving = value; }
         }
-        private void OnDestroy()
-        {
-            moveAction.performed -= MoveAction_performed;
-            moveAction.canceled -= MoveAction_canceled;
+
+        public Vector2 Direction
+        { 
+            get { return direction; }
+            set 
+            { 
+                direction = value;
+                OnDirectionChanged?.Invoke(direction);
+            }
         }
+        #endregion
 
         #region Input Functions
         /// <summary>
@@ -73,12 +73,23 @@ namespace GGL.Champions
         {
             // Only take the X or Y Component for locked movement.
             Vector2 rawInput = obj.ReadValue<Vector2>().normalized;
-            Vector2 oldMoveInput = moveInput;
-            moveInput = Mathf.Abs(rawInput.y) > Mathf.Abs(rawInput.x) ? Vector2.up * System.MathF.Sign(rawInput.y) :
+            Vector2 oldDirection = direction;
+            Vector2 inputDirection = Mathf.Abs(rawInput.y) > Mathf.Abs(rawInput.x) ? Vector2.up * System.MathF.Sign(rawInput.y) :
                 Vector2.right * System.MathF.Sign(rawInput.x);
 
+            // Set the player's new direction and target speed.
+            if (inputDirection != Vector2.zero)
+            {
+                direction = inputDirection;
+                targetSpeed = maxSpeed;
+            }
+            else
+            {
+                targetSpeed = 0;
+            }
+
             //Snap the player's position to the grid when they change direction.
-            if (positionSnap && moveInput != oldMoveInput)
+            if (positionSnap && direction != oldDirection)
             {
                 markForSnap = true;
             }
@@ -86,7 +97,7 @@ namespace GGL.Champions
         }
         private void MoveAction_canceled(InputAction.CallbackContext obj)
         {
-            moveInput = Vector2.zero;
+            targetSpeed = 0;
         }
         #endregion
 
@@ -99,8 +110,8 @@ namespace GGL.Champions
         /// </remarks>
         private void FixedUpdate()
         {
-            speed = Mathf.MoveTowards(speed, maxSpeed, acceleration * Time.fixedDeltaTime);
-            rb.linearVelocity = speed * moveInput;
+            speed = Mathf.MoveTowards(speed, targetSpeed, acceleration * Time.fixedDeltaTime);
+            rb.linearVelocity = speed * direction;
 
             // Snap the player's position tot he grid when they change direction.
             if (markForSnap)

@@ -8,14 +8,15 @@
 *****************************************************************************/
 using NaughtyAttributes;
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 namespace GGL.Champions
 {
-    [RequireComponent(typeof(EntityMover))]
-    public class ChampionDash : ChampionMovementController
+    [RequireComponent(typeof(PlayerInput))]
+    [RequireComponent(typeof(Rigidbody2D))]
+    public class ChampionDash : MonoBehaviour
     {
         #region CONSTS
         private const string DASH_ACTION_NAME = "Dash";
@@ -24,22 +25,35 @@ namespace GGL.Champions
         [Header("Dash Settings")]
         [SerializeField] private float dashSpeed;
         [SerializeField] private float dashDuration;
+        [SerializeField] private UnityEvent OnDashBegin;
+        [SerializeField] private UnityEvent OnDashEnd;
 
         private InputAction dashAction;
         private bool isDashing;
 
+        private Vector2 dashDirection;
+
         #region Component References
         [Header("Components")]
-        [SerializeReference, ReadOnly] private EntityMover movement;
+        [SerializeReference, ReadOnly] private Rigidbody2D rb;
+        [SerializeReference, ReadOnly] private PlayerInput input;
 
         /// <summary>
         /// Get components on reset.
         /// </summary>
         [ContextMenu("Get Component References")]
-        protected override void Reset()
+        private void Reset()
         {
-            base.Reset();
-            movement = GetComponent<EntityMover>();
+            rb = GetComponent<Rigidbody2D>();
+            input = GetComponent<PlayerInput>();
+        }
+        #endregion
+
+        #region Properties
+        public Vector2 DashDirection
+        {
+            get { return dashDirection; }
+            set { dashDirection = value; }
         }
         #endregion
 
@@ -48,7 +62,7 @@ namespace GGL.Champions
         /// </summary>
         private void Awake()
         {
-            dashAction = Input.actions.FindAction(DASH_ACTION_NAME);
+            dashAction = input.actions.FindAction(DASH_ACTION_NAME);
             dashAction.performed += DashAction_performed;
         }
         private void OnDestroy()
@@ -62,7 +76,7 @@ namespace GGL.Champions
         /// <param name="obj"></param>
         private void DashAction_performed(InputAction.CallbackContext obj)
         {
-            StartCoroutine(Dash(movement.Direction));
+            StartCoroutine(Dash(dashDirection));
         }
 
         /// <summary>
@@ -73,21 +87,22 @@ namespace GGL.Champions
         {
             // Prevent double dashing.
             if (isDashing) { yield break; }
+
             direction = direction.normalized;
-            movement.BlockMovement = false;
             isDashing = true;
+            OnDashBegin?.Invoke();
 
             float timer = dashDuration;
             while (timer > 0)
             {
-                Body.linearVelocity = direction * dashSpeed;
+                rb.linearVelocity = direction * dashSpeed;
 
                 timer -= Time.fixedDeltaTime;
                 yield return new WaitForFixedUpdate();
             }
 
+            OnDashEnd?.Invoke();
             isDashing = false;
-            movement.BlockMovement = true;
         }
     }
 }

@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 1483957819}
   - component: {fileID: 1483957818}
   - component: {fileID: 1483957817}
-  - component: {fileID: 1483957816}
+  - component: {fileID: 1483957823}
   - component: {fileID: 1483957822}
   m_Layer: 0
   m_Name: Player
@@ -141,26 +141,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1483957816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1483957815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a12def51fe95d4f4c889f0f78878d244, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GGL.Champions.ChampionMovement
-  rb: {fileID: 1483957818}
-  input: {fileID: 1483957819}
-  maxSpeed: 10
-  acceleration: 30
-  positionSnap: 1
-  OnDirectionChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!58 &1483957817
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -220,9 +200,9 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &1483957819
 MonoBehaviour:
@@ -339,11 +319,72 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb2346a2e2d32c54f8878b79d2a186d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Champions.ChampionDash
+  dashSpeed: 30
+  dashDuration: 0.15
+  OnDashBegin:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1483957823}
+        m_TargetAssemblyTypeName: GGL.Champions.ChampionMovement, Assembly-CSharp
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDashEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1483957823}
+        m_TargetAssemblyTypeName: GGL.Champions.ChampionMovement, Assembly-CSharp
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   rb: {fileID: 1483957818}
   input: {fileID: 1483957819}
-  dashSpeed: 20
-  dashDuration: 0.5
-  movement: {fileID: 1483957816}
+--- !u!114 &1483957823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483957815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59a079c29875d02479d23ab5dc7cd9a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Champions.ChampionMovementController
+  maxSpeed: 8
+  acceleration: 40
+  positionSnap: 1
+  OnDirectionChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1483957822}
+        m_TargetAssemblyTypeName: GGL.Champions.ChampionDash, Assembly-CSharp
+        m_MethodName: set_DashDirection
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  rb: {fileID: 1483957818}
+  input: {fileID: 1483957819}
 --- !u!1 &1764953047
 GameObject:
   m_ObjectHideFlags: 0

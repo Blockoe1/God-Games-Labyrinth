@@ -1,10 +1,10 @@
 /*****************************************************************************
-// File Name : ChampionMovement.cs
+// File Name : EntityMover.cs
 // Author : Brandon Koederitz
 // Creation Date : 1/26/2026
 // Last Modified : 1/26/2026
 //
-// Brief Description : Handles base champion movement.
+// Brief Description : Base movement script for moving an entity through the maze.
 *****************************************************************************/
 using NaughtyAttributes;
 using UnityEngine;
@@ -15,17 +15,11 @@ namespace GGL
 {
     public class EntityMover : MonoBehaviour
     {
-        #region CONSTS
-        private const string MOVE_ACTION_NAME = "Move";
-        #endregion
-
-        [Header("Movement settings")]
         [SerializeField] private float maxSpeed;
         [SerializeField] private float acceleration;
         [SerializeField] private bool positionSnap;
         [SerializeField] private UnityEvent<Vector2> OnDirectionChanged;
 
-        private float targetSpeed;
         private float speed;
         private Vector2 direction = Vector2.up;
         private bool markForSnap;
@@ -57,47 +51,17 @@ namespace GGL
         { 
             get { return direction; }
             set 
-            { 
+            {
+                Vector2 oldDirection = direction;
                 direction = value;
                 OnDirectionChanged?.Invoke(direction);
-            }
-        }
-        #endregion
 
-        #region Input Functions
-        /// <summary>
-        /// Read player movement input.
-        /// </summary>
-        /// <param name="obj"></param>
-        private void MoveAction_performed(InputAction.CallbackContext obj)
-        {
-            // Only take the X or Y Component for locked movement.
-            Vector2 rawInput = obj.ReadValue<Vector2>().normalized;
-            Vector2 oldDirection = direction;
-            Vector2 inputDirection = Mathf.Abs(rawInput.y) > Mathf.Abs(rawInput.x) ? Vector2.up * System.MathF.Sign(rawInput.y) :
-                Vector2.right * System.MathF.Sign(rawInput.x);
-
-            // Set the player's new direction and target speed.
-            if (inputDirection != Vector2.zero)
-            {
-                direction = inputDirection;
-                targetSpeed = maxSpeed;
+                //Snap the entity's position to the grid when they change direction.
+                if (positionSnap && Direction != oldDirection)
+                {
+                    markForSnap = true;
+                }
             }
-            else
-            {
-                targetSpeed = 0;
-            }
-
-            //Snap the player's position to the grid when they change direction.
-            if (positionSnap && direction != oldDirection)
-            {
-                markForSnap = true;
-            }
-
-        }
-        private void MoveAction_canceled(InputAction.CallbackContext obj)
-        {
-            targetSpeed = 0;
         }
         #endregion
 
@@ -110,7 +74,7 @@ namespace GGL
         /// </remarks>
         private void FixedUpdate()
         {
-            speed = Mathf.MoveTowards(speed, targetSpeed, acceleration * Time.fixedDeltaTime);
+            speed = Mathf.MoveTowards(speed, isMoving ? maxSpeed : 0, acceleration * Time.fixedDeltaTime);
             rb.linearVelocity = speed * direction;
 
             // Snap the player's position tot he grid when they change direction.

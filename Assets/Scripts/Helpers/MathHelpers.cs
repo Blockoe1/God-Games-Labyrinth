@@ -58,6 +58,18 @@ public static class MathHelpers
     }
 
     /// <summary>
+    /// Gets the absolute value of a vector's components.
+    /// </summary>
+    /// <param name="input">The input vector.</param>
+    /// <returns>The passed in vector with all of its components as positve values.</returns>
+    public static Vector2 V2Abs(Vector2 input)
+    {
+        input.x = Mathf.Abs(input.x);
+        input.y = Mathf.Abs(input.y);
+        return input;
+    }
+
+    /// <summary>
     /// Returns the canonical modulus of a number to the mod of another number
     /// </summary>
     /// <remarks>

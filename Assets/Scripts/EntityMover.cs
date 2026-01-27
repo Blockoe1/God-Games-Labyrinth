@@ -52,12 +52,15 @@ namespace GGL
             get { return direction; }
             set 
             {
+                // Prevent assigning a direction of 0.
+                if (value == Vector2.zero) { return; }
+
                 Vector2 oldDirection = direction;
                 direction = value;
                 OnDirectionChanged?.Invoke(direction);
 
                 //Snap the entity's position to the grid when they change direction.
-                if (positionSnap && Direction != oldDirection)
+                if (positionSnap && MathHelpers.V2Abs(oldDirection) == MathHelpers.V2Abs(Vector2.Perpendicular(direction)))
                 {
                     markForSnap = true;
                 }

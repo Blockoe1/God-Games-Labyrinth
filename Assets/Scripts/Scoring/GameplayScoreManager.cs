@@ -6,13 +6,30 @@
 //
 // Brief Description : Tracks the score of each god during a play session.
 *****************************************************************************/
+using GGL.Networking;
+using NaughtyAttributes;
 using UnityEngine;
 
 namespace GGL.Scoring
 {
+    [RequireComponent(typeof(NetworkMessenger))]
     public class GameplayScoreManager : MonoBehaviour
     {
         private int[] scores;
+
+        #region Component References
+        [Header("Components")]
+        [SerializeReference, ReadOnly] private NetworkMessenger networkMessenger;
+
+        /// <summary>
+        /// Get components on reset.
+        /// </summary>
+        [ContextMenu("Get Component References")]
+        private void Reset()
+        {
+            networkMessenger = GetComponent<NetworkMessenger>();
+        }
+        #endregion
 
         /// <summary>
         /// Initialize the scores array.
@@ -30,6 +47,14 @@ namespace GGL.Scoring
         public void AddScore(int toAdd, GodID god)
         {
             scores[(int)god] += toAdd;
+        }
+
+        /// <summary>
+        /// Has this score manager broadcast the scores for each god this round over the network.
+        /// </summary>
+        public void BroadcastScores()
+        {
+            networkMessenger.SendNetMessage(scores);
         }
 
         #region Debug

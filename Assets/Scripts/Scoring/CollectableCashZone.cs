@@ -25,7 +25,7 @@ namespace GGL.Scoring
         /// Cashes a champion's held collectables when they enter this trigger.
         /// </summary>
         /// <param name="collectables">The collectables to cash.</param>
-        public void CashCollectables(List<Collectable> collectables)
+        public void CashCollectables(IEnumerable<Collectable> collectables)
         {
             int totalScore = 0;
             foreach (Collectable collectable in collectables)

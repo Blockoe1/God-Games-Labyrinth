@@ -16,7 +16,7 @@ namespace GGL.Scoring
     {
         [SerializeField] private GodID team;
 
-        private List<Collectable> heldCollectables = new();
+        private readonly Queue<Collectable> heldCollectables = new();
 
         /// <summary>
         /// Check for gold collection when we enter a trigger.
@@ -25,9 +25,9 @@ namespace GGL.Scoring
         private void OnTriggerEnter2D(Collider2D collision)
         {
             // Handles entering a collectable.
-            if (collision.gameObject.TryGetComponent(out Collectable collectable))
+            if (collision.gameObject.TryGetComponent(out Collectable collectable) && collectable.CanBeCollected)
             {
-                heldCollectables.Add(collectable);
+                heldCollectables.Enqueue(collectable);
                 collectable.OnCollected(this);
             }
 
@@ -42,6 +42,7 @@ namespace GGL.Scoring
         /// <summary>
         /// Causes this champion to drop all collectables.
         /// </summary>
+        [ContextMenu("Debug: Drop Collectables")] // Debug
         public void DropCollectables()
         {
             DropCollectables(heldCollectables.Count);
@@ -52,7 +53,10 @@ namespace GGL.Scoring
         /// <param name="numToDrop">The number of collectables to drop.</param>
         public void DropCollectables(int numToDrop)
         {
-
+            for(int i = 0; i < numToDrop && i < heldCollectables.Count; i++)
+            {
+                heldCollectables.Dequeue().OnDropped(this);
+            }
         }
     }
 }

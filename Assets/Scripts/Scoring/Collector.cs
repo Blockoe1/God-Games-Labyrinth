@@ -27,18 +27,20 @@ namespace GGL.Scoring
             // Handles entering a collectable.
             if (collision.gameObject.TryGetComponent(out Collectable collectable))
             {
-
+                heldCollectables.Add(collectable);
+                collectable.OnCollected(this);
             }
 
             // Handles cashing collectables at a GoldCashZone
-            if (collision.gameObject.TryGetComponent(out CollectableCashZone cashZone))
+            if (collision.gameObject.TryGetComponent(out CollectableCashZone cashZone) && cashZone.Team == team)
             {
-
+                cashZone.CashCollectables(heldCollectables);
+                heldCollectables.Clear();
             }
         }
 
         /// <summary>
-        /// Causes this champion to drop a all collectables.
+        /// Causes this champion to drop all collectables.
         /// </summary>
         public void DropCollectables()
         {

@@ -23,9 +23,17 @@ namespace GGL.Scoring
         /// <summary>
         /// Called when this object is collected.
         /// </summary>
-        public void OnCollected()
+        public void OnCollected(Collector collector)
         {
-            OnCollect?.Invoke();
+            gameObject.SetActive(false);
+        }
+
+        /// <summary>
+        /// Called when this object is collected.
+        /// </summary>
+        public void OnDropped(Collector collector)
+        {
+            gameObject.SetActive(true);
         }
 
         /// <summary>
@@ -33,7 +41,7 @@ namespace GGL.Scoring
         /// </summary>
         public void OnCashed()
         {
-
+            // Do Cleanup here.
         }
     }
 }

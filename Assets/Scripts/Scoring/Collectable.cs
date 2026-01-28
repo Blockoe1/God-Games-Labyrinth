@@ -62,13 +62,12 @@ namespace GGL.Scoring
         /// </summary>
         public void OnDropped(Collector collector)
         {
-            StartCoroutine(PauseCollection(dropPickupDelay));
-
             // Snap the collected item to the dropped champion's position.
             rb.position = collector.transform.position;
-            ApplyScatterForce();
 
             gameObject.SetActive(true);
+            StartCoroutine(PauseCollection(dropPickupDelay));
+            ApplyScatterForce();
 
             OnDrop?.Invoke();
         }

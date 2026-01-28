@@ -226,6 +226,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Scoring.Collectable
   pointValue: 5
+  dropPickupDelay: 1
+  scatterForce: {x: 0, y: 0}
   OnCollect:
     m_PersistentCalls:
       m_Calls: []
+  OnDrop:
+    m_PersistentCalls:
+      m_Calls: []
+  rb: {fileID: 4969604788086359710}

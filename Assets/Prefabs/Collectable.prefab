@@ -199,7 +199,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0
+  m_LinearDamping: 1.5
   m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Scoring.Collectable
   pointValue: 5
   dropPickupDelay: 1
-  scatterForce: {x: 0, y: 0}
+  scatterForce: {x: 3, y: 7}
   OnCollect:
     m_PersistentCalls:
       m_Calls: []

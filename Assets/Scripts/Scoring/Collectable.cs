@@ -62,11 +62,11 @@ namespace GGL.Scoring
         /// </summary>
         public void OnDropped(Collector collector)
         {
-            // Snap the collected item to the dropped champion's position.
-            rb.position = collector.transform.position;
-
+            canBeCollected = false;
+            transform.position = collector.transform.position;
             gameObject.SetActive(true);
             StartCoroutine(PauseCollection(dropPickupDelay));
+            // Snap the collected item to the dropped champion's position.
             ApplyScatterForce();
 
             OnDrop?.Invoke();
@@ -88,7 +88,6 @@ namespace GGL.Scoring
         /// <returns></returns>
         public IEnumerator PauseCollection(float time)
         {
-            if (!canBeCollected) { yield break; }
             canBeCollected = false;
 
             yield return new WaitForSeconds(time);
@@ -101,7 +100,11 @@ namespace GGL.Scoring
         /// </summary>
         private void ApplyScatterForce()
         {
+            int randomAngle = Random.Range(0, 360);
+            float randomForce = Random.Range(scatterForce.x, scatterForce.y);
 
+            Vector2 forceVector = MathHelpers.DegAngleToUnitVector(randomAngle);
+            rb.AddForce(forceVector * randomForce, ForceMode2D.Impulse);
         }
     }
 }

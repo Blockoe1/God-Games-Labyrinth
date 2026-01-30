@@ -53,7 +53,7 @@ namespace GGL.Scoring
         /// <param name="numToDrop">The number of collectables to drop.</param>
         public void DropCollectables(int numToDrop)
         {
-            for(int i = 0; i < numToDrop && i < heldCollectables.Count; i++)
+            for(int i = 0; i < numToDrop && heldCollectables.Count > 0; i++)
             {
                 heldCollectables.Dequeue().OnDropped(this);
             }

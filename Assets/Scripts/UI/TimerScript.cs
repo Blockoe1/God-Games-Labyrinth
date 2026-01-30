@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace GGL
 {
@@ -8,6 +9,7 @@ namespace GGL
     {
         [SerializeField] int time;
         [SerializeField] TMP_Text timerText;
+        [SerializeField] UnityEvent UnityEvent;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()

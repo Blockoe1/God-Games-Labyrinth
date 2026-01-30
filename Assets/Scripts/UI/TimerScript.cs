@@ -1,29 +1,28 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 namespace GGL
 {
     public class TimerScript : MonoBehaviour
     {
-        private int time;
-        private float displayedTime;
+        [SerializeField] int time;
+        [SerializeField] TMP_Text timerText;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
-            time = 9000;
             StartCoroutine(Timer());
         }
         
         IEnumerator Timer()
         {
+            timerText.text = "" + time;
             while (time > 0)
             {
-                yield return new WaitForSecondsRealtime(0.01f);
+                yield return new WaitForSeconds(1f);
                 time -= 1;
-                Debug.Log(time);
-                displayedTime = time / 100;
-                Debug.Log(displayedTime);
+                timerText.text = "" + time;
             }
             //level end stuff
         }

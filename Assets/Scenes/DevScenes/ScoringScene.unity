@@ -614,9 +614,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1731887743052177298, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: OnDashBegin.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1731887743052177298, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: OnDashBegin.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1731887743052177298, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: OnDashBegin.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1731887743052177298, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: OnDashBegin.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: GGL.Champions.ChampionMovement, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4254817847457918461, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
       propertyPath: m_Name
       value: ChampionBase
+      objectReference: {fileID: 0}
+    - target: {fileID: 8650097738718565955, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: m_DefaultActionMap
+      value: 4a98ea16-8f15-4260-9a20-bf576a02e7b2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

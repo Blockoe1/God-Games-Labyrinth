@@ -249,6 +249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Champions.ChampionDash
   dashSpeed: 30
   dashDuration: 0.15
+  dashCooldown: 1
   OnDashBegin:
     m_PersistentCalls:
       m_Calls:

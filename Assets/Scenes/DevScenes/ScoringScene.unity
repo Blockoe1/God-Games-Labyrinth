@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9127707dae8dc7949b73895e749d01ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Scoring.CollectableCashZone
-  team: 0
+  team: 1
   OnChampionScore:
     m_PersistentCalls:
       m_Calls:

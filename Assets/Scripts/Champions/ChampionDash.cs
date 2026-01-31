@@ -25,11 +25,13 @@ namespace GGL.Champions
         [Header("Dash Settings")]
         [SerializeField] private float dashSpeed;
         [SerializeField] private float dashDuration;
+        [SerializeField] private float dashCooldown;
         [SerializeField] private UnityEvent OnDashBegin;
-        [SerializeField] private UnityEvent OnDashEnd;
+        [SerializeField] private UnityEvent<float> OnDashEnd;
 
         private InputAction dashAction;
         private bool isDashing;
+        private bool isCooldown;
 
         private Vector2 dashDirection;
 
@@ -85,8 +87,8 @@ namespace GGL.Champions
         /// <param name="direction">The direction for the player to dash in.</param>
         private IEnumerator Dash(Vector2 direction)
         {
-            // Prevent double dashing.
-            if (isDashing) { yield break; }
+            // Prevent double dashing and dashing during cooldown.
+            if (isDashing || isCooldown) { yield break; }
 
             direction = direction.normalized;
             isDashing = true;
@@ -101,8 +103,22 @@ namespace GGL.Champions
                 yield return new WaitForFixedUpdate();
             }
 
-            OnDashEnd?.Invoke();
+            OnDashEnd?.Invoke(dashCooldown);
+            StartCoroutine(DashCooldown(dashCooldown));
             isDashing = false;
+        }
+
+        /// <summary>
+        /// Prevents the player from dashing for a time.
+        /// </summary>
+        /// <param name="dashCooldown">The amount of time the player must cool down.</param>
+        /// <returns></returns>
+        private IEnumerator DashCooldown(float dashCooldown)
+        {
+            if (isCooldown) { yield break; }
+            isCooldown = true;
+            yield return new WaitForSeconds(dashCooldown);
+            isCooldown = false;
         }
     }
 }

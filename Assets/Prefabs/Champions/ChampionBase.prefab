@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 4195008848169630617}
   - component: {fileID: 8074908796875090492}
   - component: {fileID: 1731887743052177298}
-  m_Layer: 0
+  - component: {fileID: 5887644586341638842}
+  m_Layer: 8
   m_Name: ChampionBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -266,3 +267,16 @@ MonoBehaviour:
         m_CallState: 2
   rb: {fileID: 1706004363272337}
   input: {fileID: 8650097738718565955}
+--- !u!114 &5887644586341638842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4254817847457918461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53f7b64e21a0ad64bb809f41e9cee231, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Scoring.Collector
+  team: 0

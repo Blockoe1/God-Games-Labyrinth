@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9127707dae8dc7949b73895e749d01ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Scoring.CollectableCashZone
-  team: 1
+  team: 0
   OnChampionScore:
     m_PersistentCalls:
       m_Calls:
@@ -576,11 +576,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1271545573506326188, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.66727
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1271545573506326188, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.05442
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1271545573506326188, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
       propertyPath: m_LocalPosition.z

@@ -576,11 +576,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1271545573506326188, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.66727
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1271545573506326188, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.05442
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1271545573506326188, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -614,29 +614,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1731887743052177298, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
-      propertyPath: OnDashBegin.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1731887743052177298, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
-      propertyPath: OnDashBegin.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1731887743052177298, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
-      propertyPath: OnDashBegin.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1731887743052177298, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
-      propertyPath: OnDashBegin.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: GGL.Champions.ChampionMovement, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 4254817847457918461, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
       propertyPath: m_Name
       value: ChampionBase
-      objectReference: {fileID: 0}
-    - target: {fileID: 8650097738718565955, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
-      propertyPath: m_DefaultActionMap
-      value: cec98218-e584-468c-bce6-03ad333c7861
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

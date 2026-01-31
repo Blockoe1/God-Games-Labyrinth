@@ -22,7 +22,6 @@ namespace GGL.Champions
         private InputAction moveAction;
 
         #region Component References
-        [Header("Components")]
         [SerializeReference, ReadOnly] private PlayerInput input;
 
         /// <summary>

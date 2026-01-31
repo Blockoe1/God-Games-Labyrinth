@@ -6,7 +6,6 @@
 //
 // Brief Description : Handles sending scores across the network.
 *****************************************************************************/
-using NUnit.Framework.Constraints;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -41,7 +40,7 @@ namespace GGL.Networking
         [ContextMenu("Send Debug Message")]
         private void SendTestMessage()
         {
-            int[] message = Scoreboard.GetScoreboardArray();
+            int[] message = GGL.Scoring.Scoreboard.GetScoreboardArray();
             message[(int)GodID.Zeus] = 500;
             message[(int)GodID.Posiedon] = 100;
             message[(int)GodID.Athena] = 300;

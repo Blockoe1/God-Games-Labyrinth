@@ -15,9 +15,21 @@ namespace GGL.Scoring
     public class CollectableSpawnArea : MonoBehaviour
     {
         [SerializeField] private Collectable collectablePrefab;
-        [SerializeField] private Vector2 scatterForce;
-        [SerializeField] private float baseSpawnDelay;
-        [SerializeField] private int baseSpawnAmount;
+        [SerializeField, Tooltip("The min and max possible force for spawned objects to have to scatter them " +
+            "throughout the room.")] 
+        private Vector2 scatterForce;
+        [SerializeField, Tooltip("The base amount of time between new gold being spawned when no gold has been " +
+            "collected.")] 
+        private float baseSpawnDelay;
+        [SerializeField, Tooltip("The amount that spawn delay increases with each gold collected from this room.")] 
+        private float spawnDelayFalloff;
+        [SerializeField, Tooltip("The amount of gold spawned from this room when no gold has been collected.")] 
+        private int baseSpawnAmount;
+        [SerializeField, Tooltip("How quickly the amount of gold spawned from this room decreases based on teh amount " +
+            "of gold collected.  \nThis number represents the denominator that the number of gold to spawn is " +
+            "divided by.  (Ie if set to 1, then after collecting 1 gold the amount of future gold spawned will be " +
+            "1/ (1 + 1) or 1/2.")] 
+        private float spawnAmountFalloff;
 
         private int numCollectedItems;
         private bool wasCollected;
@@ -86,7 +98,7 @@ namespace GGL.Scoring
         private int GetSpawnNumber()
         {
             // TODO: Implement math for reducing spawn number;
-            return baseSpawnAmount;
+            return Mathf.CeilToInt(baseSpawnAmount / (1 + spawnAmountFalloff * numCollectedItems));
         }
 
         /// <summary>
@@ -96,7 +108,7 @@ namespace GGL.Scoring
         private float GetSpawnDelay()
         {
             // TODO: Implement math for reducing spawn time;
-            return baseSpawnDelay;
+            return baseSpawnDelay + (spawnDelayFalloff * numCollectedItems);
         }
 
         /// <summary>

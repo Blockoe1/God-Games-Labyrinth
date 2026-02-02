@@ -6,14 +6,98 @@
 //
 // Brief Description : Continually spawns collectables for the champions to spawn.
 *****************************************************************************/
-using NaughtyAttributes;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace GGL.Scoring
 {
     public class CollectableSpawnArea : MonoBehaviour
     {
-        [SerializeField] private Vector2 goldScatterForce;
+        [SerializeField] private Collectable collectablePrefab;
+        [SerializeField] private Vector2 scatterForce;
+        [SerializeField] private float baseSpawnDelay;
+        [SerializeField] private int baseSpawnAmount;
+
+        private int numCollectedItems;
+        private bool wasCollected;
+        private bool isSpawning;
+
+        #region Nested
+        private class CollectEventWrapper
+        {
+            internal UnityAction unsubscribeAction;
+            internal readonly Collectable toCollect;
+
+            internal CollectEventWrapper(Collectable toCollect)
+            {
+                this.toCollect = toCollect;
+            }
+        }
+        #endregion
+
+        /// <summary>
+        /// Debug
+        /// </summary>
+        private void Start()
+        {
+            StartSpawning();
+        }
+
+        /// <summary>
+        /// Toggles the room's gold spawning on and off.
+        /// </summary>
+        public void StartSpawning()
+        {
+            if (isSpawning) { return; } 
+            isSpawning = true;
+            StartCoroutine(SpawnRoutine());
+        }
+        public void StopSpawning()
+        {
+            isSpawning = false;
+        }
+
+        /// <summary>
+        /// Continually spawns new collectables in this room over time.
+        /// </summary>
+        /// <returns></returns>
+        private IEnumerator SpawnRoutine()
+        {
+            while(isSpawning)
+            {
+                // Mark the gold as not collected.
+                wasCollected = false;
+                for(int i = 0; i < GetSpawnNumber(); i++)
+                {
+                    SpawnCollectable(collectablePrefab);
+                }
+
+                yield return new WaitUntil(() => wasCollected);
+
+                yield return new WaitForSeconds(GetSpawnDelay());
+            }
+        }
+
+        /// <summary>
+        /// Calculate the number of items to spawn based on the number of items collected from this room.
+        /// </summary>
+        /// <returns></returns>
+        private int GetSpawnNumber()
+        {
+            // TODO: Implement math for reducing spawn number;
+            return baseSpawnAmount;
+        }
+
+        /// <summary>
+        /// Calculate the delay between items being spawned based on the number of items collected from this room.
+        /// </summary>
+        /// <returns></returns>
+        private float GetSpawnDelay()
+        {
+            // TODO: Implement math for reducing spawn time;
+            return baseSpawnDelay;
+        }
 
         /// <summary>
         /// Spawns a collectable at a random position within this area.
@@ -22,12 +106,31 @@ namespace GGL.Scoring
         private void SpawnCollectable(Collectable toSpawn)
         {
             Collectable spawnedCollectable = Instantiate(toSpawn, transform.position, Quaternion.identity);
-            spawnedCollectable.ApplyScatterForce(Random.Range(goldScatterForce.x, goldScatterForce.y));
+            spawnedCollectable.ApplyScatterForce(Random.Range(scatterForce.x, scatterForce.y));
 
             // Add a callback so that this spawner updates when the gold is collected for the first time.
-            spawnedCollectable.SubscribeCollectEvent(() => { });
+            CollectEventWrapper cew = new CollectEventWrapper(spawnedCollectable);
+            UnityAction unsubAction = () => { LogItemCollected(cew); };
+            cew.unsubscribeAction = unsubAction;
+            spawnedCollectable.SubscribeCollectEvent(unsubAction);
         }
 
-        private void 
+        /// <summary>
+        /// Logs an item as collected for the first time and decreases the amount of future gold spawned from the room.
+        /// </summary>
+        /// <param name="cew">
+        /// Wrapper class containing the collectable that was collected and the action ot unsubscribe.
+        /// </param>
+        private void LogItemCollected(CollectEventWrapper cew)
+        {
+            // Flag that at least one collectable was collected from this area so that new ones can spawn.
+            wasCollected = true;
+
+            // Track the number of items collected from this room.  Used in later calcs to reduce the amount spawned.
+            numCollectedItems++;
+
+            // Removes the item collected subscription so it's only called on the first collect.
+            cew.toCollect.UnsubscribeCollectEvent(cew.unsubscribeAction);
+        }
     }
 }

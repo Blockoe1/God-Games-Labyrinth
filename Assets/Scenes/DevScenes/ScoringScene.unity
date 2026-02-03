@@ -554,10 +554,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChampionBase
       objectReference: {fileID: 0}
-    - target: {fileID: 8650097738718565955, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
-      propertyPath: m_DefaultActionMap
-      value: cec98218-e584-468c-bce6-03ad333c7861
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

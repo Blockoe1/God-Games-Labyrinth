@@ -8,6 +8,7 @@
 *****************************************************************************/
 using GGL.Networking;
 using NaughtyAttributes;
+using System;
 using UnityEngine;
 
 namespace GGL.Scoring
@@ -16,6 +17,8 @@ namespace GGL.Scoring
     public class GameplayScoreManager : MonoBehaviour
     {
         private int[] scores;
+
+        public static event Action<int, GodID> OnScoreUpdate;
 
         #region Component References
         [Header("Components")]
@@ -47,6 +50,7 @@ namespace GGL.Scoring
         public void AddScore(int toAdd, GodID god)
         {
             scores[(int)god] += toAdd;
+            OnScoreUpdate?.Invoke(scores[(int)god], god);
         }
 
         /// <summary>

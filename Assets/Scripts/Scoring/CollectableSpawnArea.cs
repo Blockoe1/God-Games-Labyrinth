@@ -14,6 +14,10 @@ namespace GGL.Scoring
 {
     public class CollectableSpawnArea : MonoBehaviour
     {
+        #region CONSTS
+        private const string COLLECTABLE_PARENT_TAG = "Collectables";
+        #endregion
+
         [SerializeField] private Collectable collectablePrefab;
         [SerializeField, Tooltip("The min and max possible force for spawned objects to have to scatter them " +
             "throughout the room.")] 
@@ -31,9 +35,25 @@ namespace GGL.Scoring
             "1/ (1 + 1) or 1/2.")] 
         private float spawnAmountFalloff;
 
+        private static Transform collectableParent;
+
         private int numCollectedItems;
         private bool wasCollected;
         private bool isSpawning;
+
+        #region Properties
+        private static Transform CollectableParent
+        {
+            get
+            {
+                if (collectableParent == null)
+                {
+                    collectableParent = GameObject.FindGameObjectWithTag(COLLECTABLE_PARENT_TAG)?.transform;
+                }
+                return collectableParent;
+            }
+        }
+        #endregion
 
         #region Nested
         private class CollectEventWrapper
@@ -117,7 +137,8 @@ namespace GGL.Scoring
         /// <param name="toSpawn">The collectable to spawn.</param>
         private void SpawnCollectable(Collectable toSpawn)
         {
-            Collectable spawnedCollectable = Instantiate(toSpawn, transform.position, Quaternion.identity);
+            Collectable spawnedCollectable = Instantiate(toSpawn, transform.position, Quaternion.identity, 
+                CollectableParent);
             spawnedCollectable.ApplyScatterForce(Random.Range(scatterForce.x, scatterForce.y));
 
             // Add a callback so that this spawner updates when the gold is collected for the first time.

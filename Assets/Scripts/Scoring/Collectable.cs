@@ -19,9 +19,9 @@ namespace GGL.Scoring
     {
         [SerializeField] private int pointValue;
         [SerializeField, Tooltip("The amount of time after this collectable has been dropped before it can be " +
-            "picked up again.")] 
+            "picked up again.")]
         private float dropPickupDelay = 1;
-        [SerializeField, Tooltip("The min and max force that can be applied to a dropped collectable.")] 
+        [SerializeField, Tooltip("The min and max force that can be applied to a dropped collectable.")]
         private Vector2 scatterForce;
         [Header("Events")]
         [SerializeField] private UnityEvent OnCollect;
@@ -67,7 +67,7 @@ namespace GGL.Scoring
             gameObject.SetActive(true);
             StartCoroutine(PauseCollection(dropPickupDelay));
             // Snap the collected item to the dropped champion's position.
-            ApplyScatterForce();
+            ApplyScatterForce(Random.Range(scatterForce.x, scatterForce.y));
 
             OnDrop?.Invoke();
         }
@@ -98,13 +98,31 @@ namespace GGL.Scoring
         /// <summary>
         /// Applies a randomized force to this colelctable so it scatters when dropped.
         /// </summary>
-        private void ApplyScatterForce()
+        public void ApplyScatterForce(float scatterForce)
         {
             int randomAngle = Random.Range(0, 360);
-            float randomForce = Random.Range(scatterForce.x, scatterForce.y);
 
             Vector2 forceVector = MathHelpers.DegAngleToUnitVector(randomAngle);
-            rb.AddForce(forceVector * randomForce, ForceMode2D.Impulse);
+            rb.AddForce(forceVector * scatterForce, ForceMode2D.Impulse);
         }
+
+        #region Event Subscriptions
+        /// <summary>
+        /// Adds a subscriber to the collectable's OnCollect event.
+        /// </summary>
+        /// <param name="onCollectAction"></param>
+        public void SubscribeCollectEvent(UnityAction onCollectAction)
+        {
+            OnCollect.AddListener(onCollectAction);
+        }
+        /// <summary>
+        /// Removes a subscriber from the OnCollect Event.
+        /// </summary>
+        /// <param name="onCollectAction"></param>
+        public void UnsubscribeCollectEvent(UnityAction onCollectAction)
+        {
+            OnCollect.RemoveListener(onCollectAction);
+        }
+        #endregion
     }
 }

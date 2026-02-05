@@ -34,7 +34,7 @@ namespace GGL.Champions
                 StopCoroutine(rotateRoutine);
                 rotateRoutine = null;
             }
-            Debug.Log(MathHelpers.VectorToDegAngleUnity(direction));
+            //Debug.Log(MathHelpers.VectorToDegAngleUnity(direction));
             rotateRoutine = StartCoroutine(RotateRoutine(MathHelpers.VectorToDegAngle(direction)));
         }
 

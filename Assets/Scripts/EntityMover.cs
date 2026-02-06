@@ -28,7 +28,7 @@ namespace GGL
 
         #region Component References
         [Header("Components")]
-        [SerializeReference, ReadOnly] private Rigidbody2D rb;
+        [SerializeReference, ReadOnly] protected Rigidbody2D rb;
 
         /// <summary>
         /// Get components on reset.
@@ -83,9 +83,17 @@ namespace GGL
             // Snap the player's position tot he grid when they change direction.
             if (markForSnap)
             {
-                rb.MovePosition(MathHelpers.RoundVectorToInt(rb.position));
-                markForSnap = false;
+                Snap();
             }
+        }
+
+        /// <summary>
+        /// Snaps the object to an integer grid.
+        /// </summary>
+        protected virtual void Snap()
+        {
+            rb.MovePosition((Vector2)MathHelpers.RoundVectorToInt(rb.position * 2) / 2);
+            markForSnap = false;
         }
     }
 }

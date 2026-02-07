@@ -34,7 +34,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.66727, y: -0.05442, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1551405931899072320}
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59a079c29875d02479d23ab5dc7cd9a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Champions.ChampionMovementController
-  maxSpeed: 8
+  maxSpeed: 6
   acceleration: 40
   positionSnap: 1
   OnDirectionChanged:
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb2346a2e2d32c54f8878b79d2a186d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Champions.ChampionDash
-  dashSpeed: 30
+  dashSpeed: 20
   dashDuration: 0.15
   dashCooldown: 1
   OnDashBegin:

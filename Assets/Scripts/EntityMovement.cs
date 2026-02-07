@@ -7,21 +7,39 @@
 // Brief Description : Base movement script for moving an entity through the maze.
 *****************************************************************************/
 using NaughtyAttributes;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.InputSystem;
 
 namespace GGL
 {
-    public class EntityMover : MonoBehaviour
+    public class EntityMovement : MonoBehaviour
     {
+        #region CONSTS
+        private static readonly Vector2[] MOVEMENT_DIRECTIONS = new Vector2[]
+        {
+            Vector2.right,
+            Vector2.up, 
+            Vector2.down, 
+            Vector2.left
+        };
+        private const string MAZE_LAYER_NAME = "Maze";
+        private const float MAX_WALL_CHECK_DISTANCE = 1f;
+        #endregion
+
         [SerializeField] private float maxSpeed;
         [SerializeField] private float acceleration;
         [SerializeField] private bool positionSnap;
         [SerializeField] private UnityEvent<Vector2> OnDirectionChanged;
 
-        private float speed;
+        private static LayerMask mazeMask;
+
+        // The actual direction that the object is facing.
         private Vector2 direction = Vector2.up;
+        // THe direction that the ojbect is trying to move in.  Can be 0.
+        private Vector2 targetDirection;
+
+        private float speed;
         private bool markForSnap;
 
         private bool isMoving;
@@ -46,8 +64,36 @@ namespace GGL
             get { return isMoving; }
             set { isMoving = value; }
         }
+        private LayerMask MazeMask
+        {
+            get
+            {
+                if (mazeMask == 0)
+                {
+                    mazeMask = LayerMask.GetMask(MAZE_LAYER_NAME);
+                }
+                return mazeMask;
+            }
+        }
+        public Vector2 TargetDirection
+        {
+            get { return targetDirection; }
+            set 
+            { 
+                targetDirection = value;
 
-        public Vector2 Direction
+                // If 0 is set as the target direction, then the objecct stops moving.
+                if (targetDirection == Vector2.zero)
+                {
+                    isMoving = false;
+                }
+                else
+                {
+                    isMoving = true;
+                }
+            }
+        }
+        private Vector2 Direction
         { 
             get { return direction; }
             set 
@@ -77,8 +123,25 @@ namespace GGL
         /// </remarks>
         private void FixedUpdate()
         {
+            if (isMoving)
+            {
+                // Use a raycast to determine valid directions.
+                foreach (var direction in MOVEMENT_DIRECTIONS)
+                {
+                    RaycastHit2D ray = Physics2D.Raycast(rb.position, direction, MAX_WALL_CHECK_DISTANCE, MazeMask);
+                    Debug.DrawRay(rb.position, direction, Color.green, MAX_WALL_CHECK_DISTANCE);
+                    // If the raycast hit nothing, this is a valid direction.
+                    if (!ray && TargetDirection == direction)
+                    {
+                        // Change direction if the target direction is this valid direction.
+                        Direction = direction;
+                        break;
+                    }
+                }
+            }
+
             speed = Mathf.MoveTowards(speed, isMoving ? maxSpeed : 0, acceleration * Time.fixedDeltaTime);
-            rb.linearVelocity = speed * direction;
+            rb.linearVelocity = speed * Direction;
 
             // Snap the player's position tot he grid when they change direction.
             if (markForSnap)
@@ -92,7 +155,7 @@ namespace GGL
         /// </summary>
         protected virtual void Snap()
         {
-            rb.MovePosition((Vector2)MathHelpers.RoundVectorToInt(rb.position * 2) / 2);
+            rb.MovePosition((Vector2)MathHelpers.RoundVectorToInt(rb.position));
             markForSnap = false;
         }
     }

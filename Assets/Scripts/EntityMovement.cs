@@ -24,11 +24,13 @@ namespace GGL
             Vector2.left
         };
         private const string MAZE_LAYER_NAME = "Maze";
-        private const float MAX_WALL_CHECK_DISTANCE = 1f;
         #endregion
 
         [SerializeField] private float maxSpeed;
         [SerializeField] private float acceleration;
+        [SerializeField, Tooltip("The amount of empty space that the entity needs before it can turn in a given " +
+    "direction.")]
+        private float maxWallCheckDistance;
         [SerializeField] private bool positionSnap;
         [SerializeField] private UnityEvent<Vector2> OnDirectionChanged;
 
@@ -128,8 +130,8 @@ namespace GGL
                 // Use a raycast to determine valid directions.
                 foreach (var direction in MOVEMENT_DIRECTIONS)
                 {
-                    RaycastHit2D ray = Physics2D.Raycast(rb.position, direction, MAX_WALL_CHECK_DISTANCE, MazeMask);
-                    Debug.DrawRay(rb.position, direction, Color.green, MAX_WALL_CHECK_DISTANCE);
+                    RaycastHit2D ray = Physics2D.Raycast(rb.position, direction, maxWallCheckDistance, MazeMask);
+                    Debug.DrawRay(rb.position, direction, Color.green, maxWallCheckDistance);
                     // If the raycast hit nothing, this is a valid direction.
                     if (!ray && TargetDirection == direction)
                     {

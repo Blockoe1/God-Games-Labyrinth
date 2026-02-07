@@ -205,6 +205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Champions.ChampionMovementController
   maxSpeed: 6
   acceleration: 40
+  maxWallCheckDistance: 1.5
   positionSnap: 1
   OnDirectionChanged:
     m_PersistentCalls:

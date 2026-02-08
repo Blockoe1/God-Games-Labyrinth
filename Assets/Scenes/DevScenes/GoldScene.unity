@@ -1164,8 +1164,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Scoring.CollectableSpawner
   collectablePrefab: {fileID: 7711049314715301832, guid: 49c1250f80e35014eb05622562b2ba2f, type: 3}
-  spawnAmount: 0
-  spawnDelay: 0
+  spawnAmount: 1
+  spawnDelay: 5
   startFilled: 1
   mazeCollisionTilemap: {fileID: 1581354546}
   minBounds: {x: -27, y: -15}

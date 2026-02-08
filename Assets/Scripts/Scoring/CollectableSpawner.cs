@@ -172,7 +172,7 @@ namespace GGL.Scoring
             // Setup so that when the collectable is collected for the first time, it makes it's spawn
             // position valid again.
             CollectEventWrapper cew = new CollectEventWrapper(toSpawn, position);
-            UnityAction unsubAction = () => { LogCollected(cew); };
+            void unsubAction() { LogCollected(cew); }
             cew.unsubscribeAction = unsubAction;
             toSpawn.SubscribeCollectEvent(unsubAction);
 
@@ -180,6 +180,8 @@ namespace GGL.Scoring
             validPositions.Remove(position);
 
             toSpawn.gameObject.SetActive(true);
+
+            Debug.Log($"Spawned a collectable at position {position}");
         }
 
         /// <summary>

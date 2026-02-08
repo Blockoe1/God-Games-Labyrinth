@@ -37,6 +37,7 @@ namespace GGL.UI
         /// <param name="updatedGod">The GodID of the score that changed.</param>
         private void UpdateScoreText(int score, GodID updatedGod)
         {
+            Debug.Log($"{updatedGod} score is now {score}");
             if(updatedGod == god)
             {
                 textComponent.text = score.ToString();

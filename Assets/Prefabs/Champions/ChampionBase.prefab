@@ -203,8 +203,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59a079c29875d02479d23ab5dc7cd9a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Champions.ChampionMovementController
-  maxSpeed: 8
+  maxSpeed: 6
   acceleration: 40
+  maxWallCheckDistance: 1
   positionSnap: 1
   OnDirectionChanged:
     m_PersistentCalls:
@@ -234,6 +235,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   rb: {fileID: 1706004363272337}
+  snapTarget: {fileID: 0}
   input: {fileID: 8650097738718565955}
 --- !u!114 &1731887743052177298
 MonoBehaviour:
@@ -247,7 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb2346a2e2d32c54f8878b79d2a186d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Champions.ChampionDash
-  dashSpeed: 30
+  dashSpeed: 20
   dashDuration: 0.15
   dashCooldown: 1
   OnDashBegin:

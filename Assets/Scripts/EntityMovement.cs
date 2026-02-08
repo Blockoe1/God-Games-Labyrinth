@@ -131,7 +131,7 @@ namespace GGL
                 foreach (var direction in MOVEMENT_DIRECTIONS)
                 {
                     RaycastHit2D ray = Physics2D.Raycast(rb.position, direction, maxWallCheckDistance, MazeMask);
-                    Debug.DrawRay(rb.position, direction, Color.green, maxWallCheckDistance);
+                    Debug.DrawRay(rb.position, direction * maxWallCheckDistance, Color.green);
                     // If the raycast hit nothing, this is a valid direction.
                     if (!ray && TargetDirection == direction)
                     {

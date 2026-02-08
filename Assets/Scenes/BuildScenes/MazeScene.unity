@@ -547,7 +547,7 @@ GameObject:
   - component: {fileID: 409627863}
   - component: {fileID: 409627862}
   m_Layer: 5
-  m_Name: TempAthenaScore
+  m_Name: TempPoseidonScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -676,7 +676,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.UI.ScoreTextUpdater
   textComponent: {fileID: 409627862}
-  god: 2
+  god: 1
 --- !u!222 &409627864
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1086,9 +1086,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 1
-    height: 1
+    y: 0.055555556
+    width: 0.33333334
+    height: 0.3333333
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -1657,7 +1657,7 @@ GameObject:
   - component: {fileID: 1278227311}
   - component: {fileID: 1278227310}
   m_Layer: 5
-  m_Name: TempZeusScore (3)
+  m_Name: TempAphroditeScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2053,7 +2053,7 @@ GameObject:
   - component: {fileID: 1568616297}
   - component: {fileID: 1568616296}
   m_Layer: 5
-  m_Name: TempPoseidonScore
+  m_Name: TempAthenaScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2182,7 +2182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.UI.ScoreTextUpdater
   textComponent: {fileID: 1568616296}
-  god: 1
+  god: 2
 --- !u!222 &1568616298
 CanvasRenderer:
   m_ObjectHideFlags: 0

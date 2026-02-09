@@ -1166,7 +1166,7 @@ MonoBehaviour:
   collectablePrefab: {fileID: 7711049314715301832, guid: 49c1250f80e35014eb05622562b2ba2f, type: 3}
   spawnAmount: 1
   spawnDelay: 5
-  startFilled: 1
+  startingGoldAmount: 200
   mazeCollisionTilemap: {fileID: 1581354546}
   minBounds: {x: -27, y: -15}
   maxBounds: {x: 28, y: 16}

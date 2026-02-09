@@ -23,7 +23,7 @@ namespace GGL.Scoring
         [Header("Spawning Settings")]
         [SerializeField] private int spawnAmount;
         [SerializeField] private float spawnDelay;
-        [SerializeField] private bool startFilled;
+        [SerializeField] private int startingGoldAmount;
 
         [Header("Spawn Map Settings")]
         [SerializeField] private Tilemap mazeCollisionTilemap;
@@ -113,10 +113,12 @@ namespace GGL.Scoring
         /// </summary>
         private void Start()
         {
-            if (startFilled)
+            // Spawn the initial random gold.
+            for(int i = 0; i < startingGoldAmount; i++)
             {
-                FillAllSpaces();
+                SpawnAtRandomPosition();
             }
+
             isSpawning = true;
             StartCoroutine(SpawnRoutine());
         }
@@ -139,9 +141,9 @@ namespace GGL.Scoring
         }
 
         /// <summary>
-        /// Spawns a collectable at all valid spaces.
+        /// Spawns a collectable at evenly spaced valid spaces.
         /// </summary>
-        private void FillAllSpaces()
+        private void FillSpaces(int numToSpawn)
         {
             Vector2Int[] validPositionsCopy = validPositions.ToArray();
             foreach (var item in validPositionsCopy)
@@ -155,8 +157,11 @@ namespace GGL.Scoring
         /// </summary>
         private void SpawnAtRandomPosition()
         {
-            Vector2Int position = validPositions[Random.Range(0, validPositions.Count)];
-            SpawnAtPosition(position);
+            if (validPositions.Count > 0)
+            {
+                Vector2Int position = validPositions[Random.Range(0, validPositions.Count)];
+                SpawnAtPosition(position);
+            }
         }
 
         /// <summary>

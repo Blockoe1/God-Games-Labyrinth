@@ -87,11 +87,11 @@ namespace GGL
                 // If 0 is set as the target direction, then the objecct stops moving.
                 if (targetDirection == Vector2.zero)
                 {
-                    isMoving = false;
+                    IsMoving = false;
                 }
                 else
                 {
-                    isMoving = true;
+                    IsMoving = true;
                 }
             }
         }
@@ -125,7 +125,7 @@ namespace GGL
         /// </remarks>
         private void FixedUpdate()
         {
-            if (isMoving)
+            if (IsMoving)
             {
                 // Use a raycast to determine valid directions.
                 foreach (var direction in MOVEMENT_DIRECTIONS)
@@ -142,7 +142,7 @@ namespace GGL
                 }
             }
 
-            speed = Mathf.MoveTowards(speed, isMoving ? maxSpeed : 0, acceleration * Time.fixedDeltaTime);
+            speed = Mathf.MoveTowards(speed, IsMoving ? maxSpeed : 0, acceleration * Time.fixedDeltaTime);
             rb.linearVelocity = speed * Direction;
 
             // Snap the player's position tot he grid when they change direction.

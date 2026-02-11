@@ -6,12 +6,12 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Zeus
+  m_Name: Aphrodite
   m_Controller: {fileID: 9100000, guid: f6880d5106e0dcd49add1754c302904b, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: fb7d894cfb71ebe4695d27edbcc18ec5, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 12341f7aa82bae64186fd5284ff9dba0, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: be644427f425ee54c93c026439c38840, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 0edc11ef7ccb6b8458d3c59b29bca96b, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 16aa2330abb38cf4a8eaf236cdf28982, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 60ee732a45289c0419b9b80e3af6d08c, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: f8d71890b5b47c841a000c66290ce694, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: babb89566e283484292721180b6e76aa, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 738652f1010f4f44e967adc50a6c4644, type: 2}

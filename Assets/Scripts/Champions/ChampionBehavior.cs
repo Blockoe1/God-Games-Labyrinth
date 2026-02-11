@@ -20,7 +20,6 @@ namespace GGL.Champions
     public abstract class ChampionBehavior : MonoBehaviour
     {
         [SerializeField] private float cooldown;
-        [SerializeField] private string actionName;
 
         private InputAction performAction;
         private bool isCooldown;
@@ -42,6 +41,7 @@ namespace GGL.Champions
         #endregion
 
         #region Properties
+        protected abstract string actionName { get; }
         protected bool IsCooldown => isCooldown;
         protected Vector2 Direction => movement == null ? Vector2.zero : movement.Direction;
         #endregion

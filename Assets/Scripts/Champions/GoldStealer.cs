@@ -11,46 +11,29 @@ using UnityEngine.InputSystem;
 
 namespace GGL.Champions
 {
-    public class GoldStealer : MonoBehaviour
+    public class GoldStealer : ChampionBehavior
     {
-        #region CONSTS
-        private const string STEAL_ACTION_NAME = "Steal";
-        #endregion
+        protected override string actionName => "Steal";
 
+        [Header("Steal Settings")]
         [SerializeField] private StealProjectile projectile;
-        [SerializeField] private float stealCooldown;
-
-        private InputAction stealAction;
-
-        public Vector2 StealDirection { get; set; }
-
-        /// <summary>
-        /// Setup Input.
-        /// </summary>
-        private void Awake()
-        {
-            if (TryGetComponent(out PlayerInput input))
-            {
-                stealAction = input.currentActionMap.FindAction(STEAL_ACTION_NAME);
-
-                stealAction.performed += StealAction_performed;
-            }
-        }
-        private void OnDestroy()
-        {
-            if (stealAction != null)
-            {
-                stealAction.performed -= StealAction_performed;
-            }
-        }
+        [SerializeField] private float launchForce;
+        [SerializeField, Tooltip("The amount of empty space that must be in front of the champion to use this" +
+            " ability.")] 
+        private float requiredLeeway = 2;
 
         /// <summary>
-        /// Launches the steal projectile when the player presses the steal key.
+        /// Fires the steal projectile when the player presses the correct button.
         /// </summary>
-        /// <param name="obj"></param>
-        private void StealAction_performed(InputAction.CallbackContext obj)
+        protected override void OnActionPerformed()
         {
-
+            // If the projectile is already launched, then it can't be launched again.
+            if (projectile.IsLaunched) { return; }  
+            RaycastHit2D forwardCheck = Physics2D.Raycast(transform.position, Direction, requiredLeeway, GGLHelpers.MazeMask);
+            if (!forwardCheck)
+            {
+                projectile.Launch(Direction * launchForce);
+            }
         }
     }
 }

@@ -17,6 +17,8 @@ namespace GGL.Champions
     [RequireComponent(typeof(Rigidbody2D))]
     public class ChampionDash : ChampionBehavior
     {
+        protected override string actionName => "Dash";
+
         [Header("Dash Settings")]
         [SerializeField] private float dashSpeed;
         [SerializeField] private float dashDuration;

@@ -19,7 +19,6 @@ namespace GGL.Champions
         private const string MOVE_ACTION_NAME = "Move";
         #endregion
 
-        [SerializeField] private Transform snapTarget;
         private InputAction moveAction;
 
         #region Component References
@@ -33,14 +32,6 @@ namespace GGL.Champions
         {
             base.Reset();
             input = GetComponent<PlayerInput>();
-        }
-        #endregion
-
-        #region Properties
-        public Transform SnapTarget
-        {
-            get { return snapTarget; }
-            set { snapTarget = value; }
         }
         #endregion
 
@@ -93,17 +84,5 @@ namespace GGL.Champions
             IsMoving = false;
         }
         #endregion
-
-        /// <summary>
-        /// Snaps the player to a snap target if it's set.
-        /// </summary>
-        protected override void Snap()
-        {
-            if (snapTarget != null)
-            {
-                rb.MovePosition(snapTarget.position);
-            }
-            base.Snap();                
-        }
     }
 }

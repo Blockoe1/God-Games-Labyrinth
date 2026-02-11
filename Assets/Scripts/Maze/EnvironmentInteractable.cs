@@ -6,6 +6,7 @@
 //
 // Brief Description : Base class for components that can be interacted with via pressure plates.
 *****************************************************************************/
+using NaughtyAttributes;
 using System.Collections.Generic;
 using UnityEngine;
 

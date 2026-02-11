@@ -57,20 +57,24 @@ namespace GGL.Scoring
         /// Causes this champion to drop all collectables.
         /// </summary>
         [ContextMenu("Debug: Drop Collectables")] // Debug
-        public void DropCollectables()
+        public Collectable[] DropCollectables()
         {
-            DropCollectables(heldCollectables.Count);
+            return DropCollectables(heldCollectables.Count);
         }
         /// <summary>
         /// Causes this champion to drop a certain number of collectables.
         /// </summary>
         /// <param name="numToDrop">The number of collectables to drop.</param>
-        public void DropCollectables(int numToDrop)
+        public Collectable[] DropCollectables(int numToDrop)
         {
+            List<Collectable> droppedCollectables = new List<Collectable>();
             for(int i = 0; i < numToDrop && heldCollectables.Count > 0; i++)
             {
-                heldCollectables.Dequeue().OnDropped(this);
+                Collectable dropped = heldCollectables.Dequeue();
+                droppedCollectables.Add(dropped);
+                dropped.OnDropped(this);
             }
+            return droppedCollectables.ToArray();
         }
     }
 }

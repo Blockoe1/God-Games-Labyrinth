@@ -1,19 +1,21 @@
+/*****************************************************************************
+// File Name : StealProjectile.cs
+// Author : Brandon Koederitz
+// Creation Date : 2/11/2026
+// Last Modified : 2/11/2026
+//
+// Brief Description : Projectile fired from a champion to steal gold from another player.
+*****************************************************************************/
+using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-namespace GGL
+namespace GGL.Champions
 {
     public class StealProjectile : MonoBehaviour
     {
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
-        {
         
-        }
 
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
+
     }
 }

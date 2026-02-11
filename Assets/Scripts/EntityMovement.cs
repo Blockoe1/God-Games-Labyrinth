@@ -95,10 +95,10 @@ namespace GGL
                 }
             }
         }
-        private Vector2 Direction
+        public Vector2 Direction
         { 
             get { return direction; }
-            set 
+            private set 
             {
                 // Prevent assigning a direction of 0.
                 if (value == Vector2.zero) { return; }

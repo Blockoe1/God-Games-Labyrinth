@@ -13,11 +13,12 @@ GameObject:
   - component: {fileID: 8650097738718565955}
   - component: {fileID: 1706004363272337}
   - component: {fileID: 4195008848169630617}
-  - component: {fileID: 9166878718391037268}
   - component: {fileID: 8074908796875090492}
   - component: {fileID: 1731887743052177298}
+  - component: {fileID: 9166878718391037268}
   - component: {fileID: 6110285214635215698}
   - component: {fileID: 5887644586341638842}
+  - component: {fileID: 7795094476502601569}
   m_Layer: 8
   m_Name: ChampionBase
   m_TagString: Untagged
@@ -192,28 +193,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.4
---- !u!95 &9166878718391037268
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4254817847457918461}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f6880d5106e0dcd49add1754c302904b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &8074908796875090492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,7 +237,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   rb: {fileID: 1706004363272337}
-  snapTarget: {fileID: 0}
   input: {fileID: 8650097738718565955}
 --- !u!114 &1731887743052177298
 MonoBehaviour:
@@ -307,6 +285,28 @@ MonoBehaviour:
         m_CallState: 2
   rb: {fileID: 1706004363272337}
   input: {fileID: 8650097738718565955}
+--- !u!95 &9166878718391037268
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4254817847457918461}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f6880d5106e0dcd49add1754c302904b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &6110285214635215698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,6 +334,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Scoring.Collector
   team: 0
+--- !u!114 &7795094476502601569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4254817847457918461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e24cd2bc4057c04eb8e6f1ca1de91ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Champions.ChampionAnimator
+  movement: {fileID: 8074908796875090492}
+  anim: {fileID: 9166878718391037268}
 --- !u!1 &6872464678437171836
 GameObject:
   m_ObjectHideFlags: 0

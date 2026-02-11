@@ -61,7 +61,7 @@ namespace GGL
         #endregion
 
         #region Properties
-        public bool IsMoving
+        public virtual bool IsMoving
         {
             get { return isMoving; }
             set { isMoving = value; }

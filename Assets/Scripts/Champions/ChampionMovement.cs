@@ -7,6 +7,7 @@
 // Brief Description : Controls player input for champion movement.
 *****************************************************************************/
 using NaughtyAttributes;
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -21,19 +22,30 @@ namespace GGL.Champions
 
         private InputAction moveAction;
 
+        public event Action<bool> OnMove;
+
         #region Component References
         [SerializeReference, ReadOnly] private PlayerInput input;
 
         /// <summary>
         /// Get components on reset.
         /// </summary>
-        [ContextMenu("Get Component References")]
+        [ContextMenu("Get Component References (Child)")]
         protected override void Reset()
         {
             base.Reset();
             input = GetComponent<PlayerInput>();
         }
         #endregion
+
+        public override bool IsMoving 
+        {
+            set 
+            {
+                base.IsMoving = value;
+                OnMove?.Invoke(value);
+            }
+        }
 
         /// <summary>
         /// Subscribe/Unsubscribe input.

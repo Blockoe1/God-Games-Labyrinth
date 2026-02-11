@@ -12,6 +12,6 @@ namespace GGL
 {
     public class GodIdentifier : MonoBehaviour
     {
-        [field: SerializeField] public GodID God { get; private set; }
+        [field: SerializeField] public GodID Team { get; private set; }
     }
 }

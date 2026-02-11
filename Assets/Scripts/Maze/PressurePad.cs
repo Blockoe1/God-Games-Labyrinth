@@ -6,18 +6,29 @@
 //
 // Brief Description : Broadcasts an event when a champion of a specific god type walks over this.
 *****************************************************************************/
-using NaughtyAttributes;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace GGL.Maze
 {
-    public class PressurePad : MonoBehaviour
+    
+    public class PressurePad : InteractableTrigger
     {
-        [SerializeField, Tooltip("The main object that this pressure pad activates.")] 
-        private EnvironmentInteractable interactTarget;
-        [SerializeField] private bool requireSpecificGod;
-        [SerializeField, ShowIf("requireSpecificGod")] private GodID targetGod;
-        [SerializeField] private UnityEvent OnInteractEvent;
+        /// <summary>
+        /// Handles interacting with the pressure pad via collision.
+        /// </summary>
+        /// <param name="collision"></param>
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            // Onlt trigger if this pressure pad doesn't require a specific god, or the champion's god matches the
+            // target god.
+            if (CheckValid(collision.gameObject))
+            {
+                if (interactTarget != null)
+                {
+                    interactTarget.OnInteract();
+                }
+                OnInteractEvent?.Invoke();
+            }
+        }
     }
 }

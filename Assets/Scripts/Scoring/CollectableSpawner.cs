@@ -7,13 +7,14 @@
 // Brief Description : Spawns new collectables throughout the maze during the game.
 *****************************************************************************/
 using NaughtyAttributes;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Tilemaps;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
-using UnityEngine.Events;
 using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.Tilemaps;
+using UnityEngine.UIElements;
 
 namespace GGL.Scoring
 {
@@ -75,7 +76,7 @@ namespace GGL.Scoring
             {
                 for (int j = minBounds.x; j <= maxBounds.x; j++)
                 {
-                    Vector2 position = transform.position + new Vector3(j, i);
+                    Vector2 position = new Vector3(j, i);
 
                     bool inValidArea = true;
                     // Check if the position is within an excluded area.
@@ -106,6 +107,14 @@ namespace GGL.Scoring
         private void Awake()
         {
             validPositions = spawnMap.ToList();
+
+            // Log any gold placed in the scene already by designers.
+            Collectable[] inSceneCollectables = GetComponentsInChildren<Collectable>();
+            foreach(Collectable sceneCollectable in inSceneCollectables)
+            {
+                Vector2Int position = MathHelpers.RoundVectorToInt(sceneCollectable.transform.localPosition);
+                RegisterCollectable(sceneCollectable, position);
+            }
         }
 
         /// <summary>
@@ -171,22 +180,31 @@ namespace GGL.Scoring
         private void SpawnAtPosition(Vector2Int position)
         {
             Collectable toSpawn = GetCollectable();
-            toSpawn.transform.position = (Vector2)position + (Vector2)transform.position;
+            toSpawn.transform.localPosition = (Vector2)position;
             toSpawn.OnCashedCallback = ReturnCollectable;
 
-            // Setup so that when the collectable is collected for the first time, it makes it's spawn
-            // position valid again.
-            CollectEventWrapper cew = new CollectEventWrapper(toSpawn, position);
-            void unsubAction() { LogCollected(cew); }
-            cew.unsubscribeAction = unsubAction;
-            toSpawn.SubscribeCollectEvent(unsubAction);
-
-            // Remove the position this object was spawned at from our valid positions. (cant have double coins)
-            validPositions.Remove(position);
+            RegisterCollectable(toSpawn, position);
 
             toSpawn.gameObject.SetActive(true);
 
-            Debug.Log($"Spawned a collectable at position {position}");
+            //Debug.Log($"Spawned a collectable at position {position}");
+        }
+
+        /// <summary>
+        /// Registers this collectable with the collectable systems.
+        /// </summary>
+        /// <param name="collectable"></param>
+        private void RegisterCollectable(Collectable collectable, Vector2Int position)
+        {
+            // Setup so that when the collectable is collected for the first time, it makes it's spawn
+            // position valid again.
+            CollectEventWrapper cew = new CollectEventWrapper(collectable, position);
+            void unsubAction() { LogCollected(cew); }
+            cew.unsubscribeAction = unsubAction;
+            collectable.SubscribeCollectEvent(unsubAction);
+
+            // Remove the position this object was spawned at from our valid positions. (cant have double coins)
+            validPositions.Remove(position);
         }
 
         /// <summary>
@@ -195,17 +213,8 @@ namespace GGL.Scoring
         /// <param name="cew"></param>
         private void LogCollected(CollectEventWrapper cew)
         {
-            AddValidPosition(cew.position);
+            validPositions.Add(cew.position);
             cew.toCollect.UnsubscribeCollectEvent(cew.unsubscribeAction);
-        }
-
-        /// <summary>
-        /// Adds a valid position for collectables to spawn at.
-        /// </summary>
-        /// <param name="position">The position that collectables are now allowed to spawn at.</param>
-        private void AddValidPosition(Vector2Int position)
-        {
-            validPositions.Add(position);
         }
 
         #region Object Pooling

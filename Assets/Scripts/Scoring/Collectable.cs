@@ -8,6 +8,7 @@
 *****************************************************************************/
 using GGL.Networking;
 using NaughtyAttributes;
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -26,6 +27,8 @@ namespace GGL.Scoring
         [Header("Events")]
         [SerializeField] private UnityEvent OnCollect;
         [SerializeField] private UnityEvent OnDrop;
+
+        public Action<Collectable> OnCashedCallback {  get; set; }
 
         private bool canBeCollected = true;
 
@@ -67,7 +70,7 @@ namespace GGL.Scoring
             gameObject.SetActive(true);
             StartCoroutine(PauseCollection(dropPickupDelay));
             // Snap the collected item to the dropped champion's position.
-            ApplyScatterForce(Random.Range(scatterForce.x, scatterForce.y));
+            ApplyScatterForce(UnityEngine.Random.Range(scatterForce.x, scatterForce.y));
 
             OnDrop?.Invoke();
         }
@@ -77,8 +80,8 @@ namespace GGL.Scoring
         /// </summary>
         public void OnCashed()
         {
-            // Do Cleanup here.
-            Destroy(gameObject);
+            // Callback to return the spawned collectable to the object pool.
+            OnCashedCallback?.Invoke(this);
         }
 
         /// <summary>
@@ -100,7 +103,7 @@ namespace GGL.Scoring
         /// </summary>
         public void ApplyScatterForce(float scatterForce)
         {
-            int randomAngle = Random.Range(0, 360);
+            int randomAngle = UnityEngine.Random.Range(0, 360);
 
             Vector2 forceVector = MathHelpers.DegAngleToUnitVector(randomAngle);
             rb.AddForce(forceVector * scatterForce, ForceMode2D.Impulse);

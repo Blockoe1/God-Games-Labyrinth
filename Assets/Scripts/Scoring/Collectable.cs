@@ -31,7 +31,7 @@ namespace GGL.Scoring
 
         public Action<Collectable> OnCashedCallback {  get; set; }
 
-        private bool collectCooldown = true;
+        private bool collectCooldown;
         public bool CollectDisabled { get; set; }
 
         #region Component References
@@ -73,6 +73,9 @@ namespace GGL.Scoring
         public void OnCollected(Collector collector)
         {
             gameObject.SetActive(false);
+            StopAllCoroutines();
+            collectCooldown = false;
+            CollectDisabled = false;
             OnCollect?.Invoke();
         }
 
@@ -81,7 +84,7 @@ namespace GGL.Scoring
         /// </summary>
         public void OnDropped(Collector collector)
         {
-            collectCooldown = false;
+            collectCooldown = true;
             transform.position = collector.transform.position;
             gameObject.SetActive(true);
             StartCoroutine(PauseCollection(dropPickupDelay));
@@ -107,11 +110,11 @@ namespace GGL.Scoring
         /// <returns></returns>
         public IEnumerator PauseCollection(float time)
         {
-            collectCooldown = false;
+            collectCooldown = true;
 
             yield return new WaitForSeconds(time);
 
-            collectCooldown = true;
+            collectCooldown = false;
         }
 
         /// <summary>

@@ -9,6 +9,7 @@
 using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
@@ -56,8 +57,7 @@ namespace GGL.Scoring
             if (!isDisabled && 
                 collision.gameObject.TryGetComponent(out Collectable collectable) && collectable.IsCollectable)
             {
-                heldCollectables.Enqueue(collectable);
-                collectable.OnCollected(this);
+                ForceCollect(collectable);
             }
 
             // Handles cashing collectables at a GoldCashZone
@@ -66,6 +66,16 @@ namespace GGL.Scoring
                 cashZone.CashCollectables(heldCollectables);
                 heldCollectables.Clear();
             }
+        }
+
+        /// <summary>
+        /// Forces this collecter collect a collectable
+        /// </summary>
+        /// <param name="toCollect">The collectable to force collect.</param>
+        public void ForceCollect(Collectable toCollect)
+        {
+            heldCollectables.Enqueue(toCollect);
+            toCollect.OnCollected(this);
         }
 
         /// <summary>

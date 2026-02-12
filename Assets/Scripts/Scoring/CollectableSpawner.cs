@@ -213,7 +213,7 @@ namespace GGL.Scoring
         /// <param name="position">The spawn position of the collected item.</param>
         private void LogCollected(Vector2Int position)
         {
-            Debug.Log("Logged " + position + " as collected");
+            //Debug.Log("Logged " + position + " as collected");
             validPositions.Add(position);
         }
 

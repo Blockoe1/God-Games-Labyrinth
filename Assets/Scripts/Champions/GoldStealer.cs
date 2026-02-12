@@ -13,6 +13,7 @@ using UnityEngine.InputSystem;
 
 namespace GGL.Champions
 {
+    [RequireComponent(typeof(Collector))]
     public class GoldStealer : ChampionBehavior
     {
         protected override string actionName => "Steal";
@@ -36,7 +37,7 @@ namespace GGL.Champions
                 if (proj == null)
                 {
                     proj = Instantiate(projectilePrefab, transform.position, Quaternion.identity, transform.parent);
-                    proj.ReturnTarget = transform;
+                    proj.ReturnTarget = GetComponent<Collector>();
                 }
                 return proj;
             }

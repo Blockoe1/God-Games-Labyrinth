@@ -21,7 +21,7 @@ namespace GGL.Champions
         [SerializeField] private float returnForce;
         [SerializeField] private float collectableAttractionForce;
 
-        public Transform ReturnTarget { get; set; }
+        public Collector ReturnTarget { get; set; }
 
         private Action<Collider2D, StealProjectile, CollisionType> collisionLogic;
         private readonly List<Collectable> attractedCollectables = new List<Collectable>();
@@ -96,7 +96,7 @@ namespace GGL.Champions
             transform.position = ReturnTarget.transform.position;
             isLaunched = false;
 
-            ClearAttractedCollectables();
+            CollectAllCollectables();
         }
 
         /// <summary>
@@ -104,7 +104,7 @@ namespace GGL.Champions
         /// </summary>
         private void FixedUpdate()
         {
-            Vector2 toTarget = (Vector2)ReturnTarget.position - rb.position;
+            Vector2 toTarget = (Vector2)ReturnTarget.transform.position - rb.position;
             rb.AddForce(toTarget.normalized * returnForce, ForceMode2D.Force);
 
             AttractCollectables();
@@ -143,19 +143,19 @@ namespace GGL.Champions
         }
 
         /// <summary>
-        /// Clears all logic for attracted collectables.
+        /// Collects all attracted collectables.
         /// </summary>
-        private void ClearAttractedCollectables()
+        private void CollectAllCollectables()
         {
-            foreach (Collectable col in attractedCollectables)
-            {
-                col.IgnoreMazeCollision(false);
-                col.CollectDisabled = false;
+            Collectable[] toCollect = new Collectable[attractedCollectables.Count];
+            attractedCollectables.CopyTo(toCollect);
 
-                // Push the collectables into the attraction target.
-                col.Rb.MovePosition(ReturnTarget.position);
+            // Collectables should clean up and remove themselves automatically when collected.
+            foreach (Collectable col in toCollect)
+            {
+                // Have the collector we're returning to force-collect the collectables.
+                ReturnTarget.ForceCollect(col);
             }
-            attractedCollectables.Clear();
         }
 
         /// <summary>

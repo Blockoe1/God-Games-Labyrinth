@@ -54,7 +54,7 @@ namespace GGL.Scoring
             // Handles entering a collectable.
             // If a champion is disabled from just being stolen from, they can't recollect their dropped collectables.
             if (!isDisabled && 
-                collision.gameObject.TryGetComponent(out Collectable collectable) && collectable.CheckCollectable(id.Team))
+                collision.gameObject.TryGetComponent(out Collectable collectable) && collectable.IsCollectable)
             {
                 heldCollectables.Enqueue(collectable);
                 collectable.OnCollected(this);

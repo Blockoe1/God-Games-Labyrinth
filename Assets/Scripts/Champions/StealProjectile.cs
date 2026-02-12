@@ -18,9 +18,10 @@ namespace GGL.Champions
     [RequireComponent(typeof(Rigidbody2D))]
     public class StealProjectile : MonoBehaviour
     {
-        [SerializeField] private Transform returnTarget;
         [SerializeField] private float returnForce;
         [SerializeField] private float collectableAttractionForce;
+
+        public Transform ReturnTarget { get; set; }
 
         private Action<Collider2D, StealProjectile, CollisionType> collisionLogic;
         private readonly List<Collectable> attractedCollectables = new List<Collectable>();
@@ -57,10 +58,11 @@ namespace GGL.Champions
         /// Launches this projectile outward with a given direction and strength.
         /// </summary>
         /// <param name="launchVector"></param>
-        public void Launch(Vector2 launchVector, Action<Collider2D, StealProjectile, CollisionType> collisionLogic)
+        public void Launch(Vector2 launchPosition, Vector2 launchVector, Action<Collider2D, StealProjectile, CollisionType> collisionLogic)
         {
             // Prevent duplicate launches.
             if (isLaunched) { return; }
+            transform.position = launchPosition;
             isLaunched = true;
             this.collisionLogic = collisionLogic;
             gameObject.SetActive(true);
@@ -91,7 +93,7 @@ namespace GGL.Champions
         public void ProjectileReset()
         {
             gameObject.SetActive(false);
-            transform.position = returnTarget.transform.position;
+            transform.position = ReturnTarget.transform.position;
             isLaunched = false;
 
             ClearAttractedCollectables();
@@ -102,7 +104,7 @@ namespace GGL.Champions
         /// </summary>
         private void FixedUpdate()
         {
-            Vector2 toTarget = (Vector2)returnTarget.position - rb.position;
+            Vector2 toTarget = (Vector2)ReturnTarget.position - rb.position;
             rb.AddForce(toTarget.normalized * returnForce, ForceMode2D.Force);
 
             AttractCollectables();
@@ -120,7 +122,7 @@ namespace GGL.Champions
                 attractedCollectables.Add(col);
                 // Disable collectable collision with everything except the target character.
                 col.IgnoreMazeCollision(true);
-                col.ApplyCollectMask(team);
+                col.CollectDisabled = true;
 
                 col.SubscribeCollectOneShot(() => { RemoveAttractedCollectable(col); });
             }
@@ -135,7 +137,7 @@ namespace GGL.Champions
             if (attractedCollectables.Contains(collectable))
             {
                 collectable.IgnoreMazeCollision(false);
-                collectable.RemoveCollectMask();
+                collectable.CollectDisabled = false;
                 attractedCollectables.Remove(collectable);
             }
         }
@@ -147,7 +149,11 @@ namespace GGL.Champions
         {
             foreach (Collectable col in attractedCollectables)
             {
+                col.IgnoreMazeCollision(false);
+                col.CollectDisabled = false;
 
+                // Push the collectables into the attraction target.
+                col.Rb.MovePosition(ReturnTarget.position);
             }
             attractedCollectables.Clear();
         }
@@ -159,8 +165,9 @@ namespace GGL.Champions
         {
             foreach(Collectable collectable in attractedCollectables)
             {
-                Vector2 forceDirection = rb.position - collectable.Rb.position;
-                collectable.Rb.AddForce(forceDirection.normalized * collectableAttractionForce, ForceMode2D.Force);
+                //Vector2 forceDirection = rb.position - collectable.Rb.position;
+                collectable.Rb.MovePosition(Vector2.MoveTowards(collectable.Rb.position, rb.position,
+                    collectableAttractionForce));
             }
         }
         #endregion

@@ -31,9 +31,8 @@ namespace GGL.Scoring
 
         public Action<Collectable> OnCashedCallback {  get; set; }
 
-        private bool canBeCollected = true;
-        private bool collectMask;
-        private GodID collectMaskGod;
+        private bool collectCooldown = true;
+        public bool CollectDisabled { get; set; }
 
         #region Component References
         [Header("Components")]
@@ -64,17 +63,9 @@ namespace GGL.Scoring
 
         #region Properties
         public int PointValue => pointValue;
+        public bool IsCollectable => !collectCooldown && !CollectDisabled;
         public Rigidbody2D Rb => rb;
         #endregion
-
-        /// <summary>
-        /// Checks if this collectable can be collected by a specific champion.
-        /// </summary>
-        /// <param name="team">The god the champion represents.</param>
-        public bool CheckCollectable(GodID team)
-        {
-            return canBeCollected && (!collectMask || collectMaskGod == team);
-        }
 
         /// <summary>
         /// Called when this object is collected.
@@ -90,7 +81,7 @@ namespace GGL.Scoring
         /// </summary>
         public void OnDropped(Collector collector)
         {
-            canBeCollected = false;
+            collectCooldown = false;
             transform.position = collector.transform.position;
             gameObject.SetActive(true);
             StartCoroutine(PauseCollection(dropPickupDelay));
@@ -116,11 +107,11 @@ namespace GGL.Scoring
         /// <returns></returns>
         public IEnumerator PauseCollection(float time)
         {
-            canBeCollected = false;
+            collectCooldown = false;
 
             yield return new WaitForSeconds(time);
 
-            canBeCollected = true;
+            collectCooldown = true;
         }
 
         /// <summary>
@@ -142,24 +133,6 @@ namespace GGL.Scoring
         {
             rb.excludeLayers = ignore ? rb.excludeLayers | GGLHelpers.MazeMask : 
                 rb.excludeLayers & ~GGLHelpers.MazeMask;
-        }
-
-        /// <summary>
-        /// Applies a mask that allows this collectable to only be picked up by a certain champion.
-        /// </summary>
-        /// <param name="requiredGod">The god that can pick up this collectable.</param>
-        public void ApplyCollectMask(GodID requiredGod)
-        {
-            collectMask = true;
-            collectMaskGod = requiredGod;
-        }
-
-        /// <summary>
-        /// Removes a collection mask.
-        /// </summary>
-        public void RemoveCollectMask()
-        {
-            collectMask = false;
         }
 
         #region Event Subscriptions

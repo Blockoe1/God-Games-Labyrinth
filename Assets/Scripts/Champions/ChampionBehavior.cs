@@ -29,6 +29,7 @@ namespace GGL.Champions
         #region Component References
         [Header("Components")]
         [SerializeReference, ReadOnly] private ChampionMovement movement;
+        [SerializeReference, ReadOnly] private GodIdentifier id;
 
         /// <summary>
         /// Get components on reset.
@@ -37,11 +38,13 @@ namespace GGL.Champions
         protected virtual void Reset()
         {
             movement = GetComponent<ChampionMovement>();
+            id = GetComponent<GodIdentifier>();
         }
         #endregion
 
         #region Properties
         protected abstract string actionName { get; }
+        protected GodID Team => id == null ? GodID.Zeus : id.Team;
         protected bool IsCooldown => isCooldown;
         protected Vector2 Direction => movement == null ? Vector2.zero : movement.Direction;
         #endregion

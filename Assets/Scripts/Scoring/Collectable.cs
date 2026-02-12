@@ -10,6 +10,7 @@ using GGL.Networking;
 using NaughtyAttributes;
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -31,6 +32,8 @@ namespace GGL.Scoring
         public Action<Collectable> OnCashedCallback {  get; set; }
 
         private bool canBeCollected = true;
+        private bool collectMask;
+        private GodID collectMaskGod;
 
         #region Component References
         [Header("Components")]
@@ -46,10 +49,32 @@ namespace GGL.Scoring
         }
         #endregion
 
+        #region Nested
+        private class OneShotWrapper
+        {
+            internal UnityAction handledAction;
+            internal readonly Action triggeredAction;
+
+            internal OneShotWrapper(Action triggerAction)
+            {
+                this.triggeredAction = triggerAction;
+            }
+        }
+        #endregion
+
         #region Properties
         public int PointValue => pointValue;
-        public bool CanBeCollected => canBeCollected;
+        public Rigidbody2D Rb => rb;
         #endregion
+
+        /// <summary>
+        /// Checks if this collectable can be collected by a specific champion.
+        /// </summary>
+        /// <param name="team">The god the champion represents.</param>
+        public bool CheckCollectable(GodID team)
+        {
+            return canBeCollected && (!collectMask || collectMaskGod == team);
+        }
 
         /// <summary>
         /// Called when this object is collected.
@@ -109,6 +134,34 @@ namespace GGL.Scoring
             rb.AddForce(forceVector * scatterForce, ForceMode2D.Impulse);
         }
 
+        /// <summary>
+        /// Has this collectable ignore physics collisions with the maze.
+        /// </summary>
+        /// <param name="ignore">True if collisions should be ignored, false if not.</param>
+        public void IgnoreMazeCollision(bool ignore)
+        {
+            rb.excludeLayers = ignore ? rb.excludeLayers | GGLHelpers.MazeMask : 
+                rb.excludeLayers & ~GGLHelpers.MazeMask;
+        }
+
+        /// <summary>
+        /// Applies a mask that allows this collectable to only be picked up by a certain champion.
+        /// </summary>
+        /// <param name="requiredGod">The god that can pick up this collectable.</param>
+        public void ApplyCollectMask(GodID requiredGod)
+        {
+            collectMask = true;
+            collectMaskGod = requiredGod;
+        }
+
+        /// <summary>
+        /// Removes a collection mask.
+        /// </summary>
+        public void RemoveCollectMask()
+        {
+            collectMask = false;
+        }
+
         #region Event Subscriptions
         /// <summary>
         /// Adds a subscriber to the collectable's OnCollect event.
@@ -125,6 +178,29 @@ namespace GGL.Scoring
         public void UnsubscribeCollectEvent(UnityAction onCollectAction)
         {
             OnCollect.RemoveListener(onCollectAction);
+        }
+
+        /// <summary>
+        /// Adds a subscriber to the OnCollect event that only gets called during the next collection.
+        /// </summary>
+        /// <param name="oneShot">The action to call when the one shot occurs.</param>
+        public void SubscribeCollectOneShot(Action oneShot)
+        {
+            OneShotWrapper osw = new OneShotWrapper(oneShot);
+            void HandledAction() { HandleCollectOneShot(osw); }
+            osw.handledAction = HandledAction;
+            SubscribeCollectEvent(osw.handledAction);
+        }
+
+        /// <summary>
+        /// Called by the OnCollect event when a one shot is called to automatically unsubscribe the action.
+        /// </summary>
+        /// <param name="osw">The wrapper class that contains the UnityAction to unsubscribe.</param>
+        private void HandleCollectOneShot(OneShotWrapper osw)
+        {
+            // Unsubscribe this action.
+            UnsubscribeCollectEvent(osw.handledAction);
+            osw.triggeredAction();
         }
         #endregion
     }

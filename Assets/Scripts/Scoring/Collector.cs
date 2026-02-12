@@ -7,16 +7,25 @@
 // Brief Description : Allows a player to collect gold collectables and score points.
 *****************************************************************************/
 using NaughtyAttributes;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace GGL.Scoring
 {
     [RequireComponent(typeof(GodIdentifier))]
     public class Collector : MonoBehaviour
     {
+        [SerializeField, Tooltip("The amount of time after being stolen from that this collector can't be stolen " +
+            "from again.")] 
+        private float dropIFrames;
+        [SerializeField] private UnityEvent OnDropEvent;
+        [SerializeField] private UnityEvent OnBecomeVulnerable;
         private readonly Queue<Collectable> heldCollectables = new();
+
+        private bool dropDisabled;
 
         #region Component References
         [Header("Components")]
@@ -32,6 +41,10 @@ namespace GGL.Scoring
         }
         #endregion
 
+        #region Properties
+        public bool DropDisabled => dropDisabled;
+        #endregion
+
         /// <summary>
         /// Check for gold collection when we enter a trigger.
         /// </summary>
@@ -39,7 +52,7 @@ namespace GGL.Scoring
         private void OnTriggerEnter2D(Collider2D collision)
         {
             // Handles entering a collectable.
-            if (collision.gameObject.TryGetComponent(out Collectable collectable) && collectable.CanBeCollected)
+            if (collision.gameObject.TryGetComponent(out Collectable collectable) && collectable.CheckCollectable(id.Team))
             {
                 heldCollectables.Enqueue(collectable);
                 collectable.OnCollected(this);
@@ -62,11 +75,22 @@ namespace GGL.Scoring
             return DropCollectables(heldCollectables.Count);
         }
         /// <summary>
+        /// Drops collectables based on a percentage of the collectables this collector is holding.
+        /// </summary>
+        /// <param name="proportion">A number clamped between 0-1 for the proportion of collectables to drop.</param>
+        /// <returns></returns>
+        public Collectable[] DropCollectables(float proportion)
+        {
+            int numToDrop = Mathf.RoundToInt(heldCollectables.Count * Mathf.Clamp01(proportion));
+            return DropCollectables(numToDrop);
+        }
+        /// <summary>
         /// Causes this champion to drop a certain number of collectables.
         /// </summary>
         /// <param name="numToDrop">The number of collectables to drop.</param>
         public Collectable[] DropCollectables(int numToDrop)
         {
+            if (DropDisabled) { return null; }
             List<Collectable> droppedCollectables = new List<Collectable>();
             for(int i = 0; i < numToDrop && heldCollectables.Count > 0; i++)
             {
@@ -74,7 +98,26 @@ namespace GGL.Scoring
                 droppedCollectables.Add(dropped);
                 dropped.OnDropped(this);
             }
+
+            OnDropEvent?.Invoke();
+
+            // Add IFrames to prevent dropping multiple times.
+            StartCoroutine(DropFrames(dropIFrames));
+
             return droppedCollectables.ToArray();
+        }
+
+        /// <summary>
+        /// Prevents the collector from dropping collectables again after they've been forced to drop collectables.
+        /// </summary>
+        /// <param name="seconds">The amount of invulnerability time the champion has.</param>
+        /// <returns>cCoroutine</returns>
+        private IEnumerator DropFrames(float seconds)
+        {
+            dropDisabled = true;
+            yield return new WaitForSeconds(seconds);
+            dropDisabled = false;
+            OnBecomeVulnerable?.Invoke();
         }
     }
 }

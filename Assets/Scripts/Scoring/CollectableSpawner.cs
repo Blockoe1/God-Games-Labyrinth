@@ -49,20 +49,20 @@ namespace GGL.Scoring
         }
         #endregion
 
-        #region Nested
-        private class CollectEventWrapper
-        {
-            internal UnityAction unsubscribeAction;
-            internal readonly Collectable toCollect;
-            internal readonly Vector2Int position;
+        //#region Nested
+        //private class CollectEventWrapper
+        //{
+        //    internal UnityAction unsubscribeAction;
+        //    internal readonly Collectable toCollect;
+        //    internal readonly Vector2Int position;
 
-            internal CollectEventWrapper(Collectable toCollect, Vector2Int position)
-            {
-                this.toCollect = toCollect;
-                this.position = position;
-            }
-        }
-        #endregion
+        //    internal CollectEventWrapper(Collectable toCollect, Vector2Int position)
+        //    {
+        //        this.toCollect = toCollect;
+        //        this.position = position;
+        //    }
+        //}
+        //#endregion
 
         /// <summary>
         /// Bakes the array of spawn position data for this object.
@@ -197,10 +197,11 @@ namespace GGL.Scoring
         {
             // Setup so that when the collectable is collected for the first time, it makes it's spawn
             // position valid again.
-            CollectEventWrapper cew = new CollectEventWrapper(collectable, position);
-            void unsubAction() { LogCollected(cew); }
-            cew.unsubscribeAction = unsubAction;
-            collectable.SubscribeCollectEvent(unsubAction);
+            //CollectEventWrapper cew = new CollectEventWrapper(collectable, position);
+            //void unsubAction() { LogCollected(cew); }
+            //cew.unsubscribeAction = unsubAction;
+            //collectable.SubscribeCollectEvent(unsubAction);
+            collectable.SubscribeCollectOneShot(() => { LogCollected(position); });
 
             // Remove the position this object was spawned at from our valid positions. (cant have double coins)
             validPositions.Remove(position);
@@ -209,11 +210,11 @@ namespace GGL.Scoring
         /// <summary>
         /// Logs a certain collectable as collected and makes it's position valid again.
         /// </summary>
-        /// <param name="cew"></param>
-        private void LogCollected(CollectEventWrapper cew)
+        /// <param name="position">The spawn position of the collected item.</param>
+        private void LogCollected(Vector2Int position)
         {
-            validPositions.Add(cew.position);
-            cew.toCollect.UnsubscribeCollectEvent(cew.unsubscribeAction);
+            Debug.Log("Logged " + position + " as collected");
+            validPositions.Add(position);
         }
 
         #region Object Pooling

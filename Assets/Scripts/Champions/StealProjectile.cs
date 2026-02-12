@@ -18,7 +18,8 @@ namespace GGL.Champions
     [RequireComponent(typeof(Rigidbody2D))]
     public class StealProjectile : MonoBehaviour
     {
-        [SerializeField] private float returnForce;
+        [SerializeField] private float returnVelocity;
+        [SerializeField] private float returnAcceleration;
         [SerializeField] private float collectableAttractionForce;
 
         public Collector ReturnTarget { get; set; }
@@ -105,7 +106,11 @@ namespace GGL.Champions
         private void FixedUpdate()
         {
             Vector2 toTarget = (Vector2)ReturnTarget.transform.position - rb.position;
-            rb.AddForce(toTarget.normalized * returnForce, ForceMode2D.Force);
+            //rb.AddForce(toTarget.normalized * returnForce, ForceMode2D.Force);
+            //rb.MovePosition(Vector2.MoveTowards(ReturnTarget.transform.position, rb.position, returnForce));
+
+            rb.linearVelocity = Vector2.MoveTowards(rb.linearVelocity, toTarget.normalized * returnVelocity, 
+                returnAcceleration * Time.fixedDeltaTime);
 
             AttractCollectables();
         }

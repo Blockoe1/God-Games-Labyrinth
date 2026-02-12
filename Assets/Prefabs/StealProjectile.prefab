@@ -178,6 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f7e4aed8c801e94887d75a9595a2b02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Champions.StealProjectile
-  returnForce: 50
-  collectableAttractionForce: 500
+  returnVelocity: 30
+  returnAcceleration: 40
+  collectableAttractionForce: 35
   rb: {fileID: 1795915871495244364}

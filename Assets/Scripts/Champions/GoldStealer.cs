@@ -7,6 +7,7 @@
 // Brief Description : Fires a projectile that steals gold on contact with another player.
 *****************************************************************************/
 using GGL.Scoring;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -24,6 +25,8 @@ namespace GGL.Champions
             " ability.")] 
         private float requiredLeeway = 2;
 
+        private bool allowReturn;
+
         /// <summary>
         /// Fires the steal projectile when the player presses the correct button.
         /// </summary>
@@ -34,6 +37,8 @@ namespace GGL.Champions
             RaycastHit2D forwardCheck = Physics2D.Raycast(transform.position, Direction, requiredLeeway, GGLHelpers.MazeMask);
             if (!forwardCheck)
             {
+                allowReturn = false;
+                Debug.Log(Direction);
                 projectile.Launch(Direction * launchForce, ProjectileCollision);
             }
         }
@@ -43,21 +48,39 @@ namespace GGL.Champions
         /// </summary>
         /// <param name="collider">The object the projectile collided with.</param>
         /// <param name="projectile">The projectile that the collision occured on.</param>
-        private void ProjectileCollision(Collider2D collider, StealProjectile projectile)
+        private void ProjectileCollision(Collider2D collider, StealProjectile projectile, 
+            StealProjectile.CollisionType collisionType)
         {
-            // If the projectile collides with the shooter, then it resets.
-            if (collider.gameObject == gameObject)
+            switch(collisionType)
             {
-                projectile.ProjectileReset();
-            }
-            // Make a collector drop held gold and then grab it with this projectile.
-            else if (collider.TryGetComponent(out Collector collector) && !collector.DropDisabled)
-            {
-                Collectable[] droppedCollectables = collector.DropCollectables(stealAmount);
+                case StealProjectile.CollisionType.Enter:
+                    // If the projectile collides with the shooter, then it resets.
+                    if (allowReturn && 
+                        collider.gameObject == gameObject)
+                    {
+                        Cooldown();
+                        projectile.ProjectileReset();
+                    }
+                    // Make a collector drop held gold and then grab it with this projectile.
+                    else if (collider.gameObject != gameObject && 
+                        collider.TryGetComponent(out Collector collector) && 
+                        !collector.DropDisabled)
+                    {
+                        Collectable[] droppedCollectables = collector.DropCollectables(stealAmount);
 
-                // Setup collectables to be attracted to the projectile until collected.
-                projectile.AddAttractedCollectables(droppedCollectables, Team);
+                        // Setup collectables to be attracted to the projectile until collected.
+                        projectile.AddAttractedCollectables(droppedCollectables, Team);
+                    }
+                    break;
+                // Only allow returning after the projectile has left this object.
+                case StealProjectile.CollisionType.Exit:
+                    if (collider.gameObject == gameObject)
+                    {
+                        allowReturn = true;
+                    }
+                    break;
             }
+            
         }
     }
 }

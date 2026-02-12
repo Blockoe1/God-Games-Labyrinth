@@ -22,9 +22,9 @@ namespace GGL.Champions
         [SerializeField] private float returnForce;
         [SerializeField] private float collectableAttractionForce;
 
-        private Action<Collider2D, StealProjectile> collisionLogic;
+        private Action<Collider2D, StealProjectile, CollisionType> collisionLogic;
         private readonly List<Collectable> attractedCollectables = new List<Collectable>();
-        private bool isLaunched; 
+        private bool isLaunched;
 
         #region Component References
         [Header("Components")]
@@ -44,11 +44,20 @@ namespace GGL.Champions
         public bool IsLaunched => isLaunched;
         #endregion
 
+        #region Nested
+        public enum CollisionType
+        { 
+            Enter,
+            Exit,
+            Stay
+        }
+        #endregion
+
         /// <summary>
         /// Launches this projectile outward with a given direction and strength.
         /// </summary>
         /// <param name="launchVector"></param>
-        public void Launch(Vector2 launchVector, Action<Collider2D, StealProjectile> collisionLogic)
+        public void Launch(Vector2 launchVector, Action<Collider2D, StealProjectile, CollisionType> collisionLogic)
         {
             // Prevent duplicate launches.
             if (isLaunched) { return; }
@@ -64,7 +73,16 @@ namespace GGL.Champions
         /// <param name="collision"></param>
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            collisionLogic?.Invoke(collision, this);
+            collisionLogic?.Invoke(collision, this, CollisionType.Enter);
+        }
+
+        /// <summary>
+        /// Only allow returning if we've left a champion hitbox already.
+        /// </summary>
+        /// <param name="collision"></param>
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            collisionLogic?.Invoke(collision, this, CollisionType.Exit);
         }
 
         /// <summary>
@@ -74,6 +92,7 @@ namespace GGL.Champions
         {
             gameObject.SetActive(false);
             transform.position = returnTarget.transform.position;
+            isLaunched = false;
 
             ClearAttractedCollectables();
         }

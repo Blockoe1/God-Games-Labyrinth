@@ -34,7 +34,7 @@ namespace GGL
         [SerializeField] private UnityEvent<Vector2> OnDirectionChanged;
 
         // The actual direction that the object is facing.
-        private Vector2 direction = Vector2.up;
+        private Vector2 direction = Vector2.right;
         // THe direction that the ojbect is trying to move in.  Can be 0.
         private Vector2 targetDirection;
 

@@ -135,6 +135,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Steal",
+                    "type": "Button",
+                    "id": "bfc95c1a-e047-4a96-94a5-ccb6738bd066",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -203,6 +212,17 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "102a3c26-8d26-4e56-8e50-fcec02f8284c",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Steal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -223,6 +243,15 @@
                     "name": "Dash",
                     "type": "Button",
                     "id": "a74efc40-be1b-4608-b96e-307626764482",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Steal",
+                    "type": "Button",
+                    "id": "51697b73-ed8c-498f-be92-91120a3d9cab",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -287,6 +316,17 @@
                 },
                 {
                     "name": "",
+                    "id": "04168f97-fc34-4bbf-a7fd-d7280f04b5c6",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Steal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "8e865e93-57d9-48f5-975b-3bb0eff239cc",
                     "path": "<Keyboard>/rightCtrl",
                     "interactions": "",
@@ -315,6 +355,15 @@
                     "name": "Dash",
                     "type": "Button",
                     "id": "f17df95b-c36c-48d9-a201-992c998f34b2",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Steal",
+                    "type": "Button",
+                    "id": "3d687d7a-4003-4af3-ba04-d438e7c16841",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -379,6 +428,17 @@
                 },
                 {
                     "name": "",
+                    "id": "981aa682-ee74-4f67-aa14-eeb7af5f263f",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Steal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "a71edfeb-82b7-4584-b435-3fc0e11a1500",
                     "path": "<Keyboard>/b",
                     "interactions": "",
@@ -407,6 +467,15 @@
                     "name": "Dash",
                     "type": "Button",
                     "id": "50c32d63-8803-4031-9751-8786e3e00fcd",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Steal",
+                    "type": "Button",
+                    "id": "084f4846-8eb2-4936-8585-5176794476c3",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -468,6 +537,17 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "194c0138-ca8e-49a6-b705-7e968bc3ce0c",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Steal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 },
                 {
                     "name": "",

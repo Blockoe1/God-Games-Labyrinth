@@ -25,7 +25,7 @@ namespace GGL.Scoring
         [SerializeField] private UnityEvent OnBecomeVulnerable;
         private readonly Queue<Collectable> heldCollectables = new();
 
-        private bool dropDisabled;
+        private bool isDisabled;
 
         #region Component References
         [Header("Components")]
@@ -42,7 +42,7 @@ namespace GGL.Scoring
         #endregion
 
         #region Properties
-        public bool DropDisabled => dropDisabled;
+        public bool DropDisabled => isDisabled;
         #endregion
 
         /// <summary>
@@ -52,7 +52,9 @@ namespace GGL.Scoring
         private void OnTriggerEnter2D(Collider2D collision)
         {
             // Handles entering a collectable.
-            if (collision.gameObject.TryGetComponent(out Collectable collectable) && collectable.CheckCollectable(id.Team))
+            // If a champion is disabled from just being stolen from, they can't recollect their dropped collectables.
+            if (!isDisabled && 
+                collision.gameObject.TryGetComponent(out Collectable collectable) && collectable.CheckCollectable(id.Team))
             {
                 heldCollectables.Enqueue(collectable);
                 collectable.OnCollected(this);
@@ -114,9 +116,9 @@ namespace GGL.Scoring
         /// <returns>cCoroutine</returns>
         private IEnumerator DropFrames(float seconds)
         {
-            dropDisabled = true;
+            isDisabled = true;
             yield return new WaitForSeconds(seconds);
-            dropDisabled = false;
+            isDisabled = false;
             OnBecomeVulnerable?.Invoke();
         }
     }

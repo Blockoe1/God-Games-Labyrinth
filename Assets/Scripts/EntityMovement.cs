@@ -7,6 +7,7 @@
 // Brief Description : Base movement script for moving an entity through the maze.
 *****************************************************************************/
 using NaughtyAttributes;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -37,6 +38,8 @@ namespace GGL
         private Vector2 direction = Vector2.right;
         // THe direction that the ojbect is trying to move in.  Can be 0.
         private Vector2 targetDirection;
+
+        public event Action<Vector2> OnDetectDirection;
 
         private float speed;
         private bool markForSnap;
@@ -119,11 +122,17 @@ namespace GGL
                     RaycastHit2D ray = Physics2D.Raycast(rb.position, direction, maxWallCheckDistance, GGLHelpers.MazeMask);
                     Debug.DrawRay(rb.position, direction * maxWallCheckDistance, Color.green);
                     // If the raycast hit nothing, this is a valid direction.
-                    if (!ray && TargetDirection == direction)
+                    if (!ray)
                     {
-                        // Change direction if the target direction is this valid direction.
-                        Direction = direction;
-                        break;
+                        // Broadcast that a direction has been detected for outside scripts to add direction
+                        // controlling logic.
+                        OnDetectDirection?.Invoke(direction);
+                        if (TargetDirection == direction)
+                        {
+                            // Change direction if the target direction is this valid direction.
+                            Direction = direction;
+                            break;
+                        }
                     }
                 }
             }

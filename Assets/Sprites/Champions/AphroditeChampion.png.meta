@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 06f4fe30683ef3f40b18061959236c10
+guid: 1ca305763ea3fec4f8edbf482c0f57d4
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -121,8 +121,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce884d9e5b964ce49b6f887ab0adc313
-      internalID: 299479575
+      spriteID: 7360c452994e3f84f8b477fe3b2d3aa1
+      internalID: 72825554
       vertices: []
       indices: 
       edges: []
@@ -143,8 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3fae87bd72bf14345a28d552920e87d1
-      internalID: -1018016200
+      spriteID: 667bb7243a04eee488075236c2d87209
+      internalID: -665597183
       vertices: []
       indices: 
       edges: []
@@ -165,8 +165,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3dfa5ab140cdcd4baeedb363bb75a32
-      internalID: 1300021603
+      spriteID: 9b27a9b7fdcb3144b9f13ccf123ebeaf
+      internalID: 1322049524
       vertices: []
       indices: 
       edges: []
@@ -175,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: d80b453fad47289448e85c7d32201d9c
+    spriteID: 121ed54c6bb2b6743825c5675e1e457e
     internalID: 0
     vertices: []
     indices: 
@@ -187,9 +187,9 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":18.0,"y":18.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      AphroditeChampion_0: 299479575
-      AphroditeChampion_1: -1018016200
-      AphroditeChampion_2: 1300021603
+      AphroditeChampion_0: 72825554
+      AphroditeChampion_1: -665597183
+      AphroditeChampion_2: 1322049524
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -150,7 +150,7 @@
                 {
                     "name": "",
                     "id": "1a606026-df7f-40ee-a407-a2815f76830f",
-                    "path": "<Keyboard>/leftCtrl",
+                    "path": "<Keyboard>/z",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -216,7 +216,7 @@
                 {
                     "name": "",
                     "id": "102a3c26-8d26-4e56-8e50-fcec02f8284c",
-                    "path": "<Keyboard>/leftAlt",
+                    "path": "<Keyboard>/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -317,7 +317,7 @@
                 {
                     "name": "",
                     "id": "04168f97-fc34-4bbf-a7fd-d7280f04b5c6",
-                    "path": "<Keyboard>/rightShift",
+                    "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -328,7 +328,7 @@
                 {
                     "name": "",
                     "id": "8e865e93-57d9-48f5-975b-3bb0eff239cc",
-                    "path": "<Keyboard>/rightCtrl",
+                    "path": "<Keyboard>/rightShift",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -429,7 +429,7 @@
                 {
                     "name": "",
                     "id": "981aa682-ee74-4f67-aa14-eeb7af5f263f",
-                    "path": "<Keyboard>/e",
+                    "path": "<Keyboard>/h",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -440,7 +440,7 @@
                 {
                     "name": "",
                     "id": "a71edfeb-82b7-4584-b435-3fc0e11a1500",
-                    "path": "<Keyboard>/b",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -541,7 +541,7 @@
                 {
                     "name": "",
                     "id": "194c0138-ca8e-49a6-b705-7e968bc3ce0c",
-                    "path": "<Keyboard>/7",
+                    "path": "<Keyboard>/f12",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -552,7 +552,7 @@
                 {
                     "name": "",
                     "id": "29f7a5f2-cb1f-4ab2-bcd8-52e67854c707",
-                    "path": "<Keyboard>/8",
+                    "path": "<Keyboard>/4",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

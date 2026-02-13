@@ -31,7 +31,9 @@ namespace GGL.Scoring
         private Vector2Int minBounds;
         [SerializeField, Tooltip("The coordiantes of the top-right cell that the gold can spawn at.")] 
         private Vector2Int maxBounds;
-        [SerializeField] private BoxCollider2D[] excludedAreas;
+        [SerializeField, Tooltip("All BoxCollider2Ds within game objects in this array will be considered " +
+            "invalid spaces for gold to spawn.")] 
+        private GameObject[] excludedAreas;
 
         [SerializeField, ReadOnly] private Vector2Int[] spawnMap;
 
@@ -79,12 +81,17 @@ namespace GGL.Scoring
 
                     bool inValidArea = true;
                     // Check if the position is within an excluded area.
-                    foreach (BoxCollider2D excludedArea in excludedAreas)
+                    foreach (GameObject excludedArea in excludedAreas)
                     {
-                        if (excludedArea.bounds.Contains(position))
+                        // Get all box colliders within the excluded area.
+                        BoxCollider2D[] colliders = excludedArea.GetComponentsInChildren<BoxCollider2D>();
+                        foreach(BoxCollider2D collider in colliders)
                         {
-                            inValidArea = false;
-                            break;
+                            if (collider.bounds.Contains(position))
+                            {
+                                inValidArea = false;
+                                break;
+                            }
                         }
                     }
 

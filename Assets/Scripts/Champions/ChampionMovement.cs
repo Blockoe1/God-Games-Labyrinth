@@ -7,6 +7,7 @@
 // Brief Description : Controls player input for champion movement.
 *****************************************************************************/
 using NaughtyAttributes;
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -19,8 +20,9 @@ namespace GGL.Champions
         private const string MOVE_ACTION_NAME = "Move";
         #endregion
 
-        [SerializeField] private Transform snapTarget;
         private InputAction moveAction;
+
+        public event Action<bool> OnMove;
 
         #region Component References
         [SerializeReference, ReadOnly] private PlayerInput input;
@@ -28,7 +30,7 @@ namespace GGL.Champions
         /// <summary>
         /// Get components on reset.
         /// </summary>
-        [ContextMenu("Get Component References")]
+        [ContextMenu("Get Component References (Child)")]
         protected override void Reset()
         {
             base.Reset();
@@ -36,13 +38,14 @@ namespace GGL.Champions
         }
         #endregion
 
-        #region Properties
-        public Transform SnapTarget
+        public override bool IsMoving 
         {
-            get { return snapTarget; }
-            set { snapTarget = value; }
+            set 
+            {
+                base.IsMoving = value;
+                OnMove?.Invoke(value);
+            }
         }
-        #endregion
 
         /// <summary>
         /// Subscribe/Unsubscribe input.
@@ -93,17 +96,5 @@ namespace GGL.Champions
             IsMoving = false;
         }
         #endregion
-
-        /// <summary>
-        /// Snaps the player to a snap target if it's set.
-        /// </summary>
-        protected override void Snap()
-        {
-            if (snapTarget != null)
-            {
-                rb.MovePosition(snapTarget.position);
-            }
-            base.Snap();                
-        }
     }
 }

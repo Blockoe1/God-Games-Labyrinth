@@ -61,16 +61,16 @@ namespace GGL.Scoring
             networkMessenger.SendNetMessage(scores);
         }
 
-        #region Debug
-        private void OnGUI()
-        {
-            string scoreboard = "";
-            for(int i = 0; i < scores.Length; i++)
-            {
-                scoreboard += (GodID)i + ": " + scores[i] + "\n";
-            }
-            GUI.Label(new Rect(20, 20, 400, 1000), scoreboard);
-        }
-        #endregion
+        //#region Debug
+        //private void OnGUI()
+        //{
+        //    string scoreboard = "";
+        //    for(int i = 0; i < scores.Length; i++)
+        //    {
+        //        scoreboard += (GodID)i + ": " + scores[i] + "\n";
+        //    }
+        //    GUI.Label(new Rect(20, 20, 400, 1000), scoreboard);
+        //}
+        //#endregion
     }
 }

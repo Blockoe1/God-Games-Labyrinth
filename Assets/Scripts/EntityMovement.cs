@@ -23,7 +23,6 @@ namespace GGL
             Vector2.down, 
             Vector2.left
         };
-        private const string MAZE_LAYER_NAME = "Maze";
         #endregion
 
         [SerializeField] private float maxSpeed;
@@ -34,10 +33,8 @@ namespace GGL
         [SerializeField] private bool positionSnap;
         [SerializeField] private UnityEvent<Vector2> OnDirectionChanged;
 
-        private static LayerMask mazeMask;
-
         // The actual direction that the object is facing.
-        private Vector2 direction = Vector2.up;
+        private Vector2 direction = Vector2.right;
         // THe direction that the ojbect is trying to move in.  Can be 0.
         private Vector2 targetDirection;
 
@@ -66,17 +63,6 @@ namespace GGL
             get { return isMoving; }
             set { isMoving = value; }
         }
-        private LayerMask MazeMask
-        {
-            get
-            {
-                if (mazeMask == 0)
-                {
-                    mazeMask = LayerMask.GetMask(MAZE_LAYER_NAME);
-                }
-                return mazeMask;
-            }
-        }
         public Vector2 TargetDirection
         {
             get { return targetDirection; }
@@ -95,10 +81,10 @@ namespace GGL
                 }
             }
         }
-        private Vector2 Direction
+        public Vector2 Direction
         { 
             get { return direction; }
-            set 
+            private set 
             {
                 // Prevent assigning a direction of 0.
                 if (value == Vector2.zero) { return; }
@@ -130,7 +116,7 @@ namespace GGL
                 // Use a raycast to determine valid directions.
                 foreach (var direction in MOVEMENT_DIRECTIONS)
                 {
-                    RaycastHit2D ray = Physics2D.Raycast(rb.position, direction, maxWallCheckDistance, MazeMask);
+                    RaycastHit2D ray = Physics2D.Raycast(rb.position, direction, maxWallCheckDistance, GGLHelpers.MazeMask);
                     Debug.DrawRay(rb.position, direction * maxWallCheckDistance, Color.green);
                     // If the raycast hit nothing, this is a valid direction.
                     if (!ray && TargetDirection == direction)

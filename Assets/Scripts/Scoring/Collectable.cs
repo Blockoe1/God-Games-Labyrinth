@@ -10,6 +10,7 @@ using GGL.Networking;
 using NaughtyAttributes;
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -30,7 +31,8 @@ namespace GGL.Scoring
 
         public Action<Collectable> OnCashedCallback {  get; set; }
 
-        private bool canBeCollected = true;
+        private bool collectCooldown;
+        public bool CollectDisabled { get; set; }
 
         #region Component References
         [Header("Components")]
@@ -46,9 +48,23 @@ namespace GGL.Scoring
         }
         #endregion
 
+        #region Nested
+        private class OneShotWrapper
+        {
+            internal UnityAction handledAction;
+            internal readonly Action triggeredAction;
+
+            internal OneShotWrapper(Action triggerAction)
+            {
+                this.triggeredAction = triggerAction;
+            }
+        }
+        #endregion
+
         #region Properties
         public int PointValue => pointValue;
-        public bool CanBeCollected => canBeCollected;
+        public bool IsCollectable => !collectCooldown && !CollectDisabled;
+        public Rigidbody2D Rb => rb;
         #endregion
 
         /// <summary>
@@ -57,6 +73,9 @@ namespace GGL.Scoring
         public void OnCollected(Collector collector)
         {
             gameObject.SetActive(false);
+            StopAllCoroutines();
+            collectCooldown = false;
+            CollectDisabled = false;
             OnCollect?.Invoke();
         }
 
@@ -65,7 +84,7 @@ namespace GGL.Scoring
         /// </summary>
         public void OnDropped(Collector collector)
         {
-            canBeCollected = false;
+            collectCooldown = true;
             transform.position = collector.transform.position;
             gameObject.SetActive(true);
             StartCoroutine(PauseCollection(dropPickupDelay));
@@ -91,11 +110,11 @@ namespace GGL.Scoring
         /// <returns></returns>
         public IEnumerator PauseCollection(float time)
         {
-            canBeCollected = false;
+            collectCooldown = true;
 
             yield return new WaitForSeconds(time);
 
-            canBeCollected = true;
+            collectCooldown = false;
         }
 
         /// <summary>
@@ -107,6 +126,16 @@ namespace GGL.Scoring
 
             Vector2 forceVector = MathHelpers.DegAngleToUnitVector(randomAngle);
             rb.AddForce(forceVector * scatterForce, ForceMode2D.Impulse);
+        }
+
+        /// <summary>
+        /// Has this collectable ignore physics collisions with the maze.
+        /// </summary>
+        /// <param name="ignore">True if collisions should be ignored, false if not.</param>
+        public void IgnoreMazeCollision(bool ignore)
+        {
+            rb.excludeLayers = ignore ? rb.excludeLayers | GGLHelpers.MazeMask : 
+                rb.excludeLayers & ~GGLHelpers.MazeMask;
         }
 
         #region Event Subscriptions
@@ -125,6 +154,29 @@ namespace GGL.Scoring
         public void UnsubscribeCollectEvent(UnityAction onCollectAction)
         {
             OnCollect.RemoveListener(onCollectAction);
+        }
+
+        /// <summary>
+        /// Adds a subscriber to the OnCollect event that only gets called during the next collection.
+        /// </summary>
+        /// <param name="oneShot">The action to call when the one shot occurs.</param>
+        public void SubscribeCollectOneShot(Action oneShot)
+        {
+            OneShotWrapper osw = new OneShotWrapper(oneShot);
+            void HandledAction() { HandleCollectOneShot(osw); }
+            osw.handledAction = HandledAction;
+            SubscribeCollectEvent(osw.handledAction);
+        }
+
+        /// <summary>
+        /// Called by the OnCollect event when a one shot is called to automatically unsubscribe the action.
+        /// </summary>
+        /// <param name="osw">The wrapper class that contains the UnityAction to unsubscribe.</param>
+        private void HandleCollectOneShot(OneShotWrapper osw)
+        {
+            // Unsubscribe this action.
+            UnsubscribeCollectEvent(osw.handledAction);
+            osw.triggeredAction();
         }
         #endregion
     }

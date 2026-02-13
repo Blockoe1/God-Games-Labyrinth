@@ -14,71 +14,40 @@ using UnityEngine.InputSystem;
 
 namespace GGL.Champions
 {
-    [RequireComponent(typeof(PlayerInput))]
     [RequireComponent(typeof(Rigidbody2D))]
-    public class ChampionDash : MonoBehaviour
+    public class ChampionDash : ChampionBehavior
     {
-        #region CONSTS
-        private const string DASH_ACTION_NAME = "Dash";
-        #endregion
+        protected override string actionName => "Dash";
 
         [Header("Dash Settings")]
         [SerializeField] private float dashSpeed;
         [SerializeField] private float dashDuration;
-        [SerializeField] private float dashCooldown;
         [SerializeField] private UnityEvent OnDashBegin;
-        [SerializeField] private UnityEvent<float> OnDashEnd;
+        [SerializeField] private UnityEvent OnDashEnd;
 
-        private InputAction dashAction;
         private bool isDashing;
-        private bool isCooldown;
-
-        private Vector2 dashDirection;
 
         #region Component References
         [Header("Components")]
         [SerializeReference, ReadOnly] private Rigidbody2D rb;
-        [SerializeReference, ReadOnly] private PlayerInput input;
 
         /// <summary>
         /// Get components on reset.
         /// </summary>
-        [ContextMenu("Get Component References")]
-        private void Reset()
+        [ContextMenu("Get Component References: 1")]
+        protected override void Reset()
         {
+            base.Reset();
             rb = GetComponent<Rigidbody2D>();
-            input = GetComponent<PlayerInput>();
-        }
-        #endregion
-
-        #region Properties
-        public Vector2 DashDirection
-        {
-            get { return dashDirection; }
-            set { dashDirection = value; }
         }
         #endregion
 
         /// <summary>
-        /// Setup Input
+        /// Begin a dash when the player presses the dash button.
         /// </summary>
-        private void Awake()
+        protected override void OnActionPerformed()
         {
-            dashAction = input.actions.FindAction(DASH_ACTION_NAME);
-            dashAction.performed += DashAction_performed;
-        }
-        private void OnDestroy()
-        {
-            dashAction.performed -= DashAction_performed;
-        }
-
-        /// <summary>
-        /// Read player dash input.
-        /// </summary>
-        /// <param name="obj"></param>
-        private void DashAction_performed(InputAction.CallbackContext obj)
-        {
-            StartCoroutine(Dash(dashDirection));
+            StartCoroutine(Dash(Direction));
         }
 
         /// <summary>
@@ -87,8 +56,8 @@ namespace GGL.Champions
         /// <param name="direction">The direction for the player to dash in.</param>
         private IEnumerator Dash(Vector2 direction)
         {
-            // Prevent double dashing and dashing during cooldown.
-            if (isDashing || isCooldown) { yield break; }
+            // Prevent double dashing.
+            if (isDashing) { yield break; }
 
             direction = direction.normalized;
             isDashing = true;
@@ -103,22 +72,9 @@ namespace GGL.Champions
                 yield return new WaitForFixedUpdate();
             }
 
-            OnDashEnd?.Invoke(dashCooldown);
-            StartCoroutine(DashCooldown(dashCooldown));
+            OnDashEnd?.Invoke();
+            Cooldown();
             isDashing = false;
-        }
-
-        /// <summary>
-        /// Prevents the player from dashing for a time.
-        /// </summary>
-        /// <param name="dashCooldown">The amount of time the player must cool down.</param>
-        /// <returns></returns>
-        private IEnumerator DashCooldown(float dashCooldown)
-        {
-            if (isCooldown) { yield break; }
-            isCooldown = true;
-            yield return new WaitForSeconds(dashCooldown);
-            isCooldown = false;
         }
     }
 }

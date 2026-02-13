@@ -216,7 +216,7 @@
                 {
                     "name": "",
                     "id": "102a3c26-8d26-4e56-8e50-fcec02f8284c",
-                    "path": "",
+                    "path": "<Keyboard>/leftAlt",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -317,7 +317,7 @@
                 {
                     "name": "",
                     "id": "04168f97-fc34-4bbf-a7fd-d7280f04b5c6",
-                    "path": "",
+                    "path": "<Keyboard>/rightShift",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -429,7 +429,7 @@
                 {
                     "name": "",
                     "id": "981aa682-ee74-4f67-aa14-eeb7af5f263f",
-                    "path": "",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -541,7 +541,7 @@
                 {
                     "name": "",
                     "id": "194c0138-ca8e-49a6-b705-7e968bc3ce0c",
-                    "path": "",
+                    "path": "<Keyboard>/7",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

@@ -19,7 +19,7 @@ namespace GGL.Scoring
 {
     public class CollectableSpawner : MonoBehaviour
     {
-        [SerializeField] private Collectable collectablePrefab;
+        [SerializeField] private Collectable[] collectablePrefabs;
         [Header("Spawning Settings")]
         [SerializeField] private int spawnAmount;
         [SerializeField] private float spawnDelay;
@@ -231,8 +231,17 @@ namespace GGL.Scoring
         private Collectable GetCollectable()
         {
             Collectable toGet = collectablePool.Count > 0 ? collectablePool.Dequeue() : 
-                Instantiate(collectablePrefab, transform);
+                Instantiate(GetRandomPrefab(), transform);
             return toGet;
+        }
+
+        /// <summary>
+        /// Gets a random collectable prefab to use to spawn a new collectable.
+        /// </summary>
+        /// <returns></returns>
+        private Collectable GetRandomPrefab()
+        {
+            return collectablePrefabs[Random.Range(0, collectablePrefabs.Length)];
         }
 
         /// <summary>

@@ -1155,7 +1155,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Scoring.CollectableSpawner
   collectablePrefabs:
-  - {fileID: 2857278676197941165, guid: cc42a413f7915d7409d76f83de315e7a, type: 3}
   - {fileID: 7711049314715301832, guid: 49c1250f80e35014eb05622562b2ba2f, type: 3}
   - {fileID: 1309305341803330743, guid: fdd1119c331f1424a8d81f2f657ceee2, type: 3}
   - {fileID: 3285001252188154445, guid: 2ce2f2eb1345a664d9e44909c3aa9f64, type: 3}

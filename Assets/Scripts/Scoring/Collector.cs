@@ -6,17 +6,31 @@
 //
 // Brief Description : Allows a player to collect gold collectables and score points.
 *****************************************************************************/
+using NaughtyAttributes;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
 namespace GGL.Scoring
 {
+    [RequireComponent(typeof(GodIdentifier))]
     public class Collector : MonoBehaviour
     {
-        [SerializeField] private GodID team;
-
         private readonly Queue<Collectable> heldCollectables = new();
+
+        #region Component References
+        [Header("Components")]
+        [SerializeReference, ReadOnly] protected GodIdentifier id;
+
+        /// <summary>
+        /// Get components on reset.
+        /// </summary>
+        [ContextMenu("Get Component References")]
+        protected virtual void Reset()
+        {
+            id = GetComponent<GodIdentifier>();
+        }
+        #endregion
 
         /// <summary>
         /// Check for gold collection when we enter a trigger.
@@ -32,7 +46,7 @@ namespace GGL.Scoring
             }
 
             // Handles cashing collectables at a GoldCashZone
-            if (collision.gameObject.TryGetComponent(out CollectableCashZone cashZone) && cashZone.Team == team)
+            if (collision.gameObject.TryGetComponent(out CollectableCashZone cashZone) && cashZone.Team == id.Team)
             {
                 cashZone.CashCollectables(heldCollectables);
                 heldCollectables.Clear();

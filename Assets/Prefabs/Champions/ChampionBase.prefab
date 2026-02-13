@@ -9,12 +9,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1271545573506326188}
+  - component: {fileID: 108903021177686200}
   - component: {fileID: 789498288870739812}
   - component: {fileID: 8650097738718565955}
   - component: {fileID: 1706004363272337}
   - component: {fileID: 4195008848169630617}
   - component: {fileID: 8074908796875090492}
   - component: {fileID: 1731887743052177298}
+  - component: {fileID: 9166878718391037268}
+  - component: {fileID: 7795094476502601569}
   - component: {fileID: 6110285214635215698}
   - component: {fileID: 5887644586341638842}
   m_Layer: 8
@@ -40,6 +43,19 @@ Transform:
   - {fileID: 1551405931899072320}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &108903021177686200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4254817847457918461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 029f55d0889967f4ea3a87bfa4f4ef1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.GodIdentifier
+  <Team>k__BackingField: 0
 --- !u!212 &789498288870739812
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -203,8 +219,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59a079c29875d02479d23ab5dc7cd9a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Champions.ChampionMovementController
-  maxSpeed: 8
+  maxSpeed: 6
   acceleration: 40
+  maxWallCheckDistance: 1
   positionSnap: 1
   OnDirectionChanged:
     m_PersistentCalls:
@@ -247,7 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb2346a2e2d32c54f8878b79d2a186d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Champions.ChampionDash
-  dashSpeed: 30
+  dashSpeed: 20
   dashDuration: 0.15
   dashCooldown: 1
   OnDashBegin:
@@ -265,6 +282,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7795094476502601569}
+        m_TargetAssemblyTypeName: GGL.Champions.ChampionAnimator, Assembly-CSharp
+        m_MethodName: SetDashing
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   OnDashEnd:
     m_PersistentCalls:
       m_Calls:
@@ -280,8 +309,56 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 7795094476502601569}
+        m_TargetAssemblyTypeName: GGL.Champions.ChampionAnimator, Assembly-CSharp
+        m_MethodName: SetDashing
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   rb: {fileID: 1706004363272337}
   input: {fileID: 8650097738718565955}
+--- !u!95 &9166878718391037268
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4254817847457918461}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f6880d5106e0dcd49add1754c302904b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7795094476502601569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4254817847457918461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e24cd2bc4057c04eb8e6f1ca1de91ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Champions.ChampionAnimator
+  movement: {fileID: 8074908796875090492}
+  anim: {fileID: 9166878718391037268}
 --- !u!114 &6110285214635215698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,7 +385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53f7b64e21a0ad64bb809f41e9cee231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Scoring.Collector
-  team: 0
+  id: {fileID: 108903021177686200}
 --- !u!1 &6872464678437171836
 GameObject:
   m_ObjectHideFlags: 0

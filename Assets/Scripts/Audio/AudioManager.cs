@@ -12,7 +12,15 @@ namespace GGL
 
         private void Awake()
         {
-            instance = this;
+            if (instance != null && instance != this)
+            {
+                Debug.LogWarning("Multiple AudioManagers found in the scene.");
+                return;
+            }
+            else
+            {
+                instance = this;
+            }
         }
 
         private void Start()

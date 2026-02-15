@@ -6,8 +6,10 @@
 //
 // Brief Description : Finds a path along the grid from one space to another using JPA.
 *****************************************************************************/
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -121,30 +123,125 @@ namespace GGL.Minotaur
                     return FinalizePath(startNode, currentNode);
                 }
 
+                #region Jump Point Finders
                 // Functions for checking forced neighbors along the horizontal and vertical directions.
-                bool CheckHorizontal(Vector2Int startingTile, Vector2Int direction)
+                PathNode CheckHorizontal(Vector2Int startingTile, Vector2Int direction)
                 {
+                    // Calculate the perpendicular vector used for checking forced neighbors.
+                    Vector2Int currentTile = startingTile;
 
+                    // Checks for a forced neighbor.
+                    bool CheckForcedNeighbor(Vector2Int pVector)
+                    {
+                        return !CheckFilled(currentTile + pVector) && CheckFilled(currentTile - direction + pVector);
+                    }
+
+                    while (true)
+                    {
+                        currentTile = currentTile + direction;
+
+                        // If we hit a filled tile, then stop searching.
+                        if (CheckFilled(currentTile))
+                        {
+                            return null;
+                        }
+
+                        // If we found the ending tile, add it as a node to the open list and stop searching.
+                        if (currentTile == endingTile)
+                        {
+                            return new PathNode(currentTile, null, startingTile, endingTile);
+                        }
+                        else
+                        {
+                            // Else
+                            List<Vector2Int> forcedNeighborDirections = null;
+                            if (CheckForcedNeighbor(Vector2Int.up))
+                            {
+                                forcedNeighborDirections ??= new List<Vector2Int>();
+                                forcedNeighborDirections.Add(Vector2Int.up);
+                            }
+                            if (CheckForcedNeighbor(Vector2Int.down))
+                            {
+                                forcedNeighborDirections ??= new List<Vector2Int>();
+                                forcedNeighborDirections.Add(Vector2Int.down);
+                            }
+
+                            // If 1 or more forced neighbors were found, add this as a path node.
+                            if (forcedNeighborDirections != null)
+                            {
+                                forcedNeighborDirections.Add(direction);
+                                return new PathNode(currentTile, forcedNeighborDirections.ToArray(),
+                                    startingTile, endingTile);
+                            }
+                        }
+                    }
                 }
+
                 // Vertical is the dominant direction, so it also performs horizontal checks for forced neighbors.
-                bool CheckVertical(Vector2Int startingTile, Vector2Int direction)
+                PathNode CheckVertical(Vector2Int startingTile, Vector2Int direction)
                 {
-                    // Calculate the perpendicular vector used for 
-                    Vector2Int perpVector = new Vector2Int(direction.y, direction.x);
+                    // Calculate the perpendicular vector used for checking forced neighbors.
+                    Vector2Int currentTile = startingTile;
+
+                    while (true)
+                    {
+                        currentTile = currentTile + direction;
+
+                        // If we hit a filled tile, then stop searching.
+                        if (CheckFilled(currentTile))
+                        {
+                            return null;
+                        }
+
+                        // If we found the ending tile, add it as a node to the open list and stop searching.
+                        if (currentTile == endingTile)
+                        {
+                            return new PathNode(currentTile, null, startingTile, endingTile);
+                        }
+                        else
+                        {
+                            List<Vector2Int> forcedNeighborDirections = null;
+                            if (CheckHorizontal(currentTile, Vector2Int.right) != null)
+                            {
+                                forcedNeighborDirections ??= new List<Vector2Int>();
+                                forcedNeighborDirections.Add(Vector2Int.right);
+                            }
+                            if (CheckHorizontal(currentTile, Vector2Int.left) != null)
+                            {
+                                forcedNeighborDirections ??= new List<Vector2Int>();
+                                forcedNeighborDirections.Add(Vector2Int.left);
+                            }
+
+                            // If 1 or more forced neighbors were found, add this as a path node.
+                            if (forcedNeighborDirections != null)
+                            {
+                                forcedNeighborDirections.Add(direction);
+                                return new PathNode(currentTile, forcedNeighborDirections.ToArray(),
+                                    startingTile, endingTile);
+                            }
+                        }
+                    }
                 }
+                #endregion
 
                 // Perform checks for forced neighbors.
-                foreach(Vector2Int successorDirection in currentNode.successors)
+                foreach (Vector2Int successorDirection in currentNode.successors)
                 {
-                    // Perform checks for forced neighbors and add new nodes to the 
+                    PathNode node;
+                    // Perform checks for forced neighbors.
                     if (successorDirection.x > successorDirection.y)
                     {
-                        
+                        node = CheckHorizontal(currentNode.tile, successorDirection);
                     }
                     else
                     {
-                        
-                    }    
+                        node = CheckVertical(currentNode.tile, successorDirection);   
+                    }
+                    // If a jump point was found, add it to the open list to be evaluated.
+                    if (node != null)
+                    {
+                        openList.Add(node);
+                    }
                 }
             }
 
@@ -157,9 +254,9 @@ namespace GGL.Minotaur
         /// </summary>
         /// <param name="tile">The tile to check.</param>
         /// <returns></returns>
-        private bool CheckEmpty(Vector2Int tile)
+        private bool CheckFilled(Vector2Int tile)
         {
-            return collisionTilemap.GetTile((Vector3Int)tile);
+            return collisionTilemap.GetTile((Vector3Int)tile) != null;
         }
 
         /// <summary>

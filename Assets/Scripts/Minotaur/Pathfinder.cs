@@ -21,7 +21,7 @@ namespace GGL.Minotaur
             Vector2Int.right,
             Vector2Int.left,
             Vector2Int.up,
-            Vector2Int.down,
+            Vector2Int.down
         };
         #endregion
 
@@ -121,25 +121,30 @@ namespace GGL.Minotaur
                     return FinalizePath(startNode, currentNode);
                 }
 
-                // Functions for checking forced neighbors along the horizontal and vertical directions.  Vertical
-                // is the dominant direction, so it has to check for horizontals as well.
+                // Functions for checking forced neighbors along the horizontal and vertical directions.
                 bool CheckHorizontal(Vector2Int startingTile, Vector2Int direction)
                 {
 
                 }
-                bool CheckVertical(Vector2Int startingTile, Vector2Int direction) // Dominant direction check.
+                // Vertical is the dominant direction, so it also performs horizontal checks for forced neighbors.
+                bool CheckVertical(Vector2Int startingTile, Vector2Int direction)
                 {
-
+                    // Calculate the perpendicular vector used for 
+                    Vector2Int perpVector = new Vector2Int(direction.y, direction.x);
                 }
 
                 // Perform checks for forced neighbors.
                 foreach(Vector2Int successorDirection in currentNode.successors)
                 {
-                    // If the successor direction is vertical, perform additional checks.
-                    if (successorDirection.y > 0)
+                    // Perform checks for forced neighbors and add new nodes to the 
+                    if (successorDirection.x > successorDirection.y)
                     {
-
+                        
                     }
+                    else
+                    {
+                        
+                    }    
                 }
             }
 
@@ -147,7 +152,15 @@ namespace GGL.Minotaur
             return null;
         }
 
-
+        /// <summary>
+        /// Checks if a given tile is empty on the collision tilemap.
+        /// </summary>
+        /// <param name="tile">The tile to check.</param>
+        /// <returns></returns>
+        private bool CheckEmpty(Vector2Int tile)
+        {
+            return collisionTilemap.GetTile((Vector3Int)tile);
+        }
 
         /// <summary>
         /// Gets the tile position of a certain world position.
@@ -166,7 +179,7 @@ namespace GGL.Minotaur
         /// <returns>The position of the tile in world space.</returns>
         private Vector2 TileToPos(Vector2Int tile)
         {
-            return collisionTilemap.
+            return collisionTilemap.LocalToWorld(collisionTilemap.CellToLocal((Vector3Int)tile));
         }
 
         #region Debug

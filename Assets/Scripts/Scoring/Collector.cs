@@ -76,7 +76,7 @@ namespace GGL.Scoring
         public void ForceCollect(Collectable toCollect)
         {
             // Only allow collection if the champion's gold capacity hasn't been hit.
-            if (goldCapacity > 0 && heldCollectables.Count < goldCapacity)
+            if (goldCapacity <= 0 || heldCollectables.Count < goldCapacity)
             {
                 heldCollectables.Enqueue(toCollect);
                 toCollect.OnCollected(this);

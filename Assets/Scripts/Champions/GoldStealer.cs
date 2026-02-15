@@ -7,6 +7,7 @@
 // Brief Description : Fires a projectile that steals gold on contact with another player.
 *****************************************************************************/
 using GGL.Scoring;
+using System.Collections;
 using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -54,9 +55,20 @@ namespace GGL.Champions
             if (!forwardCheck)
             {
                 allowReturn = false;
-                Debug.Log(Direction);
+                StartCoroutine(ProjTimer());
                 Projectile.Launch(transform.position, Direction * launchForce, ProjectileCollision);
             }
+        }
+
+        private IEnumerator ProjTimer()
+        {
+            float timer = 0f;
+            while(!IsCooldown)
+            { 
+                timer += Time.deltaTime;
+                yield return null;
+            }
+            Debug.Log(timer);
         }
 
         /// <summary>

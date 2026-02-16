@@ -13,13 +13,34 @@ namespace GGL.Minotaur
     [System.Serializable]
     public abstract class MinotaurState
     {
+        protected IStateHandler parent { get; private set; }
+
         /// <summary>
-        /// Called on component reset to automatically get components on the 
+        /// Update this state with relevant references 
         /// </summary>
-        public virtual void GetComponents(GameObject minotaurGo) { }
+        /// <param name="minotaur"></param>
+        /// <param name="parent"></param>
+        public virtual void OnValidate(MinotaurController minotaur, IStateHandler parent)
+        {
+            this.parent = parent;
+            GetComponents(minotaur);
+        }
 
-        public virtual void OnStateEnter() { }
+        /// <summary>
+        /// Called on validate to get service components on the minotaur.
+        /// </summary>
+        public virtual void GetComponents(MinotaurController minotaur) { }
 
-        public virtual void OnStateExit() { }
+        /// <summary>
+        /// Called when the parent StateHandler enters this state.
+        /// </summary>
+        /// <param name="controller">The MinotaurController parent that this state belongs to.</param>
+        public virtual void OnStateEnter(MinotaurController controller) { }
+
+        /// <summary>
+        /// Called when the parent StateHandler exits this state.
+        /// </summary>
+        /// <param name="controller">The MinotaurController parent that this state belongs to.</param>
+        public virtual void OnStateExit(MinotaurController controller) { }
     }
 }

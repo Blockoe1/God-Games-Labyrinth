@@ -172,6 +172,18 @@ PrefabInstance:
       value: Minotaur
       objectReference: {fileID: 0}
     - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: states.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: 'states.Array.data[0]'
+      value: 6611741753475162
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: 'states.Array.data[1]'
+      value: 6611741753475165
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
       propertyPath: 'managedReferences[-2]'
       value: 
       objectReference: {fileID: 0}
@@ -184,12 +196,132 @@ PrefabInstance:
       value: Assembly-CSharp GGL.Minotaur.CompositeState
       objectReference: {fileID: 0}
     - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: 'managedReferences[6611741753475148]'
+      value: Assembly-CSharp GGL.Minotaur.CompositeState
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: 'managedReferences[6611741753475153]'
+      value: Assembly-CSharp GGL.Minotaur.CompositeState
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: 'managedReferences[6611741753475155]'
+      value: Assembly-CSharp GGL.Minotaur.CompositeState
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: 'managedReferences[6611741753475161]'
+      value: Assembly-CSharp GGL.Minotaur.CompositeState
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: 'managedReferences[6611741753475162]'
+      value: Assembly-CSharp GGL.Minotaur.DebugState
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: 'managedReferences[6611741753475165]'
+      value: Assembly-CSharp GGL.Minotaur.CompositeState
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: 'managedReferences[6611741753475166]'
+      value: Assembly-CSharp GGL.Minotaur.CompositeState
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: 'managedReferences[6611741753475170]'
+      value: Assembly-CSharp GGL.Minotaur.DebugState
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: 'managedReferences[6611741753475181]'
+      value: Assembly-CSharp GGL.Minotaur.CompositeState
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: 'managedReferences[6611741753475182]'
+      value: Assembly-CSharp GGL.Minotaur.CompositeState
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: 'managedReferences[6611741753475183]'
+      value: Assembly-CSharp GGL.Minotaur.DebugState
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: managedReferences[6611741753475148].minotaur
+      value: 
+      objectReference: {fileID: 1200183158}
+    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: managedReferences[6611741753475153].minotaur
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: managedReferences[6611741753475155].minotaur
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: managedReferences[6611741753475161].minotaur
+      value: 
+      objectReference: {fileID: 1200183158}
+    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: managedReferences[6611741753475165].minotaur
+      value: 
+      objectReference: {fileID: 1200183158}
+    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: managedReferences[6611741753475166].minotaur
+      value: 
+      objectReference: {fileID: 1200183158}
+    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: managedReferences[6611741753475181].minotaur
+      value: 
+      objectReference: {fileID: 1200183158}
+    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: managedReferences[6611741753475182].minotaur
+      value: 
+      objectReference: {fileID: 1200183158}
+    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
       propertyPath: managedReferences[6611729418027093].subStates.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
       propertyPath: managedReferences[6611729418027105].subStates.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: managedReferences[6611741753475148].subStates.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: managedReferences[6611741753475153].subStates.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: managedReferences[6611741753475155].subStates.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: managedReferences[6611741753475161].subStates.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: managedReferences[6611741753475165].subStates.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: managedReferences[6611741753475166].subStates.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: managedReferences[6611741753475181].subStates.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: managedReferences[6611741753475182].subStates.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: 'managedReferences[6611741753475165].subStates.Array.data[0]'
+      value: 6611741753475170
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: 'managedReferences[6611741753475165].subStates.Array.data[1]'
+      value: 6611741753475181
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: 'managedReferences[6611741753475181].subStates.Array.data[0]'
+      value: 6611741753475183
       objectReference: {fileID: 0}
     - target: {fileID: 8569201680253536264, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
       propertyPath: debugPosition
@@ -2539,6 +2671,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5282759338621820782, guid: 797e384ad3ae8df43abd9e700147a76d, type: 3}
   m_PrefabInstance: {fileID: 1155877940}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1200183158 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+  m_PrefabInstance: {fileID: 191534019}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e91b2bc71d013744a0b8a16d0367604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Minotaur.MinotaurController
 --- !u!114 &1201249625 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7375404087170512508, guid: 160911c2d27ac094c96361b830712e57, type: 3}

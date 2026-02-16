@@ -7,50 +7,27 @@
 // Brief Description : Main control script for the minotaur that utilizes a state machine to swap between states.
 *****************************************************************************/
 using NaughtyAttributes;
+using System;
 using UnityEngine;
 
 namespace GGL.Minotaur
 {
-    public class MinotaurController : MonoBehaviour
+    public class MinotaurController : MonoBehaviour, IStateHandler
     {
         [SerializeReference, ClassDropdown(typeof(MinotaurState))] private MinotaurState[] states;
 
         private MinotaurState currentState;
 
-        #region Component References
-        [Header("Components")]
-        [SerializeReference, ReadOnly] private EntityMovement movement;
-
         /// <summary>
-        /// Get components on reset.
+        /// Update all states with relevant values and references when this component is validated.
         /// </summary>
-        [ContextMenu("Get Component References")]
-        protected virtual void Reset()
+        private void OnValidate()
         {
-            movement = GetComponent<EntityMovement>();
-
-            // Have sub states get components on this object.
             foreach(MinotaurState state in states)
             {
-                state.GetComponents(gameObject);
+                if (state == null) { continue; }
+                state.OnValidate(this, this);
             }
-        }
-        #endregion
-
-        /// <summary>
-        /// Initialize the minotaur.
-        /// </summary>
-        private void Awake()
-        {
-            movement.OnDetectDirection += ProcessDirection;
-        }
-
-        /// <summary>
-        /// Unsubscribe events.
-        /// </summary>
-        private void OnDestroy()
-        {
-            movement.OnDetectDirection -= ProcessDirection;
         }
 
         /// <summary>
@@ -58,20 +35,43 @@ namespace GGL.Minotaur
         /// </summary>
         private void Start()
         {
-            currentState = states[0];
+            SetState(states[0]);
         }
 
         /// <summary>
-        /// Handles logic when a new possible direction to move in is detected.
+        /// Sets the current minotaur state to a state of type T.
         /// </summary>
-        /// <param name="direction">The direction to move in.</param>
-        private void ProcessDirection(Vector2 direction)
+        /// <typeparam name="T">The type of state to transition to</typeparam>
+        /// <returns>The new state.</returns>
+        public T SetState<T>() where T : MinotaurState
         {
-            // Check if the found direction is perpendicular to the current direction.
-            if (direction != movement.Direction && direction != -movement.Direction)
-            {
-
-            }
+            T state = (T)Array.Find(states, item => item.GetType() == typeof(T));
+            SetState(state);
+            return state;
         }
+
+        /// <summary>
+        /// Sets the current minotaur state.
+        /// </summary>
+        /// <param name="state">The state to set.</param>
+        internal void SetState(MinotaurState state)
+        {
+            currentState?.OnStateExit(this);
+            currentState = state;
+            currentState?.OnStateEnter(this);
+        }
+
+        #region Debug
+        [Button]
+        private void SetDebug()
+        {
+            SetState<DebugState>();
+        }
+        [Button]
+        private void SetComposite()
+        {
+            SetState<CompositeState>();
+        }
+        #endregion
     }
 }

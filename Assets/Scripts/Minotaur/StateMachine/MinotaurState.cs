@@ -13,6 +13,13 @@ namespace GGL.Minotaur
     [System.Serializable]
     public abstract class MinotaurState
     {
-    
+        /// <summary>
+        /// Called on component reset to automatically get components on the 
+        /// </summary>
+        public virtual void GetComponents(GameObject minotaurGo) { }
+
+        public virtual void OnStateEnter() { }
+
+        public virtual void OnStateExit() { }
     }
 }

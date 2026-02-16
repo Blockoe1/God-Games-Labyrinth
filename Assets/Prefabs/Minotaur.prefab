@@ -9,10 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1267440585663404646}
+  - component: {fileID: 5871052308712400146}
   - component: {fileID: 784318575360502659}
   - component: {fileID: 2051420132262727742}
   - component: {fileID: 6182671525324484023}
   - component: {fileID: 6996953650150706040}
+  - component: {fileID: 8569201680253536264}
   m_Layer: 6
   m_Name: Minotaur
   m_TagString: Untagged
@@ -35,6 +37,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -15, z: 0}
+--- !u!114 &5871052308712400146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137432236905573919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e91b2bc71d013744a0b8a16d0367604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Minotaur.MinotaurController
+  movement: {fileID: 6996953650150706040}
 --- !u!212 &784318575360502659
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -176,3 +191,17 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   rb: {fileID: 6182671525324484023}
+--- !u!114 &8569201680253536264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137432236905573919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6808192537ac7ed45965dc9a04896235, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Minotaur.Pathfinder
+  collisionTilemap: {fileID: 0}
+  debugPosition: {fileID: 0}

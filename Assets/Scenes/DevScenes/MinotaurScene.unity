@@ -342,7 +342,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2137432236905573919, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1200183161}
+    - targetCorrespondingSourceObject: {fileID: 2137432236905573919, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1200183160}
   m_SourcePrefab: {fileID: 100100000, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
 --- !u!1001 &206627098
 PrefabInstance:
@@ -2679,17 +2685,87 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5282759338621820782, guid: 797e384ad3ae8df43abd9e700147a76d, type: 3}
   m_PrefabInstance: {fileID: 1155877940}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1200183152 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2137432236905573919, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+  m_PrefabInstance: {fileID: 191534019}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1200183158 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
   m_PrefabInstance: {fileID: 191534019}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1200183152}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e91b2bc71d013744a0b8a16d0367604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Minotaur.MinotaurController
+--- !u!60 &1200183160
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200183152}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 767
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1.5, y: 1.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 1
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 0}
+      - {x: 0, y: 0}
+      - {x: 0, y: 0}
+  m_UseDelaunayMesh: 0
+--- !u!114 &1200183161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200183152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d27f0817063433a4dae40f1f16f01c1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Minotaur.MinotaurVision
+  visionAngle: 50
+  visionRange: 5
+  visionCollider: {fileID: 1200183160}
 --- !u!114 &1201249625 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7375404087170512508, guid: 160911c2d27ac094c96361b830712e57, type: 3}

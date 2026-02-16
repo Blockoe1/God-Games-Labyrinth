@@ -104,7 +104,7 @@ namespace GGL.Minotaur
             }
 
             List<PathNode> openList = new List<PathNode>();
-            List<PathNode> closedList = new List<PathNode>();
+            List<Vector2Int> closedList = new List<Vector2Int>();
 
             // Create the first node in the path that has a 0 direction, so all directions are searched.
             PathNode startNode = new PathNode(startingTile, DEFAULT_NODE_SUCCESSORS, startingTile, endingTile);
@@ -116,7 +116,9 @@ namespace GGL.Minotaur
                 PathNode currentNode = openList.OrderBy(item => item.F).FirstOrDefault();
                 // Mark the current node as closed.
                 openList.Remove(currentNode);
-                closedList.Add(currentNode);
+                closedList.Add(currentNode.tile);
+
+                //Debug.DrawLine(TileToPos(currentNode.tile), TileToPos(currentNode.tile) + Vector2.up, Color.blue, 100f);
 
                 // If we reached the ending node, then finish the pathfinding and construct our path.
                 if (currentNode.tile == endingTile)
@@ -240,7 +242,7 @@ namespace GGL.Minotaur
                         node = CheckVertical(currentNode.tile, successorDirection);   
                     }
                     // If a jump point was found, add it to the open list to be evaluated.
-                    if (node != null)
+                    if (node != null && !closedList.Contains(node.tile))
                     {
                         node.previousNode = currentNode;
                         openList.Add(node);
@@ -290,9 +292,15 @@ namespace GGL.Minotaur
         public void DebugPath()
         {
             Vector2[] path = FindPath(debugPosition.position);
+            if (path == null)
+            {
+                Debug.Log("No valid path found.");
+                return;
+            }
             for (int i = 0; i < path.Length - 1; i++)
             {
                 Debug.DrawLine(path[i], path[i + 1], Color.red, 5f);
+                Debug.DrawLine(path[i], path[i] + Vector2.up / 2, Color.green, 5f);
             }
         }
         #endregion

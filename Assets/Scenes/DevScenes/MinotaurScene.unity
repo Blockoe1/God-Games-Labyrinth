@@ -173,15 +173,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
       propertyPath: states.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
       propertyPath: 'states.Array.data[0]'
-      value: 6611741753475162
-      objectReference: {fileID: 0}
-    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
-      propertyPath: 'states.Array.data[1]'
-      value: 6611741753475165
+      value: 6611741753475191
       objectReference: {fileID: 0}
     - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
       propertyPath: 'managedReferences[-2]'
@@ -240,6 +236,10 @@ PrefabInstance:
       value: Assembly-CSharp GGL.Minotaur.DebugState
       objectReference: {fileID: 0}
     - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: 'managedReferences[6611741753475191]'
+      value: Assembly-CSharp GGL.Minotaur.CompositeState
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
       propertyPath: managedReferences[6611741753475148].minotaur
       value: 
       objectReference: {fileID: 1200183158}
@@ -269,6 +269,10 @@ PrefabInstance:
       objectReference: {fileID: 1200183158}
     - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
       propertyPath: managedReferences[6611741753475182].minotaur
+      value: 
+      objectReference: {fileID: 1200183158}
+    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: managedReferences[6611741753475191].minotaur
       value: 
       objectReference: {fileID: 1200183158}
     - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
@@ -309,6 +313,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
       propertyPath: managedReferences[6611741753475182].subStates.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: managedReferences[6611741753475191].subStates.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}

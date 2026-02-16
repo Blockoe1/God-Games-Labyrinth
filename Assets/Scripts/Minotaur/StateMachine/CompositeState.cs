@@ -12,6 +12,7 @@ using UnityEngine;
 
 namespace GGL.Minotaur
 {
+    [DropdownGroup("Composite States")]
     public class CompositeState : MinotaurState, IStateHandler
     {
         [SerializeReference, ClassDropdown(typeof(MinotaurState))] private MinotaurState[] subStates;
@@ -69,7 +70,13 @@ namespace GGL.Minotaur
         /// <returns>The new state.</returns>
         public T SetState<T>() where T : MinotaurState
         {
+            // Only match exact types.
             T state = (T)Array.Find(subStates, item => item.GetType() == typeof(T));
+            if (state == null)
+            {
+                Debug.LogWarning($"The StateHandler {this} does not have a state of type {typeof(T)}");
+                return null;
+            }
             SetState(state);
             return state;
         }

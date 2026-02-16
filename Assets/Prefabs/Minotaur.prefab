@@ -49,7 +49,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e91b2bc71d013744a0b8a16d0367604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Minotaur.MinotaurController
-  movement: {fileID: 6996953650150706040}
+  states: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!212 &784318575360502659
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -183,9 +186,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a12def51fe95d4f4c889f0f78878d244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.EntityMovement
-  maxSpeed: 0
-  acceleration: 0
-  maxWallCheckDistance: 0
+  maxSpeed: 4
+  acceleration: 30
+  maxWallCheckDistance: 1
   positionSnap: 1
   OnDirectionChanged:
     m_PersistentCalls:

@@ -19,6 +19,7 @@ namespace GGL.Scoring
     [RequireComponent(typeof(GodIdentifier))]
     public class Collector : MonoBehaviour
     {
+        [SerializeField] private int goldCapacity;
         [SerializeField, Tooltip("The amount of time after being stolen from that this collector can't be stolen " +
             "from again.")] 
         private float dropIFrames;
@@ -74,8 +75,12 @@ namespace GGL.Scoring
         /// <param name="toCollect">The collectable to force collect.</param>
         public void ForceCollect(Collectable toCollect)
         {
-            heldCollectables.Enqueue(toCollect);
-            toCollect.OnCollected(this);
+            // Only allow collection if the champion's gold capacity hasn't been hit.
+            if (goldCapacity <= 0 || heldCollectables.Count < goldCapacity)
+            {
+                heldCollectables.Enqueue(toCollect);
+                toCollect.OnCollected(this);
+            }
         }
 
         /// <summary>

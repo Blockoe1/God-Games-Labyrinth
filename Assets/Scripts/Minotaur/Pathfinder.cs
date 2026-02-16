@@ -25,6 +25,7 @@ namespace GGL.Minotaur
             Vector2Int.up,
             Vector2Int.down
         };
+        private const int GRID_BOUNDS = 100;
         #endregion
 
         [SerializeField, Tooltip("The tilemap to use as wall based tiles.")] private Tilemap collisionTilemap;
@@ -92,7 +93,8 @@ namespace GGL.Minotaur
             {
                 List<Vector2> result = new List<Vector2>();
                 PathNode current = lastNode;
-                while (current != startNode)
+                // The start node should have null set as previous, so once we hit null the path ends.
+                while (current != null)
                 {
                     result.Add(TileToPos(current.tile));
                     current = current.previousNode;
@@ -133,7 +135,7 @@ namespace GGL.Minotaur
                     // Checks for a forced neighbor.
                     bool CheckForcedNeighbor(Vector2Int pVector)
                     {
-                        return !CheckFilled(currentTile + pVector) && CheckFilled(currentTile - direction + pVector);
+                        return !CheckObscured(currentTile + pVector) && CheckObscured(currentTile - direction + pVector);
                     }
 
                     while (true)
@@ -141,7 +143,7 @@ namespace GGL.Minotaur
                         currentTile = currentTile + direction;
 
                         // If we hit a filled tile, then stop searching.
-                        if (CheckFilled(currentTile))
+                        if (CheckObscured(currentTile))
                         {
                             return null;
                         }
@@ -188,7 +190,7 @@ namespace GGL.Minotaur
                         currentTile = currentTile + direction;
 
                         // If we hit a filled tile, then stop searching.
-                        if (CheckFilled(currentTile))
+                        if (CheckObscured(currentTile))
                         {
                             return null;
                         }
@@ -229,7 +231,7 @@ namespace GGL.Minotaur
                 {
                     PathNode node;
                     // Perform checks for forced neighbors.
-                    if (successorDirection.x > successorDirection.y)
+                    if (Mathf.Abs(successorDirection.x) > Mathf.Abs(successorDirection.y))
                     {
                         node = CheckHorizontal(currentNode.tile, successorDirection);
                     }
@@ -240,6 +242,7 @@ namespace GGL.Minotaur
                     // If a jump point was found, add it to the open list to be evaluated.
                     if (node != null)
                     {
+                        node.previousNode = currentNode;
                         openList.Add(node);
                     }
                 }
@@ -254,9 +257,11 @@ namespace GGL.Minotaur
         /// </summary>
         /// <param name="tile">The tile to check.</param>
         /// <returns></returns>
-        private bool CheckFilled(Vector2Int tile)
+        private bool CheckObscured(Vector2Int tile)
         {
-            return collisionTilemap.GetTile((Vector3Int)tile) != null;
+            return collisionTilemap.GetTile((Vector3Int)tile) != null ||
+                tile.x > GRID_BOUNDS || 
+                tile.y > GRID_BOUNDS;
         }
 
         /// <summary>
@@ -276,7 +281,8 @@ namespace GGL.Minotaur
         /// <returns>The position of the tile in world space.</returns>
         private Vector2 TileToPos(Vector2Int tile)
         {
-            return collisionTilemap.LocalToWorld(collisionTilemap.CellToLocal((Vector3Int)tile));
+            return collisionTilemap.LocalToWorld(collisionTilemap.CellToLocal((Vector3Int)tile)) + 
+                collisionTilemap.tileAnchor;
         }
 
         #region Debug

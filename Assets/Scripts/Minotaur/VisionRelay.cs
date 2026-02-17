@@ -7,7 +7,7 @@ namespace GGL.Minotaur
     public class VisionRelay : MonoBehaviour
     {
         #region CONST
-        private string PLAYER_TAG = "Player";
+        private const string PLAYER_TAG = "Player";
         #endregion
 
         #region Component References

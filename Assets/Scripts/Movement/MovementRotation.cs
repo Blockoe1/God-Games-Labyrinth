@@ -9,9 +9,9 @@
 using System.Collections;
 using UnityEngine;
 
-namespace GGL.Champions
+namespace GGL
 {
-    public class ChampionRotation : MonoBehaviour
+    public class MovementRotation : MonoBehaviour
     {
         [SerializeField] private GameObject rotationGameObject;
         [SerializeField] private float rotationSmoothTime = 0.25f;

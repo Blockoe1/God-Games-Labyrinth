@@ -12,11 +12,11 @@ namespace GGL.Minotaur
 {
     public class DebugState : MinotaurState
     {
-        public override void OnStateEnter(MinotaurController controller)
+        public override void OnStateEnter()
         {
             Debug.Log("Debug State Entered, childed to " + parent);
         }
-        public override void OnStateExit(MinotaurController controller)
+        public override void OnStateExit()
         {
             Debug.Log("Debug State Exited, childed to " + parent);
         }

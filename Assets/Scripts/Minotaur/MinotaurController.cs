@@ -65,9 +65,9 @@ namespace GGL.Minotaur
         /// <param name="state">The state to set.</param>
         internal void SetState(MinotaurState state)
         {
-            currentState?.OnStateExit(this);
+            currentState?.OnStateExit();
             currentState = state;
-            currentState?.OnStateEnter(this);
+            currentState?.OnStateEnter();
         }
 
         #region Debug

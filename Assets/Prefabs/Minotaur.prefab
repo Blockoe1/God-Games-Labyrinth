@@ -55,6 +55,9 @@ MonoBehaviour:
   states:
   - rid: 6611772050505817
   - rid: 6611772050505818
+  <pathfinder>k__BackingField: {fileID: 8569201680253536264}
+  <movement>k__BackingField: {fileID: 6996953650150706040}
+  <vision>k__BackingField: {fileID: 464855989588843931}
   references:
     version: 2
     RefIds:
@@ -62,14 +65,15 @@ MonoBehaviour:
       type: {class: PatrolState, ns: GGL.Minotaur, asm: Assembly-CSharp}
       data:
         debugColor: {r: 1, g: 1, b: 1, a: 1}
-        pathfinder: {fileID: 8569201680253536264}
-        movement: {fileID: 6996953650150706040}
+        <minotaur>k__BackingField: {fileID: 5871052308712400146}
     - rid: 6611772050505818
       type: {class: AggroedState, ns: GGL.Minotaur, asm: Assembly-CSharp}
       data:
         debugColor: {r: 0.63522005, g: 0.23371296, b: 0.23371296, a: 1}
+        <minotaur>k__BackingField: {fileID: 5871052308712400146}
         subStates: []
-        minotaur: {fileID: 5871052308712400146}
+        aggroTime: 0
+        aggroChangeChance: 0
 --- !u!114 &8569201680253536264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,7 +222,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &6996953650150706040
 MonoBehaviour:
   m_ObjectHideFlags: 0

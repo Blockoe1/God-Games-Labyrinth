@@ -21,18 +21,22 @@ namespace GGL.Minotaur
         private GameObject aggroTarget;
         private float aggroTimer;
 
+        #region Properties
+        internal GameObject AggroTarget => aggroTarget;
+        #endregion
+
         /// <summary>
         /// Setup so that the minotaur can change targets if a new champion enters it's vision.
         /// </summary>
         /// <param name="minotaur"></param>
-        public override void OnStateEnter(MinotaurController minotaur)
+        public override void OnStateEnter()
         {
-            base.OnStateEnter(minotaur);
+            base.OnStateEnter();
             minotaur.vision.OnChampionFound += OnDetectChampion;
         }
-        public override void OnStateExit(MinotaurController minotaur)
+        public override void OnStateExit()
         {
-            base.OnStateExit(minotaur);
+            base.OnStateExit();
             minotaur.vision.OnChampionFound -= OnDetectChampion;
         }
 
@@ -42,6 +46,8 @@ namespace GGL.Minotaur
         /// <param name="newChampion"></param>
         private void OnDetectChampion(GameObject newChampion)
         {
+            // Prevent double aggro.
+            if (newChampion == aggroTarget) { return; }
             if (Random.Range(0, 100) > aggroChangeChance)
             {
                 SetAggroTarget(newChampion);
@@ -64,7 +70,7 @@ namespace GGL.Minotaur
         /// </summary>
         /// <param name="minotaur"></param>
         /// <returns></returns>
-        protected override IEnumerator StateRoutine(MinotaurController minotaur)
+        protected override IEnumerator StateRoutine()
         {
             // Continually wait until the aggro timer expires.
             yield return new WaitUntil(() => aggroTimer < 0);

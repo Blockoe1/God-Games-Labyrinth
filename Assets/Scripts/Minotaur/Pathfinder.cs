@@ -287,6 +287,20 @@ namespace GGL.Minotaur
                 collisionTilemap.tileAnchor;
         }
 
+        #region Statics
+        /// <summary>
+        /// Gets the direction that the minotaur should move in based on two path points.
+        /// </summary>
+        /// <param name="targetPathPoint">The target path point to move to.</param>
+        /// <param name="currentPathPoint">The current path point.</param>
+        /// <returns>The orthogonal direction the minotaur should move in.</returns>
+        public static Vector2 GetDirection(Vector2 targetPathPoint, Vector2 currentPathPoint)
+        {
+            Vector2 toVector = targetPathPoint - currentPathPoint;
+            return Mathf.Abs(toVector.x) > Mathf.Abs(toVector.y) ?
+                new Vector2(System.MathF.Sign(toVector.x), 0) : new Vector2(0, System.MathF.Sign(toVector.y));
+        }
+
         /// <summary>
         /// Draws a path using debug lines.
         /// </summary>
@@ -299,5 +313,6 @@ namespace GGL.Minotaur
                 Debug.DrawLine(path[i], path[i] + Vector2.up / 2, Color.green, duration);
             }
         }
+        #endregion
     }
 }

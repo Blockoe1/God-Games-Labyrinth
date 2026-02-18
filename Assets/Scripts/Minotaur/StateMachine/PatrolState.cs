@@ -25,12 +25,12 @@ namespace GGL.Minotaur
         /// When the state is entered, set a starting path.
         /// </summary>
         /// <param name="controller"></param>
-        public override void OnStateEnter(MinotaurController minotaur)
+        public override void OnStateEnter()
         {
             SetNewPatrolPath(minotaur.pathfinder);
             // The minotaur is moving while in this state.
             minotaur.movement.IsMoving = true;
-            base.OnStateEnter(minotaur);
+            base.OnStateEnter();
 
             // Setup the transition to the aggro state.
             minotaur.vision.OnChampionFound += OnDetectChampion;
@@ -40,9 +40,9 @@ namespace GGL.Minotaur
         /// Stop movement when exiting the patrol state.
         /// </summary>
         /// <param name="controller"></param>
-        public override void OnStateExit(MinotaurController minotaur)
+        public override void OnStateExit()
         {
-            base.OnStateExit(minotaur);
+            base.OnStateExit();
             minotaur.movement.IsMoving = false;
             minotaur.vision.OnChampionFound -= OnDetectChampion;
         }
@@ -54,7 +54,7 @@ namespace GGL.Minotaur
         /// </summary>
         /// <param name="controller"></param>
         /// <returns></returns>
-        protected override IEnumerator StateRoutine(MinotaurController minotaur)
+        protected override IEnumerator StateRoutine()
         {
             while (true)
             {
@@ -75,26 +75,13 @@ namespace GGL.Minotaur
                         continue;
                     }
 
-                    minotaur.movement.TargetDirection = GetDirection(currentPath[currentPathNode], 
+                    minotaur.movement.TargetDirection = Pathfinder.GetDirection(currentPath[currentPathNode], 
                         currentPath[currentPathNode - 1]);
                 }
 
                 // Check patrol on FixedUpdate as the game uses physics movement.
                 yield return new WaitForFixedUpdate();
             }
-        }
-
-        /// <summary>
-        /// Gets the direction that the minotaur should move in based on two path points.
-        /// </summary>
-        /// <param name="targetPathPoint">The target path point to move to.</param>
-        /// <param name="currentPathPoint">The current path point.</param>
-        /// <returns>The orthogonal direction the minotaur should move in.</returns>
-        private static Vector2 GetDirection(Vector2 targetPathPoint, Vector2 currentPathPoint)
-        {
-            Vector2 toVector = targetPathPoint - currentPathPoint;
-            return Mathf.Abs(toVector.x) > Mathf.Abs(toVector.y) ? 
-                new Vector2(System.MathF.Sign(toVector.x), 0) : new Vector2(0, System.MathF.Sign(toVector.y));
         }
 
         /// <summary>

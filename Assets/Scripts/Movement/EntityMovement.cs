@@ -62,6 +62,11 @@ namespace GGL
 
         #region Properties
         public Rigidbody2D Rigidbody => rb;
+        public float MaxSpeed
+        {
+            get { return maxSpeed; }
+            set { maxSpeed = value; }
+        }
         public virtual bool IsMoving
         {
             get { return isMoving; }

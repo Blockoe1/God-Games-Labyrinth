@@ -19,9 +19,6 @@ namespace GGL.Minotaur
 
         private MinotaurState currentState;
 
-        // Saved reference to the parent minotaur controller for state setting.
-        [SerializeField, HideInInspector] private MinotaurController minotaur;
-
         /// <summary>
         /// When the minotaur is validated, validate this state and all sub-states, with this composite state as the
         /// parent.
@@ -31,7 +28,6 @@ namespace GGL.Minotaur
         public sealed override void OnValidate(MinotaurController minotaur, IStateHandler parent)
         {
             base.OnValidate(minotaur, parent);
-            this.minotaur = minotaur;
             foreach (MinotaurState state in subStates)
             {
                 if (state == null) { continue; }
@@ -43,17 +39,17 @@ namespace GGL.Minotaur
         /// When this state is entered, act like minotaur enter state.
         /// </summary>
         /// <param name="controller"></param>
-        public override void OnStateEnter(MinotaurController controller)
+        public override void OnStateEnter()
         {
-            base.OnStateEnter(controller);
+            base.OnStateEnter();
             if (subStates.Length > 0)
             {
                 SetState(subStates[0]);
             }
         }
-        public override void OnStateExit(MinotaurController controller)
+        public override void OnStateExit()
         {
-            base.OnStateExit(controller);
+            base.OnStateExit();
             SetState(null);
         }
 
@@ -63,9 +59,9 @@ namespace GGL.Minotaur
         /// <param name="state">The state to set.</param>
         internal void SetState(MinotaurState state)
         {
-            currentState?.OnStateExit(minotaur);
+            currentState?.OnStateExit();
             currentState = state;
-            currentState?.OnStateEnter(minotaur);
+            currentState?.OnStateEnter();
         }
 
         /// <summary>

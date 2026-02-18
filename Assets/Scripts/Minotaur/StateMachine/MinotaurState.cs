@@ -6,6 +6,7 @@
 //
 // Brief Description : Abstract base class for states that control the minotaur's behavior.
 *****************************************************************************/
+using System.Collections;
 using UnityEngine;
 
 namespace GGL.Minotaur
@@ -15,7 +16,8 @@ namespace GGL.Minotaur
     {
         [SerializeField] private Color debugColor;
 
-        protected IStateHandler parent { get; private set; }
+        private Coroutine stateRoutine;
+        [field: SerializeField, HideInInspector] protected IStateHandler parent { get; private set; }
 
         /// <summary>
         /// Update this state with relevant references 
@@ -37,16 +39,37 @@ namespace GGL.Minotaur
         /// Called when the parent StateHandler enters this state.
         /// </summary>
         /// <param name="controller">The MinotaurController parent that this state belongs to.</param>
-        public virtual void OnStateEnter(MinotaurController controller) 
+        public virtual void OnStateEnter(MinotaurController minotaur) 
         { 
             // Debug to visualize colors.
-            controller.GetComponent<SpriteRenderer>().color = debugColor;
+            minotaur.GetComponent<SpriteRenderer>().color = debugColor;
+            // Start the coroutine for this state.
+            stateRoutine = minotaur.StartCoroutine(StateRoutine(minotaur));
         }
 
         /// <summary>
         /// Called when the parent StateHandler exits this state.
         /// </summary>
         /// <param name="controller">The MinotaurController parent that this state belongs to.</param>
-        public virtual void OnStateExit(MinotaurController controller) { }
+        public virtual void OnStateExit(MinotaurController minotaur) 
+        {
+            if (stateRoutine != null)
+            {
+                minotaur.StopCoroutine(stateRoutine);
+                stateRoutine = null;
+            }
+        }
+
+        /// <summary>
+        /// Continual coroutine that runs while this state is active.
+        /// </summary>
+        /// <param name="controller">The MinotaurController this state is managing.</param>
+        /// <returns>Coroutine</returns>
+        protected virtual IEnumerator StateRoutine(MinotaurController minotaur)
+        {
+            // By default, the state routine immediately ends.
+            stateRoutine = null;
+            yield break;
+        }
     }
 }

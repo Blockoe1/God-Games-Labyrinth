@@ -52,10 +52,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e91b2bc71d013744a0b8a16d0367604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Minotaur.MinotaurController
-  states: []
+  states:
+  - rid: 6611772050505817
+  - rid: 6611772050505818
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 6611772050505817
+      type: {class: PatrolState, ns: GGL.Minotaur, asm: Assembly-CSharp}
+      data:
+        debugColor: {r: 1, g: 1, b: 1, a: 1}
+        pathfinder: {fileID: 8569201680253536264}
+        movement: {fileID: 6996953650150706040}
+    - rid: 6611772050505818
+      type: {class: AggroedState, ns: GGL.Minotaur, asm: Assembly-CSharp}
+      data:
+        debugColor: {r: 0.63522005, g: 0.23371296, b: 0.23371296, a: 1}
+        subStates: []
+        minotaur: {fileID: 5871052308712400146}
 --- !u!114 &8569201680253536264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,7 +83,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Minotaur.Pathfinder
   collisionTilemap: {fileID: 0}
-  debugPosition: {fileID: 0}
 --- !u!114 &464855989588843931
 MonoBehaviour:
   m_ObjectHideFlags: 0

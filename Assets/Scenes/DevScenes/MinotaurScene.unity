@@ -242,7 +242,7 @@ PrefabInstance:
     - target: {fileID: 8569201680253536264, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
       propertyPath: debugPosition
       value: 
-      objectReference: {fileID: 848822332}
+      objectReference: {fileID: 0}
     - target: {fileID: 8569201680253536264, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
       propertyPath: collisionTilemap
       value: 
@@ -924,37 +924,6 @@ Transform:
   - {fileID: 1817073344}
   - {fileID: 1714213585}
   - {fileID: 1155877941}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &848822331
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 848822332}
-  m_Layer: 0
-  m_Name: DebugPathfinder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &848822332
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 848822331}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22, y: -4, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &854577337
@@ -38506,4 +38475,3 @@ SceneRoots:
   - {fileID: 958082920}
   - {fileID: 1347709606}
   - {fileID: 191534019}
-  - {fileID: 848822332}

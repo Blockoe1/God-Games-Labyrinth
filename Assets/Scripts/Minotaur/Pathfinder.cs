@@ -29,7 +29,6 @@ namespace GGL.Minotaur
         #endregion
 
         [SerializeField, Tooltip("The tilemap to use as wall based tiles.")] private Tilemap collisionTilemap;
-        [SerializeField] private Transform debugPosition;
 
         #region Nested
         /// <summary>
@@ -300,20 +299,5 @@ namespace GGL.Minotaur
                 Debug.DrawLine(path[i], path[i] + Vector2.up / 2, Color.green, duration);
             }
         }
-
-        #region Debug
-        [ContextMenu("Debug Path")]
-        public void DebugPath()
-        {
-            Vector2[] path = FindPath(debugPosition.position);
-            if (path == null)
-            {
-                Debug.Log("No valid path found.");
-                return;
-            }
-            DrawPath(path, 5f);
-            
-        }
-        #endregion
     }
 }

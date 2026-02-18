@@ -45,10 +45,15 @@ namespace GGL.Minotaur
         /// <param name="controller"></param>
         public override void OnStateEnter(MinotaurController controller)
         {
-            SetState(subStates[0]);
+            base.OnStateEnter(controller);
+            if (subStates.Length > 0)
+            {
+                SetState(subStates[0]);
+            }
         }
         public override void OnStateExit(MinotaurController controller)
         {
+            base.OnStateExit(controller);
             SetState(null);
         }
 

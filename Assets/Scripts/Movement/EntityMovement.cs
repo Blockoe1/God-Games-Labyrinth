@@ -61,6 +61,7 @@ namespace GGL
         #endregion
 
         #region Properties
+        public Rigidbody2D Rigidbody => rb;
         public virtual bool IsMoving
         {
             get { return isMoving; }
@@ -126,12 +127,15 @@ namespace GGL
                     {
                         // Broadcast that a direction has been detected for outside scripts to add direction
                         // controlling logic.
-                        OnDetectDirection?.Invoke(direction);
+                        if(direction != Direction && direction != -Direction)
+                        {
+                            OnDetectDirection?.Invoke(direction);
+                        }
+
                         if (TargetDirection == direction)
                         {
                             // Change direction if the target direction is this valid direction.
                             Direction = direction;
-                            break;
                         }
                     }
                 }

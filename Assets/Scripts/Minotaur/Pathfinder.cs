@@ -6,10 +6,8 @@
 //
 // Brief Description : Finds a path along the grid from one space to another using JPA.
 *****************************************************************************/
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -282,19 +280,6 @@ namespace GGL.Minotaur
         {
             return collisionTilemap.LocalToWorld(collisionTilemap.CellToLocal((Vector3Int)tile)) + 
                 collisionTilemap.tileAnchor;
-        }
-
-        /// <summary>
-        /// Gets the direction that the minotaur should move in based on two path points.
-        /// </summary>
-        /// <param name="targetPathPoint">The target path point to move to.</param>
-        /// <param name="currentPathPoint">The current path point.</param>
-        /// <returns>The orthogonal direction the minotaur should move in.</returns>
-        public static Vector2 GetDirection(Vector2 targetPathPoint, Vector2 currentPathPoint)
-        {
-            Vector2 toVector = targetPathPoint - currentPathPoint;
-            return Mathf.Abs(toVector.x) > Mathf.Abs(toVector.y) ?
-                new Vector2(System.MathF.Sign(toVector.x), 0) : new Vector2(0, System.MathF.Sign(toVector.y));
         }
 
         /// <summary>

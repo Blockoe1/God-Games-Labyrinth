@@ -11,7 +11,7 @@ using UnityEngine;
 
 namespace GGL.Minotaur
 {
-    public class AggroedState : CompositeState
+    public class AggroState : CompositeState
     {
         [SerializeField, Tooltip("The amount of time that the minotaur remains aggored to a specific champion")] 
         private float aggroTime;
@@ -73,7 +73,11 @@ namespace GGL.Minotaur
         protected override IEnumerator StateRoutine()
         {
             // Continually wait until the aggro timer expires.
-            yield return new WaitUntil(() => aggroTimer < 0);
+            while (aggroTimer > 0)
+            {
+                aggroTimer -= Time.deltaTime;
+                yield return null;
+            }
 
             // Transition back to the patrol state.
             parent.SetState<PatrolState>();

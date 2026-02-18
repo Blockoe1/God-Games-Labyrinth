@@ -19,8 +19,8 @@ namespace GGL.Minotaur
         private MinotaurState currentState;
 
         #region Base Component References
-        [field: SerializeReference, HideInInspector] internal PathfinderMovement movement { get; private set; }
-        [field: SerializeReference, HideInInspector] internal MinotaurVision vision { get; private set; }
+        [field: SerializeReference, ReadOnly] internal PathfinderMovement movement { get; private set; }
+        [field: SerializeReference, ReadOnly] internal MinotaurVision vision { get; private set; }
         #endregion
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace GGL.Minotaur
             foreach(MinotaurState state in states)
             {
                 if (state == null) { continue; }
-                state.OnValidate(this, this);
+                state.OnValidate(this, null);
             }
         }
 
@@ -50,10 +50,9 @@ namespace GGL.Minotaur
         /// </summary>
         /// <typeparam name="T">The type of state to transition to</typeparam>
         /// <returns>The new state.</returns>
-        public T SetState<T>() where T : MinotaurState
+        public T GetState<T>() where T : MinotaurState
         {
             T state = (T)Array.Find(states, item => item.GetType() == typeof(T));
-            SetState(state);
             return state;
         }
 
@@ -61,23 +60,35 @@ namespace GGL.Minotaur
         /// Sets the current minotaur state.
         /// </summary>
         /// <param name="state">The state to set.</param>
-        internal void SetState(MinotaurState state)
+        public void SetState(MinotaurState state)
         {
             currentState?.OnStateExit();
             currentState = state;
             currentState?.OnStateEnter();
         }
 
+        /// <summary>
+        /// Sets the current minotaur state by type.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public T SetState<T>() where T : MinotaurState
+        {
+            T state = GetState<T>();
+            SetState(state);
+            return state;
+        }
+
         #region Debug
         [Button]
         private void SetDebug()
         {
-            SetState<DebugState>();
+            GetState<DebugState>();
         }
         [Button]
         private void SetComposite()
         {
-            SetState<CompositeState>();
+            GetState<CompositeState>();
         }
         #endregion
     }

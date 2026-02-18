@@ -32,14 +32,13 @@ namespace GGL
     "direction.")]
         private float maxWallCheckDistance;
         [SerializeField] private bool positionSnap;
-        [SerializeField] private UnityEvent<Vector2> OnDirectionChanged;
 
         // The actual direction that the object is facing.
         private Vector2 direction = Vector2.right;
         // THe direction that the ojbect is trying to move in.  Can be 0.
         private Vector2 targetDirection;
 
-        public event Action<Vector2> OnDetectDirection;
+        public event Action<Vector2> OnDirectionChanged;
 
         private float speed;
         private bool markForSnap;
@@ -130,13 +129,6 @@ namespace GGL
                     // If the raycast hit nothing, this is a valid direction.
                     if (!ray)
                     {
-                        // Broadcast that a direction has been detected for outside scripts to add direction
-                        // controlling logic.
-                        if(direction != Direction && direction != -Direction)
-                        {
-                            OnDetectDirection?.Invoke(direction);
-                        }
-
                         if (TargetDirection == direction)
                         {
                             // Change direction if the target direction is this valid direction.

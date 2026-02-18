@@ -17,8 +17,12 @@ namespace GGL.Minotaur
         [SerializeField] private Color debugColor;
 
         private Coroutine stateRoutine;
-        [field: SerializeField, HideInInspector] protected IStateHandler parent { get; private set; }
+        [SerializeReference, HideInInspector] private IStateHandler parentState;
         [field: SerializeField, HideInInspector] protected MinotaurController minotaur { get; private set; }
+
+        #region Properties
+        protected IStateHandler parent => parentState == null ? minotaur : parentState;
+        #endregion
 
         /// <summary>
         /// Update this state with relevant references 
@@ -27,7 +31,7 @@ namespace GGL.Minotaur
         /// <param name="parent"></param>
         public virtual void OnValidate(MinotaurController minotaur, IStateHandler parent)
         {
-            this.parent = parent;
+            this.parentState = parent;
             this.minotaur = minotaur;
             GetComponents();
         }

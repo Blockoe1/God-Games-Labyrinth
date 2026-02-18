@@ -10,13 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1267440585663404646}
   - component: {fileID: 5871052308712400146}
-  - component: {fileID: 8569201680253536264}
   - component: {fileID: 464855989588843931}
   - component: {fileID: 784318575360502659}
   - component: {fileID: 2051420132262727742}
   - component: {fileID: 6182671525324484023}
-  - component: {fileID: 6996953650150706040}
   - component: {fileID: 4685272650038533086}
+  - component: {fileID: 3511338007652119557}
   m_Layer: 6
   m_Name: Minotaur
   m_TagString: Untagged
@@ -54,39 +53,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Minotaur.MinotaurController
   states:
   - rid: 6611772050505817
-  - rid: 6611772050505818
-  <pathfinder>k__BackingField: {fileID: 8569201680253536264}
-  <movement>k__BackingField: {fileID: 6996953650150706040}
+  - rid: 6611786919313524
+  <movement>k__BackingField: {fileID: 3511338007652119557}
   <vision>k__BackingField: {fileID: 464855989588843931}
   references:
     version: 2
     RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
     - rid: 6611772050505817
       type: {class: PatrolState, ns: GGL.Minotaur, asm: Assembly-CSharp}
       data:
         debugColor: {r: 1, g: 1, b: 1, a: 1}
+        parentState:
+          rid: -2
         <minotaur>k__BackingField: {fileID: 5871052308712400146}
-    - rid: 6611772050505818
-      type: {class: AggroedState, ns: GGL.Minotaur, asm: Assembly-CSharp}
+        visionDelay: 1
+    - rid: 6611786919313524
+      type: {class: AggroState, ns: GGL.Minotaur, asm: Assembly-CSharp}
       data:
-        debugColor: {r: 0.63522005, g: 0.23371296, b: 0.23371296, a: 1}
+        debugColor: {r: 0, g: 0, b: 0, a: 0}
+        parentState:
+          rid: -2
         <minotaur>k__BackingField: {fileID: 5871052308712400146}
-        subStates: []
-        aggroTime: 0
+        subStates:
+        - rid: 6611786919313526
+        aggroTime: 8
         aggroChangeChance: 0
---- !u!114 &8569201680253536264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2137432236905573919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6808192537ac7ed45965dc9a04896235, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GGL.Minotaur.Pathfinder
-  collisionTilemap: {fileID: 0}
+    - rid: 6611786919313526
+      type: {class: ChaseState, ns: GGL.Minotaur, asm: Assembly-CSharp}
+      data:
+        debugColor: {r: 0.52201253, g: 0.024623167, b: 0.024623167, a: 1}
+        parentState:
+          rid: 6611786919313524
+        <minotaur>k__BackingField: {fileID: 5871052308712400146}
+        chaseSpeed: 5
 --- !u!114 &464855989588843931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,7 +149,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -223,38 +224,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &6996953650150706040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2137432236905573919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a12def51fe95d4f4c889f0f78878d244, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GGL.EntityMovement
-  maxSpeed: 4
-  acceleration: 30
-  maxWallCheckDistance: 1
-  positionSnap: 1
-  OnDirectionChanged:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4685272650038533086}
-        m_TargetAssemblyTypeName: GGL.MovementRotation, Assembly-CSharp
-        m_MethodName: SetRotation
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  rb: {fileID: 6182671525324484023}
 --- !u!114 &4685272650038533086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,6 +238,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GGL.MovementRotation
   rotationGameObject: {fileID: 2137432236905573919}
   rotationSmoothTime: 0.4
+  movement: {fileID: 3511338007652119557}
+--- !u!114 &3511338007652119557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137432236905573919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a87fd40b229d3ce41a1d8f241d818172, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Minotaur.PathfinderMovement
+  maxSpeed: 4
+  acceleration: 30
+  maxWallCheckDistance: 1
+  positionSnap: 1
+  rb: {fileID: 6182671525324484023}
+  collisionTilemap: {fileID: 0}
 --- !u!1 &6343835046107924701
 GameObject:
   m_ObjectHideFlags: 0

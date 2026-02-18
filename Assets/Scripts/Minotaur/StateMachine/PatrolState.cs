@@ -14,7 +14,7 @@ namespace GGL.Minotaur
 {
     public class PatrolState : MinotaurState
     {
-        
+        [SerializeField] private float visionDelay = 1f;
 
         /// <summary>
         /// When the state is entered, set a starting path.
@@ -22,13 +22,12 @@ namespace GGL.Minotaur
         /// <param name="controller"></param>
         public override void OnStateEnter()
         {
-            SetNewPatrolPath(minotaur.pathfinder);
-            // The minotaur is moving while in this state.
-            minotaur.movement.IsMoving = true;
             base.OnStateEnter();
+            // When the minotaur finishes it's current path, get a new path.
+            minotaur.movement.OnCompletePath += SetNewPatrolPath;
 
-            // Setup the transition to the aggro state.
-            minotaur.vision.OnChampionFound += OnDetectChampion;
+            // Set a starting patrol path.
+            SetNewPatrolPath();
         }
 
         /// <summary>
@@ -38,57 +37,33 @@ namespace GGL.Minotaur
         public override void OnStateExit()
         {
             base.OnStateExit();
-            minotaur.movement.IsMoving = false;
+            minotaur.movement.Stop();
             minotaur.vision.OnChampionFound -= OnDetectChampion;
+            // When the minotaur finishes it's current path, get a new path.
+            minotaur.movement.OnCompletePath -= SetNewPatrolPath;
+        }
+
+        /// <summary>
+        /// Only initialize vision after a delay.
+        /// </summary>
+        /// <returns></returns>
+        protected override IEnumerator StateRoutine()
+        {
+            yield return new WaitForSeconds(visionDelay);
+            // Setup the transition to the aggro state.
+            minotaur.vision.OnChampionFound += OnDetectChampion;
         }
 
         #region Patrolling
         /// <summary>
-        /// Continually check if the minotaur has reached the next point in their patrol path, and update 
-        /// target direction.
-        /// </summary>
-        /// <param name="controller"></param>
-        /// <returns></returns>
-        protected override IEnumerator StateRoutine()
-        {
-            while (true)
-            {
-                // Pause the state if there is no valid paths.
-                if (currentPath == null) { continue; }
-
-                Pathfinder.DrawPath(currentPath);
-
-                // If we've reached the next node in the path, update the target direction and move to the next node.
-                if (Vector2.Distance(minotaur.movement.Rigidbody.position, currentPath[currentPathNode]) < REQUIRED_PATH_DIST)
-                {
-                    currentPathNode++;
-
-                    // Get a new path if we've reached the end of this current path.
-                    if (currentPathNode >= currentPath.Length)
-                    {
-                        SetNewPatrolPath(minotaur.pathfinder);
-                        continue;
-                    }
-
-                    minotaur.movement.TargetDirection = Pathfinder.GetDirection(currentPath[currentPathNode], 
-                        currentPath[currentPathNode - 1]);
-                }
-
-                // Check patrol on FixedUpdate as the game uses physics movement.
-                yield return new WaitForFixedUpdate();
-            }
-        }
-
-        /// <summary>
         /// Gets a patrol path to a randomized piece of gold.
         /// </summary>
         /// <returns>The path from the minotaur's current position to the gold's position.</returns>
-        private void SetNewPatrolPath(Pathfinder pathfinder)
+        private void SetNewPatrolPath()
         {
             Vector2 destination = CollectableSpawner.Collectables[Random.Range(0, 
                 CollectableSpawner.Collectables.Count)].transform.position;
-            currentPath = pathfinder.FindPath(destination);
-            currentPathNode = 0;
+            minotaur.movement.SetDestination(destination);
         }
         #endregion
 
@@ -99,8 +74,10 @@ namespace GGL.Minotaur
         /// <param name="seenChampion">The champion the minotaur saw.</param>
         private void OnDetectChampion(GameObject seenChampion)
         {
-            AggroedState newState = parent.SetState<AggroedState>();
+            AggroState newState = parent.GetState<AggroState>();
             newState.SetAggroTarget(seenChampion);
+            // Set the aggro target before setting the new state.
+            parent.SetState(newState);
         }
         #endregion
     }

@@ -111,14 +111,14 @@ namespace GGL.Minotaur
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, toObj.normalized, visionRange,
                     GGLHelpers.MazeMask | GGLHelpers.ChampionMask);
                 // If the player was not detected, move it to monitored.
-                if (hit.collider == null || !hit.collider.gameObject.CompareTag(PLAYER_TAG))
+                if (hit.collider == null || !hit.collider.gameObject != seenObjects[i])
                 {
-                    OnChampionLost?.Invoke(hit.collider.gameObject);
+                    OnChampionLost?.Invoke(seenObjects[i]);
+                    monitoredObjects.Add(seenObjects[i]);
+                    Debug.Log("Lost champion " + seenObjects[i]);
                     seenObjects.RemoveAt(i);
-                    monitoredObjects.Add(hit.collider.gameObject);
                     i--;
                     Debug.DrawRay(transform.position, toObj.normalized * visionRange, Color.green);
-                    Debug.Log("Lost champion " + hit.collider.gameObject);
                 }
             }
         }

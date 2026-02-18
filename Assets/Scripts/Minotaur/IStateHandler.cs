@@ -11,6 +11,8 @@ namespace GGL.Minotaur
 {
     public interface IStateHandler
     {
+        public T GetState<T>() where T : MinotaurState;
         public T SetState<T>() where T : MinotaurState;
+        public void SetState(MinotaurState state);
     }
 }

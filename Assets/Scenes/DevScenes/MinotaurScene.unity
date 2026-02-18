@@ -171,119 +171,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Minotaur
       objectReference: {fileID: 0}
-    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
-      propertyPath: 'managedReferences[-2]'
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
-      propertyPath: 'managedReferences[6611751690043392]'
-      value: Assembly-CSharp GGL.Minotaur.CompositeState
-      objectReference: {fileID: 0}
-    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
-      propertyPath: 'managedReferences[6611751690043492]'
-      value: Assembly-CSharp GGL.Minotaur.CompositeState
-      objectReference: {fileID: 0}
-    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
-      propertyPath: 'managedReferences[6611751690043493]'
-      value: Assembly-CSharp GGL.Minotaur.DebugState
-      objectReference: {fileID: 0}
-    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
-      propertyPath: 'managedReferences[6611772050505835]'
-      value: Assembly-CSharp GGL.Minotaur.AggroedState
-      objectReference: {fileID: 0}
-    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
-      propertyPath: 'managedReferences[6611772050505836]'
-      value: Assembly-CSharp GGL.Minotaur.ChaseState
-      objectReference: {fileID: 0}
-    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
-      propertyPath: managedReferences[6611751690043392].minotaur
-      value: 
-      objectReference: {fileID: 191534020}
-    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
-      propertyPath: managedReferences[6611751690043492].minotaur
-      value: 
-      objectReference: {fileID: 191534020}
-    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
-      propertyPath: managedReferences[6611772050505818].aggroTime
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
-      propertyPath: managedReferences[6611772050505835].aggroTime
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
-      propertyPath: managedReferences[6611772050505836].chaseSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
-      propertyPath: managedReferences[6611772050505835].debugColor.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
-      propertyPath: managedReferences[6611772050505835].debugColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
-      propertyPath: managedReferences[6611772050505835].debugColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
-      propertyPath: managedReferences[6611772050505835].debugColor.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
-      propertyPath: managedReferences[6611772050505836].debugColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
-      propertyPath: managedReferences[6611772050505836].debugColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
-      propertyPath: managedReferences[6611772050505836].debugColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
-      propertyPath: managedReferences[6611772050505836].debugColor.r
-      value: 0.57861626
-      objectReference: {fileID: 0}
-    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
-      propertyPath: managedReferences[6611772050505835].aggroChangeChance
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
-      propertyPath: managedReferences[6611751690043392].subStates.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
-      propertyPath: managedReferences[6611751690043492].subStates.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
-      propertyPath: managedReferences[6611772050505818].subStates.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
-      propertyPath: managedReferences[6611772050505835].subStates.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
-      propertyPath: 'managedReferences[6611772050505818].subStates.Array.data[0]'
-      value: 6611772050505836
-      objectReference: {fileID: 0}
-    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
-      propertyPath: managedReferences[6611772050505835].<minotaur>k__BackingField
-      value: 
-      objectReference: {fileID: 191534020}
-    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
-      propertyPath: managedReferences[6611772050505836].<minotaur>k__BackingField
-      value: 
-      objectReference: {fileID: 191534020}
-    - target: {fileID: 8569201680253536264, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
-      propertyPath: debugPosition
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8569201680253536264, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+    - target: {fileID: 3511338007652119557, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
       propertyPath: collisionTilemap
       value: 
       objectReference: {fileID: 1581354546}
@@ -292,17 +180,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
---- !u!114 &191534020 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
-  m_PrefabInstance: {fileID: 191534019}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e91b2bc71d013744a0b8a16d0367604, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GGL.Minotaur.MinotaurController
 --- !u!1001 &206627098
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -16,7 +16,7 @@ namespace GGL.Minotaur
 
         private float baseSpeed;
 
-        private AggroedState aggroState => parent as AggroedState;
+        private AggroState aggroState => parent as AggroState;
 
         /// <summary>
         /// Setup event references when this state is entered.
@@ -25,13 +25,15 @@ namespace GGL.Minotaur
         public override void OnStateEnter()
         {
             base.OnStateEnter();
-
             // Set a custom movement speed for chases.
             baseSpeed = minotaur.movement.MaxSpeed;
             minotaur.movement.MaxSpeed = chaseSpeed;
 
-            // While in the chase state, the minotaur is moving.
-            minotaur.movement.IsMoving = true;
+            // When the minotaur reaches a new node along the path, auto-update the path so that it always
+            // takes the most efficient route.
+            minotaur.movement.OnReachNode += UpdatePath;
+            // Set a default chase path.
+            UpdatePath(Vector2.zero);
         }
 
         /// <summary>
@@ -41,36 +43,19 @@ namespace GGL.Minotaur
         public override void OnStateExit()
         {
             base.OnStateExit();
-
             // Revert the minotaur's speed back to it's base.
             minotaur.movement.MaxSpeed = baseSpeed;
-
-            // Reset the minotaur's movement state.
-            minotaur.movement.IsMoving = false;
+            minotaur.movement.OnReachNode -= UpdatePath;
         }
 
         /// <summary>
-        /// When the minotaur encounters a fork in the road, perform a pathfind to find the optimal path to the
-        /// aggroed target.
+        /// Updates the minotaur's current path whenever a new node is reached.
         /// </summary>
-        /// <param name="detectedDirection">The direction of new movement.</param>
-        private void Movement_OnDetectDirection(Vector2 detectedDirection)
+        /// <param name="reachedNode">The new node that was reached.</param>
+        private void UpdatePath(Vector2 reachedNode)
         {
-            
-            Vector2[] optimalPath = minotaur.pathfinder.FindPath(aggroState.AggroTarget.transform.position);
-            // Do nothing if the optimal path isn't long enough.
-            if (optimalPath.Length >= 2)
-            {
-                Vector2 optimalDirection = Pathfinder.GetDirection(optimalPath[1], optimalPath[0]);
-                Pathfinder.DrawPath(optimalPath, 1f);
-                //Debug.Log($"Direction {detectedDirection} found.  The optimal direction is {optimalDirection}.  The optimal path points are: {optimalPath[0]} {optimalPath[1]}");
-                // Only allow turning if it's the found direction or backwards.
-                if (optimalDirection == detectedDirection ||
-                    optimalDirection == -minotaur.movement.Direction)
-                {
-                    minotaur.movement.TargetDirection = optimalDirection;
-                }
-            }
+            Debug.Log(aggroState.AggroTarget);
+            minotaur.movement.SetDestination(aggroState.AggroTarget.transform.position);
         }
     }
 }

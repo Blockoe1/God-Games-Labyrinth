@@ -57,7 +57,7 @@ namespace GGL.Minotaur
         /// Sets the current minotaur state.
         /// </summary>
         /// <param name="state">The state to set.</param>
-        internal void SetState(MinotaurState state)
+        public void SetState(MinotaurState state)
         {
             currentState?.OnStateExit();
             currentState = state;
@@ -65,11 +65,11 @@ namespace GGL.Minotaur
         }
 
         /// <summary>
-        /// Sets the current minotaur state to a state of type T.
+        /// Gets a minotaur state from this state's sub-states of type T.
         /// </summary>
         /// <typeparam name="T">The type of state to transition to</typeparam>
         /// <returns>The new state.</returns>
-        public T SetState<T>() where T : MinotaurState
+        public T GetState<T>() where T : MinotaurState
         {
             // Only match exact types.
             T state = (T)Array.Find(subStates, item => item.GetType() == typeof(T));
@@ -78,8 +78,19 @@ namespace GGL.Minotaur
                 Debug.LogWarning($"The StateHandler {this} does not have a state of type {typeof(T)}");
                 return null;
             }
-            SetState(state);
             return state;
+        }
+
+        /// <summary>
+        /// Sets the current minotaur state by type.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public T SetState<T>() where T : MinotaurState
+        {
+            T state = GetState<T>();
+            SetState(state);
+            return state;   
         }
     }
 }

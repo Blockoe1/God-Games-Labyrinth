@@ -15,7 +15,7 @@ using UnityEngine.Tilemaps;
 
 namespace GGL.Minotaur
 {
-    public class Pathfinder : MonoBehaviour
+    public static class Pathfinder
     {
         #region CONSTS
         private static readonly Vector2Int[] DEFAULT_NODE_SUCCESSORS = new Vector2Int[]
@@ -27,8 +27,6 @@ namespace GGL.Minotaur
         };
         private const int GRID_BOUNDS = 100;
         #endregion
-
-        [SerializeField, Tooltip("The tilemap to use as wall based tiles.")] private Tilemap collisionTilemap;
 
         #region Nested
         /// <summary>
@@ -71,22 +69,20 @@ namespace GGL.Minotaur
         }
         #endregion
 
-        public Vector2[] FindPath(Vector2 endingPos)
+        public static Vector2[] FindPath(Tilemap collisionTilemap, Vector2 startingPos, Vector2 endingPos)
         {
-            return FindPath(PosToTile(endingPos));
-        }
-        public Vector2[] FindPath(Vector2Int endingTile)
-        {
-            return FindPath(PosToTile(transform.position), endingTile);
+            return FindPath(collisionTilemap, PosToTile(collisionTilemap, startingPos), 
+                PosToTile(collisionTilemap, endingPos));
         }
 
         /// <summary>
         /// Finds the most optimal path from one tile to another.
         /// </summary>
+        /// <param name="collisionTilemap">The tilemap containing collisions with the pathfinding object.</param>
         /// <param name="startingTile">The starting tile of the path.</param>
         /// <param name="endingTile">The ending tile of the path.</param>
         /// <returns>The sequence of nodes from the starting to the ending tiles.</returns>
-        public Vector2[] FindPath(Vector2Int startingTile, Vector2Int endingTile)
+        public static Vector2[] FindPath(Tilemap collisionTilemap, Vector2Int startingTile, Vector2Int endingTile)
         {
             // Finalizes the path by looping through nodes in reverse order and adding their position to a list.
             Vector2[] FinalizePath(PathNode startNode, PathNode lastNode)
@@ -96,7 +92,7 @@ namespace GGL.Minotaur
                 // The start node should have null set as previous, so once we hit null the path ends.
                 while (current != null)
                 {
-                    result.Add(TileToPos(current.tile));
+                    result.Add(TileToPos(collisionTilemap, current.tile));
                     current = current.previousNode;
                 }
                 result.Reverse();
@@ -137,7 +133,8 @@ namespace GGL.Minotaur
                     // Checks for a forced neighbor.
                     bool CheckForcedNeighbor(Vector2Int pVector)
                     {
-                        return !CheckObscured(currentTile + pVector) && CheckObscured(currentTile - direction + pVector);
+                        return !CheckObscured(collisionTilemap, currentTile + pVector) && 
+                            CheckObscured(collisionTilemap, currentTile - direction + pVector);
                     }
 
                     while (true)
@@ -145,7 +142,7 @@ namespace GGL.Minotaur
                         currentTile = currentTile + direction;
 
                         // If we hit a filled tile, then stop searching.
-                        if (CheckObscured(currentTile))
+                        if (CheckObscured(collisionTilemap, currentTile))
                         {
                             return null;
                         }
@@ -192,7 +189,7 @@ namespace GGL.Minotaur
                         currentTile = currentTile + direction;
 
                         // If we hit a filled tile, then stop searching.
-                        if (CheckObscured(currentTile))
+                        if (CheckObscured(collisionTilemap, currentTile))
                         {
                             return null;
                         }
@@ -259,7 +256,7 @@ namespace GGL.Minotaur
         /// </summary>
         /// <param name="tile">The tile to check.</param>
         /// <returns></returns>
-        private bool CheckObscured(Vector2Int tile)
+        private static bool CheckObscured(Tilemap collisionTilemap, Vector2Int tile)
         {
             return collisionTilemap.GetTile((Vector3Int)tile) != null ||
                 tile.x > GRID_BOUNDS || 
@@ -271,7 +268,7 @@ namespace GGL.Minotaur
         /// </summary>
         /// <param name="pos">The world position to get the tile position of.</param>
         /// <returns>The tile position</returns>
-        private Vector2Int PosToTile(Vector2 pos)
+        private static Vector2Int PosToTile(Tilemap collisionTilemap, Vector2 pos)
         {
             return (Vector2Int)collisionTilemap.WorldToCell(pos);  
         }
@@ -281,13 +278,12 @@ namespace GGL.Minotaur
         /// </summary>
         /// <param name="tile">The tile to convert.</param>
         /// <returns>The position of the tile in world space.</returns>
-        private Vector2 TileToPos(Vector2Int tile)
+        private static Vector2 TileToPos(Tilemap collisionTilemap, Vector2Int tile)
         {
             return collisionTilemap.LocalToWorld(collisionTilemap.CellToLocal((Vector3Int)tile)) + 
                 collisionTilemap.tileAnchor;
         }
 
-        #region Statics
         /// <summary>
         /// Gets the direction that the minotaur should move in based on two path points.
         /// </summary>
@@ -313,6 +309,5 @@ namespace GGL.Minotaur
                 Debug.DrawLine(path[i], path[i] + Vector2.up / 2, Color.green, duration);
             }
         }
-        #endregion
     }
 }

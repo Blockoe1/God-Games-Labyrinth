@@ -19,8 +19,7 @@ namespace GGL.Minotaur
         private MinotaurState currentState;
 
         #region Base Component References
-        [field: SerializeReference, HideInInspector] internal Pathfinder pathfinder {  get; private set; }
-        [field: SerializeReference, HideInInspector] internal EntityMovement movement { get; private set; }
+        [field: SerializeReference, HideInInspector] internal PathfinderMovement movement { get; private set; }
         [field: SerializeReference, HideInInspector] internal MinotaurVision vision { get; private set; }
         #endregion
 
@@ -29,8 +28,7 @@ namespace GGL.Minotaur
         /// </summary>
         private void OnValidate()
         {
-            pathfinder = GetComponent<Pathfinder>();
-            movement = GetComponent<EntityMovement>();
+            movement = GetComponent<PathfinderMovement>();
             vision = GetComponent<MinotaurVision>();
             foreach(MinotaurState state in states)
             {

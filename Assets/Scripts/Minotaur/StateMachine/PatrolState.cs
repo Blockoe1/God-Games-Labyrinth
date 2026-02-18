@@ -14,12 +14,7 @@ namespace GGL.Minotaur
 {
     public class PatrolState : MinotaurState
     {
-        #region CONSTS
-        private const float REQUIRED_PATH_DIST = 0.5f;
-        #endregion
-
-        private Vector2[] currentPath;
-        private int currentPathNode;
+        
 
         /// <summary>
         /// When the state is entered, set a starting path.

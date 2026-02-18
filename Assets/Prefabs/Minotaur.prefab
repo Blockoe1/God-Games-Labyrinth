@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.MovementRotation
   rotationGameObject: {fileID: 2137432236905573919}
-  rotationSmoothTime: 0.1
+  rotationSmoothTime: 0.4
 --- !u!1 &6343835046107924701
 GameObject:
   m_ObjectHideFlags: 0

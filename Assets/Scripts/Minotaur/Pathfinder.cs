@@ -80,6 +80,7 @@ namespace GGL.Minotaur
         {
             return FindPath(PosToTile(transform.position), endingTile);
         }
+
         /// <summary>
         /// Finds the most optimal path from one tile to another.
         /// </summary>
@@ -287,6 +288,19 @@ namespace GGL.Minotaur
                 collisionTilemap.tileAnchor;
         }
 
+        /// <summary>
+        /// Draws a path using debug lines.
+        /// </summary>
+        /// <param name="path"></param>
+        public static void DrawPath(Vector2[] path, float duration = 0f)
+        {
+            for (int i = 0; i < path.Length - 1; i++)
+            {
+                Debug.DrawLine(path[i], path[i + 1], Color.red, duration);
+                Debug.DrawLine(path[i], path[i] + Vector2.up / 2, Color.green, duration);
+            }
+        }
+
         #region Debug
         [ContextMenu("Debug Path")]
         public void DebugPath()
@@ -297,11 +311,8 @@ namespace GGL.Minotaur
                 Debug.Log("No valid path found.");
                 return;
             }
-            for (int i = 0; i < path.Length - 1; i++)
-            {
-                Debug.DrawLine(path[i], path[i + 1], Color.red, 5f);
-                Debug.DrawLine(path[i], path[i] + Vector2.up / 2, Color.green, 5f);
-            }
+            DrawPath(path, 5f);
+            
         }
         #endregion
     }

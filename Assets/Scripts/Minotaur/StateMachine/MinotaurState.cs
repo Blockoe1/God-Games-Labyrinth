@@ -13,6 +13,8 @@ namespace GGL.Minotaur
     [System.Serializable]
     public abstract class MinotaurState
     {
+        [SerializeField] private Color debugColor;
+
         protected IStateHandler parent { get; private set; }
 
         /// <summary>
@@ -35,7 +37,11 @@ namespace GGL.Minotaur
         /// Called when the parent StateHandler enters this state.
         /// </summary>
         /// <param name="controller">The MinotaurController parent that this state belongs to.</param>
-        public virtual void OnStateEnter(MinotaurController controller) { }
+        public virtual void OnStateEnter(MinotaurController controller) 
+        { 
+            // Debug to visualize colors.
+            controller.GetComponent<SpriteRenderer>().color = debugColor;
+        }
 
         /// <summary>
         /// Called when the parent StateHandler exits this state.

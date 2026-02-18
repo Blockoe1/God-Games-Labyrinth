@@ -78,18 +78,5 @@ namespace GGL.Minotaur
             SetState(state);
             return state;
         }
-
-        #region Debug
-        [Button]
-        private void SetDebug()
-        {
-            GetState<DebugState>();
-        }
-        [Button]
-        private void SetComposite()
-        {
-            GetState<CompositeState>();
-        }
-        #endregion
     }
 }

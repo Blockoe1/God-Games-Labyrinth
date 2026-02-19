@@ -55,20 +55,8 @@ namespace GGL.Champions
             if (!forwardCheck)
             {
                 allowReturn = false;
-                StartCoroutine(ProjTimer());
                 Projectile.Launch(transform.position, Direction * launchForce, ProjectileCollision);
             }
-        }
-
-        private IEnumerator ProjTimer()
-        {
-            float timer = 0f;
-            while(!IsCooldown)
-            { 
-                timer += Time.deltaTime;
-                yield return null;
-            }
-            Debug.Log(timer);
         }
 
         /// <summary>
@@ -91,15 +79,13 @@ namespace GGL.Champions
                     }
                     // Make a collector drop held gold and then grab it with this projectile.
                     else if (collider.gameObject != gameObject && 
-                        collider.TryGetComponent(out Collector collector) && 
-                        !collector.DropDisabled)
+                        collider.TryGetComponent(out Attackable attackable) && 
+                        !attackable.IsInvincible)
                     {
-                        Collectable[] droppedCollectables = collector.DropCollectables(stealAmount);
-
-                        // Setup collectables to be attracted to the projectile until collected.
-                        projectile.AddAttractedCollectables(droppedCollectables, Team);
+                        OnHitAttackable(attackable, projectile);
                     }
                     break;
+
                 // Only allow returning after the projectile has left this object.
                 case StealProjectile.CollisionType.Exit:
                     if (collider.gameObject == gameObject)
@@ -109,6 +95,26 @@ namespace GGL.Champions
                     break;
             }
             
+        }
+
+        /// <summary>
+        /// Controls what happens when the projectile hits a valid target.
+        /// </summary>
+        /// <param name="attackable"></param>
+        /// <param name="projectile"></param>
+        private void OnHitAttackable(Attackable attackable, StealProjectile projectile)
+        {
+            // If the hit object collects gold, steal it.
+            if (attackable.TryGetComponent(out Collector collector))
+            {
+                Collectable[] droppedCollectables = collector.DropCollectables(stealAmount);
+
+                // Setup collectables to be attracted to the projectile until collected.
+                projectile.AddAttractedCollectables(droppedCollectables, Team);
+            }
+
+            // Notify the attackable that it was hit.
+            attackable.OnHit();
         }
     }
 }

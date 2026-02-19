@@ -7,10 +7,7 @@
 // Brief Description : Allows a player to collect gold collectables and score points.
 *****************************************************************************/
 using NaughtyAttributes;
-using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -20,14 +17,10 @@ namespace GGL.Scoring
     public class Collector : MonoBehaviour
     {
         [SerializeField] private int goldCapacity;
-        [SerializeField, Tooltip("The amount of time after being stolen from that this collector can't be stolen " +
-            "from again.")] 
-        private float dropIFrames;
         [SerializeField] private UnityEvent OnDropEvent;
-        [SerializeField] private UnityEvent OnBecomeVulnerable;
         private readonly Queue<Collectable> heldCollectables = new();
 
-        private bool isDisabled;
+        public bool DisableCollection { get; set; }
 
         #region Component References
         [Header("Components")]
@@ -43,10 +36,6 @@ namespace GGL.Scoring
         }
         #endregion
 
-        #region Properties
-        public bool DropDisabled => isDisabled;
-        #endregion
-
         /// <summary>
         /// Check for gold collection when we enter a trigger.
         /// </summary>
@@ -55,7 +44,7 @@ namespace GGL.Scoring
         {
             // Handles entering a collectable.
             // If a champion is disabled from just being stolen from, they can't recollect their dropped collectables.
-            if (!isDisabled && 
+            if (!DisableCollection && 
                 collision.gameObject.TryGetComponent(out Collectable collectable) && collectable.IsCollectable)
             {
                 ForceCollect(collectable);
@@ -107,7 +96,6 @@ namespace GGL.Scoring
         /// <param name="numToDrop">The number of collectables to drop.</param>
         public Collectable[] DropCollectables(int numToDrop)
         {
-            if (DropDisabled) { return null; }
             List<Collectable> droppedCollectables = new List<Collectable>();
             for(int i = 0; i < numToDrop && heldCollectables.Count > 0; i++)
             {
@@ -118,23 +106,7 @@ namespace GGL.Scoring
 
             OnDropEvent?.Invoke();
 
-            // Add IFrames to prevent dropping multiple times.
-            StartCoroutine(DropFrames(dropIFrames));
-
             return droppedCollectables.ToArray();
-        }
-
-        /// <summary>
-        /// Prevents the collector from dropping collectables again after they've been forced to drop collectables.
-        /// </summary>
-        /// <param name="seconds">The amount of invulnerability time the champion has.</param>
-        /// <returns>cCoroutine</returns>
-        private IEnumerator DropFrames(float seconds)
-        {
-            isDisabled = true;
-            yield return new WaitForSeconds(seconds);
-            isDisabled = false;
-            OnBecomeVulnerable?.Invoke();
         }
     }
 }

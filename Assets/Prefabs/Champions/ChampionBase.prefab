@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 5887644586341638842}
   - component: {fileID: 6048924070031639117}
   - component: {fileID: 4637998730901008517}
+  - component: {fileID: 6409254547191728489}
   m_Layer: 8
   m_Name: ChampionBase
   m_TagString: Player
@@ -374,11 +375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Scoring.Collector
   goldCapacity: 0
-  dropIFrames: 1
   OnDropEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnBecomeVulnerable:
     m_PersistentCalls:
       m_Calls: []
   id: {fileID: 108903021177686200}
@@ -413,3 +410,46 @@ MonoBehaviour:
   stealAmount: 0.5
   launchForce: 30
   requiredLeeway: 2
+--- !u!114 &6409254547191728489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4254817847457918461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b80a45e4d802c8c42be45e7e7812226f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Attackable
+  iFrames: 1
+  OnHitEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5887644586341638842}
+        m_TargetAssemblyTypeName: GGL.Scoring.Collector, Assembly-CSharp
+        m_MethodName: set_DisableCollection
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  OnIFrameExpire:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5887644586341638842}
+        m_TargetAssemblyTypeName: GGL.Scoring.Collector, Assembly-CSharp
+        m_MethodName: set_DisableCollection
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

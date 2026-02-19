@@ -1,17 +1,18 @@
 /*****************************************************************************
-// File Name : HitboxRelay.cs
+// File Name : AttackEffect.cs
 // Author : Brandon Koederitz
 // Creation Date : 2/18/2026
 // Last Modified : 2/18/2026
 //
-// Brief Description : Relays collision information to a parent MinotaurAttacker Component.
+// Brief Description : Base class that defines an effect of a minotaur's attack.
 *****************************************************************************/
 using UnityEngine;
 
 namespace GGL.Minotaur
 {
-    public class MinotaurHitbox : MonoBehaviour
+    [System.Serializable]
+    public abstract class AttackEffect
     {
-        
+        public abstract void OnHit(Attackable hitAttackable);
     }
 }

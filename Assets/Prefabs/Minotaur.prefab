@@ -90,7 +90,7 @@ MonoBehaviour:
     - rid: 6611796126072911
       type: {class: KnockbackEffect, ns: GGL.Minotaur, asm: Assembly-CSharp}
       data:
-        knockbackForce: 500
+        knockbackForce: 20
 --- !u!1 &2137432236905573919
 GameObject:
   m_ObjectHideFlags: 0

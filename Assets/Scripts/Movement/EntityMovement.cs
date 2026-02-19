@@ -40,7 +40,7 @@ namespace GGL
 
         public event Action<Vector2> OnDirectionChanged;
 
-        private float speed;
+        protected float speed;
         private bool markForSnap;
 
         private bool isMoving;
@@ -92,7 +92,7 @@ namespace GGL
         public Vector2 Direction
         { 
             get { return direction; }
-            private set 
+            protected set 
             {
                 // Prevent assigning a direction of 0.
                 if (value == Vector2.zero) { return; }

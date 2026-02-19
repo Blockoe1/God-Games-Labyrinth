@@ -19,8 +19,10 @@ namespace GGL.Minotaur
         private MinotaurState currentState;
 
         #region Base Component References
+        [field: Header("Components")]
         [field: SerializeReference, ReadOnly] internal PathfinderMovement movement { get; private set; }
         [field: SerializeReference, ReadOnly] internal MinotaurVision vision { get; private set; }
+        [field: SerializeReference, ReadOnly] internal MinotaurAttacker attacker { get; private set; }
         #endregion
 
         /// <summary>
@@ -30,6 +32,7 @@ namespace GGL.Minotaur
         {
             movement = GetComponent<PathfinderMovement>();
             vision = GetComponent<MinotaurVision>();
+            attacker = GetComponent<MinotaurAttacker>();
             foreach(MinotaurState state in states)
             {
                 if (state == null) { continue; }

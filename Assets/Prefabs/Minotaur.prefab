@@ -149,6 +149,7 @@ MonoBehaviour:
   - rid: 6611786919313524
   <movement>k__BackingField: {fileID: 3511338007652119557}
   <vision>k__BackingField: {fileID: 464855989588843931}
+  <attacker>k__BackingField: {fileID: 8163698570004376742}
   references:
     version: 2
     RefIds:

@@ -33,11 +33,26 @@ namespace GGL.Minotaur
         {
             base.OnStateEnter();
             minotaur.vision.OnChampionFound += OnDetectChampion;
+            minotaur.attacker.OnHitObject += OnHit;
         }
         public override void OnStateExit()
         {
             base.OnStateExit();
             minotaur.vision.OnChampionFound -= OnDetectChampion;
+            minotaur.attacker.OnHitObject -= OnHit;
+        }
+
+        /// <summary>
+        /// De-aggro on a champion if the minotaur hits them in any capacity.
+        /// </summary>
+        /// <param name="hitObject"></param>
+        private void OnHit(Attackable hitObject)
+        {
+            // Switch back to the patrol state if the minotaur hit it's target.
+            if (hitObject.gameObject == aggroTarget)
+            {
+                parent.SetState<PatrolState>();
+            }
         }
 
         /// <summary>

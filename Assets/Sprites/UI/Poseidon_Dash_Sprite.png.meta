@@ -49,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -63,8 +63,8 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 176, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -87,7 +87,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -115,20 +115,20 @@ TextureImporter:
       name: Poseidon_Dash_Sprite_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 65
-        width: 30
-        height: 30
+        x: 0
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3c2a1360caab9d240800000000000000
-      internalID: 4817086524450513603
+      spriteID: ed14fd89d4280ca4aa67a6fae01f11e4
+      internalID: -452345617
       vertices: []
       indices: 
       edges: []
@@ -137,20 +137,20 @@ TextureImporter:
       name: Poseidon_Dash_Sprite_1
       rect:
         serializedVersion: 2
-        x: 33
-        y: 65
-        width: 30
-        height: 30
+        x: 32
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 50d7e2f99b27762a0800000000000000
-      internalID: -6744295775398888187
+      spriteID: 73e610dc6a39d2742864d8df9e7df08a
+      internalID: 1470400998
       vertices: []
       indices: 
       edges: []
@@ -159,20 +159,20 @@ TextureImporter:
       name: Poseidon_Dash_Sprite_2
       rect:
         serializedVersion: 2
-        x: 1
-        y: 33
-        width: 30
-        height: 30
+        x: 0
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 80117a18df8e96480800000000000000
-      internalID: -8905330612648865528
+      spriteID: d6f1fcf3697385143af18be221208373
+      internalID: 1574575714
       vertices: []
       indices: 
       edges: []
@@ -181,20 +181,20 @@ TextureImporter:
       name: Poseidon_Dash_Sprite_3
       rect:
         serializedVersion: 2
-        x: 33
-        y: 33
-        width: 30
-        height: 30
+        x: 32
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8d187041b7a75afc0800000000000000
-      internalID: -3484244067665608232
+      spriteID: b36fdd9f12620d648ba3d8b2f5a2b915
+      internalID: -1011825863
       vertices: []
       indices: 
       edges: []
@@ -203,20 +203,20 @@ TextureImporter:
       name: Poseidon_Dash_Sprite_4
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
-        width: 30
-        height: 30
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f9efe187e3cad5320800000000000000
-      internalID: 2548382348464815775
+      spriteID: 1f7094e1cbac2d84aaccbcdb9a4e59e2
+      internalID: -955012142
       vertices: []
       indices: 
       edges: []
@@ -225,21 +225,23 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
-    internalID: 0
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Poseidon_Dash_Sprite_0: 4817086524450513603
-      Poseidon_Dash_Sprite_1: -6744295775398888187
-      Poseidon_Dash_Sprite_2: -8905330612648865528
-      Poseidon_Dash_Sprite_3: -3484244067665608232
-      Poseidon_Dash_Sprite_4: 2548382348464815775
+      Poseidon_Dash_Sprite_0: -452345617
+      Poseidon_Dash_Sprite_1: 1470400998
+      Poseidon_Dash_Sprite_2: 1574575714
+      Poseidon_Dash_Sprite_3: -1011825863
+      Poseidon_Dash_Sprite_4: -955012142
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

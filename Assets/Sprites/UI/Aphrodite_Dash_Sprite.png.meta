@@ -49,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -63,8 +63,8 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 176, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -87,7 +87,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -115,20 +115,20 @@ TextureImporter:
       name: Aphrodite_Dash_Sprite_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 65
-        width: 30
-        height: 30
+        x: 0
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6af3b37687f277d60800000000000000
-      internalID: 7887825466537230246
+      spriteID: ff4bd8df6be2abe4e8e309578c7a4d68
+      internalID: 1609347211
       vertices: []
       indices: 
       edges: []
@@ -137,20 +137,20 @@ TextureImporter:
       name: Aphrodite_Dash_Sprite_1
       rect:
         serializedVersion: 2
-        x: 33
-        y: 65
-        width: 30
-        height: 30
+        x: 32
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6fbb19f74e4aac7f0800000000000000
-      internalID: -591479099746042890
+      spriteID: 099644dd50554394596699ac61bb872a
+      internalID: -1211941790
       vertices: []
       indices: 
       edges: []
@@ -159,20 +159,20 @@ TextureImporter:
       name: Aphrodite_Dash_Sprite_2
       rect:
         serializedVersion: 2
-        x: 1
-        y: 33
-        width: 30
-        height: 30
+        x: 0
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8cf4f70b95bb80b00800000000000000
-      internalID: 795091328118509512
+      spriteID: ea13ef42e608d2c4989f7a493ebc59f3
+      internalID: 293747198
       vertices: []
       indices: 
       edges: []
@@ -181,20 +181,20 @@ TextureImporter:
       name: Aphrodite_Dash_Sprite_3
       rect:
         serializedVersion: 2
-        x: 33
-        y: 33
-        width: 30
-        height: 30
+        x: 32
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 24d3f0e8166bdcd70800000000000000
-      internalID: 9065102155078122818
+      spriteID: 11b15ceb23f42a243a87ba0c2a4d412a
+      internalID: 611116066
       vertices: []
       indices: 
       edges: []
@@ -203,20 +203,20 @@ TextureImporter:
       name: Aphrodite_Dash_Sprite_4
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
-        width: 30
-        height: 30
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 81d1fe6d10d9f60a0800000000000000
-      internalID: -6886112673999676136
+      spriteID: 9678facfa9b89264ca71068a3c797c03
+      internalID: 519830560
       vertices: []
       indices: 
       edges: []
@@ -225,21 +225,23 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
-    internalID: 0
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Aphrodite_Dash_Sprite_0: 7887825466537230246
-      Aphrodite_Dash_Sprite_1: -591479099746042890
-      Aphrodite_Dash_Sprite_2: 795091328118509512
-      Aphrodite_Dash_Sprite_3: 9065102155078122818
-      Aphrodite_Dash_Sprite_4: -6886112673999676136
+      Aphrodite_Dash_Sprite_0: 1609347211
+      Aphrodite_Dash_Sprite_1: -1211941790
+      Aphrodite_Dash_Sprite_2: 293747198
+      Aphrodite_Dash_Sprite_3: 611116066
+      Aphrodite_Dash_Sprite_4: 519830560
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

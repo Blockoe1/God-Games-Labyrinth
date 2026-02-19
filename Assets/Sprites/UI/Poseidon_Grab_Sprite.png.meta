@@ -49,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -63,8 +63,8 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 176, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -87,7 +87,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -115,20 +115,20 @@ TextureImporter:
       name: Poseidon_Grab_Sprite_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 65
-        width: 30
-        height: 30
+        x: 0
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3dfc1c4879f6b1410800000000000000
-      internalID: 1448874401687785427
+      spriteID: b8d34712dd427d94ea9c04ab42bbc556
+      internalID: 1438840208
       vertices: []
       indices: 
       edges: []
@@ -137,20 +137,20 @@ TextureImporter:
       name: Poseidon_Grab_Sprite_1
       rect:
         serializedVersion: 2
-        x: 33
-        y: 65
-        width: 30
-        height: 30
+        x: 32
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 425c0c8fab59a36d0800000000000000
-      internalID: -3009928770673916636
+      spriteID: 6fd290e27861cef4e8225b3e27b6684f
+      internalID: -1880124835
       vertices: []
       indices: 
       edges: []
@@ -159,20 +159,20 @@ TextureImporter:
       name: Poseidon_Grab_Sprite_2
       rect:
         serializedVersion: 2
-        x: 1
-        y: 33
-        width: 30
-        height: 30
+        x: 0
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 72920437d01106ff0800000000000000
-      internalID: -45017246807873241
+      spriteID: 1538f438de37cfc42b91210b756b2097
+      internalID: -1463736755
       vertices: []
       indices: 
       edges: []
@@ -181,20 +181,20 @@ TextureImporter:
       name: Poseidon_Grab_Sprite_3
       rect:
         serializedVersion: 2
-        x: 33
-        y: 33
-        width: 30
-        height: 30
+        x: 32
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1351976a6a79f7ce0800000000000000
-      internalID: -1405237816702986959
+      spriteID: 17d40a61539256c4fb45d15a37805f06
+      internalID: 807177752
       vertices: []
       indices: 
       edges: []
@@ -203,20 +203,20 @@ TextureImporter:
       name: Poseidon_Grab_Sprite_4
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
-        width: 30
-        height: 30
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4e3836409b0665ce0800000000000000
-      internalID: -1416838685002595356
+      spriteID: 2ef58e3011477dd4997f1d5b799f78a2
+      internalID: 1603480169
       vertices: []
       indices: 
       edges: []
@@ -225,21 +225,23 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
-    internalID: 0
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Poseidon_Grab_Sprite_0: 1448874401687785427
-      Poseidon_Grab_Sprite_1: -3009928770673916636
-      Poseidon_Grab_Sprite_2: -45017246807873241
-      Poseidon_Grab_Sprite_3: -1405237816702986959
-      Poseidon_Grab_Sprite_4: -1416838685002595356
+      Poseidon_Grab_Sprite_0: 1438840208
+      Poseidon_Grab_Sprite_1: -1880124835
+      Poseidon_Grab_Sprite_2: -1463736755
+      Poseidon_Grab_Sprite_3: 807177752
+      Poseidon_Grab_Sprite_4: 1603480169
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

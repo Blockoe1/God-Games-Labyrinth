@@ -49,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -63,8 +63,8 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 176, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -87,7 +87,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -115,20 +115,20 @@ TextureImporter:
       name: Athena_Grab_Sprite_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 65
-        width: 30
-        height: 30
+        x: 0
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c6804e1aaa3d17e30800000000000000
-      internalID: 4499610232533813356
+      spriteID: 122cf99c3aa0d004aacfb0b464c7eb1e
+      internalID: -1269416790
       vertices: []
       indices: 
       edges: []
@@ -137,20 +137,20 @@ TextureImporter:
       name: Athena_Grab_Sprite_1
       rect:
         serializedVersion: 2
-        x: 33
-        y: 65
-        width: 30
-        height: 30
+        x: 32
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: fe4711cd3348e9720800000000000000
-      internalID: 2854864572069803247
+      spriteID: d35dc3db637ca604cb928e584cf42a14
+      internalID: 2012278807
       vertices: []
       indices: 
       edges: []
@@ -159,20 +159,20 @@ TextureImporter:
       name: Athena_Grab_Sprite_2
       rect:
         serializedVersion: 2
-        x: 1
-        y: 33
-        width: 30
-        height: 30
+        x: 0
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: cb7e1391e5e2b1bc0800000000000000
-      internalID: -3811401677954488388
+      spriteID: f8758d5f769dcdd4f9339df020f32864
+      internalID: 950255053
       vertices: []
       indices: 
       edges: []
@@ -181,20 +181,20 @@ TextureImporter:
       name: Athena_Grab_Sprite_3
       rect:
         serializedVersion: 2
-        x: 33
-        y: 33
-        width: 30
-        height: 30
+        x: 32
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 77dbb5aca40f28620800000000000000
-      internalID: 2775044524426902903
+      spriteID: 58865181a5e97dd4ca8eed77a0570a84
+      internalID: 902275677
       vertices: []
       indices: 
       edges: []
@@ -203,20 +203,20 @@ TextureImporter:
       name: Athena_Grab_Sprite_4
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
-        width: 30
-        height: 30
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9e2eb681a8dddb730800000000000000
-      internalID: 4016610027869299433
+      spriteID: f11a4de49ef43454e9042c48b307572b
+      internalID: 1483668743
       vertices: []
       indices: 
       edges: []
@@ -225,21 +225,23 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
-    internalID: 0
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Athena_Grab_Sprite_0: 4499610232533813356
-      Athena_Grab_Sprite_1: 2854864572069803247
-      Athena_Grab_Sprite_2: -3811401677954488388
-      Athena_Grab_Sprite_3: 2775044524426902903
-      Athena_Grab_Sprite_4: 4016610027869299433
+      Athena_Grab_Sprite_0: -1269416790
+      Athena_Grab_Sprite_1: 2012278807
+      Athena_Grab_Sprite_2: 950255053
+      Athena_Grab_Sprite_3: 902275677
+      Athena_Grab_Sprite_4: 1483668743
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -22,9 +22,10 @@ GameObject:
   - component: {fileID: 5887644586341638842}
   - component: {fileID: 6048924070031639117}
   - component: {fileID: 4637998730901008517}
+  - component: {fileID: 6409254547191728489}
   m_Layer: 8
   m_Name: ChampionBase
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,7 +104,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: -1325833067, guid: 18233f62209897a48a95b2d9fce6e4a6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -224,21 +225,6 @@ MonoBehaviour:
   acceleration: 40
   maxWallCheckDistance: 1
   positionSnap: 1
-  OnDirectionChanged:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6110285214635215698}
-        m_TargetAssemblyTypeName: GGL.Champions.ChampionRotation, Assembly-CSharp
-        m_MethodName: SetRotation
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   rb: {fileID: 1706004363272337}
   input: {fileID: 8650097738718565955}
 --- !u!114 &1731887743052177298
@@ -375,6 +361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Champions.ChampionRotation
   rotationGameObject: {fileID: 4254817847457918461}
   rotationSmoothTime: 0.1
+  movement: {fileID: 8074908796875090492}
 --- !u!114 &5887644586341638842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,11 +374,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53f7b64e21a0ad64bb809f41e9cee231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Scoring.Collector
-  dropIFrames: 0
+  goldCapacity: 0
   OnDropEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnBecomeVulnerable:
     m_PersistentCalls:
       m_Calls: []
   id: {fileID: 108903021177686200}
@@ -426,3 +410,70 @@ MonoBehaviour:
   stealAmount: 0.5
   launchForce: 30
   requiredLeeway: 2
+--- !u!114 &6409254547191728489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4254817847457918461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b80a45e4d802c8c42be45e7e7812226f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Attackable
+  iFrames: 1
+  OnHitEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5887644586341638842}
+        m_TargetAssemblyTypeName: GGL.Scoring.Collector, Assembly-CSharp
+        m_MethodName: set_DisableCollection
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 7795094476502601569}
+        m_TargetAssemblyTypeName: GGL.Champions.ChampionAnimator, Assembly-CSharp
+        m_MethodName: SetInvincible
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  OnIFrameExpire:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5887644586341638842}
+        m_TargetAssemblyTypeName: GGL.Scoring.Collector, Assembly-CSharp
+        m_MethodName: set_DisableCollection
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7795094476502601569}
+        m_TargetAssemblyTypeName: GGL.Champions.ChampionAnimator, Assembly-CSharp
+        m_MethodName: SetInvincible
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

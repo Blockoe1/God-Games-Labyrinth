@@ -7,6 +7,7 @@
 // Brief Description : Base movement script for moving an entity through the maze.
 *****************************************************************************/
 using NaughtyAttributes;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -31,14 +32,15 @@ namespace GGL
     "direction.")]
         private float maxWallCheckDistance;
         [SerializeField] private bool positionSnap;
-        [SerializeField] private UnityEvent<Vector2> OnDirectionChanged;
 
         // The actual direction that the object is facing.
         private Vector2 direction = Vector2.right;
         // THe direction that the ojbect is trying to move in.  Can be 0.
         private Vector2 targetDirection;
 
-        private float speed;
+        public event Action<Vector2> OnDirectionChanged;
+
+        protected float speed;
         private bool markForSnap;
 
         private bool isMoving;
@@ -58,6 +60,12 @@ namespace GGL
         #endregion
 
         #region Properties
+        public Rigidbody2D Rigidbody => rb;
+        public float MaxSpeed
+        {
+            get { return maxSpeed; }
+            set { maxSpeed = value; }
+        }
         public virtual bool IsMoving
         {
             get { return isMoving; }
@@ -84,7 +92,7 @@ namespace GGL
         public Vector2 Direction
         { 
             get { return direction; }
-            private set 
+            protected set 
             {
                 // Prevent assigning a direction of 0.
                 if (value == Vector2.zero) { return; }
@@ -119,11 +127,13 @@ namespace GGL
                     RaycastHit2D ray = Physics2D.Raycast(rb.position, direction, maxWallCheckDistance, GGLHelpers.MazeMask);
                     Debug.DrawRay(rb.position, direction * maxWallCheckDistance, Color.green);
                     // If the raycast hit nothing, this is a valid direction.
-                    if (!ray && TargetDirection == direction)
+                    if (!ray)
                     {
-                        // Change direction if the target direction is this valid direction.
-                        Direction = direction;
-                        break;
+                        if (TargetDirection == direction)
+                        {
+                            // Change direction if the target direction is this valid direction.
+                            Direction = direction;
+                        }
                     }
                 }
             }

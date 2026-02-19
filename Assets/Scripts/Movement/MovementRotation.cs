@@ -6,19 +6,51 @@
 //
 // Brief Description : Rotates the champion's visuals so that players know which way they are facing.
 *****************************************************************************/
+using GGL.Minotaur;
+using NaughtyAttributes;
 using System.Collections;
 using UnityEngine;
 
-namespace GGL.Champions
+namespace GGL
 {
-    public class ChampionRotation : MonoBehaviour
+    [RequireComponent(typeof(EntityMovement))]
+    public class MovementRotation : MonoBehaviour
     {
         [SerializeField] private GameObject rotationGameObject;
         [SerializeField] private float rotationSmoothTime = 0.25f;
 
         private Coroutine rotateRoutine;
 
-        private float angleSpeed;  
+        private float angleSpeed;
+
+        #region Component References
+        [Header("Components")] 
+        [SerializeReference, ReadOnly] private EntityMovement movement;
+
+        /// <summary>
+        /// Get components on reset.
+        /// </summary>
+        [ContextMenu("Get Component References")]
+        protected virtual void Reset()
+        {
+            movement = GetComponent<EntityMovement>();
+#if UNITY_EDITOR
+            UnityEditor.EditorUtility.SetDirty(this);
+#endif
+        }
+        #endregion
+
+        /// <summary>
+        /// Subscription to update the direction the entity is facing based on the movement direction.
+        /// </summary>
+        private void Awake()
+        {
+            movement.OnDirectionChanged += SetRotation;
+        }
+        private void OnDestroy()
+        {
+            movement.OnDirectionChanged -= SetRotation;
+        }
 
         /// <summary>
         /// Sets the direction that this champion's visuals face.

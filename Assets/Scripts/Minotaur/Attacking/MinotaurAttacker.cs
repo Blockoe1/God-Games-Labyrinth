@@ -32,7 +32,7 @@ namespace GGL.Minotaur
             // Apply each attack effect.
             foreach(AttackEffect attackEffect in totalAttackEffects)
             {
-                attackEffect.OnHit(hitObject);
+                attackEffect.OnHit(hitObject, this);
             }
 
             // Notify the attackable that it was hit.

@@ -63,7 +63,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -81,11 +81,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7133555b68ab98f4289a8263860acadb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Minotaur.MinotaurHitbox
-  attackEffects: []
+  attackEffects:
+  - rid: 6611796126072911
   attacker: {fileID: 8163698570004376742}
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 6611796126072911
+      type: {class: KnockbackEffect, ns: GGL.Minotaur, asm: Assembly-CSharp}
+      data:
+        knockbackForce: 500
 --- !u!1 &2137432236905573919
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +291,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2

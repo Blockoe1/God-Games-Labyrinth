@@ -175,6 +175,18 @@ PrefabInstance:
       propertyPath: collisionTilemap
       value: 
       objectReference: {fileID: 1581354546}
+    - target: {fileID: 4342195054536788992, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: 'managedReferences[-2]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342195054536788992, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: 'managedReferences[6611796126072909]'
+      value: Assembly-CSharp GGL.Minotaur.DropGoldEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342195054536788992, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: managedReferences[6611796126072909].dropProportion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -949,9 +961,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 1
-    height: 1
+    y: 0.055555556
+    width: 0.33333334
+    height: 0.3333333
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -19887,6 +19899,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 837329400}
     m_Modifications:
+    - target: {fileID: 3040042053928728507, guid: f901d6f675cd5484681ff28cd263affd, type: 3}
+      propertyPath: m_DefaultActionMap
+      value: cec98218-e584-468c-bce6-03ad333c7861
+      objectReference: {fileID: 0}
     - target: {fileID: 4872432737161707348, guid: f901d6f675cd5484681ff28cd263affd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -25

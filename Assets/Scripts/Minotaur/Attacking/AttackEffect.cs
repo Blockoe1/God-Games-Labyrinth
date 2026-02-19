@@ -13,6 +13,6 @@ namespace GGL.Minotaur
     [System.Serializable]
     public abstract class AttackEffect
     {
-        public abstract void OnHit(Attackable hitAttackable);
+        public abstract void OnHit(Attackable hitAttackable, MinotaurAttacker attacker);
     }
 }

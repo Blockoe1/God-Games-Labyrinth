@@ -54,7 +54,7 @@ namespace GGL.Minotaur
         /// <param name="reachedNode">The new node that was reached.</param>
         private void UpdatePath(Vector2 reachedNode)
         {
-            Debug.Log(aggroState.AggroTarget);
+            //Debug.Log(aggroState.AggroTarget);
             minotaur.movement.SetDestination(aggroState.AggroTarget.transform.position);
         }
     }

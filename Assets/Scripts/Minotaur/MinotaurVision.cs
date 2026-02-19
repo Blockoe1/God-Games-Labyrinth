@@ -75,7 +75,7 @@ namespace GGL.Minotaur
             {
                 seenObjects.Remove(monitoredObject);
                 OnChampionLost?.Invoke(monitoredObject);
-                Debug.Log("Lost champion " + monitoredObject);
+                //Debug.Log("Lost champion " + monitoredObject);
             }
         }
 
@@ -98,8 +98,8 @@ namespace GGL.Minotaur
                     monitoredObjects.RemoveAt(i);
                     seenObjects.Add(hit.collider.gameObject);
                     i--;
-                    Debug.DrawRay(transform.position, toObj.normalized * visionRange, Color.red);
-                    Debug.Log("Found champion " + hit.collider.gameObject);
+                    //Debug.DrawRay(transform.position, toObj.normalized * visionRange, Color.red);
+                    //Debug.Log("Found champion " + hit.collider.gameObject);
                 }
             }
 
@@ -115,10 +115,10 @@ namespace GGL.Minotaur
                 {
                     OnChampionLost?.Invoke(seenObjects[i]);
                     monitoredObjects.Add(seenObjects[i]);
-                    Debug.Log("Lost champion " + seenObjects[i]);
+                    //Debug.Log("Lost champion " + seenObjects[i]);
                     seenObjects.RemoveAt(i);
                     i--;
-                    Debug.DrawRay(transform.position, toObj.normalized * visionRange, Color.green);
+                    //Debug.DrawRay(transform.position, toObj.normalized * visionRange, Color.green);
                 }
             }
         }

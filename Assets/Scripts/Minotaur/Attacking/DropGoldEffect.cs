@@ -20,7 +20,7 @@ namespace GGL.Minotaur
         /// Causes a collectable on the hit object to drop gold.
         /// </summary>
         /// <param name="hitAttackable"></param>
-        public override void OnHit(Attackable hitAttackable)
+        public override void OnHit(Attackable hitAttackable, MinotaurAttacker attacker)
         {
             if (hitAttackable.TryGetComponent(out Collector collector))
             {

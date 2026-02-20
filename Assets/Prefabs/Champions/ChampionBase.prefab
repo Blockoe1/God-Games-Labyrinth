@@ -374,7 +374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53f7b64e21a0ad64bb809f41e9cee231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Scoring.Collector
-  goldCapacity: 10
+  goldCapacity: 50
   OnDropEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -409,7 +409,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 2111984268478495364, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
   stealAmount: 0.5
   launchForce: 30
-  requiredLeeway: 2
+  requiredLeeway: 0
 --- !u!114 &6409254547191728489
 MonoBehaviour:
   m_ObjectHideFlags: 0

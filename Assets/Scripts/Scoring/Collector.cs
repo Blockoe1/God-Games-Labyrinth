@@ -7,6 +7,7 @@
 // Brief Description : Allows a player to collect gold collectables and score points.
 *****************************************************************************/
 using NaughtyAttributes;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -19,6 +20,8 @@ namespace GGL.Scoring
         [SerializeField] private int goldCapacity;
         [SerializeField] private UnityEvent OnDropEvent;
         private readonly Queue<Collectable> heldCollectables = new();
+
+        public event Action<int, int> OnCollectablesChanged;
 
         public bool DisableCollection { get; set; }
 
@@ -33,6 +36,22 @@ namespace GGL.Scoring
         protected virtual void Reset()
         {
             id = GetComponent<GodIdentifier>();
+        }
+        #endregion
+
+        #region Properties
+        public int GoldCapacity => goldCapacity;
+        private int TotalPointsHeld
+        {
+            get
+            {
+                int totalPoints = 0;
+                foreach(Collectable collectable in heldCollectables)
+                {
+                    totalPoints += collectable.PointValue;
+                }
+                return totalPoints;
+            }
         }
         #endregion
 
@@ -55,6 +74,8 @@ namespace GGL.Scoring
             {
                 cashZone.CashCollectables(heldCollectables);
                 heldCollectables.Clear();
+
+                OnCollectablesChanged?.Invoke(heldCollectables.Count, TotalPointsHeld);
             }
         }
 
@@ -68,6 +89,7 @@ namespace GGL.Scoring
             if (goldCapacity <= 0 || heldCollectables.Count < goldCapacity)
             {
                 heldCollectables.Enqueue(toCollect);
+                OnCollectablesChanged?.Invoke(heldCollectables.Count, TotalPointsHeld);
                 toCollect.OnCollected(this);
             }
         }
@@ -104,6 +126,7 @@ namespace GGL.Scoring
                 dropped.OnDropped(this);
             }
 
+            OnCollectablesChanged?.Invoke(heldCollectables.Count, TotalPointsHeld);
             OnDropEvent?.Invoke();
 
             return droppedCollectables.ToArray();

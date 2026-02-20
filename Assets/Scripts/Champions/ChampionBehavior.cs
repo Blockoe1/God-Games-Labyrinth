@@ -24,7 +24,8 @@ namespace GGL.Champions
         private InputAction performAction;
         private bool isCooldown;
 
-        private event Action<float> OnCooldownEvent;
+        public event Action<float> OnCooldownEvent;
+        public event Action OnActionPerformedEvent;
 
         #region Component References
         [Header("Components")]
@@ -77,6 +78,7 @@ namespace GGL.Champions
         {
             if (!IsCooldown)
             {
+                OnActionPerformedEvent?.Invoke();
                 OnActionPerformed();
             }
         }

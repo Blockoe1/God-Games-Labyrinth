@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb2346a2e2d32c54f8878b79d2a186d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Champions.ChampionDash
-  cooldown: 1
+  cooldown: 0.25
   movement: {fileID: 8074908796875090492}
   id: {fileID: 108903021177686200}
   dashSpeed: 20
@@ -374,7 +374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53f7b64e21a0ad64bb809f41e9cee231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Scoring.Collector
-  goldCapacity: 0
+  goldCapacity: 10
   OnDropEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -403,7 +403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4e8fd2dde7d9114bae9ae943531454c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Champions.GoldStealer
-  cooldown: 1
+  cooldown: 2
   movement: {fileID: 8074908796875090492}
   id: {fileID: 108903021177686200}
   projectilePrefab: {fileID: 2111984268478495364, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}

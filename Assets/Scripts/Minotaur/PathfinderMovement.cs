@@ -64,8 +64,9 @@ namespace GGL.Minotaur
             {
                 Pathfinder.DrawPath(currentPath);
 
-                Debug.Log(currentPath[currentPathNode] + " " + currentPathNode + ".  Current Direction: " + GetDirection(currentPath[currentPathNode],
-                        currentPath[currentPathNode - 1]));
+                Debug.Log(currentPath[currentPathNode] + " " + currentPathNode);
+
+                TargetDirection = GetDirection(currentPath[currentPathNode], rb.position);
 
                 // If we've reached the next node in the path, update the target direction and move to the next node.
                 if (Vector2.Distance(rb.position, currentPath[currentPathNode]) < REQUIRED_PATH_DIST)

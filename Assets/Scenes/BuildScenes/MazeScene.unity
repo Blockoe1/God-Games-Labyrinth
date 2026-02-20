@@ -430,7 +430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 471594965}
   - component: {fileID: 471594964}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2160,7 +2160,7 @@ GameObject:
   - component: {fileID: 1581354544}
   - component: {fileID: 1581354543}
   - component: {fileID: 1581354542}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 'TileCollisions '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21842,7 +21842,7 @@ GameObject:
   - component: {fileID: 2005797283}
   - component: {fileID: 2005797285}
   - component: {fileID: 2005797284}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GoundTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}

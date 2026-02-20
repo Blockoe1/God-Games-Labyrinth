@@ -374,7 +374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53f7b64e21a0ad64bb809f41e9cee231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Scoring.Collector
-  goldCapacity: 50
+  goldCapacity: 25
   OnDropEvent:
     m_PersistentCalls:
       m_Calls: []

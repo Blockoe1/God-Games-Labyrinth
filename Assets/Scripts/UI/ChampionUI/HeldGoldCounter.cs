@@ -14,12 +14,8 @@ namespace GGL.UI.ChampionUI
 {
     public class HeldGoldCounter : ChampionUIService
     {
-        #region CONST
-        private const int SCORE_DISPLAY_DIGITS = 4;
-        #endregion
-
         [SerializeField] private TieredSprite goldSprite;
-        [SerializeField] private TMP_Text pointsText;
+        //[SerializeField] private TMP_Text pointsText;
 
         private Collector collector;
 
@@ -41,21 +37,10 @@ namespace GGL.UI.ChampionUI
         private void UpdateCollectables(int heldCount, int heldValue)
         {
             // Update the text to show the total held value.
-            pointsText.text = FormatPoints(heldValue);
+            //pointsText.text = FormatPoints(heldValue);
 
             // Update the gold sprite based on the proportion of the champion's held amount and capacity.
             goldSprite.SpriteAmount = collector.GoldCapacity > 0 ? (float)heldCount / collector.GoldCapacity : 0;
-        }
-
-        /// <summary>
-        /// Converts an iteger score into a string with zeros appended to the beginning to fill a certain 
-        /// number of digits.
-        /// </summary>
-        /// <param name="score"></param>
-        /// <returns></returns>
-        public static string FormatPoints(int score)
-        {
-            return UIHelpers.ArcadeFormat(score, SCORE_DISPLAY_DIGITS);
         }
 
         /// <summary>

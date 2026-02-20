@@ -41,7 +41,7 @@ namespace GGL
         /// <param name="name"></param>
         public EventReference FindEvent(string name)
         {
-            Debug.Log(sounds.Length);
+            //Debug.Log(sounds.Length);
             return Array.Find(sounds, item => item.name == name).eventRef;
         }
     }

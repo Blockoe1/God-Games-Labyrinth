@@ -18,6 +18,7 @@ namespace GGL.Champions
         #region CONSTS
         private const string MOVE_BOOL_NAME = "IsMoving";
         private const string DASH_BOOL_NAME = "IsDashing";
+        private const string INVINCIBLE_BOOL_NAME = "IsInvincible";
         #endregion
 
         #region Component References
@@ -64,6 +65,15 @@ namespace GGL.Champions
         public void SetDashing(bool isDashing)
         {
             anim.SetBool(DASH_BOOL_NAME , isDashing);
+        }
+
+        /// <summary>
+        /// Sets the IsInvincible parameter of the champion's animator.
+        /// </summary>
+        /// <param name="isInvincible">The value to set the IsInvincible parameter to.</param>
+        public void SetInvincible(bool isInvincible)
+        {
+            anim.SetBool(INVINCIBLE_BOOL_NAME, isInvincible);
         }
     }
 }

@@ -38028,6 +38028,63 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &796233191857358469
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1267440585663404646, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1267440585663404646, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1267440585663404646, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1267440585663404646, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99144495
+      objectReference: {fileID: 0}
+    - target: {fileID: 1267440585663404646, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1267440585663404646, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.13052596
+      objectReference: {fileID: 0}
+    - target: {fileID: 1267440585663404646, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1267440585663404646, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1267440585663404646, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1267440585663404646, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2137432236905573919, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
+      propertyPath: m_Name
+      value: Minotaur
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
 --- !u!1001 &5219224651335043484
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38308,3 +38365,4 @@ SceneRoots:
   - {fileID: 950011701}
   - {fileID: 958082920}
   - {fileID: 1347709606}
+  - {fileID: 796233191857358469}

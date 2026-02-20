@@ -11,7 +11,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.Tilemaps;
 using UnityEngine.UIElements;
 
@@ -38,6 +37,8 @@ namespace GGL.Scoring
         [SerializeField, ReadOnly] private Vector2Int[] spawnMap;
 
         private List<Vector2Int> validPositions;
+
+        public static List<Collectable> Collectables { get; private set; } = new List<Collectable>();
 
         private readonly Queue<Collectable> collectablePool = new Queue<Collectable>();
 
@@ -208,20 +209,23 @@ namespace GGL.Scoring
             //void unsubAction() { LogCollected(cew); }
             //cew.unsubscribeAction = unsubAction;
             //collectable.SubscribeCollectEvent(unsubAction);
-            collectable.SubscribeCollectOneShot(() => { LogCollected(position); });
+            collectable.SubscribeCollectOneShot(() => { LogCollected(position, collectable); });
 
             // Remove the position this object was spawned at from our valid positions. (cant have double coins)
             validPositions.Remove(position);
+
+            Collectables.Add(collectable);
         }
 
         /// <summary>
         /// Logs a certain collectable as collected and makes it's position valid again.
         /// </summary>
         /// <param name="position">The spawn position of the collected item.</param>
-        private void LogCollected(Vector2Int position)
+        private void LogCollected(Vector2Int position, Collectable collectable)
         {
             //Debug.Log("Logged " + position + " as collected");
             validPositions.Add(position);
+            Collectables.Remove(collectable);
         }
 
         #region Object Pooling

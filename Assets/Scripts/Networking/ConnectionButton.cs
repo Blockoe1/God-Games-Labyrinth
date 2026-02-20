@@ -22,6 +22,7 @@ namespace GGL.Networking
         /// </summary>
         private void Awake()
         {
+            connectAction.Enable();
             connectAction.performed += ConnectAction_performed;
         }
         private void OnDestroy()
@@ -35,15 +36,22 @@ namespace GGL.Networking
         /// <param name="obj"></param>
         private void ConnectAction_performed(InputAction.CallbackContext obj)
         {
+            if (NetworkManager.Singleton == null) { return; }
             if (isHost)
             {
-                Debug.Log("Connecting as host.");
-                NetworkManager.Singleton.StartHost();
+                if (!NetworkManager.Singleton.IsHost)
+                {
+                    Debug.Log("Connecting as host.");
+                    NetworkManager.Singleton.StartHost();
+                }
             }
             else
             {
-                Debug.Log("Connecting as client.");
-                NetworkManager.Singleton.StartClient();
+                if (!NetworkManager.Singleton.IsClient)
+                {
+                    Debug.Log("Connecting as client.");
+                    NetworkManager.Singleton.StartClient();
+                }
             }
         }
     }

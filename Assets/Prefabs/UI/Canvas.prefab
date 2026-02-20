@@ -820,6 +820,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -665597183, guid: 1ca305763ea3fec4f8edbf482c0f57d4, type: 3}
+    - target: {fileID: 3510606859056363374, guid: c93949430ef14d34ba5249274a1a0340, type: 3}
+      propertyPath: team
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5179169167742881542, guid: c93949430ef14d34ba5249274a1a0340, type: 3}
       propertyPath: m_text
       value: 'Aphrodite
@@ -988,6 +992,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1114255996, guid: 4baa5d509c3b73d4b95ee3c1e9d0fd40, type: 3}
+    - target: {fileID: 3510606859056363374, guid: c93949430ef14d34ba5249274a1a0340, type: 3}
+      propertyPath: team
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5179169167742881542, guid: c93949430ef14d34ba5249274a1a0340, type: 3}
       propertyPath: m_text
       value: Poseidon
@@ -1150,6 +1158,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1325833067, guid: 18233f62209897a48a95b2d9fce6e4a6, type: 3}
+    - target: {fileID: 3510606859056363374, guid: c93949430ef14d34ba5249274a1a0340, type: 3}
+      propertyPath: team
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5179169167742881542, guid: c93949430ef14d34ba5249274a1a0340, type: 3}
       propertyPath: m_text
       value: Athena

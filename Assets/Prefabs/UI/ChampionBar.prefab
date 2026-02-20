@@ -222,6 +222,7 @@ GameObject:
   - component: {fileID: 6857849781713391100}
   - component: {fileID: 1221858562972366127}
   - component: {fileID: 8381894808662346467}
+  - component: {fileID: 3510606859056363374}
   m_Layer: 5
   m_Name: ChampionBar
   m_TagString: Untagged
@@ -291,6 +292,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3510606859056363374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846911000666173214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4a220df8d840b14e9714ad70de15adf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.UI.ChampionUI.ChampionUIManager
+  team: 0
+  services:
+  - {fileID: 4989800987411431282}
+  - {fileID: 5310166042338679892}
+  - {fileID: 1520562628333632123}
 --- !u!1 &6535425614048191608
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,6 +456,8 @@ GameObject:
   - component: {fileID: 5682250564120265874}
   - component: {fileID: 6416190867810424291}
   - component: {fileID: 4931222576803306582}
+  - component: {fileID: 1520562628333632123}
+  - component: {fileID: 8429222571395572140}
   m_Layer: 5
   m_Name: Gold
   m_TagString: Untagged
@@ -493,7 +513,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1520094459, guid: 9c83327b53e6edc4fa94ca1361bbf362, type: 3}
+  m_Sprite: {fileID: 2041403158, guid: 9c83327b53e6edc4fa94ca1361bbf362, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -503,6 +523,41 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1520562628333632123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7568863588697252072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e7bcd6c49e8df94494738e0891fceb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.UI.ChampionUI.HeldGoldCounter
+  goldSprite: {fileID: 8429222571395572140}
+  pointsText: {fileID: 7379541536454175287}
+--- !u!114 &8429222571395572140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7568863588697252072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df3edffae46916b47a700ce1d9abbadb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.UI.ChampionUI.TieredSprite
+  targetImage: {fileID: 4931222576803306582}
+  sprites:
+  - {fileID: 2041403158, guid: 9c83327b53e6edc4fa94ca1361bbf362, type: 3}
+  - {fileID: 2108647510, guid: 9c83327b53e6edc4fa94ca1361bbf362, type: 3}
+  - {fileID: -1916976526, guid: 9c83327b53e6edc4fa94ca1361bbf362, type: 3}
+  - {fileID: -450288316, guid: 9c83327b53e6edc4fa94ca1361bbf362, type: 3}
+  - {fileID: 2104063955, guid: 9c83327b53e6edc4fa94ca1361bbf362, type: 3}
+  - {fileID: -407064006, guid: 9c83327b53e6edc4fa94ca1361bbf362, type: 3}
+  - {fileID: -1520094459, guid: 9c83327b53e6edc4fa94ca1361bbf362, type: 3}
 --- !u!1001 &7055320916010916167
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -515,6 +570,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 1733762247, guid: b9eb69283f44d8b4fadc7eb0c8b22abe, type: 3}
+    - target: {fileID: 2907345274211304723, guid: d0f666c2707563d4784ca972a20697f3, type: 3}
+      propertyPath: targetTypeName
+      value: GoldStealer
+      objectReference: {fileID: 0}
     - target: {fileID: 5994950716370977259, guid: d0f666c2707563d4784ca972a20697f3, type: 3}
       propertyPath: m_Name
       value: GrabCooldown
@@ -613,6 +672,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6891895164356231165, guid: d0f666c2707563d4784ca972a20697f3, type: 3}
   m_PrefabInstance: {fileID: 7055320916010916167}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5310166042338679892 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2907345274211304723, guid: d0f666c2707563d4784ca972a20697f3, type: 3}
+  m_PrefabInstance: {fileID: 7055320916010916167}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32916c17e3e533248af628490de37842, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.UI.ChampionUI.CooldownIndicator
 --- !u!1001 &7883448412602612321
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -715,3 +785,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6891895164356231165, guid: d0f666c2707563d4784ca972a20697f3, type: 3}
   m_PrefabInstance: {fileID: 7883448412602612321}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4989800987411431282 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2907345274211304723, guid: d0f666c2707563d4784ca972a20697f3, type: 3}
+  m_PrefabInstance: {fileID: 7883448412602612321}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32916c17e3e533248af628490de37842, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.UI.ChampionUI.CooldownIndicator

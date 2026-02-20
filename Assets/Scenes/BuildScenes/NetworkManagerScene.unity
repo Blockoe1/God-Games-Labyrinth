@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 443677543}
   - component: {fileID: 443677542}
   - component: {fileID: 443677546}
-  - component: {fileID: 443677545}
+  - component: {fileID: 443677547}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -270,18 +270,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &443677545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 443677541}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 344794decf7dd874db112e7bcadc3da4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GGL.NetworkManagerScene
 --- !u!114 &443677546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,6 +314,18 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &443677547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443677541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e4aab6b706231e4087e453c4b7e08a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.NetworkManagerScene
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

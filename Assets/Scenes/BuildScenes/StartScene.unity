@@ -439,6 +439,7 @@ GameObject:
   - component: {fileID: 1137427018}
   - component: {fileID: 1137427017}
   - component: {fileID: 1137427016}
+  - component: {fileID: 1137427020}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -522,7 +523,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1137427016}
+      - m_Target: {fileID: 1137427020}
         m_TargetAssemblyTypeName: GGL.StartSceneScript, Assembly-CSharp
         m_MethodName: StartGame
         m_Mode: 1
@@ -572,6 +573,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1137427014}
   m_CullTransparentMesh: 1
+--- !u!114 &1137427020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137427014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c4b8d2bfb7749f419b716f92b7acb77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.StartSceneScript
 --- !u!1 &2092580770
 GameObject:
   m_ObjectHideFlags: 0

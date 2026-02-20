@@ -224,6 +224,7 @@ GameObject:
   - component: {fileID: 493451987}
   - component: {fileID: 493451986}
   - component: {fileID: 493451985}
+  - component: {fileID: 493451989}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -307,7 +308,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 493451985}
+      - m_Target: {fileID: 493451989}
         m_TargetAssemblyTypeName: GGL.WinSceneScript, Assembly-CSharp
         m_MethodName: BacktoMenu
         m_Mode: 1
@@ -357,6 +358,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 493451983}
   m_CullTransparentMesh: 1
+--- !u!114 &493451989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493451983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00f69c04be7b0124888db3118ab8cdd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.WinSceneScript
 --- !u!1 &738916582
 GameObject:
   m_ObjectHideFlags: 0

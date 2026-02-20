@@ -14,6 +14,10 @@ namespace GGL.UI
 {
     public class ScoreTextUpdater : MonoBehaviour
     {
+        #region CONST
+        private const int SCORE_DISPLAY_DIGITS = 4;
+        #endregion
+
         [SerializeField] private TMP_Text textComponent;
         [SerializeField] private GodID god;
 
@@ -39,8 +43,19 @@ namespace GGL.UI
         {
             if(updatedGod == god)
             {
-                textComponent.text = score.ToString();
+                textComponent.text = FormatPoints(score);
             }
+        }
+
+        /// <summary>
+        /// Converts an iteger score into a string with zeros appended to the beginning to fill a certain 
+        /// number of digits.
+        /// </summary>
+        /// <param name="score"></param>
+        /// <returns></returns>
+        public static string FormatPoints(int score)
+        {
+            return UIHelpers.ArcadeFormat(score, SCORE_DISPLAY_DIGITS);
         }
     }
 }

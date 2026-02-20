@@ -13,17 +13,9 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 789498288870739812, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
-      propertyPath: m_Color.b
-      value: 0.5891244
-      objectReference: {fileID: 0}
-    - target: {fileID: 789498288870739812, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
-      propertyPath: m_Color.g
-      value: 0.5503144
-      objectReference: {fileID: 0}
-    - target: {fileID: 789498288870739812, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1475191007, guid: deed1c1686da9104da45f57be81d9088, type: 3}
     - target: {fileID: 1271545573506326188, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -80,6 +72,10 @@ PrefabInstance:
       propertyPath: m_DefaultActionMap
       value: Arcade Player 3
       objectReference: {fileID: 0}
+    - target: {fileID: 9166878718391037268, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: a0f71d7483533f2458cd70ee7f466cea, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -13,13 +13,9 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 789498288870739812, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
-      propertyPath: m_Color.g
-      value: 0.7176471
-      objectReference: {fileID: 0}
-    - target: {fileID: 789498288870739812, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
-      propertyPath: m_Color.r
-      value: 0.9882353
-      objectReference: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -665597183, guid: 1ca305763ea3fec4f8edbf482c0f57d4, type: 3}
     - target: {fileID: 1271545573506326188, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -64,6 +60,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AphroditeChampion
       objectReference: {fileID: 0}
+    - target: {fileID: 4637998730901008517, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 7306666121951689013, guid: ba1d1996de2ffb54da60ae0da6a05ca7, type: 3}
     - target: {fileID: 5887644586341638842, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
       propertyPath: team
       value: 3
@@ -72,8 +72,13 @@ PrefabInstance:
       propertyPath: m_DefaultActionMap
       value: Arcade Player 4
       objectReference: {fileID: 0}
+    - target: {fileID: 9166878718391037268, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 52baba1795694d341aa004b25edcc7e0, type: 2}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6872464678437171836, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}

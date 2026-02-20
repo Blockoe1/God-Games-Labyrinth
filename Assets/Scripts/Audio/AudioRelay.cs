@@ -21,9 +21,12 @@ namespace GGL.Audio
         /// <param name="soundName"></param>
         public void PlaySound(string soundName)
         {
-            Debug.Log(FmodEvents.instance + "-" + AudioManager.instance);
-            EventReference eventInst = FmodEvents.instance.FindEvent(soundName);
-            AudioManager.instance.PlayOneShot(eventInst, transform.position);
+            //Debug.Log(FmodEvents.instance + "-" + AudioManager.instance);
+            if (FmodEvents.instance != null && AudioManager.instance != null)
+            {
+                EventReference eventInst = FmodEvents.instance.FindEvent(soundName);
+                AudioManager.instance.PlayOneShot(eventInst, transform.position);
+            }
         }
     }
 }

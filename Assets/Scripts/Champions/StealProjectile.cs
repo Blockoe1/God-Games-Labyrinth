@@ -159,6 +159,7 @@ namespace GGL.Champions
             foreach (Collectable col in toCollect)
             {
                 // Have the collector we're returning to force-collect the collectables.
+                RemoveAttractedCollectable(col);
                 ReturnTarget.ForceCollect(col);
             }
         }

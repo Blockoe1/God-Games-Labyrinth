@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8317701599385538228}
   - component: {fileID: 7192306369331563358}
   - component: {fileID: 6047070479091597608}
+  - component: {fileID: 1353534807487435496}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -104,3 +105,33 @@ MonoBehaviour:
     PacketDelayMS: 0
     PacketJitterMS: 0
     PacketDropRate: 0
+--- !u!114 &1353534807487435496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7900056041062670903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b2c1792d4997324994a618d558ca024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Networking.ConnectionButton
+  connectAction:
+    m_Name: Connect
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 4ce93f78-906f-4383-96d0-a7eb6d10de43
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: baa92c4c-1579-451f-ba6c-0062eded7fe7
+      m_Path: <Keyboard>/2
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Connect
+      m_Flags: 0
+    m_Flags: 0
+  isHost: 0

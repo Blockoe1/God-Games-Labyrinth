@@ -162,7 +162,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 46cfd8c0b0832ef40a075208346669e1, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -226,6 +226,7 @@ MonoBehaviour:
   maxWallCheckDistance: 1
   positionSnap: 1
   rb: {fileID: 1706004363272337}
+  autoTurn: 0
   input: {fileID: 8650097738718565955}
 --- !u!114 &1731887743052177298
 MonoBehaviour:

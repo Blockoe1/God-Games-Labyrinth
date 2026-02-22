@@ -18,6 +18,7 @@ namespace GGL.Scoring
     public class Collector : MonoBehaviour
     {
         [SerializeField] private int goldCapacity;
+        [SerializeField] private UnityEvent OnCollectEvent;
         [SerializeField] private UnityEvent OnDropEvent;
         private readonly Queue<Collectable> heldCollectables = new();
 
@@ -90,6 +91,7 @@ namespace GGL.Scoring
             {
                 heldCollectables.Enqueue(toCollect);
                 OnCollectablesChanged?.Invoke(heldCollectables.Count, TotalPointsHeld);
+                OnCollectEvent?.Invoke();
                 toCollect.OnCollected(this);
             }
         }

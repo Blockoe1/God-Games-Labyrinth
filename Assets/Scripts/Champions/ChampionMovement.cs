@@ -73,29 +73,49 @@ namespace GGL.Champions
             // Only take the X or Y Component for locked movement.
             Vector2Int input = MathHelpers.RoundVectorToInt(obj.ReadValue<Vector2>());
             TargetDirection = input;
-            // Ignore diagonal movement
-            //if (Mathf.Abs(input.x) != Mathf.Abs(input.y) || input == Vector2Int.zero)
-            //{
-            //    //Vector2Int inputDirection = Mathf.Abs(rawInput.y) > Mathf.Abs(rawInput.x) ? 
-            //    //    Vector2Int.up * System.MathF.Sign(rawInput.y) : Vector2Int.right * System.MathF.Sign(rawInput.x);
-
-            //    // Set the player's new direction and target speed.
-            //    if (input != Vector2Int.zero)
-            //    {
-            //        Direction = input;
-            //        IsMoving = true;
-            //    }
-            //    else
-            //    {
-            //        IsMoving = false;
-            //    }
-            //}
         }
         private void MoveAction_canceled(InputAction.CallbackContext obj)
         {
             IsMoving = false;
         }
         #endregion
+        /// <summary>
+        /// Perform additional checks for auto-turning.
+        /// </summary>
+        protected override void OnFixedUpdate()
+        {
+            if (IsMoving && TargetDirection == Direction)
+            {
+                // Check for if the champion is running into a wall.
+                RaycastHit2D isFacingWall = Physics2D.Raycast(rb.position, Direction, MaxWallCheckDistance, GGLHelpers.MazeMask);
+                if (isFacingWall)
+                {
+                    // Check for valid directions to auto-turn.
+                    Vector2 perpVector = new Vector2(Direction.y, -Direction.x);
+                    for (int i = 1; i >= -1; i -= 2)
+                    {
+                        // Check both perpendicular directions
+                        perpVector = perpVector * i;
+
+                        RaycastHit2D isWallCheck = Physics2D.Raycast(rb.position, perpVector,
+                            MaxWallCheckDistance, GGLHelpers.MazeMask);
+                        if (!isWallCheck)
+                        {
+                            RaycastHit2D isHallCheck = Physics2D.Raycast(rb.position + (perpVector), TargetDirection,
+                                MaxWallCheckDistance, GGLHelpers.MazeMask);
+                            Debug.DrawRay(rb.position + (perpVector), Direction * MaxWallCheckDistance, Color.green);
+                            // If this direction is available, auto-turn in that direction.
+                            if (!isHallCheck)
+                            {
+                                Debug.Log($"Found {perpVector} direction to auto-turn");
+                                Direction = perpVector;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
         /// <summary>
         /// Forcibly rotates and applies speed to this champion to simulate knockback.

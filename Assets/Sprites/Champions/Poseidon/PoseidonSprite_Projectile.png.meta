@@ -1,28 +1,22 @@
 fileFormatVersion: 2
-guid: 14be02e27cf87b449830db6f14afdc14
+guid: 99d6a26ac4c02b74998644e49858b013
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3533397495224097574
-    second: Athena Spawner_0
+      213: -8532505446938565172
+    second: PoseidonSprite_Projectile_0
   - first:
-      213: -8881716892067983443
-    second: Athena Spawner_1
+      213: -6618514861713693102
+    second: PoseidonSprite_Projectile_1
   - first:
-      213: -4551459125691631283
-    second: Athena Spawner_2
+      213: -2997446576827486547
+    second: PoseidonSprite_Projectile_2
   - first:
-      213: 5220017913688369504
-    second: Athena Spawner_3
+      213: -5378639541713674503
+    second: PoseidonSprite_Projectile_3
   - first:
-      213: -7648433429848169864
-    second: Athena Spawner_4
-  - first:
-      213: -785295231840078920
-    second: Athena Spawner_5
-  - first:
-      213: 4558621964669621556
-    second: Athena Spawner_6
+      213: 1023171098238528419
+    second: PoseidonSprite_Projectile_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -55,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -69,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -93,7 +87,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -118,155 +112,111 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Athena Spawner_0
+      name: PoseidonSprite_Projectile_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
-        width: 16
-        height: 16
+        x: 1
+        y: 36
+        width: 15
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 136bb86f6f84d2848a9748925c8ab3d5
-      internalID: -496511682
+      spriteID: cc5242fc083769980800000000000000
+      internalID: -8532505446938565172
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Athena Spawner_1
+      name: PoseidonSprite_Projectile_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 16
+        x: 1
+        y: 18
+        width: 15
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 61b6c34b079ccb749852ade5aeaccd67
-      internalID: 1870152185
+      spriteID: 25669e6bccf4624a0800000000000000
+      internalID: -6618514861713693102
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Athena Spawner_2
+      name: PoseidonSprite_Projectile_2
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
-        width: 16
-        height: 16
+        x: 19
+        y: 36
+        width: 15
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 3e39b198e388277448f20627d2d2887c
-      internalID: 706198976
+      spriteID: daeacf2383ee666d0800000000000000
+      internalID: -2997446576827486547
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Athena Spawner_3
+      name: PoseidonSprite_Projectile_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
+        x: 19
+        y: 18
+        width: 15
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 9384f4d67b65fa041bc719143c1cc1f7
-      internalID: -1237566180
+      spriteID: 9fe594585db3b55b0800000000000000
+      internalID: -5378639541713674503
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Athena Spawner_4
+      name: PoseidonSprite_Projectile_4
       rect:
         serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0494b4f45bb7e584fb5805c187b84f84
-      internalID: -828188530
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Athena Spawner_5
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7816aa24c70fc424192e11ff38e24953
-      internalID: 985551969
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Athena Spawner_6
-      rect:
-        serializedVersion: 2
-        x: 0
+        x: 1
         y: 0
-        width: 16
-        height: 16
+        width: 15
+        height: 19
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: c95a14b1467aeb043a11a0353c841403
-      internalID: 521918092
+      spriteID: 3ab24fe51b8033e00800000000000000
+      internalID: 1023171098238528419
       vertices: []
       indices: 
       edges: []
@@ -275,7 +225,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 70e4e6dd3ee2ac945a78080422c062d6
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -283,17 +233,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      Athena Spawner_0: -496511682
-      Athena Spawner_1: 1870152185
-      Athena Spawner_2: 706198976
-      Athena Spawner_3: -1237566180
-      Athena Spawner_4: -828188530
-      Athena Spawner_5: 985551969
-      Athena Spawner_6: 521918092
+      PoseidonSprite_Projectile_0: -8532505446938565172
+      PoseidonSprite_Projectile_1: -6618514861713693102
+      PoseidonSprite_Projectile_2: -2997446576827486547
+      PoseidonSprite_Projectile_3: -5378639541713674503
+      PoseidonSprite_Projectile_4: 1023171098238528419
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

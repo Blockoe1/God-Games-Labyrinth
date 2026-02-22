@@ -1,31 +1,28 @@
 fileFormatVersion: 2
-guid: 452ab7138ceff734e90feca43cdaa06c
+guid: 1781fa4b260daca4682efce8282557f4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1813724097217694259
-    second: Aphrodite Spawner_0
+      213: -1469338980184140047
+    second: Aquaman Spawner_0
   - first:
-      213: -7588984347076044078
-    second: Aphrodite Spawner_1
+      213: -4241237563977163067
+    second: Aquaman Spawner_1
   - first:
-      213: 8967316703296705904
-    second: Aphrodite Spawner_2
+      213: 702854441203103064
+    second: Aquaman Spawner_2
   - first:
-      213: -4870322825564275268
-    second: Aphrodite Spawner_3
+      213: -695965942797100578
+    second: Aquaman Spawner_3
   - first:
-      213: -9059316184217189630
-    second: Aphrodite Spawner_4
+      213: -1045119382798026064
+    second: Aquaman Spawner_4
   - first:
-      213: 941618827398861794
-    second: Aphrodite Spawner_5
+      213: -3946045290890567164
+    second: Aquaman Spawner_5
   - first:
-      213: -6478734210349229628
-    second: Aphrodite Spawner_6
-  - first:
-      213: -8669657471896474420
-    second: Aphrodite Spawner_7
+      213: 8379797730390468587
+    second: Aquaman Spawner_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -121,7 +118,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Aphrodite Spawner_0
+      name: Poseidon Spawner_0
       rect:
         serializedVersion: 2
         x: 0
@@ -136,14 +133,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebdb9d2da456f2d4dab6a69f4e80e62b
-      internalID: 1046874489
+      spriteID: 7099343f6f98a934e95e19391bd0d402
+      internalID: -817903270
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Aphrodite Spawner_1
+      name: Poseidon Spawner_1
       rect:
         serializedVersion: 2
         x: 16
@@ -158,14 +155,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b16a595570b3c904289d235661c28406
-      internalID: 163567652
+      spriteID: 60dc4397be692584fb4b865dc27c8324
+      internalID: 555371498
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Aphrodite Spawner_2
+      name: Poseidon Spawner_2
       rect:
         serializedVersion: 2
         x: 32
@@ -180,14 +177,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1266d16b235d9434d87e062ae234a714
-      internalID: -2016030936
+      spriteID: 7dffed86bcd2c664aa7dddc4289ec481
+      internalID: 102358400
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Aphrodite Spawner_3
+      name: Poseidon Spawner_3
       rect:
         serializedVersion: 2
         x: 0
@@ -202,14 +199,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3ea1d10c31d1e0418c0b1b9f8ac4297
-      internalID: -1367798827
+      spriteID: 86a7bf8ff39acb742802080ea075dc22
+      internalID: 1994332415
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Aphrodite Spawner_4
+      name: Poseidon Spawner_4
       rect:
         serializedVersion: 2
         x: 16
@@ -224,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af7e40e54759d2f4498d8c5bd8e58fab
-      internalID: 1148698207
+      spriteID: ecfbcb4afcfe7cf48ae73f64fc1830b8
+      internalID: 1641106854
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Aphrodite Spawner_5
+      name: Poseidon Spawner_5
       rect:
         serializedVersion: 2
         x: 32
@@ -246,14 +243,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5b8b840d2c5ffa47a3148026785c036
-      internalID: -484864556
+      spriteID: 642946ca95884c84a863855b13a95fcb
+      internalID: -1815205924
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Aphrodite Spawner_6
+      name: Poseidon Spawner_6
       rect:
         serializedVersion: 2
         x: 0
@@ -268,30 +265,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ea5d87b2f2a63a4a8b0cbde66aa2916
-      internalID: -1916598116
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Aphrodite Spawner_7
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 661599642f3499542bdd1303cd5ee7c0
-      internalID: 1461911770
+      spriteID: dfd355aca4457144fa31beb9856b300e
+      internalID: -2036371040
       vertices: []
       indices: 
       edges: []
@@ -300,7 +275,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 20c0077827b3267439575e81ff74f701
+    spriteID: a885a291bb4a9ee44ac7d7b6fa9b08ce
     internalID: 0
     vertices: []
     indices: 
@@ -312,14 +287,13 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Aphrodite Spawner_0: 1046874489
-      Aphrodite Spawner_1: 163567652
-      Aphrodite Spawner_2: -2016030936
-      Aphrodite Spawner_3: -1367798827
-      Aphrodite Spawner_4: 1148698207
-      Aphrodite Spawner_5: -484864556
-      Aphrodite Spawner_6: -1916598116
-      Aphrodite Spawner_7: 1461911770
+      Poseidon Spawner_0: -817903270
+      Poseidon Spawner_1: 555371498
+      Poseidon Spawner_2: 102358400
+      Poseidon Spawner_3: 1994332415
+      Poseidon Spawner_4: 1641106854
+      Poseidon Spawner_5: -1815205924
+      Poseidon Spawner_6: -2036371040
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

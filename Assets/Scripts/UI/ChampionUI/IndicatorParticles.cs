@@ -39,7 +39,7 @@ namespace GGL.UI
         /// <param name="callback">A callback to perform after the particle's animation is complete.</param>
         public void PlayParticle(Vector2 startPos, Vector2 endPos, float time, Action callback = null)
         {
-
+            StartCoroutine(ParticleRoutine(startPos, endPos, time, callback));
         }
 
         public void PlayParticle(Vector2 startPos, Vector2 endPos, Action callback = null)
@@ -59,12 +59,18 @@ namespace GGL.UI
         {
             GameObject particleGo = GetParticle();
             float timer = 0;
+            float ampScale = UnityEngine.Random.Range(-1, 1);
+
             while (timer < time)
             {
                 float normalizedTime = time / timer;
+                Vector2 toVector = endPos - (Vector2)particleGo.transform.position;
+                Vector2 perpVector = new Vector2(toVector.y, -toVector.x);
 
-
-
+                Vector2 currentPos = Vector2.Lerp(startPos, endPos, toTargetCurve.Evaluate(normalizedTime));
+                // Offsets the particle based on a random amount and the offset curve.
+                currentPos = currentPos + ampScale * offsetAmplitude * offseCurve.Evaluate(normalizedTime) * perpVector;
+                particleGo.transform.position = currentPos;
 
                 timer += Time.deltaTime;
                 yield return null;

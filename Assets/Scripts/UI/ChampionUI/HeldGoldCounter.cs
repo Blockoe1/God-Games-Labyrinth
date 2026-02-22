@@ -17,9 +17,10 @@ namespace GGL.UI.ChampionUI
     public class HeldGoldCounter : ChampionUIService
     {
         [SerializeField] private TieredSprite goldSprite;
+        [SerializeField] private Transform depositParticleTarget;
+        [SerializeField] private IndicatorParticles particles;
         [SerializeField] private float goldDecreaseTime = 1f;
         [SerializeField] private float goldDepositePeriod;
-        [SerializeField] private Transform depositParticleTarget;
         //[SerializeField] private TMP_Text pointsText;
 
         private Collector collector;
@@ -27,23 +28,6 @@ namespace GGL.UI.ChampionUI
         private Coroutine animateRoutine;
 
         private int lastHeld;
-
-        #region Component References
-        [Header("Components")]
-        [SerializeReference, ReadOnly] private IndicatorParticles particles;
-
-        /// <summary>
-        /// Get components on reset.
-        /// </summary>
-        [ContextMenu("Get Component References")]
-        protected virtual void Reset()
-        {
-            particles = GetComponent<IndicatorParticles>();
-#if UNITY_EDITOR
-            UnityEditor.EditorUtility.SetDirty(this);
-#endif
-        }
-        #endregion
 
         /// <summary>
         /// Get a reference to the collector on the found champion.

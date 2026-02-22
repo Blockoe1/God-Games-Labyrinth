@@ -238,6 +238,7 @@ GameObject:
   - component: {fileID: 1221858562972366127}
   - component: {fileID: 8381894808662346467}
   - component: {fileID: 3510606859056363374}
+  - component: {fileID: 5794244265736098952}
   m_Layer: 5
   m_Name: ChampionBar
   m_TagString: Untagged
@@ -262,6 +263,7 @@ RectTransform:
   - {fileID: 5682250564120265874}
   - {fileID: 3657851654086378908}
   - {fileID: 4489357503260894906}
+  - {fileID: 6960102223938325480}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -324,6 +326,33 @@ MonoBehaviour:
   - {fileID: 4989800987411431282}
   - {fileID: 5310166042338679892}
   - {fileID: 1520562628333632123}
+--- !u!114 &5794244265736098952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846911000666173214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58fd93823bc35f4892d740626aa1d0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.UI.IndicatorParticles
+  particlePrefab: {fileID: 0}
+  animationTime: 0
+  offsetAmplitude: 0
+  toTargetCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  offseCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &6535425614048191608
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,6 +580,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.UI.ChampionUI.HeldGoldCounter
   goldSprite: {fileID: 8429222571395572140}
+  depositParticleTarget: {fileID: 6960102223938325480}
+  particles: {fileID: 5794244265736098952}
+  goldDecreaseTime: 1
+  goldDepositePeriod: 0.5
 --- !u!114 &8429222571395572140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -572,6 +605,41 @@ MonoBehaviour:
   - {fileID: 2104063955, guid: 9c83327b53e6edc4fa94ca1361bbf362, type: 3}
   - {fileID: -407064006, guid: 9c83327b53e6edc4fa94ca1361bbf362, type: 3}
   - {fileID: -1520094459, guid: 9c83327b53e6edc4fa94ca1361bbf362, type: 3}
+--- !u!1 &8405292464227941020
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6960102223938325480}
+  m_Layer: 5
+  m_Name: DepositTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6960102223938325480
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8405292464227941020}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6857849781713391100}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 48, y: 140}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1001 &7055320916010916167
 PrefabInstance:
   m_ObjectHideFlags: 0

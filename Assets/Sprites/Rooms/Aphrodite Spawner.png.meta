@@ -58,7 +58,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,7 +72,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -96,7 +96,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -129,15 +129,15 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: ebdb9d2da456f2d4dab6a69f4e80e62b
-      internalID: 1046874489
+      spriteID: 33a0a37f474ab2910800000000000000
+      internalID: 1813724097217694259
       vertices: []
       indices: 
       edges: []
@@ -146,20 +146,20 @@ TextureImporter:
       name: Aphrodite Spawner_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 32
+        x: 0
+        y: 16
         width: 16
-        height: 16
+        height: 17
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b16a595570b3c904289d235661c28406
-      internalID: 163567652
+      spriteID: 2da588ac1f28ea690800000000000000
+      internalID: -7588984347076044078
       vertices: []
       indices: 
       edges: []
@@ -168,20 +168,20 @@ TextureImporter:
       name: Aphrodite Spawner_2
       rect:
         serializedVersion: 2
-        x: 32
+        x: 15
         y: 32
-        width: 16
+        width: 17
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 1266d16b235d9434d87e062ae234a714
-      internalID: -2016030936
+      spriteID: 0755d60e70f427c70800000000000000
+      internalID: 8967316703296705904
       vertices: []
       indices: 
       edges: []
@@ -190,20 +190,20 @@ TextureImporter:
       name: Aphrodite Spawner_3
       rect:
         serializedVersion: 2
-        x: 0
+        x: 15
         y: 16
-        width: 16
-        height: 16
+        width: 17
+        height: 17
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: f3ea1d10c31d1e0418c0b1b9f8ac4297
-      internalID: -1367798827
+      spriteID: cbdb3c8b133296cb0800000000000000
+      internalID: -4870322825564275268
       vertices: []
       indices: 
       edges: []
@@ -212,20 +212,20 @@ TextureImporter:
       name: Aphrodite Spawner_4
       rect:
         serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
+        x: 31
+        y: 32
+        width: 17
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: af7e40e54759d2f4498d8c5bd8e58fab
-      internalID: 1148698207
+      spriteID: 20389c3cde7d64280800000000000000
+      internalID: -9059316184217189630
       vertices: []
       indices: 
       edges: []
@@ -234,20 +234,20 @@ TextureImporter:
       name: Aphrodite Spawner_5
       rect:
         serializedVersion: 2
-        x: 32
+        x: 31
         y: 16
-        width: 16
-        height: 16
+        width: 17
+        height: 17
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: c5b8b840d2c5ffa47a3148026785c036
-      internalID: -484864556
+      spriteID: 2e3dde8a55d411d00800000000000000
+      internalID: 941618827398861794
       vertices: []
       indices: 
       edges: []
@@ -259,17 +259,17 @@ TextureImporter:
         x: 0
         y: 0
         width: 16
-        height: 16
+        height: 17
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 2ea5d87b2f2a63a4a8b0cbde66aa2916
-      internalID: -1916598116
+      spriteID: 4c996fdbf89e616a0800000000000000
+      internalID: -6478734210349229628
       vertices: []
       indices: 
       edges: []
@@ -278,20 +278,20 @@ TextureImporter:
       name: Aphrodite Spawner_7
       rect:
         serializedVersion: 2
-        x: 16
+        x: 15
         y: 0
-        width: 16
-        height: 16
+        width: 17
+        height: 17
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 661599642f3499542bdd1303cd5ee7c0
-      internalID: 1461911770
+      spriteID: cccac4f86703fa780800000000000000
+      internalID: -8669657471896474420
       vertices: []
       indices: 
       edges: []
@@ -300,7 +300,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 20c0077827b3267439575e81ff74f701
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -308,18 +308,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      Aphrodite Spawner_0: 1046874489
-      Aphrodite Spawner_1: 163567652
-      Aphrodite Spawner_2: -2016030936
-      Aphrodite Spawner_3: -1367798827
-      Aphrodite Spawner_4: 1148698207
-      Aphrodite Spawner_5: -484864556
-      Aphrodite Spawner_6: -1916598116
-      Aphrodite Spawner_7: 1461911770
+      Aphrodite Spawner_0: 1813724097217694259
+      Aphrodite Spawner_1: -7588984347076044078
+      Aphrodite Spawner_2: 8967316703296705904
+      Aphrodite Spawner_3: -4870322825564275268
+      Aphrodite Spawner_4: -9059316184217189630
+      Aphrodite Spawner_5: 941618827398861794
+      Aphrodite Spawner_6: -6478734210349229628
+      Aphrodite Spawner_7: -8669657471896474420
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

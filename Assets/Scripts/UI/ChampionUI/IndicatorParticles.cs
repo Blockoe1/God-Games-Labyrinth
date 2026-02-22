@@ -57,26 +57,37 @@ namespace GGL.UI
         /// <returns></returns>
         private IEnumerator ParticleRoutine(Vector2 startPos, Vector2 endPos, float time, Action callback = null)
         {
+            // Prevent 0 time particles.
+            if (time == 0)
+            {
+                callback?.Invoke();
+                yield break;
+            }
+
             GameObject particleGo = GetParticle();
+            particleGo.SetActive(false);
             float timer = 0;
             float ampScale = UnityEngine.Random.Range(-1, 1);
+            particleGo.transform.position = startPos;
+            particleGo.SetActive(true);
 
             while (timer < time)
             {
-                float normalizedTime = time / timer;
+                float normalizedTime = timer / time;
                 Vector2 toVector = endPos - (Vector2)particleGo.transform.position;
                 Vector2 perpVector = new Vector2(toVector.y, -toVector.x);
+                Debug.Log(perpVector);
 
                 Vector2 currentPos = Vector2.Lerp(startPos, endPos, toTargetCurve.Evaluate(normalizedTime));
                 // Offsets the particle based on a random amount and the offset curve.
-                currentPos = currentPos + ampScale * offsetAmplitude * offseCurve.Evaluate(normalizedTime) * perpVector;
+                currentPos = currentPos + ampScale * offsetAmplitude * offseCurve.Evaluate(normalizedTime) * perpVector.normalized;
                 particleGo.transform.position = currentPos;
 
                 timer += Time.deltaTime;
                 yield return null;
             }
 
-            callback();
+            callback?.Invoke();
             ReturnParticle(particleGo);
         }
 
@@ -89,7 +100,7 @@ namespace GGL.UI
         {
             GameObject toReturn = particlePool.Count > 0 ? particlePool.Dequeue() :
                 Instantiate(particlePrefab, transform);
-            toReturn.SetActive(true);
+            //toReturn.SetActive(false);
             return toReturn;
         }
 
@@ -100,7 +111,7 @@ namespace GGL.UI
         private void ReturnParticle(GameObject particle)
         {
             particlePool.Enqueue(particle);
-            particle.SetActive(false);
+            //particle.SetActive(false);
         }
         #endregion
     }

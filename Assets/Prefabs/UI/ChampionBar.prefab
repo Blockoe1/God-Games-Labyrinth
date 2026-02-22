@@ -338,18 +338,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58fd93823bc35f4892d740626aa1d0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.UI.IndicatorParticles
-  particlePrefab: {fileID: 0}
-  animationTime: 0
-  offsetAmplitude: 0
+  particlePrefab: {fileID: 3209508589773443423, guid: dc92cc8750e2d9549a51b47c54c6a0d5, type: 3}
+  animationTime: 0.4
+  offsetAmplitude: 3
   toTargetCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   offseCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.0015869141
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -2.7428617
+      outSlope: -2.7428617
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.10988994
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -526,9 +571,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 327, y: 8}
+  m_AnchoredPosition: {x: 352, y: -20}
   m_SizeDelta: {x: 60, y: 60}
-  m_Pivot: {x: 0, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &6416190867810424291
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -583,7 +628,7 @@ MonoBehaviour:
   depositParticleTarget: {fileID: 6960102223938325480}
   particles: {fileID: 5794244265736098952}
   goldDecreaseTime: 1
-  goldDepositePeriod: 0.5
+  goldDepositePeriod: 0.25
 --- !u!114 &8429222571395572140
 MonoBehaviour:
   m_ObjectHideFlags: 0

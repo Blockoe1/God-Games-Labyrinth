@@ -309,10 +309,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 837329400}
     m_Modifications:
-    - target: {fileID: 608891863478781399, guid: 4e31b594f0e4ddc4db1b6f71b3c246c7, type: 3}
-      propertyPath: autoTurn
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4859603225673024022, guid: 4e31b594f0e4ddc4db1b6f71b3c246c7, type: 3}
       propertyPath: m_Name
       value: ZeusChampion
@@ -4908,7 +4904,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 46cfd8c0b0832ef40a075208346669e1, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

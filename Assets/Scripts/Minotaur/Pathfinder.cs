@@ -139,39 +139,37 @@ namespace GGL.Minotaur
                     {
                         currentTile = currentTile + direction;
 
+                        // If we found the ending tile, add it as a node to the open list and stop searching.
+                        if (currentTile == endingTile)
+                        {
+                            return new PathNode(currentTile, null, startingTile, endingTile);
+                        }
+
                         // If we hit a filled tile, then stop searching.
                         if (CheckObscured(collisionTilemap, currentTile))
                         {
                             return null;
                         }
 
-                        // If we found the ending tile, add it as a node to the open list and stop searching.
-                        if (currentTile == endingTile)
+                        // Else
+                        List<Vector2Int> forcedNeighborDirections = null;
+                        if (CheckForcedNeighbor(Vector2Int.up))
                         {
-                            return new PathNode(currentTile, null, startingTile, endingTile);
+                            forcedNeighborDirections ??= new List<Vector2Int>();
+                            forcedNeighborDirections.Add(Vector2Int.up);
                         }
-                        else
+                        if (CheckForcedNeighbor(Vector2Int.down))
                         {
-                            // Else
-                            List<Vector2Int> forcedNeighborDirections = null;
-                            if (CheckForcedNeighbor(Vector2Int.up))
-                            {
-                                forcedNeighborDirections ??= new List<Vector2Int>();
-                                forcedNeighborDirections.Add(Vector2Int.up);
-                            }
-                            if (CheckForcedNeighbor(Vector2Int.down))
-                            {
-                                forcedNeighborDirections ??= new List<Vector2Int>();
-                                forcedNeighborDirections.Add(Vector2Int.down);
-                            }
+                            forcedNeighborDirections ??= new List<Vector2Int>();
+                            forcedNeighborDirections.Add(Vector2Int.down);
+                        }
 
-                            // If 1 or more forced neighbors were found, add this as a path node.
-                            if (forcedNeighborDirections != null)
-                            {
-                                forcedNeighborDirections.Add(direction);
-                                return new PathNode(currentTile, forcedNeighborDirections.ToArray(),
-                                    startingTile, endingTile);
-                            }
+                        // If 1 or more forced neighbors were found, add this as a path node.
+                        if (forcedNeighborDirections != null)
+                        {
+                            forcedNeighborDirections.Add(direction);
+                            return new PathNode(currentTile, forcedNeighborDirections.ToArray(),
+                                startingTile, endingTile);
                         }
                     }
                 }
@@ -186,38 +184,36 @@ namespace GGL.Minotaur
                     {
                         currentTile = currentTile + direction;
 
+                        // If we found the ending tile, add it as a node to the open list and stop searching.
+                        if (currentTile == endingTile)
+                        {
+                            return new PathNode(currentTile, null, startingTile, endingTile);
+                        }
+
                         // If we hit a filled tile, then stop searching.
                         if (CheckObscured(collisionTilemap, currentTile))
                         {
                             return null;
                         }
 
-                        // If we found the ending tile, add it as a node to the open list and stop searching.
-                        if (currentTile == endingTile)
+                        List<Vector2Int> forcedNeighborDirections = null;
+                        if (CheckHorizontal(currentTile, Vector2Int.right) != null)
                         {
-                            return new PathNode(currentTile, null, startingTile, endingTile);
+                            forcedNeighborDirections ??= new List<Vector2Int>();
+                            forcedNeighborDirections.Add(Vector2Int.right);
                         }
-                        else
+                        if (CheckHorizontal(currentTile, Vector2Int.left) != null)
                         {
-                            List<Vector2Int> forcedNeighborDirections = null;
-                            if (CheckHorizontal(currentTile, Vector2Int.right) != null)
-                            {
-                                forcedNeighborDirections ??= new List<Vector2Int>();
-                                forcedNeighborDirections.Add(Vector2Int.right);
-                            }
-                            if (CheckHorizontal(currentTile, Vector2Int.left) != null)
-                            {
-                                forcedNeighborDirections ??= new List<Vector2Int>();
-                                forcedNeighborDirections.Add(Vector2Int.left);
-                            }
+                            forcedNeighborDirections ??= new List<Vector2Int>();
+                            forcedNeighborDirections.Add(Vector2Int.left);
+                        }
 
-                            // If 1 or more forced neighbors were found, add this as a path node.
-                            if (forcedNeighborDirections != null)
-                            {
-                                forcedNeighborDirections.Add(direction);
-                                return new PathNode(currentTile, forcedNeighborDirections.ToArray(),
-                                    startingTile, endingTile);
-                            }
+                        // If 1 or more forced neighbors were found, add this as a path node.
+                        if (forcedNeighborDirections != null)
+                        {
+                            forcedNeighborDirections.Add(direction);
+                            return new PathNode(currentTile, forcedNeighborDirections.ToArray(),
+                                startingTile, endingTile);
                         }
                     }
                 }

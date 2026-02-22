@@ -1,31 +1,10 @@
 fileFormatVersion: 2
-guid: 452ab7138ceff734e90feca43cdaa06c
+guid: 4b1a809267a036f49b949649a55256b3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1813724097217694259
-    second: Aphrodite Spawner_0
-  - first:
-      213: -7588984347076044078
-    second: Aphrodite Spawner_1
-  - first:
-      213: 8967316703296705904
-    second: Aphrodite Spawner_2
-  - first:
-      213: -4870322825564275268
-    second: Aphrodite Spawner_3
-  - first:
-      213: -9059316184217189630
-    second: Aphrodite Spawner_4
-  - first:
-      213: 941618827398861794
-    second: Aphrodite Spawner_5
-  - first:
-      213: -6478734210349229628
-    second: Aphrodite Spawner_6
-  - first:
-      213: -8669657471896474420
-    second: Aphrodite Spawner_7
+      213: 3480158107918477836
+    second: SpawnRooms_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -121,73 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Aphrodite Spawner_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ebdb9d2da456f2d4dab6a69f4e80e62b
-      internalID: 1046874489
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Aphrodite Spawner_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b16a595570b3c904289d235661c28406
-      internalID: 163567652
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Aphrodite Spawner_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1266d16b235d9434d87e062ae234a714
-      internalID: -2016030936
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Aphrodite Spawner_3
+      name: SpawnRooms_0
       rect:
         serializedVersion: 2
         x: 0
@@ -202,14 +115,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3ea1d10c31d1e0418c0b1b9f8ac4297
-      internalID: -1367798827
+      spriteID: 40fb9f47b8dcee24881506368418c301
+      internalID: 1378704311
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Aphrodite Spawner_4
+      name: SpawnRooms_1
       rect:
         serializedVersion: 2
         x: 16
@@ -224,36 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af7e40e54759d2f4498d8c5bd8e58fab
-      internalID: 1148698207
+      spriteID: 7ef73788413b53c4190fbe9fb6016d4a
+      internalID: 14471841
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Aphrodite Spawner_5
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c5b8b840d2c5ffa47a3148026785c036
-      internalID: -484864556
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Aphrodite Spawner_6
+      name: SpawnRooms_2
       rect:
         serializedVersion: 2
         x: 0
@@ -268,14 +159,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ea5d87b2f2a63a4a8b0cbde66aa2916
-      internalID: -1916598116
+      spriteID: da6be21794ec2584a82e41a93d39d41a
+      internalID: -601053231
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Aphrodite Spawner_7
+      name: SpawnRooms_3
       rect:
         serializedVersion: 2
         x: 16
@@ -290,8 +181,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 661599642f3499542bdd1303cd5ee7c0
-      internalID: 1461911770
+      spriteID: 9b11c1ba3e27e374f8db1d5b61a43fdc
+      internalID: -1119659941
       vertices: []
       indices: 
       edges: []
@@ -300,7 +191,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 20c0077827b3267439575e81ff74f701
+    spriteID: 23d39c54ca3b9d3479b606978671ef70
     internalID: 0
     vertices: []
     indices: 
@@ -312,14 +203,10 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Aphrodite Spawner_0: 1046874489
-      Aphrodite Spawner_1: 163567652
-      Aphrodite Spawner_2: -2016030936
-      Aphrodite Spawner_3: -1367798827
-      Aphrodite Spawner_4: 1148698207
-      Aphrodite Spawner_5: -484864556
-      Aphrodite Spawner_6: -1916598116
-      Aphrodite Spawner_7: 1461911770
+      SpawnRooms_0: 1378704311
+      SpawnRooms_1: 14471841
+      SpawnRooms_2: -601053231
+      SpawnRooms_3: -1119659941
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,28 +1,22 @@
 fileFormatVersion: 2
-guid: 1781fa4b260daca4682efce8282557f4
+guid: 99d6a26ac4c02b74998644e49858b013
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1469338980184140047
-    second: Aquaman Spawner_0
+      213: -8532505446938565172
+    second: PoseidonSprite_Projectile_0
   - first:
-      213: -4241237563977163067
-    second: Aquaman Spawner_1
+      213: -6618514861713693102
+    second: PoseidonSprite_Projectile_1
   - first:
-      213: 702854441203103064
-    second: Aquaman Spawner_2
+      213: -2997446576827486547
+    second: PoseidonSprite_Projectile_2
   - first:
-      213: -695965942797100578
-    second: Aquaman Spawner_3
+      213: -5378639541713674503
+    second: PoseidonSprite_Projectile_3
   - first:
-      213: -1045119382798026064
-    second: Aquaman Spawner_4
-  - first:
-      213: -3946045290890567164
-    second: Aquaman Spawner_5
-  - first:
-      213: 8379797730390468587
-    second: Aquaman Spawner_6
+      213: 1023171098238528419
+    second: PoseidonSprite_Projectile_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -118,13 +112,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Aquaman Spawner_0
+      name: PoseidonSprite_Projectile_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
-        width: 16
-        height: 16
+        x: 1
+        y: 36
+        width: 15
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,20 +127,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1f65d7f7bfbdb9be0800000000000000
-      internalID: -1469338980184140047
+      spriteID: cc5242fc083769980800000000000000
+      internalID: -8532505446938565172
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Aquaman Spawner_1
+      name: PoseidonSprite_Projectile_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 17
+        x: 1
+        y: 18
+        width: 15
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,20 +149,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5ce191718e81425c0800000000000000
-      internalID: -4241237563977163067
+      spriteID: 25669e6bccf4624a0800000000000000
+      internalID: -6618514861713693102
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Aquaman Spawner_2
+      name: PoseidonSprite_Projectile_2
       rect:
         serializedVersion: 2
-        x: 15
-        y: 32
-        width: 17
-        height: 16
+        x: 19
+        y: 36
+        width: 15
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 85577b0f36a01c900800000000000000
-      internalID: 702854441203103064
+      spriteID: daeacf2383ee666d0800000000000000
+      internalID: -2997446576827486547
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Aquaman Spawner_3
+      name: PoseidonSprite_Projectile_3
       rect:
         serializedVersion: 2
-        x: 15
-        y: 16
-        width: 17
-        height: 17
+        x: 19
+        y: 18
+        width: 15
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -199,64 +193,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ed91fc399ae6756f0800000000000000
-      internalID: -695965942797100578
+      spriteID: 9fe594585db3b55b0800000000000000
+      internalID: -5378639541713674503
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Aquaman Spawner_4
+      name: PoseidonSprite_Projectile_4
       rect:
         serializedVersion: 2
-        x: 31
-        y: 32
-        width: 17
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0bab278657dfe71f0800000000000000
-      internalID: -1045119382798026064
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Aquaman Spawner_5
-      rect:
-        serializedVersion: 2
-        x: 31
-        y: 16
-        width: 17
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4026dd807b4dc39c0800000000000000
-      internalID: -3946045290890567164
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Aquaman Spawner_6
-      rect:
-        serializedVersion: 2
-        x: 0
+        x: 1
         y: 0
-        width: 16
-        height: 17
+        width: 15
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,8 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: be76c8143a50b4470800000000000000
-      internalID: 8379797730390468587
+      spriteID: 3ab24fe51b8033e00800000000000000
+      internalID: 1023171098238528419
       vertices: []
       indices: 
       edges: []
@@ -285,13 +235,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Aquaman Spawner_0: -1469338980184140047
-      Aquaman Spawner_1: -4241237563977163067
-      Aquaman Spawner_2: 702854441203103064
-      Aquaman Spawner_3: -695965942797100578
-      Aquaman Spawner_4: -1045119382798026064
-      Aquaman Spawner_5: -3946045290890567164
-      Aquaman Spawner_6: 8379797730390468587
+      PoseidonSprite_Projectile_0: -8532505446938565172
+      PoseidonSprite_Projectile_1: -6618514861713693102
+      PoseidonSprite_Projectile_2: -2997446576827486547
+      PoseidonSprite_Projectile_3: -5378639541713674503
+      PoseidonSprite_Projectile_4: 1023171098238528419
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

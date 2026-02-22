@@ -61,7 +61,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -99,7 +99,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -132,15 +132,15 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4de7931d7ff47e880800000000000000
-      internalID: -8581802639145468204
+      spriteID: d1b4c4bb19649ea44b3bcd0442940e1e
+      internalID: -1217547544
       vertices: []
       indices: 
       edges: []
@@ -149,20 +149,20 @@ TextureImporter:
       name: Zues Spawner_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16
+        x: 16
+        y: 32
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d6b9fefafba214ad0800000000000000
-      internalID: -2719845697176233107
+      spriteID: 2a4cb8a9535b22a45a28a605d44d941d
+      internalID: 261343203
       vertices: []
       indices: 
       edges: []
@@ -171,20 +171,20 @@ TextureImporter:
       name: Zues Spawner_2
       rect:
         serializedVersion: 2
-        x: 15
+        x: 32
         y: 32
-        width: 17
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d2bc8fc1d2bb0b210800000000000000
-      internalID: 1346782091017767725
+      spriteID: 5f368c651f062ea40bb4446d3edbdfcd
+      internalID: -160550893
       vertices: []
       indices: 
       edges: []
@@ -193,20 +193,20 @@ TextureImporter:
       name: Zues Spawner_3
       rect:
         serializedVersion: 2
-        x: 15
+        x: 0
         y: 16
-        width: 17
-        height: 17
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 59f8c5c9444b3dfe0800000000000000
-      internalID: -1165389671784738923
+      spriteID: 07e5c4c745981174bbc60c632b0a6253
+      internalID: 775658321
       vertices: []
       indices: 
       edges: []
@@ -215,20 +215,20 @@ TextureImporter:
       name: Zues Spawner_4
       rect:
         serializedVersion: 2
-        x: 31
-        y: 32
-        width: 17
+        x: 16
+        y: 16
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: df1b0349051e37eb0800000000000000
-      internalID: -4723183847981665795
+      spriteID: 76f45292d738db347b96ad889ba4d42e
+      internalID: -1348216484
       vertices: []
       indices: 
       edges: []
@@ -237,20 +237,20 @@ TextureImporter:
       name: Zues Spawner_5
       rect:
         serializedVersion: 2
-        x: 31
+        x: 32
         y: 16
-        width: 17
-        height: 17
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0e187578361af7020800000000000000
-      internalID: 2341767780100440544
+      spriteID: 806de00d33aeb8f48b87c618a2154559
+      internalID: 709272273
       vertices: []
       indices: 
       edges: []
@@ -262,17 +262,17 @@ TextureImporter:
         x: 0
         y: 0
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e8ef55265df1a62c0800000000000000
-      internalID: -4437699481481904498
+      spriteID: a24e367ff39f5864c90674e454cf7ab9
+      internalID: 1848178916
       vertices: []
       indices: 
       edges: []
@@ -281,20 +281,20 @@ TextureImporter:
       name: Zues Spawner_7
       rect:
         serializedVersion: 2
-        x: 15
+        x: 16
         y: 0
-        width: 17
-        height: 17
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3d38ccc2b2e835c10800000000000000
-      internalID: 2041131372215305171
+      spriteID: eba467d31bbe90d47ab93300fe632269
+      internalID: 1984076147
       vertices: []
       indices: 
       edges: []
@@ -303,20 +303,20 @@ TextureImporter:
       name: Zues Spawner_8
       rect:
         serializedVersion: 2
-        x: 31
+        x: 32
         y: 0
-        width: 17
-        height: 17
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 876a7990e890e6610800000000000000
-      internalID: 1616239821923526264
+      spriteID: 6ba0e06f7520fc54fbb2d678c959636c
+      internalID: 118513406
       vertices: []
       indices: 
       edges: []
@@ -325,7 +325,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: cb1d42049524aa642941da1602e0c4e5
     internalID: 0
     vertices: []
     indices: 
@@ -333,17 +333,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Zues Spawner_0: -8581802639145468204
-      Zues Spawner_1: -2719845697176233107
-      Zues Spawner_2: 1346782091017767725
-      Zues Spawner_3: -1165389671784738923
-      Zues Spawner_4: -4723183847981665795
-      Zues Spawner_5: 2341767780100440544
-      Zues Spawner_6: -4437699481481904498
-      Zues Spawner_7: 2041131372215305171
-      Zues Spawner_8: 1616239821923526264
+      Zues Spawner_0: -1217547544
+      Zues Spawner_1: 261343203
+      Zues Spawner_2: -160550893
+      Zues Spawner_3: 775658321
+      Zues Spawner_4: -1348216484
+      Zues Spawner_5: 709272273
+      Zues Spawner_6: 1848178916
+      Zues Spawner_7: 1984076147
+      Zues Spawner_8: 118513406
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

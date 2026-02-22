@@ -2,6 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 namespace GGL
 {
@@ -26,7 +27,7 @@ namespace GGL
                 time -= Time.deltaTime;
                 timerText.text = "" + time;
             }
-            //level end stuff
+            SceneManager.LoadScene("WinScene");
         }
     }
 }

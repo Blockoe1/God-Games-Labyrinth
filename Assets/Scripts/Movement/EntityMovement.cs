@@ -60,6 +60,7 @@ namespace GGL
         #endregion
 
         #region Properties
+        protected float MaxWallCheckDistance => maxWallCheckDistance;
         public Rigidbody2D Rigidbody => rb;
         public float MaxSpeed
         {
@@ -138,6 +139,8 @@ namespace GGL
                 }
             }
 
+            OnFixedUpdate();
+
             speed = Mathf.MoveTowards(speed, IsMoving ? maxSpeed : 0, acceleration * Time.fixedDeltaTime);
             rb.linearVelocity = speed * Direction;
 
@@ -147,6 +150,11 @@ namespace GGL
                 Snap();
             }
         }
+
+        /// <summary>
+        /// Special inster for running FixedUpdate logic that happens in between direction checks and movement.
+        /// </summary>
+        protected virtual void OnFixedUpdate() { }
 
         /// <summary>
         /// Snaps the object to an integer grid.

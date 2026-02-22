@@ -163,7 +163,7 @@ MonoBehaviour:
         parentState:
           rid: -2
         <minotaur>k__BackingField: {fileID: 5871052308712400146}
-        visionDelay: 1
+        visionDelay: 3
     - rid: 6611786919313524
       type: {class: AggroState, ns: GGL.Minotaur, asm: Assembly-CSharp}
       data:

@@ -20,6 +20,8 @@ namespace GGL.Champions
         private const string MOVE_ACTION_NAME = "Move";
         #endregion
 
+        [SerializeField] private bool autoTurn;
+
         private InputAction moveAction;
 
         public event Action<bool> OnMove;
@@ -84,7 +86,7 @@ namespace GGL.Champions
         /// </summary>
         protected override void OnFixedUpdate()
         {
-            if (IsMoving && TargetDirection == Direction)
+            if (autoTurn && IsMoving && TargetDirection == Direction)
             {
                 // Check for if the champion is running into a wall.
                 RaycastHit2D isFacingWall = Physics2D.Raycast(rb.position, Direction, MaxWallCheckDistance, GGLHelpers.MazeMask);

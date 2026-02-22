@@ -55,7 +55,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -69,7 +69,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -93,7 +93,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,15 +126,15 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 62b56191d46290130800000000000000
-      internalID: 3533397495224097574
+      spriteID: 136bb86f6f84d2848a9748925c8ab3d5
+      internalID: -496511682
       vertices: []
       indices: 
       edges: []
@@ -143,20 +143,20 @@ TextureImporter:
       name: Athena Spawner_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16
+        x: 16
+        y: 32
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: daf83b44b8dcdb480800000000000000
-      internalID: -8881716892067983443
+      spriteID: 61b6c34b079ccb749852ade5aeaccd67
+      internalID: 1870152185
       vertices: []
       indices: 
       edges: []
@@ -165,20 +165,20 @@ TextureImporter:
       name: Athena Spawner_2
       rect:
         serializedVersion: 2
-        x: 15
+        x: 32
         y: 32
-        width: 17
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d49b0733a08f5d0c0800000000000000
-      internalID: -4551459125691631283
+      spriteID: 3e39b198e388277448f20627d2d2887c
+      internalID: 706198976
       vertices: []
       indices: 
       edges: []
@@ -187,20 +187,20 @@ TextureImporter:
       name: Athena Spawner_3
       rect:
         serializedVersion: 2
-        x: 15
+        x: 0
         y: 16
-        width: 17
-        height: 17
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 069229ab2aa317840800000000000000
-      internalID: 5220017913688369504
+      spriteID: 9384f4d67b65fa041bc719143c1cc1f7
+      internalID: -1237566180
       vertices: []
       indices: 
       edges: []
@@ -209,20 +209,20 @@ TextureImporter:
       name: Athena Spawner_4
       rect:
         serializedVersion: 2
-        x: 31
-        y: 32
-        width: 17
+        x: 16
+        y: 16
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8726da5915e4bd590800000000000000
-      internalID: -7648433429848169864
+      spriteID: 0494b4f45bb7e584fb5805c187b84f84
+      internalID: -828188530
       vertices: []
       indices: 
       edges: []
@@ -231,20 +231,20 @@ TextureImporter:
       name: Athena Spawner_5
       rect:
         serializedVersion: 2
-        x: 31
+        x: 32
         y: 16
-        width: 17
-        height: 17
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8b33d56b5221a15f0800000000000000
-      internalID: -785295231840078920
+      spriteID: 7816aa24c70fc424192e11ff38e24953
+      internalID: 985551969
       vertices: []
       indices: 
       edges: []
@@ -256,17 +256,17 @@ TextureImporter:
         x: 0
         y: 0
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4351d65368a734f30800000000000000
-      internalID: 4558621964669621556
+      spriteID: c95a14b1467aeb043a11a0353c841403
+      internalID: 521918092
       vertices: []
       indices: 
       edges: []
@@ -275,7 +275,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 70e4e6dd3ee2ac945a78080422c062d6
     internalID: 0
     vertices: []
     indices: 
@@ -283,15 +283,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Athena Spawner_0: 3533397495224097574
-      Athena Spawner_1: -8881716892067983443
-      Athena Spawner_2: -4551459125691631283
-      Athena Spawner_3: 5220017913688369504
-      Athena Spawner_4: -7648433429848169864
-      Athena Spawner_5: -785295231840078920
-      Athena Spawner_6: 4558621964669621556
+      Athena Spawner_0: -496511682
+      Athena Spawner_1: 1870152185
+      Athena Spawner_2: 706198976
+      Athena Spawner_3: -1237566180
+      Athena Spawner_4: -828188530
+      Athena Spawner_5: 985551969
+      Athena Spawner_6: 521918092
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

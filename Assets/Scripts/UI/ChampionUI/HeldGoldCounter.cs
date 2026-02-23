@@ -36,9 +36,9 @@ namespace GGL.UI.ChampionUI
         public override void Initialize(GodIdentifier champion)
         {
             collector = champion.GetComponent<Collector>();
-            collector.OnCollect += Collector_OnCollect;
-            collector.OnDeposit += Collector_OnDeposit;
-            collector.OnDrop += Collector_OnDrop;
+            collector.OnCollectEvent.AddListener(Collector_OnCollect);
+            collector.OnDepositEvent.AddListener(Collector_OnDeposit);
+            collector.OnDropEvent.AddListener(Collector_OnDrop);
         }
 
         /// <summary>
@@ -123,9 +123,9 @@ namespace GGL.UI.ChampionUI
         /// </summary>
         private void OnDestroy()
         {
-            collector.OnCollect -= Collector_OnCollect;
-            collector.OnDeposit -= Collector_OnDeposit;
-            collector.OnDrop -= Collector_OnDrop;
+            collector.OnCollectEvent.RemoveListener(Collector_OnCollect);
+            collector.OnDepositEvent.RemoveListener(Collector_OnDeposit);
+            collector.OnDropEvent.RemoveListener(Collector_OnDrop);
         }
     }
 }

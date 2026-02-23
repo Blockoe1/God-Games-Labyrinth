@@ -18,13 +18,10 @@ namespace GGL.Scoring
     public class Collector : MonoBehaviour
     {
         [SerializeField] private int goldCapacity;
-        [SerializeField] private UnityEvent<int> OnCollectEvent;
-        [SerializeField] private UnityEvent<int> OnDropEvent;
+        [SerializeField] private UnityEvent OnDropEvent;
         private readonly Queue<Collectable> heldCollectables = new();
 
-        public event Action<int> OnCollect;
-        public event Action<int> OnDrop;
-        public event Action<int> OnDeposit;
+        public event Action<int, int> OnCollectablesChanged;
 
         public bool DisableCollection { get; set; }
 
@@ -73,13 +70,11 @@ namespace GGL.Scoring
             }
 
             // Handles cashing collectables at a GoldCashZone
-            if (collision.gameObject.TryGetComponent(out CollectableCashZone cashZone) && cashZone.Team == id.Team 
-                && heldCollectables.Count > 0)
+            if (collision.gameObject.TryGetComponent(out CollectableCashZone cashZone) && cashZone.Team == id.Team)
             {
                 cashZone.CashCollectables(heldCollectables);
                 heldCollectables.Clear();
-
-                OnDeposit?.Invoke(heldCollectables.Count);
+                OnCollectablesChanged?.Invoke(heldCollectables.Count, TotalPointsHeld);
             }
         }
 
@@ -93,8 +88,7 @@ namespace GGL.Scoring
             if (goldCapacity <= 0 || heldCollectables.Count < goldCapacity)
             {
                 heldCollectables.Enqueue(toCollect);
-                OnCollect?.Invoke(heldCollectables.Count);
-                OnCollectEvent?.Invoke(heldCollectables.Count);
+                OnCollectablesChanged?.Invoke(heldCollectables.Count, TotalPointsHeld);
                 toCollect.OnCollected(this);
             }
         }
@@ -131,8 +125,8 @@ namespace GGL.Scoring
                 dropped.OnDropped(this);
             }
 
-            OnDrop?.Invoke(heldCollectables.Count);
-            OnDropEvent?.Invoke(heldCollectables.Count);
+            OnCollectablesChanged?.Invoke(heldCollectables.Count, TotalPointsHeld);
+            OnDropEvent?.Invoke();
 
             return droppedCollectables.ToArray();
         }

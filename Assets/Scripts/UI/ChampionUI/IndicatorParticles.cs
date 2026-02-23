@@ -67,16 +67,16 @@ namespace GGL.UI
             GameObject particleGo = GetParticle();
             particleGo.SetActive(false);
             float timer = 0;
-            float ampScale = UnityEngine.Random.Range(-1, 1);
+            float ampScale = UnityEngine.Random.Range(-1f, 1f);
             particleGo.transform.position = startPos;
             particleGo.SetActive(true);
+
+            Vector2 toVector = endPos - (Vector2)particleGo.transform.position;
+            Vector2 perpVector = new Vector2(toVector.y, -toVector.x);
 
             while (timer < time)
             {
                 float normalizedTime = timer / time;
-                Vector2 toVector = endPos - (Vector2)particleGo.transform.position;
-                Vector2 perpVector = new Vector2(toVector.y, -toVector.x);
-                Debug.Log(perpVector);
 
                 Vector2 currentPos = Vector2.Lerp(startPos, endPos, toTargetCurve.Evaluate(normalizedTime));
                 // Offsets the particle based on a random amount and the offset curve.

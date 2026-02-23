@@ -73,7 +73,8 @@ namespace GGL.Scoring
             }
 
             // Handles cashing collectables at a GoldCashZone
-            if (collision.gameObject.TryGetComponent(out CollectableCashZone cashZone) && cashZone.Team == id.Team)
+            if (collision.gameObject.TryGetComponent(out CollectableCashZone cashZone) && cashZone.Team == id.Team 
+                && heldCollectables.Count > 0)
             {
                 cashZone.CashCollectables(heldCollectables);
                 heldCollectables.Clear();

@@ -6,6 +6,8 @@
 //
 // Brief Description : Set of helper functions specifically for interacting with GodGamesLabyrinth's setup.
 *****************************************************************************/
+using System;
+using System.Collections;
 using UnityEngine;
 
 namespace GGL
@@ -40,6 +42,34 @@ namespace GGL
                 }
                 return championMask;
             }
+        }
+
+        /// <summary>
+        /// Animates an integer value from a starting to target value over time.
+        /// </summary>
+        /// <param name="updater">The update function used to change the value of the integer.</param>
+        /// <param name="time">The time the animation should take.</param>
+        /// <param name="startValue">The initial starting value.</param>
+        /// <param name="targetValue">The target value that the int should animate to.</param>
+        /// <returns></returns>
+        public static IEnumerator AnimateInt(Action<int> updater, float time, int startValue, int targetValue)
+        {
+            // If no time is specified, immediatealy update the value.
+            if (time <= 0 || targetValue == startValue)
+            {
+                updater(targetValue);
+                yield break;
+            }
+
+            int value = startValue;
+            float timeStep = time / Mathf.Abs(targetValue - startValue);
+            while (value != targetValue)
+            {
+                value = (int)Mathf.MoveTowards(value, targetValue, 1);
+                updater(value);
+                yield return new WaitForSeconds(timeStep);
+            }
+            updater(targetValue);
         }
     }
 }

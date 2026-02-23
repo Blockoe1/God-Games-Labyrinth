@@ -18,10 +18,10 @@ namespace GGL.Scoring
     public class Collector : MonoBehaviour
     {
         [SerializeField] private int goldCapacity;
-        [SerializeField] private UnityEvent OnDropEvent;
+        [SerializeField] private UnityEvent<int> onCollectEvent;
+        [SerializeField] private UnityEvent<int> onDropEvent;
+        [SerializeField] private UnityEvent<int> onDepositEvent;
         private readonly Queue<Collectable> heldCollectables = new();
-
-        public event Action<int, int> OnCollectablesChanged;
 
         public bool DisableCollection { get; set; }
 
@@ -40,6 +40,9 @@ namespace GGL.Scoring
         #endregion
 
         #region Properties
+        public UnityEvent<int> OnCollectEvent => onCollectEvent;
+        public UnityEvent<int> OnDropEvent => onDropEvent;
+        public UnityEvent<int> OnDepositEvent => onDepositEvent;
         public int GoldCapacity => goldCapacity;
         private int TotalPointsHeld
         {
@@ -70,12 +73,14 @@ namespace GGL.Scoring
             }
 
             // Handles cashing collectables at a GoldCashZone
-            if (collision.gameObject.TryGetComponent(out CollectableCashZone cashZone) && cashZone.Team == id.Team)
+            if (collision.gameObject.TryGetComponent(out CollectableCashZone cashZone) && cashZone.Team == id.Team 
+                && heldCollectables.Count > 0)
             {
                 cashZone.CashCollectables(heldCollectables);
                 heldCollectables.Clear();
+                onDepositEvent?.Invoke(heldCollectables.Count);
 
-                OnCollectablesChanged?.Invoke(heldCollectables.Count, TotalPointsHeld);
+                //OnDeposit?.Invoke(heldCollectables.Count);
             }
         }
 
@@ -89,9 +94,27 @@ namespace GGL.Scoring
             if (goldCapacity <= 0 || heldCollectables.Count < goldCapacity)
             {
                 heldCollectables.Enqueue(toCollect);
-                OnCollectablesChanged?.Invoke(heldCollectables.Count, TotalPointsHeld);
+                //OnCollect?.Invoke(heldCollectables.Count);
+                onCollectEvent?.Invoke(heldCollectables.Count);
                 toCollect.OnCollected(this);
             }
+        }
+
+        /// <summary>
+        /// Subscribes/Unsubscribes an action to all collection unity events.
+        /// </summary>
+        /// <param name="action"></param>
+        public void AddOnCollectListener(UnityAction<int> action)
+        {
+            OnCollectEvent.AddListener(action);
+            OnDepositEvent.AddListener(action);
+            OnDropEvent.AddListener(action);
+        }
+        public void RemoveOnCollectListener(UnityAction<int> action)
+        {
+            OnCollectEvent.RemoveListener(action);
+            OnDepositEvent.RemoveListener(action);
+            OnDropEvent.RemoveListener(action);
         }
 
         /// <summary>
@@ -126,8 +149,8 @@ namespace GGL.Scoring
                 dropped.OnDropped(this);
             }
 
-            OnCollectablesChanged?.Invoke(heldCollectables.Count, TotalPointsHeld);
-            OnDropEvent?.Invoke();
+            //OnDrop?.Invoke(heldCollectables.Count);
+            onDropEvent?.Invoke(heldCollectables.Count);
 
             return droppedCollectables.ToArray();
         }

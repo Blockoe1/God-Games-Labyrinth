@@ -52,21 +52,6 @@ namespace GGL.Scoring
         }
         #endregion
 
-        //#region Nested
-        //private class CollectEventWrapper
-        //{
-        //    internal UnityAction unsubscribeAction;
-        //    internal readonly Collectable toCollect;
-        //    internal readonly Vector2Int position;
-
-        //    internal CollectEventWrapper(Collectable toCollect, Vector2Int position)
-        //    {
-        //        this.toCollect = toCollect;
-        //        this.position = position;
-        //    }
-        //}
-        //#endregion
-
         /// <summary>
         /// Bakes the array of spawn position data for this object.
         /// </summary>
@@ -189,6 +174,11 @@ namespace GGL.Scoring
             Collectable toSpawn = GetCollectable();
             toSpawn.transform.localPosition = (Vector2)position;
             toSpawn.OnCashedCallback = ReturnCollectable;
+
+            // Gives the collectable a random rotation.
+            float randomAngle = 90 * Random.Range(0, 4);
+            toSpawn.transform.eulerAngles = new Vector3(toSpawn.transform.eulerAngles.x,
+                toSpawn.transform.eulerAngles.y, randomAngle);
 
             RegisterCollectable(toSpawn, position);
 

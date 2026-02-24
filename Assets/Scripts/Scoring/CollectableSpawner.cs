@@ -98,6 +98,11 @@ namespace GGL.Scoring
         /// </summary>
         private void Awake()
         {
+#if UNITY_EDITOR
+            // Dynamically bake on awake so it's easier on the designers.
+            BakeSpawnPositions();
+#endif
+
             validPositions = spawnMap.ToList();
 
             // Log any gold placed in the scene already by designers.

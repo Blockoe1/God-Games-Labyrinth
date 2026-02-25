@@ -9,24 +9,19 @@
 using GGL.Scoring;
 using NaughtyAttributes;
 using System.Collections.Generic;
-using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace GGL.Champions
 {
     [RequireComponent(typeof(Rigidbody2D))]
     public class StealProjectile : MonoBehaviour
     {
-        [SerializeField] private float returnVelocity;
-        [SerializeField] private float returnAcceleration;
-        [SerializeField] private float collectableAttractionForce;
+        private GoldStealer shooter;
 
-        public Collector ReturnTarget { get; set; }
-
-        private Action<Collider2D, StealProjectile, CollisionType> collisionLogic;
         private readonly List<Collectable> attractedCollectables = new List<Collectable>();
+
         private bool isLaunched;
+        private bool allowReturn;
 
         #region Component References
         [Header("Components")]
@@ -46,26 +41,25 @@ namespace GGL.Champions
         public bool IsLaunched => isLaunched;
         #endregion
 
-        #region Nested
-        public enum CollisionType
-        { 
-            Enter,
-            Exit,
-            Stay
+        /// <summary>
+        /// Initializes this steal projectile with a reference to the champion that shoots it.
+        /// </summary>
+        /// <param name="shooter"></param>
+        public void Initialize(GoldStealer shooter)
+        {
+            this.shooter = shooter;
         }
-        #endregion
 
         /// <summary>
         /// Launches this projectile outward with a given direction and strength.
         /// </summary>
         /// <param name="launchVector"></param>
-        public void Launch(Vector2 launchPosition, Vector2 launchVector, Action<Collider2D, StealProjectile, CollisionType> collisionLogic)
+        public void Launch(Vector2 launchPosition, Vector2 launchVector)
         {
             // Prevent duplicate launches.
             if (isLaunched) { return; }
             transform.position = launchPosition;
             isLaunched = true;
-            this.collisionLogic = collisionLogic;
             gameObject.SetActive(true);
             rb.AddForce(launchVector, ForceMode2D.Impulse);
         }
@@ -73,31 +67,39 @@ namespace GGL.Champions
         /// <summary>
         /// Detect trigger collisions for projectile logic.
         /// </summary>
-        /// <param name="collision"></param>
-        private void OnTriggerEnter2D(Collider2D collision)
+        /// <param name="collider"></param>
+        private void OnTriggerEnter2D(Collider2D collider)
         {
-            collisionLogic?.Invoke(collision, this, CollisionType.Enter);
+            // If the projectile collides with the shooter, then it resets.
+            if (allowReturn &&
+                collider.gameObject == shooter.gameObject)
+            {
+                shooter.OnReturn(attractedCollectables.ToArray());
+                gameObject.SetActive(false);
+                transform.position = shooter.transform.position;
+                isLaunched = false;
+
+                ResetCollectables();
+            }
+            // Make a collector drop held gold and then grab it with this projectile.
+            else if (collider.gameObject != shooter.gameObject &&
+                collider.TryGetComponent(out Attackable attackable) &&
+                !attackable.IsInvincible)
+            {
+                OnHitAttackable(attackable);
+            }
         }
 
         /// <summary>
         /// Only allow returning if we've left a champion hitbox already.
         /// </summary>
-        /// <param name="collision"></param>
-        private void OnTriggerExit2D(Collider2D collision)
+        /// <param name="collider"></param>
+        private void OnTriggerExit2D(Collider2D collider)
         {
-            collisionLogic?.Invoke(collision, this, CollisionType.Exit);
-        }
-
-        /// <summary>
-        /// Resets the projectile back to a disabled state.
-        /// </summary>
-        public void ProjectileReset()
-        {
-            gameObject.SetActive(false);
-            transform.position = ReturnTarget.transform.position;
-            isLaunched = false;
-
-            CollectAllCollectables();
+            if (collider.gameObject == shooter.gameObject)
+            {
+                allowReturn = true;
+            }
         }
 
         /// <summary>
@@ -105,12 +107,12 @@ namespace GGL.Champions
         /// </summary>
         private void FixedUpdate()
         {
-            Vector2 toTarget = (Vector2)ReturnTarget.transform.position - rb.position;
+            Vector2 toTarget = (Vector2)shooter.transform.position - rb.position;
             //rb.AddForce(toTarget.normalized * returnForce, ForceMode2D.Force);
             //rb.MovePosition(Vector2.MoveTowards(ReturnTarget.transform.position, rb.position, returnForce));
 
-            rb.linearVelocity = Vector2.MoveTowards(rb.linearVelocity, toTarget.normalized * returnVelocity, 
-                returnAcceleration * Time.fixedDeltaTime);
+            rb.linearVelocity = Vector2.MoveTowards(rb.linearVelocity, toTarget.normalized * shooter.ReturnVelocity, 
+                shooter.ReturnAcceleration * Time.fixedDeltaTime);
 
             AttractCollectables();
         }
@@ -120,7 +122,7 @@ namespace GGL.Champions
         /// Adds an array of collectables to be attracted to this projectile.
         /// </summary>
         /// <param name="collectablesToAttract">The collectables to attract to this projectile.</param>
-        public void AddAttractedCollectables(Collectable[] collectablesToAttract, GodID team)
+        public void AddAttractedCollectables(Collectable[] collectablesToAttract)
         {
             foreach(Collectable col in collectablesToAttract)
             {
@@ -150,18 +152,15 @@ namespace GGL.Champions
         /// <summary>
         /// Collects all attracted collectables.
         /// </summary>
-        private void CollectAllCollectables()
+        private void ResetCollectables()
         {
-            Collectable[] toCollect = new Collectable[attractedCollectables.Count];
-            attractedCollectables.CopyTo(toCollect);
-
             // Collectables should clean up and remove themselves automatically when collected.
-            foreach (Collectable col in toCollect)
+            foreach (Collectable col in attractedCollectables)
             {
-                // Have the collector we're returning to force-collect the collectables.
-                RemoveAttractedCollectable(col);
-                ReturnTarget.ForceCollect(col);
+                col.IgnoreMazeCollision(false);
+                col.CollectDisabled = false;
             }
+            attractedCollectables.Clear();
         }
 
         /// <summary>
@@ -173,9 +172,29 @@ namespace GGL.Champions
             {
                 //Vector2 forceDirection = rb.position - collectable.Rb.position;
                 collectable.Rb.MovePosition(Vector2.MoveTowards(collectable.Rb.position, rb.position,
-                    collectableAttractionForce));
+                    shooter.CollectableAttractionForce));
             }
         }
         #endregion
+
+        /// <summary>
+        /// Controls what happens when the projectile hits a valid target.
+        /// </summary>
+        /// <param name="attackable"></param>
+        /// <param name="projectile"></param>
+        private void OnHitAttackable(Attackable attackable)
+        {
+            // If the hit object collects gold, steal it.
+            if (attackable.TryGetComponent(out Collector collector))
+            {
+                Collectable[] droppedCollectables = collector.DropCollectables(shooter.StealAmount);
+
+                // Setup collectables to be attracted to the projectile until collected.
+                AddAttractedCollectables(droppedCollectables);
+            }
+
+            // Notify the attackable that it was hit.
+            attackable.OnHit();
+        }
     }
 }

@@ -19,11 +19,16 @@ namespace GGL.Champions
 
         [Header("Steal Settings")]
         [SerializeField] private StealProjectile projectilePrefab;
-        [SerializeField] private float launchForce;
-        [field: SerializeField, Range(0, 1f)] public float StealAmount { get; private set; }
-        [field: SerializeField] public float ReturnVelocity { get; private set; }
-        [field: SerializeField] public float ReturnAcceleration { get; private set; }
-        [field: SerializeField] public float CollectableAttractionForce { get; private set; }
+        [SerializeField, Tooltip("The speed at which the projectile is initially shot at.")] 
+        private float launchForce;
+        [field: SerializeField, Range(0, 1f), Tooltip("The proportion of gold that is stolen from hit champions.")] 
+        public float StealAmount { get; private set; }
+        [field: SerializeField, Tooltip("The max speed that the projectile returns at.")] 
+        public float ReturnVelocity { get; private set; }
+        [field: SerializeField, Tooltip("How quickly the projectile turns around to return to the shooting champion.")]
+        public float ReturnAcceleration { get; private set; }
+        [field: SerializeField, Tooltip("How strongly stolen gold is pulled to the projectile.")] 
+        public float CollectableAttractionForce { get; private set; }
         [SerializeField, Tooltip("The amount of empty space that must be in front of the champion to use this" +
             " ability.")] 
         private float requiredLeeway = 2;

@@ -21,7 +21,7 @@ namespace GGL.Champions
 
         [Header("Dash Settings")]
         [SerializeField] private float dashSpeed;
-        [SerializeField] private float dashDuration;
+        [SerializeField] private float dashDistance;
         [SerializeField] private UnityEvent OnDashBegin;
         [SerializeField] private UnityEvent OnDashEnd;
 
@@ -63,7 +63,7 @@ namespace GGL.Champions
             isDashing = true;
             OnDashBegin?.Invoke();
 
-            float timer = dashDuration;
+            float timer = dashDistance / dashSpeed;
             while (timer > 0)
             {
                 rb.linearVelocity = direction * dashSpeed;

@@ -5090,8 +5090,8 @@ MonoBehaviour:
   cooldown: 0.25
   movement: {fileID: 8074908796875090492}
   id: {fileID: 108903021177686200}
-  dashSpeed: 20
-  dashDuration: 0.15
+  dashSpeed: 30
+  dashDistance: 3
   OnDashBegin:
     m_PersistentCalls:
       m_Calls:

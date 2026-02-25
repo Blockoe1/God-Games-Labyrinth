@@ -1843,10 +1843,6 @@ PrefabInstance:
       propertyPath: collisionTilemap
       value: 
       objectReference: {fileID: 1581354546}
-    - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
-      propertyPath: managedReferences[6611786919313526].chaseSpeed
-      value: 7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

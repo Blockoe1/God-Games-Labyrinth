@@ -7,6 +7,7 @@
 // Brief Description : Fires a projectile that steals gold on contact with another player.
 *****************************************************************************/
 using GGL.Scoring;
+using NaughtyAttributes;
 using UnityEngine;
 
 namespace GGL.Champions
@@ -19,7 +20,7 @@ namespace GGL.Champions
         [Header("Steal Settings")]
         [SerializeField] private StealProjectile projectilePrefab;
         [SerializeField] private float launchForce;
-        [field: SerializeField] public float StealAmount { get; private set; }
+        [field: SerializeField, Range(0, 1f)] public float StealAmount { get; private set; }
         [field: SerializeField] public float ReturnVelocity { get; private set; }
         [field: SerializeField] public float ReturnAcceleration { get; private set; }
         [field: SerializeField] public float CollectableAttractionForce { get; private set; }
@@ -28,6 +29,8 @@ namespace GGL.Champions
         private float requiredLeeway = 2;
 
         private StealProjectile proj;
+
+        #region Properties
         private StealProjectile Projectile
         { 
             get
@@ -41,6 +44,22 @@ namespace GGL.Champions
                 return proj;
             }
         }
+        #endregion
+
+        #region Component References
+        [Header("Components")]
+        [SerializeReference, ReadOnly] protected Collector collector;
+
+        /// <summary>
+        /// Get components on reset.
+        /// </summary>
+        [ContextMenu("Get Component References: 1")]
+        protected override void Reset()
+        {
+            base.Reset();
+            collector = GetComponent<Collector>();
+        }
+        #endregion
 
         /// <summary>
         /// Fires the steal projectile when the player presses the correct button.
@@ -62,7 +81,11 @@ namespace GGL.Champions
         /// <param name="stoleCollectables">The collectibles this projectile stole.</param>
         public void OnReturn(Collectable[] stoleCollectables)
         {
-
+            // Force-Collect all the stolen collectables.
+            foreach(Collectable collectable in stoleCollectables)
+            {
+                collector.ForceCollect(collectable);
+            }
         }
     }
 }

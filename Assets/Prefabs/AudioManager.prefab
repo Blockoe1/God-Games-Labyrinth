@@ -65,11 +65,27 @@ MonoBehaviour:
         Data2: 1104134266
         Data3: 1309239743
         Data4: 698196596
-      Path: event:/Placeholder
+      Path: event:/Placeholder/Placeholder
+  - name: DashCooldown
+    eventRef:
+      Guid:
+        Data1: 913703944
+        Data2: 1269519234
+        Data3: 231073958
+        Data4: 1983637463
+      Path: event:/Placeholder/DashCooldownPlaceholder
+  - name: GrabCooldown
+    eventRef:
+      Guid:
+        Data1: -71068285
+        Data2: 1239404527
+        Data3: -1614503533
+        Data4: -516140487
+      Path: event:/Placeholder/GrabCooldownPlaceholder
   <music>k__BackingField:
     Guid:
       Data1: -1010265967
       Data2: 1104134266
       Data3: 1309239743
       Data4: 698196596
-    Path: event:/Placeholder
+    Path: event:/Placeholder/Placeholder

@@ -91,6 +91,7 @@ namespace GGL.Champions
             {
                 collector.ForceCollect(collectable);
             }
+            Cooldown();
         }
     }
 }

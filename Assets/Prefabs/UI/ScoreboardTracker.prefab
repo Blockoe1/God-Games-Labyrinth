@@ -146,7 +146,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6776446585339504512}
   - component: {fileID: 8140703329590609211}
-  - component: {fileID: 1019602814850175224}
+  - component: {fileID: 1654943360494122778}
   - component: {fileID: 1969127907601075818}
   m_Layer: 5
   m_Name: ScoreText
@@ -182,7 +182,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7324650786107749564}
   m_CullTransparentMesh: 1
---- !u!114 &1019602814850175224
+--- !u!114 &1654943360494122778
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -191,11 +191,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7324650786107749564}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cedc8e9dfd283d49806650e24f1af88, type: 3}
+  m_Script: {fileID: 11500000, guid: 63b73dc5f1ecf3c4aae3bffb89f5f058, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GGL.UI.ScoreTextUpdater
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.UI.Scoreboard.TextScoreboard
   textComponent: {fileID: 1969127907601075818}
-  god: 0
+  team: 0
 --- !u!114 &1969127907601075818
 MonoBehaviour:
   m_ObjectHideFlags: 0

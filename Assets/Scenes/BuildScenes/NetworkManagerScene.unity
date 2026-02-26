@@ -186,9 +186,9 @@ GameObject:
   m_Component:
   - component: {fileID: 443677544}
   - component: {fileID: 443677543}
-  - component: {fileID: 443677542}
   - component: {fileID: 443677546}
   - component: {fileID: 443677547}
+  - component: {fileID: 443677548}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -196,14 +196,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &443677542
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 443677541}
-  m_Enabled: 1
 --- !u!20 &443677543
 Camera:
   m_ObjectHideFlags: 0
@@ -326,6 +318,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e4aab6b706231e4087e453c4b7e08a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.NetworkManagerScene
+--- !u!114 &443677548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443677541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 443677541}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -30,6 +30,10 @@ namespace GGL.Networking
         {
             NetworkManager.OnInstantiated += SubscribeEvents;
             NetworkManager.OnDestroying += UnsubscribeEvents;
+            if (NetworkManager.Singleton != null)
+            {
+                SubscribeEvents(NetworkManager.Singleton);
+            }
         }
         private void OnDestroy()
         {

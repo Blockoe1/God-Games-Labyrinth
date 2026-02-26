@@ -23,6 +23,21 @@ namespace GGL.Scoring
 
         private static int[] scoreboard;
 
+        #region Nested
+        [System.Serializable]
+        private class ScoreboardWrapper
+        {
+            [SerializeField] private int[] scoreboard;
+
+            internal int[] Scoreboard => scoreboard;
+
+            internal ScoreboardWrapper(int[] scoreboard)
+            {
+                this.scoreboard = scoreboard;
+            }
+        }
+        #endregion
+
         /// <summary>
         /// Load scores in start once event subscriptions are handled in awake.
         /// </summary>
@@ -43,7 +58,7 @@ namespace GGL.Scoring
                 scoreboard[i] += scores[i];
             }
             OnScoreboardUpdate?.Invoke(scoreboard);
-            SaveScores(scores);
+            SaveScores(scoreboard);
         }
 
         /// <summary>
@@ -66,7 +81,7 @@ namespace GGL.Scoring
         {
             // Saves the scores arrat as a JSON file.
             string path = Path.Combine(Application.streamingAssetsPath, FILE_NAME);
-            string jsonData = JsonUtility.ToJson(scores);
+            string jsonData = JsonUtility.ToJson(new ScoreboardWrapper(scores));
             File.WriteAllText(path, jsonData);
         }
         /// <summary>
@@ -79,12 +94,16 @@ namespace GGL.Scoring
             if (File.Exists(path))
             {
                 string jsonData = File.ReadAllText(path);
-                int[] scoreboard = JsonUtility.FromJson<int[]>(jsonData);
-
-                if (scoreboard == null || scoreboard.Length == 0)
+                ScoreboardWrapper wrapper = JsonUtility.FromJson<ScoreboardWrapper>(jsonData);
+                int[] scoreboard;
+                if (wrapper == null || wrapper.Scoreboard == null || wrapper.Scoreboard.Length == 0)
                 {
                     scoreboard = GetScoreboardArray();
                     Debug.Log("Failed to load high scores from " + path + ".  No JSON data was detected.");
+                }
+                else
+                {
+                    scoreboard = wrapper.Scoreboard;
                 }
                 return scoreboard;
             }

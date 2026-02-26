@@ -1,5 +1,5 @@
 /*****************************************************************************
-// File Name : TextScoreboard.cs
+// File Name : ScoreboardTextUpdater.cs
 // Author : Brandon Koederitz
 // Creation Date : 2/26/2026
 // Last Modified : 2/26/2026
@@ -12,7 +12,7 @@ using UnityEngine;
 
 namespace GGL.UI.Scoreboard
 {
-    public class TextScoreboard : MonoBehaviour
+    public class ScoreboardTextUpdater : MonoBehaviour
     {
         #region CONSTS
         private const int DISPLAY_DIGITS = 6;

@@ -60,6 +60,7 @@ namespace GGL.Champions
             if (isLaunched) { return; }
             transform.position = launchPosition;
             isLaunched = true;
+            allowReturn = false;
             gameObject.SetActive(true);
             rb.AddForce(launchVector, ForceMode2D.Impulse);
         }

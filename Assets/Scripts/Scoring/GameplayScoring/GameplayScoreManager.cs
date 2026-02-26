@@ -39,7 +39,7 @@ namespace GGL.Scoring
         /// </summary>
         private void Awake()
         {
-            scores = Scoreboard.GetScoreboardArray();
+            scores = ScoreboardManager.GetScoreboardArray();
         }
 
         /// <summary>

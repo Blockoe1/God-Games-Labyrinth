@@ -1,5 +1,5 @@
 /*****************************************************************************
-// File Name : Scoreboard.cs
+// File Name : ScoreboardManager.cs
 // Author : Brandon Koederitz
 // Creation Date : 1/28/2026
 // Last Modified : 1/28/2026
@@ -13,15 +13,15 @@ using UnityEngine;
 
 namespace GGL.Scoring
 {
-    public class Scoreboard : MonoBehaviour
+    public class ScoreboardManager : MonoBehaviour
     {
         #region CONSTS
         private const string FILE_NAME = "ggl_scoreboard.json";
         #endregion
 
-        public static event Action<GodID, int> OnScoreboardUpdate;
+        public static event Action<int[]> OnScoreboardUpdate;
 
-        private int[] scoreboard;
+        private static int[] scoreboard;
 
         /// <summary>
         /// Load scores in start once event subscriptions are handled in awake.
@@ -29,6 +29,7 @@ namespace GGL.Scoring
         private void Start()
         {
             scoreboard = LoadScores();
+            OnScoreboardUpdate?.Invoke(scoreboard);
         }
 
         /// <summary>
@@ -39,10 +40,9 @@ namespace GGL.Scoring
         {
             for(int i = 0; i < scores.Length; i++)
             {
-                GodID id = (GodID)i;
                 scoreboard[i] += scores[i];
-                OnScoreboardUpdate?.Invoke(id, scoreboard[i]);
             }
+            OnScoreboardUpdate?.Invoke(scoreboard);
             SaveScores(scores);
         }
 
@@ -62,7 +62,7 @@ namespace GGL.Scoring
         /// Saves an array of god scores to a file in StreamingAssets.
         /// </summary>
         /// <param name="scores">The scores to save</param>
-        private void SaveScores(int[] scores)
+        private static void SaveScores(int[] scores)
         {
             // Saves the scores arrat as a JSON file.
             string path = Path.Combine(Application.streamingAssetsPath, FILE_NAME);
@@ -73,7 +73,7 @@ namespace GGL.Scoring
         /// Loads scores from the saved leaderboard file.
         /// </summary>
         /// <returns></returns>
-        private int[] LoadScores()
+        private static int[] LoadScores()
         {
             string path = Path.Combine(Application.streamingAssetsPath, FILE_NAME);
             if (File.Exists(path))

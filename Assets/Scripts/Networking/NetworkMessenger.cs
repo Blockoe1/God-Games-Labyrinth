@@ -40,7 +40,7 @@ namespace GGL.Networking
         [ContextMenu("Send Debug Message")]
         private void SendTestMessage()
         {
-            int[] message = GGL.Scoring.Scoreboard.GetScoreboardArray();
+            int[] message = GGL.Scoring.ScoreboardManager.GetScoreboardArray();
             message[(int)GodID.Zeus] = 500;
             message[(int)GodID.Posiedon] = 100;
             message[(int)GodID.Athena] = 300;

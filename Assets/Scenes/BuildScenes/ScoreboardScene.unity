@@ -220,50 +220,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &137262702 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7900056041062670903, guid: 2b9221f25eead484abad2895383e155c, type: 3}
-  m_PrefabInstance: {fileID: 837025949}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &137262704 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7192306369331563358, guid: 2b9221f25eead484abad2895383e155c, type: 3}
-  m_PrefabInstance: {fileID: 837025949}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 137262702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 593a2fe42fa9d37498c96f9a383b6521, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkManager
---- !u!114 &137262706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 137262702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eae15fbb100ee1e49b4686fc103524a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GGL.Networking.NetworkReciever
-  OnMessageRecieved:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1561674355}
-        m_TargetAssemblyTypeName: GGL.RecieverDebugger, Assembly-CSharp
-        m_MethodName: SetScores
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  networkManager: {fileID: 137262704}
 --- !u!1 &411266147
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,10 +526,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7900056041062670903, guid: 2b9221f25eead484abad2895383e155c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 137262706}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b9221f25eead484abad2895383e155c, type: 3}
 --- !u!1 &1154612441
 GameObject:
@@ -606,7 +559,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1561674351
+--- !u!1 &1550016458
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -614,51 +567,78 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1561674354}
-  - component: {fileID: 1561674355}
+  - component: {fileID: 1550016460}
+  - component: {fileID: 1550016459}
+  - component: {fileID: 1550016461}
   m_Layer: 0
-  m_Name: Reciever
+  m_Name: ScoreboardManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1561674354
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1561674351}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.60181, y: -0.08654, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1561674355
+--- !u!114 &1550016459
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1561674351}
+  m_GameObject: {fileID: 1550016458}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6ca19a8662fc3b499b7ef090f2af62a, type: 3}
+  m_Script: {fileID: 11500000, guid: eae15fbb100ee1e49b4686fc103524a6, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GGL.RecieverDebugger
-  scores: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Networking.NetworkReciever
+  OnMessageRecieved:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1550016461}
+        m_TargetAssemblyTypeName: GGL.Scoring.Scoreboard, Assembly-CSharp
+        m_MethodName: LogScores
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!4 &1550016460
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550016458}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1550016461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550016458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cdfe4ac1663ec04789017df9316b02f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Scoring.Scoreboard
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 837025949}
+  - {fileID: 1550016460}
   - {fileID: 1154612442}
   - {fileID: 61142603}
   - {fileID: 731712497}
   - {fileID: 504808687}
   - {fileID: 411266150}
-  - {fileID: 1561674354}

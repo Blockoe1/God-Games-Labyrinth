@@ -65,11 +65,11 @@ MonoBehaviour:
         Data2: 1104134266
         Data3: 1309239743
         Data4: 698196596
-      Path: event:/Placeholder
+      Path: event:/Placeholder/Placeholder
   <music>k__BackingField:
     Guid:
       Data1: -1010265967
       Data2: 1104134266
       Data3: 1309239743
       Data4: 698196596
-    Path: event:/Placeholder
+    Path: event:/Placeholder/Placeholder

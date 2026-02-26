@@ -18,6 +18,7 @@ namespace GGL.UI.ChampionUI
     {
         [SerializeField] private string targetTypeName;
         [SerializeField] private Image fillImage;
+        [SerializeField] private bool hideIfAvailable;
 
 
         private ChampionBehavior targetBehaviour;
@@ -32,6 +33,11 @@ namespace GGL.UI.ChampionUI
                 .Where(x => x.GetType().Name == targetTypeName).FirstOrDefault();
             targetBehaviour.OnCooldownEvent += StartCooldown;
             targetBehaviour.OnActionPerformedEvent += SetInactive;
+
+            if (hideIfAvailable)
+            {
+                gameObject.SetActive(false);
+            }
         }
 
         /// <summary>
@@ -40,6 +46,10 @@ namespace GGL.UI.ChampionUI
         private void SetInactive()
         {
             fillImage.fillAmount = 0;
+            if (hideIfAvailable)
+            { 
+                gameObject.SetActive(true);
+            }
         }
 
         /// <summary>
@@ -48,6 +58,10 @@ namespace GGL.UI.ChampionUI
         /// <param name="cooldown">The time in seconds of the cooldown.</param>
         private void StartCooldown(float cooldown)
         {
+            if (hideIfAvailable)
+            {
+                gameObject.SetActive(true);
+            }
             StartCoroutine(CooldownRoutine(cooldown));
         }
         private IEnumerator CooldownRoutine(float cooldown)
@@ -63,6 +77,12 @@ namespace GGL.UI.ChampionUI
             }
             // Fill the image completely at the end of the cooldown.
             fillImage.fillAmount = 1;
+
+            // Disable this object when the ability is off-cooldown.
+            if (hideIfAvailable)
+            {
+                gameObject.SetActive(false);
+            }
         }
 
         /// <summary>
@@ -71,6 +91,7 @@ namespace GGL.UI.ChampionUI
         private void OnDestroy()
         {
             targetBehaviour.OnCooldownEvent -= StartCooldown;
+            targetBehaviour.OnActionPerformedEvent -= SetInactive;
         }
     }
 }

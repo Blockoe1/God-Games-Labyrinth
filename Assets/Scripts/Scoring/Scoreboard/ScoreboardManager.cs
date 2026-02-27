@@ -114,5 +114,14 @@ namespace GGL.Scoring
             }
         }
         #endregion
+
+        #region Debug
+        [ContextMenu("Debug Scores")]
+        public void DebugScores()
+        {
+            int[] scores = { 200, 300, 400, 500, 100 };
+            LogScores(scores);
+        }
+        #endregion
     }
 }

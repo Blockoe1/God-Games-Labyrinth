@@ -225,4 +225,35 @@ public static class MathHelpers
     {
         return new Vector2Int(Mathf.RoundToInt(vector.x), Mathf.RoundToInt(vector.y));
     }
+
+
+    /// <summary>
+    /// Calculates the probability density of a value based on the mean and standard deviation of a normal distribution.
+    /// </summary>
+    /// <param name="value">The value to find the probability density of.</param>
+    /// <param name="mean">The mean of the normal distribution.</param>
+    /// <param name="standardDeviation">The standard deviation of the normal distribution.</param>
+    public static float NormalDistribution(float value, float mean, float standardDeviation)
+    {
+        return Mathf.Pow(System.MathF.E, (Mathf.Pow((value - mean) / standardDeviation, 2) / -2)) /
+            (standardDeviation * Mathf.Sqrt(2 * Mathf.PI));
+    }
+
+    /// <summary>
+    /// Finds the standard deviation of a collection of integers.
+    /// </summary>
+    /// <param name="mean">The mean of the data set.</param>
+    /// <param name="data">The data set to find the standard deviation of.</param>
+    /// <returns>The standard deviation of the data set.</returns>
+    public static float StandardDeviation(float mean, float[] data)
+    {
+        float variance = 0;
+        foreach (var item in data)
+        {
+            variance += Mathf.Pow(item - mean, 2);
+        }
+        variance = variance / data.Length;
+
+        return Mathf.Sqrt(variance);
+    }
 }

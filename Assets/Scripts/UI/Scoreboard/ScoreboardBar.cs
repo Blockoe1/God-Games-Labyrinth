@@ -8,6 +8,7 @@
 *****************************************************************************/
 using GGL.Scoring;
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 namespace GGL.UI.Scoreboard
@@ -46,17 +47,21 @@ namespace GGL.UI.Scoreboard
             {
                 totalScore += num;
             }
+            int avgScore = totalScore / scoreboard.Length;
+            float stdDev = MathHelpers.StandardDeviation(avgScore, scoreboard.Cast<float>().ToArray());
 
             // Calculate the proportion of the total score this team's sscore takes up.
             int score = scoreboard[(int)team];
+            float sign = score > avgScore ? 1 : -1;
+            float normalizedWidth = 0.5f + (sign * )
 
-            float width = Mathf.Lerp(minWidth, maxWidth, score / totalScore);
+            float width = Mathf.Lerp(minWidth, maxWidth, normalizedWidth);
             if (animationCoroutine != null)
             {
                 StopCoroutine(animationCoroutine);
                 animationCoroutine = null;
             }
-            animationCoroutine = StartCoroutine(ScoreboardAnimateRoutine(width));
+            animationCoroutine = StartCoroutine(ScoreboardAnimateRoutine(width, tweenTime));
         }
 
         /// <summary>
@@ -66,11 +71,19 @@ namespace GGL.UI.Scoreboard
         /// <returns></returns>
         private IEnumerator ScoreboardAnimateRoutine(float targetWidth, float time)
         {
-            
-            while ()
+            float step = Mathf.Abs((rTrans.sizeDelta.x - targetWidth) / time);
+            Debug.Log(step);
+            while (time > 0)
             {
+                Vector2 size = rTrans.sizeDelta;
+                size.x = Mathf.MoveTowards(size.x, targetWidth, step * Time.deltaTime);
+                rTrans.sizeDelta = size;
 
+                time -= Time.deltaTime;
+                yield return null;
             }
+            animationCoroutine = null;
         }
+
     }
 }

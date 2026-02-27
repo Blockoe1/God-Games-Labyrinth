@@ -19,10 +19,10 @@ namespace GGL.Networking
         /// <param name="message">The message to send.</param>
         public void SendNetMessage(int[] message)
         {
-            if (NetworkManager.Singleton.CustomMessagingManager == null)
+            if (NetworkManager.Singleton == null || NetworkManager.Singleton.CustomMessagingManager == null)
             {
-                throw new System.NotSupportedException
-                    ("Cannot send a message over the network as the client is not connected.");
+                Debug.LogWarning("Cannot send a message over the network as the NetworkManager is not connected.");
+                return;
             }
 
             // Create a buffer writer to write the contents of the message.

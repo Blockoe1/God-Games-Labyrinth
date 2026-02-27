@@ -18,6 +18,7 @@ namespace GGL
         [SerializeField] Slider Timer2;
         [SerializeField] Slider Timer3;
         [SerializeField] Slider Timer4;
+        [SerializeField] Image minotaurImage;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
@@ -43,8 +44,11 @@ namespace GGL
                 timerText.text = "" + time;
                 Timer1.value = ((time - 60) / 30);
             }
+
             //30 seconds have passed, spawn Minotaur
             Minotaur.SetActive(true);
+            minotaurImage.gameObject.SetActive(false);
+
             while (time > 45)
             {
                 yield return null;

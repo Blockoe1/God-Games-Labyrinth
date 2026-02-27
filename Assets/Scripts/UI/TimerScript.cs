@@ -10,7 +10,7 @@ namespace GGL
     {
         [SerializeField] float time;
         [SerializeField] TMP_Text timerText;
-        [SerializeField] UnityEvent UnityEvent;
+        [SerializeField] UnityEvent OnTimerComplete;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
@@ -27,6 +27,7 @@ namespace GGL
                 time -= Time.deltaTime;
                 timerText.text = "" + time;
             }
+            OnTimerComplete?.Invoke();
             SceneManager.LoadScene("WinScene");
         }
     }

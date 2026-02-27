@@ -23,6 +23,14 @@ namespace GGL.UI
         {
             NetworkManager.OnInstantiated += SubscribeEvents;
             NetworkManager.OnDestroying += UnsubscribeEvents;
+            if (NetworkManager.Singleton != null)
+            {
+                SubscribeEvents(NetworkManager.Singleton);
+                if (NetworkManager.Singleton.IsClient)
+                {
+                    OnClientStarted();
+                }
+            }
         }
         private void OnDestroy()
         {
@@ -49,7 +57,10 @@ namespace GGL.UI
         /// </summary>
         private void OnClientStarted()
         {
-            disconnectedImage.enabled = false;
+            if (disconnectedImage != null)
+            {
+                disconnectedImage.enabled = false;
+            }
         }
 
         /// <summary>
@@ -58,7 +69,10 @@ namespace GGL.UI
         /// <param name="isHost">If this client was run as a host.</param>
         private void OnClientStopped(bool isHost)
         {
-            disconnectedImage.enabled = true;
+            if (disconnectedImage != null)
+            {
+                disconnectedImage.enabled = true;
+            }
         }
     }
 }

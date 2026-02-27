@@ -5299,7 +5299,7 @@ MonoBehaviour:
   <ReturnAcceleration>k__BackingField: 40
   <CollectableAttractionForce>k__BackingField: 35
   requiredLeeway: 0
-  collector: {fileID: 0}
+  collector: {fileID: 5887644586341638842}
 --- !u!114 &6409254547191728489
 MonoBehaviour:
   m_ObjectHideFlags: 0

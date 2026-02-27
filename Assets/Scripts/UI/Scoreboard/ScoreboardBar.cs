@@ -48,12 +48,13 @@ namespace GGL.UI.Scoreboard
                 totalScore += num;
             }
             int avgScore = totalScore / scoreboard.Length;
-            float stdDev = MathHelpers.StandardDeviation(avgScore, scoreboard.Cast<float>().ToArray());
+            float stdDev = MathHelpers.StandardDeviation(avgScore, scoreboard);
 
             // Calculate the proportion of the total score this team's sscore takes up.
             int score = scoreboard[(int)team];
             float sign = score > avgScore ? 1 : -1;
-            float normalizedWidth = 0.5f + (sign * )
+            Debug.Log(score + " " + avgScore + " " + MathHelpers.NormalDistribution01(score, avgScore, stdDev) + " " + stdDev);
+            float normalizedWidth = 0.5f + (sign * (1 - MathHelpers.NormalDistribution01(score, avgScore, stdDev)));
 
             float width = Mathf.Lerp(minWidth, maxWidth, normalizedWidth);
             if (animationCoroutine != null)
@@ -72,7 +73,6 @@ namespace GGL.UI.Scoreboard
         private IEnumerator ScoreboardAnimateRoutine(float targetWidth, float time)
         {
             float step = Mathf.Abs((rTrans.sizeDelta.x - targetWidth) / time);
-            Debug.Log(step);
             while (time > 0)
             {
                 Vector2 size = rTrans.sizeDelta;

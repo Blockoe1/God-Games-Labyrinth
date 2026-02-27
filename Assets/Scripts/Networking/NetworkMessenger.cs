@@ -22,6 +22,7 @@ namespace GGL.Networking
             if (NetworkManager.Singleton == null || NetworkManager.Singleton.CustomMessagingManager == null)
             {
                 Debug.LogWarning("Cannot send a message over the network as the NetworkManager is not connected.");
+                return;
             }
 
             // Create a buffer writer to write the contents of the message.

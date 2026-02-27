@@ -32,15 +32,6 @@ namespace GGL.Minotaur
         #region Component References
         [Header("Components")]
         [SerializeReference, ReadOnly] protected VisionRelay relay;
-
-        /// <summary>
-        /// Get components on reset.
-        /// </summary>
-        [ContextMenu("Get Component References")]
-        protected virtual void Reset()
-        {
-            relay = GetComponentInChildren<VisionRelay>();
-        }
         #endregion
 
         /// <summary>
@@ -48,6 +39,7 @@ namespace GGL.Minotaur
         /// </summary>
         private void OnValidate()
         {
+            relay = GetComponentInChildren<VisionRelay>();
             Vector2[] points = new Vector2[VISION_RESOLUTION + 1];
             points[0] = Vector2.zero;
             float subdividedAngle = visionAngle / VISION_RESOLUTION;

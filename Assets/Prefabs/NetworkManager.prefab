@@ -126,8 +126,40 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
+      m_Id: cab71ac5-1bd3-40a6-8ace-8f20b97db79d
+      m_Path: <Keyboard>/1
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Connect
+      m_Flags: 0
+    - m_Name: 
       m_Id: baa92c4c-1579-451f-ba6c-0062eded7fe7
       m_Path: <Keyboard>/2
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Connect
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 3b80e979-5174-4876-b0e1-07047bc9bb9e
+      m_Path: <Keyboard>/3
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Connect
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 5c52c630-a934-4f42-a078-3beae73a9701
+      m_Path: <Keyboard>/o
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Connect
+      m_Flags: 0
+    - m_Name: 
+      m_Id: d9bdb985-3886-4ab8-bc98-bd945246730d
+      m_Path: <Keyboard>/f5
       m_Interactions: 
       m_Processors: 
       m_Groups: 

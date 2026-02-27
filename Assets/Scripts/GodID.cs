@@ -13,6 +13,7 @@ namespace GGL
         Zeus = 0,
         Posiedon = 1,
         Athena = 2,
-        Aphrodite = 3
+        Aphrodite = 3,
+        Minotaur = 4
     }
 }

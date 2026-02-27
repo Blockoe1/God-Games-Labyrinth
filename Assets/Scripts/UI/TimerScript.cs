@@ -13,11 +13,13 @@ namespace GGL
         [SerializeField] float time;
         [SerializeField] TMP_Text timerText;
         [SerializeField] UnityEvent OnTimerComplete;
-        [SerializeField] GameObject Minotaur;
+        [SerializeField] UnityEvent MinotaurSpawn;
+        [SerializeField] UnityEvent MinotaurEnrage;
         [SerializeField] Slider Timer1;
         [SerializeField] Slider Timer2;
         [SerializeField] Slider Timer3;
         [SerializeField] Slider Timer4;
+        [SerializeField] Image minotaurImage;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
@@ -43,8 +45,11 @@ namespace GGL
                 timerText.text = "" + time;
                 Timer1.value = ((time - 60) / 30);
             }
+
             //30 seconds have passed, spawn Minotaur
-            Minotaur.SetActive(true);
+            MinotaurSpawn?.Invoke();
+            minotaurImage.gameObject.SetActive(false);
+
             while (time > 45)
             {
                 yield return null;
@@ -59,8 +64,10 @@ namespace GGL
                 timerText.text = "" + time;
                 Timer3.value = ((time - 15) / 30);
             }
+
             //60 seconds have passed, 30 left
-            //enrage minotaur i guess
+            MinotaurEnrage?.Invoke();
+
             while (time > 15)
             {
                 yield return null;

@@ -13,7 +13,6 @@ using UnityEngine.Events;
 
 namespace GGL.Networking
 {
-    [RequireComponent(typeof(NetworkManager))]
     public class NetworkReciever : MonoBehaviour
     {
         #region Consts
@@ -22,32 +21,40 @@ namespace GGL.Networking
 
         [SerializeField] private UnityEvent<int[]> OnMessageRecieved;
 
-        #region Component References
-        [Header("Components")]
-        [SerializeReference, ReadOnly] private NetworkManager networkManager;
+        private NetworkManager networkManager;
 
         /// <summary>
-        /// Get components on reset.
+        /// Setup event references to show and hide the UI element on network events.
         /// </summary>
-        [ContextMenu("Get Component References")]
-        private void Reset()
+        private void Awake()
         {
-            networkManager = GetComponent<NetworkManager>();
-        }
-        #endregion
-
-        /// <summary>
-        /// Setup Events to register message recieving.
-        /// </summary>
-        private void Start()
-        {
-            networkManager.OnServerStarted += RegisterMessages;
-            networkManager.OnPreShutdown += UnregisterMessages;
+            NetworkManager.OnInstantiated += SubscribeEvents;
+            NetworkManager.OnDestroying += UnsubscribeEvents;
+            if (NetworkManager.Singleton != null)
+            {
+                SubscribeEvents(NetworkManager.Singleton);
+            }
         }
         private void OnDestroy()
         {
-            networkManager.OnServerStarted -= RegisterMessages;
-            networkManager.OnPreShutdown -= UnregisterMessages;
+            NetworkManager.OnInstantiated -= SubscribeEvents;
+            NetworkManager.OnDestroying -= UnsubscribeEvents;
+        }
+
+        /// <summary>
+        /// Called by the NetworkManager when it's spawned/destroyed to subscribe/unsubscrive singleton events.
+        /// </summary>
+        private void SubscribeEvents(NetworkManager manager)
+        {
+            networkManager = manager;
+            manager.OnServerStarted += RegisterMessages;
+            manager.OnPreShutdown += UnregisterMessages;
+        }
+        private void UnsubscribeEvents(NetworkManager manager)
+        {
+            manager.OnServerStarted -= RegisterMessages;
+            manager.OnPreShutdown -= UnregisterMessages;
+            networkManager = null;
         }
 
         /// <summary>

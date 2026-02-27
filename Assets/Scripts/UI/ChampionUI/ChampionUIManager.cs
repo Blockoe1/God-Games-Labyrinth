@@ -25,6 +25,7 @@ namespace GGL.UI.ChampionUI
                 .Where(item => item.Team == team).FirstOrDefault();
             // Dont initialize if a champion wasn't found.
             //Debug.Log(champion);
+            ChampionUIService[] services = GetComponentsInChildren<ChampionUIService>();
             if (champion != null)
             {
                 foreach(ChampionUIService service in services)

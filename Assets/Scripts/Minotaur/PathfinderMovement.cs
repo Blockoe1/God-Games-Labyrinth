@@ -64,7 +64,7 @@ namespace GGL.Minotaur
             {
                 Pathfinder.DrawPath(currentPath);
 
-                Debug.Log(currentPath[currentPathNode] + " " + currentPathNode);
+                //Debug.Log(currentPath[currentPathNode] + " " + currentPathNode);
 
                 TargetDirection = GetDirection(currentPath[currentPathNode], rb.position);
 

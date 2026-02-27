@@ -24,6 +24,7 @@ namespace GGL
             Vector2.down, 
             Vector2.left
         };
+        private const string MOVE_CHECK_MASK = "MoveCheck";
         #endregion
 
         [SerializeField] private float maxSpeed;
@@ -60,6 +61,7 @@ namespace GGL
         #endregion
 
         #region Properties
+        protected float MaxWallCheckDistance => maxWallCheckDistance;
         public Rigidbody2D Rigidbody => rb;
         public float MaxSpeed
         {
@@ -124,7 +126,8 @@ namespace GGL
                 // Use a raycast to determine valid directions.
                 foreach (var direction in MOVEMENT_DIRECTIONS)
                 {
-                    RaycastHit2D ray = Physics2D.Raycast(rb.position, direction, maxWallCheckDistance, GGLHelpers.MazeMask);
+                    RaycastHit2D ray = Physics2D.Raycast(rb.position, direction, maxWallCheckDistance, 
+                        LayerMask.GetMask(MOVE_CHECK_MASK) | GGLHelpers.MazeMask);
                     Debug.DrawRay(rb.position, direction * maxWallCheckDistance, Color.green);
                     // If the raycast hit nothing, this is a valid direction.
                     if (!ray)
@@ -138,6 +141,8 @@ namespace GGL
                 }
             }
 
+            OnFixedUpdate();
+
             speed = Mathf.MoveTowards(speed, IsMoving ? maxSpeed : 0, acceleration * Time.fixedDeltaTime);
             rb.linearVelocity = speed * Direction;
 
@@ -147,6 +152,11 @@ namespace GGL
                 Snap();
             }
         }
+
+        /// <summary>
+        /// Special inster for running FixedUpdate logic that happens in between direction checks and movement.
+        /// </summary>
+        protected virtual void OnFixedUpdate() { }
 
         /// <summary>
         /// Snaps the object to an integer grid.

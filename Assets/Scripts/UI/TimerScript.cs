@@ -2,6 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 namespace GGL
 {
@@ -9,7 +10,7 @@ namespace GGL
     {
         [SerializeField] float time;
         [SerializeField] TMP_Text timerText;
-        [SerializeField] UnityEvent UnityEvent;
+        [SerializeField] UnityEvent OnTimerComplete;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
@@ -26,7 +27,8 @@ namespace GGL
                 time -= Time.deltaTime;
                 timerText.text = "" + time;
             }
-            //level end stuff
+            OnTimerComplete?.Invoke();
+            SceneManager.LoadScene("WinScene");
         }
     }
 }

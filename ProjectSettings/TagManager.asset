@@ -17,7 +17,7 @@ TagManager:
   - Collectable
   - Champion
   - Snapping
-  - 
+  - MoveCheck
   - 
   - 
   - 
@@ -48,6 +48,9 @@ TagManager:
     locked: 0
   - name: Front
     uniqueID: 1666798879
+    locked: 0
+  - name: UI
+    uniqueID: 2228205009
     locked: 0
   m_RenderingLayers:
   - Default

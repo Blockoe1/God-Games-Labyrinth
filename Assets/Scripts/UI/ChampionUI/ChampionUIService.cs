@@ -6,6 +6,8 @@
 //
 // Brief Description : Base class for all scripts that display UI information about a champion.
 *****************************************************************************/
+using System.Collections;
+using System.Reflection;
 using UnityEngine;
 
 namespace GGL.UI.ChampionUI

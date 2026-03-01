@@ -48,6 +48,7 @@ namespace GGL.Champions
         protected GodID Team => id == null ? GodID.Zeus : id.Team;
         protected bool IsCooldown => isCooldown;
         protected Vector2 Direction => movement == null ? Vector2.zero : movement.Direction;
+        protected Vector2 TargetDirection => movement == null ? Vector2.zero : movement.TargetDirection;
         #endregion
 
         /// <summary>

@@ -40,6 +40,7 @@ namespace GGL
         private Vector2 targetDirection;
 
         public event Action<Vector2> OnDirectionChanged;
+        public event Action<Vector2> OnTargetDirectionChanged;
 
         protected float speed;
         private bool markForSnap;
@@ -80,6 +81,7 @@ namespace GGL
             { 
                 targetDirection = value;
 
+                OnTargetDirectionChanged?.Invoke(targetDirection);
                 // If 0 is set as the target direction, then the objecct stops moving.
                 if (targetDirection == Vector2.zero)
                 {

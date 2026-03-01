@@ -13553,7 +13553,7 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 3
       m_TileSpriteIndex: 3
-      m_TileMatrixIndex: 2
+      m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
@@ -13893,7 +13893,7 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 3
       m_TileSpriteIndex: 3
-      m_TileMatrixIndex: 2
+      m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
@@ -14253,7 +14253,7 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 3
       m_TileSpriteIndex: 3
-      m_TileMatrixIndex: 2
+      m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
@@ -26938,7 +26938,7 @@ Tilemap:
   - m_RefCount: 33
     m_Data: {fileID: -917383685, guid: 8754abf70639770459a8d077bfe2a80b, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 1590
+  - m_RefCount: 1593
     m_Data:
       e00: 1
       e01: 0
@@ -26974,7 +26974,7 @@ Tilemap:
       e31: 0
       e32: 0
       e33: 1
-  - m_RefCount: 95
+  - m_RefCount: 92
     m_Data:
       e00: 0
       e01: -1
@@ -27049,9 +27049,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0ff122d19ea9364a9c44f5cf8c4a380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Maze.AutoMoveCollision
-  referenceTilemap: {fileID: 1581354546}
-  targetTilemap: {fileID: 1340197530}
-  fillTile: {fileID: 11400000, guid: 9fd99afd5fe1a1d4aa4d2d37a5cb237a, type: 2}
+  referenceTilemap: {fileID: 1340197530}
+  targetTilemap: {fileID: 1581354546}
+  fillTile: {fileID: 11400000, guid: be3f6090a4c56a948971ca0e78faa201, type: 2}
 --- !u!1 &1529363999
 GameObject:
   m_ObjectHideFlags: 0

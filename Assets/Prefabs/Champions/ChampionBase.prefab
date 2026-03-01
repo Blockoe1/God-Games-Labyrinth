@@ -5098,6 +5098,7 @@ MonoBehaviour:
   maxWallCheckDistance: 1
   positionSnap: 1
   rb: {fileID: 1706004363272337}
+  knockbackTime: 0.5
   autoTurn: 0
   input: {fileID: 8650097738718565955}
 --- !u!114 &1731887743052177298
@@ -5404,7 +5405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eafdf9f47ba18e4daa4d6478abeb504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Champions.ToggleIgnoreMinotaur
-  collider: {fileID: 4195008848169630617}
+  coll: {fileID: 4195008848169630617}
 --- !u!114 &3109071281417572511
 MonoBehaviour:
   m_ObjectHideFlags: 0

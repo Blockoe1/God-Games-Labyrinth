@@ -8,6 +8,7 @@
 *****************************************************************************/
 using NaughtyAttributes;
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,11 +21,13 @@ namespace GGL.Champions
         private const string MOVE_ACTION_NAME = "Move";
         #endregion
 
+        [SerializeField] private float knockbackTime;
         [SerializeField] private bool autoTurn;
 
         private InputAction moveAction;
 
         public event Action<bool> OnMove;
+        private bool suspendInput;
 
         #region Component References
         [SerializeReference, ReadOnly] private PlayerInput input;
@@ -73,8 +76,11 @@ namespace GGL.Champions
         private void MoveAction_performed(InputAction.CallbackContext obj)
         {
             // Only take the X or Y Component for locked movement.
-            Vector2Int input = MathHelpers.RoundVectorToInt(obj.ReadValue<Vector2>());
-            TargetDirection = input;
+            if (!suspendInput)
+            {
+                Vector2Int input = MathHelpers.RoundVectorToInt(moveAction.ReadValue<Vector2>());
+                TargetDirection = input;
+            }
         }
         private void MoveAction_canceled(InputAction.CallbackContext obj)
         {
@@ -128,6 +134,17 @@ namespace GGL.Champions
         {
             Direction = -direction;
             speed = -force;
+            StartCoroutine(SuspendInput(knockbackTime));
+        }
+
+        private IEnumerator SuspendInput(float time)
+        {
+            if (suspendInput) { yield break; }
+            suspendInput = true;
+            yield return new WaitForSeconds(time);
+            suspendInput = false;
+            // Check input after suspension.
+            MoveAction_performed(new InputAction.CallbackContext());
         }
     }
 }

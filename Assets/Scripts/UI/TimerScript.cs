@@ -20,6 +20,7 @@ namespace GGL
         [SerializeField] Slider Timer3;
         [SerializeField] Slider Timer4;
         [SerializeField] Image minotaurImage;
+        [SerializeField] Image circleTimer;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
@@ -37,6 +38,7 @@ namespace GGL
                 time -= Time.deltaTime;
                 timerText.text = "" + time;
                 Timer1.value = ((time - 60) / 30);
+                circleTimer.fillAmount = time / 90;
             }
             while (time > 60)
             {
@@ -44,6 +46,8 @@ namespace GGL
                 time -= Time.deltaTime;
                 timerText.text = "" + time;
                 Timer1.value = ((time - 60) / 30);
+                circleTimer.fillAmount = time / 90;
+
             }
 
             //30 seconds have passed, spawn Minotaur
@@ -56,6 +60,7 @@ namespace GGL
                 time -= Time.deltaTime;
                 timerText.text = "" + time;
                 Timer2.value = ((time - 45) / 15);
+                circleTimer.fillAmount = time / 90;
             }
             while (time > 30)
             {
@@ -63,6 +68,7 @@ namespace GGL
                 time -= Time.deltaTime;
                 timerText.text = "" + time;
                 Timer3.value = ((time - 15) / 30);
+                circleTimer.fillAmount = time / 90;
             }
 
             //60 seconds have passed, 30 left
@@ -74,6 +80,7 @@ namespace GGL
                 time -= Time.deltaTime;
                 timerText.text = "" + time;
                 Timer3.value = ((time - 15) / 30);
+                circleTimer.fillAmount = time / 90;
             }
             while (time > 0)
             {
@@ -81,6 +88,7 @@ namespace GGL
                 time -= Time.deltaTime;
                 timerText.text = "" + time;
                 Timer4.value = (time / 15);
+                circleTimer.fillAmount = time / 90;
             }
             OnTimerComplete?.Invoke();
             SceneManager.LoadScene("WinScene");

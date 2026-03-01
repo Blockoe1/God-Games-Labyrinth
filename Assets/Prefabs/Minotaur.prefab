@@ -183,6 +183,7 @@ MonoBehaviour:
           rid: 2241602981746442322
         <minotaur>k__BackingField: {fileID: 5871052308712400146}
         chaseSpeed: 5
+        rePathDelay: 0
 --- !u!114 &464855989588843931
 MonoBehaviour:
   m_ObjectHideFlags: 0

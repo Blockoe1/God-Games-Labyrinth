@@ -112,6 +112,12 @@ namespace GGL.Scoring
                 Vector2Int position = MathHelpers.RoundVectorToInt(sceneCollectable.transform.localPosition);
                 RegisterCollectable(sceneCollectable, position);
             }
+
+            // Spawn the initial random gold.
+            for (int i = 0; i < startingGoldAmount; i++)
+            {
+                SpawnAtRandomPosition();
+            }
         }
 
         /// <summary>
@@ -119,12 +125,6 @@ namespace GGL.Scoring
         /// </summary>
         private void Start()
         {
-            // Spawn the initial random gold.
-            for(int i = 0; i < startingGoldAmount; i++)
-            {
-                SpawnAtRandomPosition();
-            }
-
             isSpawning = true;
             StartCoroutine(SpawnRoutine());
         }

@@ -2680,7 +2680,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2137432236905573919, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3511338007652119557, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
       propertyPath: collisionTilemap

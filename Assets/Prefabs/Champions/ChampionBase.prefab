@@ -4870,6 +4870,7 @@ GameObject:
   - component: {fileID: 1020027819385585752}
   - component: {fileID: 4637998730901008517}
   - component: {fileID: 6409254547191728489}
+  - component: {fileID: 3682207722364879143}
   - component: {fileID: 3109071281417572511}
   m_Layer: 8
   m_Name: ChampionBase
@@ -5340,6 +5341,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 3682207722364879143}
+        m_TargetAssemblyTypeName: GGL.Champions.ToggleIgnoreMinotaur, Assembly-CSharp
+        m_MethodName: Toggle
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   OnIFrameExpire:
     m_PersistentCalls:
       m_Calls:
@@ -5367,6 +5380,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3682207722364879143}
+        m_TargetAssemblyTypeName: GGL.Champions.ToggleIgnoreMinotaur, Assembly-CSharp
+        m_MethodName: Toggle
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3682207722364879143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4254817847457918461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eafdf9f47ba18e4daa4d6478abeb504, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Champions.ToggleIgnoreMinotaur
+  collider: {fileID: 4195008848169630617}
 --- !u!114 &3109071281417572511
 MonoBehaviour:
   m_ObjectHideFlags: 0

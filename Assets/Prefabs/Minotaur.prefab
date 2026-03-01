@@ -147,7 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Minotaur.MinotaurController
   states:
   - rid: 6611772050505817
-  - rid: 6611786919313524
+  - rid: 2241602981746442322
   <movement>k__BackingField: {fileID: 3511338007652119557}
   <vision>k__BackingField: {fileID: 464855989588843931}
   <attacker>k__BackingField: {fileID: 8163698570004376742}
@@ -164,7 +164,7 @@ MonoBehaviour:
           rid: -2
         <minotaur>k__BackingField: {fileID: 5871052308712400146}
         visionDelay: 3
-    - rid: 6611786919313524
+    - rid: 2241602981746442322
       type: {class: AggroState, ns: GGL.Minotaur, asm: Assembly-CSharp}
       data:
         debugColor: {r: 0, g: 0, b: 0, a: 0}
@@ -172,17 +172,17 @@ MonoBehaviour:
           rid: -2
         <minotaur>k__BackingField: {fileID: 5871052308712400146}
         subStates:
-        - rid: 6611786919313526
-        aggroTime: 8
+        - rid: 2241602981746442323
+        aggroTime: 5
         aggroChangeChance: 0
-    - rid: 6611786919313526
+    - rid: 2241602981746442323
       type: {class: ChaseState, ns: GGL.Minotaur, asm: Assembly-CSharp}
       data:
         debugColor: {r: 0.52201253, g: 0.024623167, b: 0.024623167, a: 1}
         parentState:
-          rid: 6611786919313524
+          rid: 2241602981746442322
         <minotaur>k__BackingField: {fileID: 5871052308712400146}
-        chaseSpeed: 7
+        chaseSpeed: 5
 --- !u!114 &464855989588843931
 MonoBehaviour:
   m_ObjectHideFlags: 0

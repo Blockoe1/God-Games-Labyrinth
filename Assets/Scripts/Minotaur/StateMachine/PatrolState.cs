@@ -7,6 +7,7 @@
 // Brief Description : State for the minotaur patrolling around the maze.
 *****************************************************************************/
 using GGL.Scoring;
+using NaughtyAttributes;
 using System.Collections;
 using UnityEngine;
 
@@ -15,6 +16,17 @@ namespace GGL.Minotaur
     public class PatrolState : MinotaurState
     {
         [SerializeField] private float visionDelay = 1f;
+        [SerializeField, ReadOnly, AllowNesting] private GameObject[] champions;
+
+        private int patrolTarget;
+
+        /// <summary>
+        /// Gets references to the champions to patrol to.
+        /// </summary>
+        public override void GetComponents()
+        {
+            champions = GameObject.FindGameObjectsWithTag("Player");
+        }
 
         /// <summary>
         /// When the state is entered, set a starting path.
@@ -61,8 +73,10 @@ namespace GGL.Minotaur
         /// <returns>The path from the minotaur's current position to the gold's position.</returns>
         private void SetNewPatrolPath()
         {
-            Vector2 destination = CollectableSpawner.Collectables[Random.Range(0, 
-                CollectableSpawner.Collectables.Count)].transform.position;
+            //Vector2 destination = CollectableSpawner.Collectables[Random.Range(0, 
+            //    CollectableSpawner.Collectables.Count)].transform.position;
+            patrolTarget = (patrolTarget + 1) % champions.Length;
+            Vector2 destination = champions[patrolTarget].transform.position;
             minotaur.movement.SetDestination(destination);
         }
         #endregion

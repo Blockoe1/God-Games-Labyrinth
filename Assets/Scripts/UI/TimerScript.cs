@@ -1,17 +1,16 @@
+using System;
 using System.Collections;
-using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using static UnityEngine.Rendering.DebugUI;
 
 namespace GGL
 {
     public class TimerScript : MonoBehaviour
     {
-        [SerializeField] float time;
-        [SerializeField] TMP_Text timerText;
+        [SerializeField] private float time;
+        //[SerializeField] TMP_Text timerText;
         [SerializeField] UnityEvent OnTimerComplete;
         [SerializeField] UnityEvent MinotaurSpawn;
         [SerializeField] UnityEvent MinotaurEnrage;
@@ -22,73 +21,83 @@ namespace GGL
         [SerializeField] Image minotaurImage;
         [SerializeField] Image circleTimer;
 
+        [SerializeField] float currentTime;
+
+        public static event Action<float, float> OnTimerUpdate;
+
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
+            currentTime = time;
             StartCoroutine(Timer());
         }
         
         IEnumerator Timer()
         {
             Timer1.value = 0.5f;
-            timerText.text = "" + time;
-            while (time > 75)
+            //timerText.text = "" + time;
+            while (currentTime > 75)
             {
                 yield return null;
-                time -= Time.deltaTime;
-                timerText.text = "" + time;
-                Timer1.value = ((time - 60) / 30);
-                circleTimer.fillAmount = time / 90;
+                currentTime -= Time.deltaTime;
+                //timerText.text = "" + time;
+                Timer1.value = ((currentTime - 60) / 30);
+                circleTimer.fillAmount = currentTime / 90;
+                OnTimerUpdate?.Invoke(currentTime, time);
             }
-            while (time > 60)
+            while (currentTime > 60)
             {
                 yield return null;
-                time -= Time.deltaTime;
-                timerText.text = "" + time;
-                Timer1.value = ((time - 60) / 30);
-                circleTimer.fillAmount = time / 90;
-
+                currentTime -= Time.deltaTime;
+                //timerText.text = "" + time;
+                Timer1.value = ((currentTime - 60) / 30);
+                circleTimer.fillAmount = currentTime / 90;
+                OnTimerUpdate?.Invoke(currentTime, time);
             }
 
             //30 seconds have passed, spawn Minotaur
             MinotaurSpawn?.Invoke();
             minotaurImage.gameObject.SetActive(false);
 
-            while (time > 45)
+            while (currentTime > 45)
             {
                 yield return null;
-                time -= Time.deltaTime;
-                timerText.text = "" + time;
-                Timer2.value = ((time - 45) / 15);
-                circleTimer.fillAmount = time / 90;
+                currentTime -= Time.deltaTime;
+                //timerText.text = "" + time;
+                Timer2.value = ((currentTime - 45) / 15);
+                circleTimer.fillAmount = currentTime / 90;
+                OnTimerUpdate?.Invoke(currentTime, time);
             }
-            while (time > 30)
+            while (currentTime > 30)
             {
                 yield return null;
-                time -= Time.deltaTime;
-                timerText.text = "" + time;
-                Timer3.value = ((time - 15) / 30);
-                circleTimer.fillAmount = time / 90;
+                currentTime -= Time.deltaTime;
+                //timerText.text = "" + time;
+                Timer3.value = ((currentTime - 15) / 30);
+                circleTimer.fillAmount = currentTime / 90;
+                OnTimerUpdate?.Invoke(currentTime, time);
             }
 
             //60 seconds have passed, 30 left
             MinotaurEnrage?.Invoke();
 
-            while (time > 15)
+            while (currentTime > 15)
             {
                 yield return null;
-                time -= Time.deltaTime;
-                timerText.text = "" + time;
-                Timer3.value = ((time - 15) / 30);
-                circleTimer.fillAmount = time / 90;
+                currentTime -= Time.deltaTime;
+                //timerText.text = "" + time;
+                Timer3.value = ((currentTime - 15) / 30);
+                circleTimer.fillAmount = currentTime / 90;
+                OnTimerUpdate?.Invoke(currentTime, time);
             }
-            while (time > 0)
+            while (currentTime > 0)
             {
                 yield return null;
-                time -= Time.deltaTime;
-                timerText.text = "" + time;
-                Timer4.value = (time / 15);
-                circleTimer.fillAmount = time / 90;
+                currentTime -= Time.deltaTime;
+                //timerText.text = "" + time;
+                Timer4.value = (currentTime / 15);
+                circleTimer.fillAmount = currentTime / 90;
+                OnTimerUpdate?.Invoke(currentTime, time);
             }
             OnTimerComplete?.Invoke();
             SceneManager.LoadScene("WinScene");

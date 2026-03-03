@@ -6,13 +6,18 @@
 //
 // Brief Description : State for the minotaur chasing an aggroed player.
 *****************************************************************************/
+using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem.UI;
 
 namespace GGL.Minotaur
 {
     public class ChaseState : MinotaurState
     {
         [SerializeField] private float chaseSpeed;
+        [SerializeField, Tooltip("If the minotaur fails to find a path to the chased player, wait this many " +
+            "seconds before attempting to find a path again.")] 
+        private float rePathDelay;
 
         private float baseSpeed;
 
@@ -56,6 +61,22 @@ namespace GGL.Minotaur
         {
             //Debug.Log(aggroState.AggroTarget);
             minotaur.movement.SetDestination(aggroState.AggroTarget.transform.position);
+            // If a null path was found, delay for a bit and re-path;
+            if (minotaur.movement.CurrentPath == null)
+            {
+                minotaur.StartCoroutine(RePathRoutine(rePathDelay));
+            }
+        }
+
+        /// <summary>
+        /// Delayed coroutine to check for a new path after a delay.
+        /// </summary>
+        /// <param name="time"></param>
+        /// <returns></returns>
+        private IEnumerator RePathRoutine(float time)
+        {
+            yield return new WaitForSeconds(time);
+            UpdatePath(Vector2.zero);
         }
     }
 }

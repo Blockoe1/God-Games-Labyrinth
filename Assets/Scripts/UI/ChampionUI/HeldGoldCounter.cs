@@ -47,7 +47,8 @@ namespace GGL.UI.ChampionUI
         /// <param name="heldCount">The total amount of gold the champion is holding.</param>
         private void Collector_OnCollect(int heldCount)
         {
-            particles.PlayParticle(collector.transform.position, transform.position, () => UpdateCollectables(heldCount));
+            //particles.PlayParticle(collector.transform.position, transform.position, () => UpdateCollectables(heldCount));
+            UpdateCollectables(heldCount);
         }
 
         /// <summary>

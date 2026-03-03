@@ -43,7 +43,7 @@ namespace GGL.Minotaur
         /// <summary>
         /// Set the first state as the minotaur's starting state.
         /// </summary>
-        private void Start()
+        private void OnEnable()
         {
             SetState(states[0]);
         }

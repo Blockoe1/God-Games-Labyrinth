@@ -10,6 +10,7 @@ using GGL.Scoring;
 using NaughtyAttributes;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace GGL.UI.ChampionUI
 {
@@ -19,6 +20,7 @@ namespace GGL.UI.ChampionUI
         [SerializeField] private TieredSprite goldSprite;
         [SerializeField] private Transform depositParticleTarget;
         [SerializeField] private IndicatorParticles particles;
+        [SerializeField] private Image fillImage;
         [SerializeField] private float goldDecreaseTime = 1f;
         [SerializeField] private float goldDepositePeriod;
         //[SerializeField] private TMP_Text pointsText;
@@ -115,7 +117,15 @@ namespace GGL.UI.ChampionUI
         private void UpdateCollectables(int heldCount)
         {
             // Update the gold sprite based on the proportion of the champion's held amount and capacity.
-            goldSprite.SpriteAmount = collector.GoldCapacity > 0 ? (float)heldCount / collector.GoldCapacity : 0;
+            float normalizedGold = collector.GoldCapacity > 0 ? (float)heldCount / collector.GoldCapacity : 0;
+            if (fillImage != null)
+            {
+                fillImage.fillAmount = normalizedGold;
+            }
+            if (goldSprite != null)
+            {
+                goldSprite.SpriteAmount = normalizedGold;
+            }
             lastHeld = heldCount;
         }
 

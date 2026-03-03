@@ -10,6 +10,7 @@ using GGL.Champions;
 using System.Collections;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace GGL.UI.ChampionUI
@@ -19,6 +20,7 @@ namespace GGL.UI.ChampionUI
         [SerializeField] private string targetTypeName;
         [SerializeField] private Image fillImage;
         [SerializeField] private bool hideIfAvailable;
+        [SerializeField] private UnityEvent OnCooldownExpire;
 
 
         private ChampionBehavior targetBehaviour;
@@ -77,6 +79,7 @@ namespace GGL.UI.ChampionUI
             }
             // Fill the image completely at the end of the cooldown.
             fillImage.fillAmount = 1;
+            OnCooldownExpire?.Invoke();
 
             // Disable this object when the ability is off-cooldown.
             if (hideIfAvailable)

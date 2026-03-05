@@ -17,7 +17,7 @@ namespace GGL.Champions
     {
         [SerializeField] private ParticleSystem goldParticles;
         [SerializeField] private float maxEmission = 5;
-        [SerializeField] private float maxLifetime = 2;
+        //[SerializeField] private float maxLifetime = 2;
 
         #region Component References
         [Header("Components")]
@@ -59,8 +59,8 @@ namespace GGL.Champions
             emission.rateOverTime = Mathf.Lerp(0, maxEmission, normalizedGold);
 
             // Set the lifetime.
-            var main = goldParticles.main;
-            main.startLifetime = Mathf.Lerp(0, maxLifetime, normalizedGold);
+            //var main = goldParticles.main;
+            //main.startLifetime = Mathf.Lerp(0, maxLifetime, normalizedGold);
         }
     }
 }

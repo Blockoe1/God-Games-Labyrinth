@@ -1743,18 +1743,6 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.9921569
       objectReference: {fileID: 0}
-    - target: {fileID: 5923003265238840535, guid: c93949430ef14d34ba5249274a1a0340, type: 3}
-      propertyPath: m_Color.b
-      value: 0.93725497
-      objectReference: {fileID: 0}
-    - target: {fileID: 5923003265238840535, guid: c93949430ef14d34ba5249274a1a0340, type: 3}
-      propertyPath: m_Color.g
-      value: 0.6431373
-      objectReference: {fileID: 0}
-    - target: {fileID: 5923003265238840535, guid: c93949430ef14d34ba5249274a1a0340, type: 3}
-      propertyPath: m_Color.r
-      value: 0.9921569
-      objectReference: {fileID: 0}
     - target: {fileID: 6857849781713391100, guid: c93949430ef14d34ba5249274a1a0340, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1993,18 +1981,6 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.43529415
       objectReference: {fileID: 0}
-    - target: {fileID: 5923003265238840535, guid: c93949430ef14d34ba5249274a1a0340, type: 3}
-      propertyPath: m_Color.b
-      value: 0.9960785
-      objectReference: {fileID: 0}
-    - target: {fileID: 5923003265238840535, guid: c93949430ef14d34ba5249274a1a0340, type: 3}
-      propertyPath: m_Color.g
-      value: 0.80392164
-      objectReference: {fileID: 0}
-    - target: {fileID: 5923003265238840535, guid: c93949430ef14d34ba5249274a1a0340, type: 3}
-      propertyPath: m_Color.r
-      value: 0.43529415
-      objectReference: {fileID: 0}
     - target: {fileID: 6857849781713391100, guid: c93949430ef14d34ba5249274a1a0340, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2230,14 +2206,6 @@ PrefabInstance:
     - target: {fileID: 5768132322379381111, guid: c93949430ef14d34ba5249274a1a0340, type: 3}
       propertyPath: m_Color.r
       value: 0.9921569
-      objectReference: {fileID: 0}
-    - target: {fileID: 5923003265238840535, guid: c93949430ef14d34ba5249274a1a0340, type: 3}
-      propertyPath: m_Color.b
-      value: 0.36862746
-      objectReference: {fileID: 0}
-    - target: {fileID: 5923003265238840535, guid: c93949430ef14d34ba5249274a1a0340, type: 3}
-      propertyPath: m_Color.g
-      value: 0.35686275
       objectReference: {fileID: 0}
     - target: {fileID: 6857849781713391100, guid: c93949430ef14d34ba5249274a1a0340, type: 3}
       propertyPath: m_Pivot.x

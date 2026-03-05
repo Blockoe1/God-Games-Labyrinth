@@ -19,7 +19,7 @@ namespace GGL.Audio
         /// </summary>
         /// <remarks>Done this way so it can be called with UnityEvents.</remarks>
         /// <param name="soundName"></param>
-        public void PlaySound(string soundName)
+        public virtual void PlaySound(string soundName)
         {
             //Debug.Log(FmodEvents.instance + "-" + AudioManager.instance);
             if (FmodEvents.instance != null && AudioManager.instance != null)

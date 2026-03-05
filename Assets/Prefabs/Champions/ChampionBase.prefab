@@ -4861,15 +4861,13 @@ GameObject:
   - component: {fileID: 4195008848169630617}
   - component: {fileID: 9166878718391037268}
   - component: {fileID: 8074908796875090492}
+  - component: {fileID: 5887644586341638842}
+  - component: {fileID: 6409254547191728489}
   - component: {fileID: 1731887743052177298}
+  - component: {fileID: 4637998730901008517}
+  - component: {fileID: 1426306323422705125}
   - component: {fileID: 7795094476502601569}
   - component: {fileID: 6110285214635215698}
-  - component: {fileID: 5887644586341638842}
-  - component: {fileID: 6048924070031639117}
-  - component: {fileID: 23632201074515538}
-  - component: {fileID: 1020027819385585752}
-  - component: {fileID: 4637998730901008517}
-  - component: {fileID: 6409254547191728489}
   - component: {fileID: 3682207722364879143}
   - component: {fileID: 3109071281417572511}
   m_Layer: 8
@@ -5101,119 +5099,6 @@ MonoBehaviour:
   knockbackTime: 0.5
   autoTurn: 0
   input: {fileID: 8650097738718565955}
---- !u!114 &1731887743052177298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4254817847457918461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb2346a2e2d32c54f8878b79d2a186d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GGL.Champions.ChampionDash
-  cooldown: 0.25
-  movement: {fileID: 8074908796875090492}
-  id: {fileID: 108903021177686200}
-  dashSpeed: 30
-  dashDistance: 3
-  OnDashBegin:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8074908796875090492}
-        m_TargetAssemblyTypeName: GGL.Champions.ChampionMovement, Assembly-CSharp
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7795094476502601569}
-        m_TargetAssemblyTypeName: GGL.Champions.ChampionAnimator, Assembly-CSharp
-        m_MethodName: SetDashing
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 6048924070031639117}
-        m_TargetAssemblyTypeName: GGL.Audio.AudioRelay, Assembly-CSharp
-        m_MethodName: PlaySound
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Test
-          m_BoolArgument: 1
-        m_CallState: 2
-  OnDashEnd:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8074908796875090492}
-        m_TargetAssemblyTypeName: GGL.Champions.ChampionMovement, Assembly-CSharp
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 7795094476502601569}
-        m_TargetAssemblyTypeName: GGL.Champions.ChampionAnimator, Assembly-CSharp
-        m_MethodName: SetDashing
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  rb: {fileID: 1706004363272337}
---- !u!114 &7795094476502601569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4254817847457918461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e24cd2bc4057c04eb8e6f1ca1de91ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GGL.Champions.ChampionAnimator
-  movement: {fileID: 8074908796875090492}
-  anim: {fileID: 9166878718391037268}
---- !u!114 &6110285214635215698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4254817847457918461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d39290c86f428af4caa83ab1968a0d1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GGL.Champions.ChampionRotation
-  rotationGameObject: {fileID: 4254817847457918461}
-  rotationSmoothTime: 0.1
-  movement: {fileID: 8074908796875090492}
 --- !u!114 &5887644586341638842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5229,79 +5114,38 @@ MonoBehaviour:
   goldCapacity: 25
   onCollectEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1426306323422705125}
+        m_TargetAssemblyTypeName: GGL.Champions.ChampionAudio, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: CollectGold
+          m_BoolArgument: 0
+        m_CallState: 2
   onDropEvent:
     m_PersistentCalls:
       m_Calls: []
   onDepositEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1426306323422705125}
+        m_TargetAssemblyTypeName: GGL.Champions.ChampionAudio, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: DepositGold
+          m_BoolArgument: 0
+        m_CallState: 2
   id: {fileID: 108903021177686200}
---- !u!114 &6048924070031639117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4254817847457918461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3588f6df0103e3c43bebf097637efda7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GGL.Audio.AudioRelay
---- !u!114 &23632201074515538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4254817847457918461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e792bca432ef90468dfefcede1f9b3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GGL.Champions.CooldownAudio
-  cooldownBehavior: {fileID: 1731887743052177298}
-  soundName: DashCooldown
-  audioRelay: {fileID: 6048924070031639117}
---- !u!114 &1020027819385585752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4254817847457918461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e792bca432ef90468dfefcede1f9b3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GGL.Champions.CooldownAudio
-  cooldownBehavior: {fileID: 4637998730901008517}
-  soundName: GrabCooldown
-  audioRelay: {fileID: 6048924070031639117}
---- !u!114 &4637998730901008517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4254817847457918461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4e8fd2dde7d9114bae9ae943531454c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GGL.Champions.GoldStealer
-  cooldown: 2
-  movement: {fileID: 8074908796875090492}
-  id: {fileID: 108903021177686200}
-  projectilePrefab: {fileID: 2111984268478495364, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
-  launchForce: 30
-  <StealAmount>k__BackingField: 0.25
-  <ReturnVelocity>k__BackingField: 30
-  <ReturnAcceleration>k__BackingField: 40
-  <CollectableAttractionForce>k__BackingField: 35
-  requiredLeeway: 0
-  collector: {fileID: 5887644586341638842}
 --- !u!114 &6409254547191728489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5354,6 +5198,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1426306323422705125}
+        m_TargetAssemblyTypeName: GGL.Champions.ChampionAudio, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: TakeDamage
+          m_BoolArgument: 1
+        m_CallState: 2
   OnIFrameExpire:
     m_PersistentCalls:
       m_Calls:
@@ -5393,6 +5249,203 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1731887743052177298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4254817847457918461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb2346a2e2d32c54f8878b79d2a186d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Champions.ChampionDash
+  cooldown: 0.25
+  movement: {fileID: 8074908796875090492}
+  id: {fileID: 108903021177686200}
+  dashSpeed: 30
+  dashDistance: 3
+  OnDashBegin:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8074908796875090492}
+        m_TargetAssemblyTypeName: GGL.Champions.ChampionMovement, Assembly-CSharp
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7795094476502601569}
+        m_TargetAssemblyTypeName: GGL.Champions.ChampionAnimator, Assembly-CSharp
+        m_MethodName: SetDashing
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1426306323422705125}
+        m_TargetAssemblyTypeName: GGL.Champions.ChampionAudio, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Dash
+          m_BoolArgument: 1
+        m_CallState: 2
+  OnDashEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8074908796875090492}
+        m_TargetAssemblyTypeName: GGL.Champions.ChampionMovement, Assembly-CSharp
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 7795094476502601569}
+        m_TargetAssemblyTypeName: GGL.Champions.ChampionAnimator, Assembly-CSharp
+        m_MethodName: SetDashing
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  rb: {fileID: 1706004363272337}
+--- !u!114 &4637998730901008517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4254817847457918461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4e8fd2dde7d9114bae9ae943531454c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Champions.GoldStealer
+  cooldown: 2
+  movement: {fileID: 8074908796875090492}
+  id: {fileID: 108903021177686200}
+  projectilePrefab: {fileID: 2111984268478495364, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+  launchForce: 30
+  <StealAmount>k__BackingField: 0.25
+  <ReturnVelocity>k__BackingField: 30
+  <ReturnAcceleration>k__BackingField: 40
+  <CollectableAttractionForce>k__BackingField: 35
+  requiredLeeway: 0
+  collector: {fileID: 5887644586341638842}
+--- !u!114 &1426306323422705125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4254817847457918461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dd13d5002574fb449f6482b31c5c5ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Champions.ChampionAudio
+  sounds:
+  - name: Dash
+    eventRef:
+      Guid:
+        Data1: -1894415327
+        Data2: 1116556695
+        Data3: 1180336804
+        Data4: -1826723750
+      Path: event:/Zeus/ZeusDash
+  - name: Shoot
+    eventRef:
+      Guid:
+        Data1: 1217712053
+        Data2: 1323020702
+        Data3: 1484801685
+        Data4: 583292660
+      Path: event:/Zeus/ZeusShoot
+  - name: Cooldown
+    eventRef:
+      Guid:
+        Data1: 913703944
+        Data2: 1269519234
+        Data3: 231073958
+        Data4: 1983637463
+      Path: event:/Game/Cooldown
+  - name: CollectGold
+    eventRef:
+      Guid:
+        Data1: -1873670536
+        Data2: 1331148487
+        Data3: -725611097
+        Data4: -1849802919
+      Path: event:/Game/CollectGold
+  - name: DepositGold
+    eventRef:
+      Guid:
+        Data1: 1803752991
+        Data2: 1229285460
+        Data3: -253870458
+        Data4: -1999038577
+      Path: event:/Game/DepositGold
+  - name: TakeDamage
+    eventRef:
+      Guid:
+        Data1: 429701503
+        Data2: 1084331659
+        Data3: 1594946483
+        Data4: -1242647505
+      Path: event:/Game/TakeDamage
+--- !u!114 &7795094476502601569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4254817847457918461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e24cd2bc4057c04eb8e6f1ca1de91ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Champions.ChampionAnimator
+  movement: {fileID: 8074908796875090492}
+  anim: {fileID: 9166878718391037268}
+--- !u!114 &6110285214635215698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4254817847457918461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d39290c86f428af4caa83ab1968a0d1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Champions.ChampionRotation
+  rotationGameObject: {fileID: 4254817847457918461}
+  rotationSmoothTime: 0.1
+  movement: {fileID: 8074908796875090492}
 --- !u!114 &3682207722364879143
 MonoBehaviour:
   m_ObjectHideFlags: 0

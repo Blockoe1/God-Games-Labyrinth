@@ -15,7 +15,7 @@ namespace GGL
 
         #region Nested
         [System.Serializable]
-        private class Sound
+        public class Sound
         {
             [SerializeField] internal string name;
             [SerializeField] internal EventReference eventRef;

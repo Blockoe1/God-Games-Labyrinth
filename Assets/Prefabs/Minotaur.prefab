@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 4685272650038533086}
   - component: {fileID: 3511338007652119557}
   - component: {fileID: 1557663963208992879}
+  - component: {fileID: 3520188249698541510}
   m_Layer: 6
   m_Name: Minotaur
   m_TagString: Untagged
@@ -401,6 +402,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3520188249698541510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137432236905573919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3588f6df0103e3c43bebf097637efda7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Audio.AudioRelay
+  enableSound: MinotaurSpawn
 --- !u!1 &6343835046107924701
 GameObject:
   m_ObjectHideFlags: 0

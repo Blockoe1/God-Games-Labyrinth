@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.FmodEvents
   sounds:
-  - name: DashCooldown
+  - name: Cooldown
     eventRef:
       Guid:
         Data1: 913703944
@@ -66,14 +66,54 @@ MonoBehaviour:
         Data3: 231073958
         Data4: 1983637463
       Path: event:/Game/Cooldown
-  - name: GrabCooldown
+  - name: TakeDamage
     eventRef:
       Guid:
-        Data1: 913703944
-        Data2: 1269519234
-        Data3: 231073958
-        Data4: 1983637463
-      Path: event:/Game/Cooldown
+        Data1: 429701503
+        Data2: 1084331659
+        Data3: 1594946483
+        Data4: -1242647505
+      Path: event:/Game/TakeDamage
+  - name: CollectGold
+    eventRef:
+      Guid:
+        Data1: -1873670536
+        Data2: 1331148487
+        Data3: -725611097
+        Data4: -1849802919
+      Path: event:/Game/CollectGold
+  - name: DepositGold
+    eventRef:
+      Guid:
+        Data1: 1803752991
+        Data2: 1229285460
+        Data3: -253870458
+        Data4: -1999038577
+      Path: event:/Game/DepositGold
+  - name: MinotaurSpawn
+    eventRef:
+      Guid:
+        Data1: -49893735
+        Data2: 1149766361
+        Data3: 30012036
+        Data4: -75520690
+      Path: event:/Game/MinotaurSpawn
+  - name: PlayerReady
+    eventRef:
+      Guid:
+        Data1: -1332966411
+        Data2: 1313630937
+        Data3: 1775011462
+        Data4: -1110056847
+      Path: event:/UI/PlayerReady
+  - name: WinCheer
+    eventRef:
+      Guid:
+        Data1: 54175177
+        Data2: 1105746875
+        Data3: 1779357109
+        Data4: -1500118143
+      Path: event:/UI/WinCheer
   <music>k__BackingField:
     Guid:
       Data1: 1455658395

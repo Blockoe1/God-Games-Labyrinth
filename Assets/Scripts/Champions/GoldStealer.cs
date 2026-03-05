@@ -9,6 +9,7 @@
 using GGL.Scoring;
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace GGL.Champions
 {
@@ -32,6 +33,7 @@ namespace GGL.Champions
         [SerializeField, Tooltip("The amount of empty space that must be in front of the champion to use this" +
             " ability.")] 
         private float requiredLeeway = 2;
+        [SerializeField] private UnityEvent OnShoot;
 
         private StealProjectile proj;
 
@@ -78,6 +80,7 @@ namespace GGL.Champions
             if (!forwardCheck)
             {
                 Projectile.Launch(transform.position, direction * launchForce);
+                OnShoot?.Invoke();
             }
         }
 

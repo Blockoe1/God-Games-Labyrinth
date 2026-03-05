@@ -53,6 +53,7 @@ namespace GGL.Champions
             // Only uses sounds stored locally for this champion, instead of the FMOD events singleton.
             if (AudioManager.instance != null)
             {
+
                 AudioManager.instance.PlayOneShot(FindEvent(soundName), transform.position);
             }
         }
@@ -64,7 +65,12 @@ namespace GGL.Champions
         public EventReference FindEvent(string name)
         {
             //Debug.Log(sounds.Length);
-            return Array.Find(sounds, item => item.name == name).eventRef;
+            FmodEvents.Sound foundSound = Array.Find(sounds, item => item.name == name);
+            if (foundSound == null && FmodEvents.instance != null)
+            {
+                return FmodEvents.instance.FindEvent(name);
+            }
+            return foundSound.eventRef;
         }
 
         /// <summary>

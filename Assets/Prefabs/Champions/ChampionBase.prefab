@@ -5355,6 +5355,21 @@ MonoBehaviour:
   <ReturnAcceleration>k__BackingField: 40
   <CollectableAttractionForce>k__BackingField: 35
   requiredLeeway: 0
+  OnShoot:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1426306323422705125}
+        m_TargetAssemblyTypeName: GGL.Champions.ChampionAudio, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Shoot
+          m_BoolArgument: 0
+        m_CallState: 2
   collector: {fileID: 5887644586341638842}
 --- !u!114 &1426306323422705125
 MonoBehaviour:
@@ -5385,38 +5400,6 @@ MonoBehaviour:
         Data3: 1484801685
         Data4: 583292660
       Path: event:/Zeus/ZeusShoot
-  - name: Cooldown
-    eventRef:
-      Guid:
-        Data1: 913703944
-        Data2: 1269519234
-        Data3: 231073958
-        Data4: 1983637463
-      Path: event:/Game/Cooldown
-  - name: CollectGold
-    eventRef:
-      Guid:
-        Data1: -1873670536
-        Data2: 1331148487
-        Data3: -725611097
-        Data4: -1849802919
-      Path: event:/Game/CollectGold
-  - name: DepositGold
-    eventRef:
-      Guid:
-        Data1: 1803752991
-        Data2: 1229285460
-        Data3: -253870458
-        Data4: -1999038577
-      Path: event:/Game/DepositGold
-  - name: TakeDamage
-    eventRef:
-      Guid:
-        Data1: 429701503
-        Data2: 1084331659
-        Data3: 1594946483
-        Data4: -1242647505
-      Path: event:/Game/TakeDamage
 --- !u!114 &7795094476502601569
 MonoBehaviour:
   m_ObjectHideFlags: 0

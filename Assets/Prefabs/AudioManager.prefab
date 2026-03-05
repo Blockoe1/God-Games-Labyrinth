@@ -58,14 +58,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.FmodEvents
   sounds:
-  - name: Test
-    eventRef:
-      Guid:
-        Data1: -1010265967
-        Data2: 1104134266
-        Data3: 1309239743
-        Data4: 698196596
-      Path: event:/Placeholder/Placeholder
   - name: DashCooldown
     eventRef:
       Guid:
@@ -73,19 +65,19 @@ MonoBehaviour:
         Data2: 1269519234
         Data3: 231073958
         Data4: 1983637463
-      Path: event:/Placeholder/DashCooldownPlaceholder
+      Path: event:/Game/Cooldown
   - name: GrabCooldown
     eventRef:
       Guid:
-        Data1: -71068285
-        Data2: 1239404527
-        Data3: -1614503533
-        Data4: -516140487
-      Path: event:/Placeholder/GrabCooldownPlaceholder
+        Data1: 913703944
+        Data2: 1269519234
+        Data3: 231073958
+        Data4: 1983637463
+      Path: event:/Game/Cooldown
   <music>k__BackingField:
     Guid:
-      Data1: -1010265967
-      Data2: 1104134266
-      Data3: 1309239743
-      Data4: 698196596
-    Path: event:/Placeholder/Placeholder
+      Data1: 1455658395
+      Data2: 1115540922
+      Data3: 1422608039
+      Data4: -1624918118
+    Path: event:/Music/GameMusic

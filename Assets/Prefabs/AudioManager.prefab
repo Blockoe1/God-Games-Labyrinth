@@ -65,7 +65,7 @@ MonoBehaviour:
         Data2: 1269519234
         Data3: 231073958
         Data4: 1983637463
-      Path: event:/Game/Cooldown
+      Path: event:/SFX/Game/Cooldown
   - name: TakeDamage
     eventRef:
       Guid:
@@ -73,7 +73,7 @@ MonoBehaviour:
         Data2: 1084331659
         Data3: 1594946483
         Data4: -1242647505
-      Path: event:/Game/TakeDamage
+      Path: event:/SFX/Game/TakeDamage
   - name: CollectGold
     eventRef:
       Guid:
@@ -81,7 +81,7 @@ MonoBehaviour:
         Data2: 1331148487
         Data3: -725611097
         Data4: -1849802919
-      Path: event:/Game/CollectGold
+      Path: event:/SFX/Game/CollectGold
   - name: DepositGold
     eventRef:
       Guid:
@@ -89,7 +89,7 @@ MonoBehaviour:
         Data2: 1229285460
         Data3: -253870458
         Data4: -1999038577
-      Path: event:/Game/DepositGold
+      Path: event:/SFX/Game/DepositGold
   - name: MinotaurSpawn
     eventRef:
       Guid:
@@ -97,7 +97,7 @@ MonoBehaviour:
         Data2: 1149766361
         Data3: 30012036
         Data4: -75520690
-      Path: event:/Game/MinotaurSpawn
+      Path: event:/SFX/Game/MinotaurSpawn
   - name: PlayerReady
     eventRef:
       Guid:

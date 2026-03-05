@@ -21,6 +21,9 @@ namespace GGL.UI.ChampionUI
         [SerializeField] private Transform depositParticleTarget;
         [SerializeField] private IndicatorParticles particles;
         [SerializeField] private Image fillImage;
+        [SerializeField] private Image[] flashingImages;
+        [SerializeField] private Color flashColor;
+        [SerializeField] private float flashPeriod;
         [SerializeField] private float goldDecreaseTime = 1f;
         [SerializeField] private float goldDepositePeriod;
         //[SerializeField] private TMP_Text pointsText;
@@ -30,6 +33,7 @@ namespace GGL.UI.ChampionUI
         private Coroutine animateRoutine;
 
         private int lastHeld;
+        private bool isFlashing;
 
         /// <summary>
         /// Get a reference to the collector on the found champion.
@@ -126,7 +130,41 @@ namespace GGL.UI.ChampionUI
             {
                 goldSprite.SpriteAmount = normalizedGold;
             }
+            if (normalizedGold == 1)
+            {
+                
+                if (flashingImages != null && !isFlashing)
+                {
+                    foreach (var image in flashingImages)
+                    {
+                        StartCoroutine(FlashRoutine(image));
+                    }
+                }
+            }
+            else
+            {
+                isFlashing = false;
+            }
             lastHeld = heldCount;
+        }
+
+        /// <summary>
+        /// Makes the outline around the gold purse flash white.
+        /// </summary>
+        /// <param name="flashingImage"></param>
+        /// <returns></returns>
+        private IEnumerator FlashRoutine(Image flashingImage)
+        {
+            Color baseColor = flashingImage.color;
+            isFlashing = true;
+            while(isFlashing)
+            {
+                flashingImage.color = flashColor;
+                yield return new WaitForSeconds(flashPeriod);
+                flashingImage.color = baseColor;
+                yield return new WaitForSeconds(flashPeriod);
+            }
+            flashingImage.color = baseColor;
         }
 
         /// <summary>

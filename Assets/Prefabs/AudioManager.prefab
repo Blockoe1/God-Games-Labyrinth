@@ -58,34 +58,66 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.FmodEvents
   sounds:
-  - name: Test
-    eventRef:
-      Guid:
-        Data1: -1010265967
-        Data2: 1104134266
-        Data3: 1309239743
-        Data4: 698196596
-      Path: event:/Placeholder/Placeholder
-  - name: DashCooldown
+  - name: Cooldown
     eventRef:
       Guid:
         Data1: 913703944
         Data2: 1269519234
         Data3: 231073958
         Data4: 1983637463
-      Path: event:/Placeholder/DashCooldownPlaceholder
-  - name: GrabCooldown
+      Path: event:/SFX/Game/Cooldown
+  - name: TakeDamage
     eventRef:
       Guid:
-        Data1: -71068285
-        Data2: 1239404527
-        Data3: -1614503533
-        Data4: -516140487
-      Path: event:/Placeholder/GrabCooldownPlaceholder
+        Data1: 429701503
+        Data2: 1084331659
+        Data3: 1594946483
+        Data4: -1242647505
+      Path: event:/SFX/Game/TakeDamage
+  - name: CollectGold
+    eventRef:
+      Guid:
+        Data1: -1873670536
+        Data2: 1331148487
+        Data3: -725611097
+        Data4: -1849802919
+      Path: event:/SFX/Game/CollectGold
+  - name: DepositGold
+    eventRef:
+      Guid:
+        Data1: 1803752991
+        Data2: 1229285460
+        Data3: -253870458
+        Data4: -1999038577
+      Path: event:/SFX/Game/DepositGold
+  - name: MinotaurSpawn
+    eventRef:
+      Guid:
+        Data1: -49893735
+        Data2: 1149766361
+        Data3: 30012036
+        Data4: -75520690
+      Path: event:/SFX/Game/MinotaurSpawn
+  - name: PlayerReady
+    eventRef:
+      Guid:
+        Data1: -1332966411
+        Data2: 1313630937
+        Data3: 1775011462
+        Data4: -1110056847
+      Path: event:/UI/PlayerReady
+  - name: WinCheer
+    eventRef:
+      Guid:
+        Data1: 54175177
+        Data2: 1105746875
+        Data3: 1779357109
+        Data4: -1500118143
+      Path: event:/UI/WinCheer
   <music>k__BackingField:
     Guid:
-      Data1: -1010265967
-      Data2: 1104134266
-      Data3: 1309239743
-      Data4: 698196596
-    Path: event:/Placeholder/Placeholder
+      Data1: 1455658395
+      Data2: 1115540922
+      Data3: 1422608039
+      Data4: -1624918118
+    Path: event:/Music/GameMusic

@@ -15,11 +15,13 @@ namespace GGL
             if (instance != null && instance != this)
             {
                 Debug.LogWarning("Multiple AudioManagers found in the scene.");
+                Destroy(gameObject);
                 return;
             }
             else
             {
                 instance = this;
+                DontDestroyOnLoad(gameObject);
             }
         }
 

@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 4685272650038533086}
   - component: {fileID: 3511338007652119557}
   - component: {fileID: 1557663963208992879}
+  - component: {fileID: 3520188249698541510}
   m_Layer: 6
   m_Name: Minotaur
   m_TagString: Untagged
@@ -147,7 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Minotaur.MinotaurController
   states:
   - rid: 6611772050505817
-  - rid: 6611786919313524
+  - rid: 2241602981746442322
   <movement>k__BackingField: {fileID: 3511338007652119557}
   <vision>k__BackingField: {fileID: 464855989588843931}
   <attacker>k__BackingField: {fileID: 8163698570004376742}
@@ -164,7 +165,12 @@ MonoBehaviour:
           rid: -2
         <minotaur>k__BackingField: {fileID: 5871052308712400146}
         visionDelay: 3
-    - rid: 6611786919313524
+        champions:
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+    - rid: 2241602981746442322
       type: {class: AggroState, ns: GGL.Minotaur, asm: Assembly-CSharp}
       data:
         debugColor: {r: 0, g: 0, b: 0, a: 0}
@@ -172,17 +178,18 @@ MonoBehaviour:
           rid: -2
         <minotaur>k__BackingField: {fileID: 5871052308712400146}
         subStates:
-        - rid: 6611786919313526
-        aggroTime: 8
+        - rid: 2241602981746442323
+        aggroTime: 5
         aggroChangeChance: 0
-    - rid: 6611786919313526
+    - rid: 2241602981746442323
       type: {class: ChaseState, ns: GGL.Minotaur, asm: Assembly-CSharp}
       data:
         debugColor: {r: 0.52201253, g: 0.024623167, b: 0.024623167, a: 1}
         parentState:
-          rid: 6611786919313524
+          rid: 2241602981746442322
         <minotaur>k__BackingField: {fileID: 5871052308712400146}
-        chaseSpeed: 7
+        chaseSpeed: 5
+        rePathDelay: 0
 --- !u!114 &464855989588843931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,6 +402,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3520188249698541510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137432236905573919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3588f6df0103e3c43bebf097637efda7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Audio.AudioRelay
+  enableSound: MinotaurSpawn
 --- !u!1 &6343835046107924701
 GameObject:
   m_ObjectHideFlags: 0

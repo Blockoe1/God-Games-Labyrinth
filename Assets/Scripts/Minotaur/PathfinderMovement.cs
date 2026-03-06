@@ -28,6 +28,10 @@ namespace GGL.Minotaur
         private Vector2[] currentPath;
         private int currentPathNode;
 
+        #region Properties
+        public Vector2[] CurrentPath => currentPath;
+        #endregion
+
         /// <summary>
         /// Sets a destination position to navigate this entity to.
         /// </summary>

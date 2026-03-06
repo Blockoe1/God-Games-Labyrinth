@@ -9,6 +9,7 @@
 using GGL.Scoring;
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace GGL.Champions
 {
@@ -32,6 +33,7 @@ namespace GGL.Champions
         [SerializeField, Tooltip("The amount of empty space that must be in front of the champion to use this" +
             " ability.")] 
         private float requiredLeeway = 2;
+        [SerializeField] private UnityEvent OnShoot;
 
         private StealProjectile proj;
 
@@ -73,10 +75,12 @@ namespace GGL.Champions
         {
             // If the projectile is already launched, then it can't be launched again.
             if (Projectile.IsLaunched) { return; }  
-            RaycastHit2D forwardCheck = Physics2D.Raycast(transform.position, Direction, requiredLeeway, GGLHelpers.MazeMask);
+            Vector2 direction = TargetDirection == Vector2.zero ? Direction : TargetDirection;
+            RaycastHit2D forwardCheck = Physics2D.Raycast(transform.position, direction, requiredLeeway, GGLHelpers.MazeMask);
             if (!forwardCheck)
             {
-                Projectile.Launch(transform.position, Direction * launchForce);
+                Projectile.Launch(transform.position, direction * launchForce);
+                OnShoot?.Invoke();
             }
         }
 

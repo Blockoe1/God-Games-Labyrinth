@@ -46,10 +46,12 @@ namespace GGL
         private void Awake()
         {
             movement.OnDirectionChanged += SetRotation;
+            movement.OnTargetDirectionChanged += SetRotation;
         }
         private void OnDestroy()
         {
             movement.OnDirectionChanged -= SetRotation;
+            movement.OnTargetDirectionChanged -= SetRotation;
         }
 
         /// <summary>
@@ -67,7 +69,8 @@ namespace GGL
                 rotateRoutine = null;
             }
             //Debug.Log(MathHelpers.VectorToDegAngleUnity(direction));
-            rotateRoutine = StartCoroutine(RotateRoutine(MathHelpers.VectorToDegAngle(direction)));
+            rotateRoutine = StartCoroutine(RotateRoutine(MathHelpers.VectorToDegAngle(Vector2.Lerp(movement.Direction, 
+                movement.TargetDirection, 0.5f))));
         }
 
         /// <summary>

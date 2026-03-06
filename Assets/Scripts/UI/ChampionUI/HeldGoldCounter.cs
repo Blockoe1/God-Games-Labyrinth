@@ -10,6 +10,7 @@ using GGL.Scoring;
 using NaughtyAttributes;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace GGL.UI.ChampionUI
 {
@@ -19,6 +20,10 @@ namespace GGL.UI.ChampionUI
         [SerializeField] private TieredSprite goldSprite;
         [SerializeField] private Transform depositParticleTarget;
         [SerializeField] private IndicatorParticles particles;
+        [SerializeField] private Image fillImage;
+        [SerializeField] private Image[] flashingImages;
+        [SerializeField] private Color flashColor;
+        [SerializeField] private float flashPeriod;
         [SerializeField] private float goldDecreaseTime = 1f;
         [SerializeField] private float goldDepositePeriod;
         //[SerializeField] private TMP_Text pointsText;
@@ -28,6 +33,7 @@ namespace GGL.UI.ChampionUI
         private Coroutine animateRoutine;
 
         private int lastHeld;
+        private bool isFlashing;
 
         /// <summary>
         /// Get a reference to the collector on the found champion.
@@ -47,7 +53,8 @@ namespace GGL.UI.ChampionUI
         /// <param name="heldCount">The total amount of gold the champion is holding.</param>
         private void Collector_OnCollect(int heldCount)
         {
-            particles.PlayParticle(collector.transform.position, transform.position, () => UpdateCollectables(heldCount));
+            //particles.PlayParticle(collector.transform.position, transform.position, () => UpdateCollectables(heldCount));
+            UpdateCollectables(heldCount);
         }
 
         /// <summary>
@@ -114,8 +121,50 @@ namespace GGL.UI.ChampionUI
         private void UpdateCollectables(int heldCount)
         {
             // Update the gold sprite based on the proportion of the champion's held amount and capacity.
-            goldSprite.SpriteAmount = collector.GoldCapacity > 0 ? (float)heldCount / collector.GoldCapacity : 0;
+            float normalizedGold = collector.GoldCapacity > 0 ? (float)heldCount / collector.GoldCapacity : 0;
+            if (fillImage != null)
+            {
+                fillImage.fillAmount = normalizedGold;
+            }
+            if (goldSprite != null)
+            {
+                goldSprite.SpriteAmount = normalizedGold;
+            }
+            if (normalizedGold == 1)
+            {
+                
+                if (flashingImages != null && !isFlashing)
+                {
+                    foreach (var image in flashingImages)
+                    {
+                        StartCoroutine(FlashRoutine(image));
+                    }
+                }
+            }
+            else
+            {
+                isFlashing = false;
+            }
             lastHeld = heldCount;
+        }
+
+        /// <summary>
+        /// Makes the outline around the gold purse flash white.
+        /// </summary>
+        /// <param name="flashingImage"></param>
+        /// <returns></returns>
+        private IEnumerator FlashRoutine(Image flashingImage)
+        {
+            Color baseColor = flashingImage.color;
+            isFlashing = true;
+            while(isFlashing)
+            {
+                flashingImage.color = flashColor;
+                yield return new WaitForSeconds(flashPeriod);
+                flashingImage.color = baseColor;
+                yield return new WaitForSeconds(flashPeriod);
+            }
+            flashingImage.color = baseColor;
         }
 
         /// <summary>

@@ -136,8 +136,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebdb9d2da456f2d4dab6a69f4e80e62b
-      internalID: 1046874489
+      spriteID: 3d0d5b6b96f5e0d418bd767aad01c10e
+      internalID: 2087303361
       vertices: []
       indices: 
       edges: []
@@ -158,8 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b16a595570b3c904289d235661c28406
-      internalID: 163567652
+      spriteID: 6c12dbac2d92de3439a2ae279a8b5c01
+      internalID: 1909780634
       vertices: []
       indices: 
       edges: []
@@ -180,8 +180,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1266d16b235d9434d87e062ae234a714
-      internalID: -2016030936
+      spriteID: a595b8a8838c94342973847848d4a488
+      internalID: 1522974708
       vertices: []
       indices: 
       edges: []
@@ -202,8 +202,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3ea1d10c31d1e0418c0b1b9f8ac4297
-      internalID: -1367798827
+      spriteID: 2b8736477dedf1c4fbc9a01143ffeab8
+      internalID: 804448890
       vertices: []
       indices: 
       edges: []
@@ -224,8 +224,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af7e40e54759d2f4498d8c5bd8e58fab
-      internalID: 1148698207
+      spriteID: f381e4af622ad38498fb1fe561db3924
+      internalID: 1304677806
       vertices: []
       indices: 
       edges: []
@@ -246,8 +246,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5b8b840d2c5ffa47a3148026785c036
-      internalID: -484864556
+      spriteID: 417394cf66e94244a9e06dca0d695bee
+      internalID: -402713808
       vertices: []
       indices: 
       edges: []
@@ -268,8 +268,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ea5d87b2f2a63a4a8b0cbde66aa2916
-      internalID: -1916598116
+      spriteID: 1d1fee071ddea5f44969adf973a4306c
+      internalID: -284408289
       vertices: []
       indices: 
       edges: []
@@ -290,8 +290,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 661599642f3499542bdd1303cd5ee7c0
-      internalID: 1461911770
+      spriteID: 1efcfce30cdd5644a8ec6cbbd39a1ed9
+      internalID: -40079910
       vertices: []
       indices: 
       edges: []
@@ -300,7 +300,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 20c0077827b3267439575e81ff74f701
+    spriteID: 6f8415e88a9ae314087c80182bbdfa76
     internalID: 0
     vertices: []
     indices: 
@@ -310,16 +310,16 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":3.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Aphrodite Spawner_0: 1046874489
-      Aphrodite Spawner_1: 163567652
-      Aphrodite Spawner_2: -2016030936
-      Aphrodite Spawner_3: -1367798827
-      Aphrodite Spawner_4: 1148698207
-      Aphrodite Spawner_5: -484864556
-      Aphrodite Spawner_6: -1916598116
-      Aphrodite Spawner_7: 1461911770
+      Aphrodite Spawner_0: 2087303361
+      Aphrodite Spawner_1: 1909780634
+      Aphrodite Spawner_2: 1522974708
+      Aphrodite Spawner_3: 804448890
+      Aphrodite Spawner_4: 1304677806
+      Aphrodite Spawner_5: -402713808
+      Aphrodite Spawner_6: -284408289
+      Aphrodite Spawner_7: -40079910
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

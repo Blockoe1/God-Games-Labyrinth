@@ -635,7 +635,12 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
-  - Placeholder
+  - Aphrodite
+  - Athena
+  - Game
+  - Music
+  - Poseidon
+  - UI
   - Zeus
   BanksToLoad: []
   LiveUpdatePort: 9264

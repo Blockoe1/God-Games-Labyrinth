@@ -8,14 +8,12 @@ namespace GGL
     public class FmodEvents : MonoBehaviour
     {
         [SerializeField] private Sound[] sounds;
-        [field: Header("Music")]
-        [field:SerializeField] public EventReference music { get; private set; }
 
         public static FmodEvents instance {  get; private set; }
 
         #region Nested
         [System.Serializable]
-        private class Sound
+        public class Sound
         {
             [SerializeField] internal string name;
             [SerializeField] internal EventReference eventRef;

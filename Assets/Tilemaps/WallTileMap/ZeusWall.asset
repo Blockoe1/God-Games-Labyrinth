@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: ZeusWall
+  m_EditorClassIdentifier: Unity.2D.Tilemap.Extras::UnityEngine.Tilemaps.AnimatedTile
+  m_AnimatedSprites:
+  - {fileID: 617703744, guid: dbfe79ca9565de84eaa6e9d7c9c0b48d, type: 3}
+  - {fileID: -1967133282, guid: dbfe79ca9565de84eaa6e9d7c9c0b48d, type: 3}
+  - {fileID: -725526289, guid: dbfe79ca9565de84eaa6e9d7c9c0b48d, type: 3}
+  - {fileID: 1643741456, guid: dbfe79ca9565de84eaa6e9d7c9c0b48d, type: 3}
+  - {fileID: -2038336426, guid: dbfe79ca9565de84eaa6e9d7c9c0b48d, type: 3}
+  - {fileID: -199609018, guid: dbfe79ca9565de84eaa6e9d7c9c0b48d, type: 3}
+  - {fileID: 150870596, guid: dbfe79ca9565de84eaa6e9d7c9c0b48d, type: 3}
+  - {fileID: -551439458, guid: dbfe79ca9565de84eaa6e9d7c9c0b48d, type: 3}
+  - {fileID: 574350197, guid: dbfe79ca9565de84eaa6e9d7c9c0b48d, type: 3}
+  - {fileID: -1418812250, guid: dbfe79ca9565de84eaa6e9d7c9c0b48d, type: 3}
+  - {fileID: 2094820628, guid: dbfe79ca9565de84eaa6e9d7c9c0b48d, type: 3}
+  - {fileID: -2059377612, guid: dbfe79ca9565de84eaa6e9d7c9c0b48d, type: 3}
+  - {fileID: -280922167, guid: dbfe79ca9565de84eaa6e9d7c9c0b48d, type: 3}
+  - {fileID: -1121961066, guid: dbfe79ca9565de84eaa6e9d7c9c0b48d, type: 3}
+  - {fileID: 49351158, guid: dbfe79ca9565de84eaa6e9d7c9c0b48d, type: 3}
+  m_MinSpeed: 1
+  m_MaxSpeed: 1
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 1
+  m_TileAnimationFlags: 0

@@ -1,3 +1,4 @@
+using GGL.Scoring;
 using JetBrains.Annotations;
 using System.Collections;
 using TMPro;
@@ -37,26 +38,30 @@ namespace GGL
         IEnumerator WinScreenTimer()
         {
             yield return new WaitForSecondsRealtime(1f);
-            while (!zeusWin && !poseidonWin && !athenaWin && !aphroditeWin)
-            {
-                yield return null;
-            }
-            if (zeusWin)
+            if (GameplayScoreManager.GameScores[0] >= GameplayScoreManager.GameScores[1] &&
+                GameplayScoreManager.GameScores[0] >= GameplayScoreManager.GameScores[2] &&
+                GameplayScoreManager.GameScores[0] >= GameplayScoreManager.GameScores[3])
             {
                 zeusWinName.SetActive(true);
                 zeusWinQuote.SetActive(true);
             }
-            else if (poseidonWin)
+            else if (GameplayScoreManager.GameScores[1] >= GameplayScoreManager.GameScores[0] &&
+                GameplayScoreManager.GameScores[1] >= GameplayScoreManager.GameScores[2] &&
+                GameplayScoreManager.GameScores[1] >= GameplayScoreManager.GameScores[3])
             {
                 poseidonWinName.SetActive(true);
                 poseidonWinQuote.SetActive(true);
             }
-            else if (athenaWin)
+            else if (GameplayScoreManager.GameScores[2] >= GameplayScoreManager.GameScores[0] &&
+                GameplayScoreManager.GameScores[2] >= GameplayScoreManager.GameScores[1] &&
+                GameplayScoreManager.GameScores[2] >= GameplayScoreManager.GameScores[3])
             {
                 athenaWinName.SetActive(true);
                 athenaWinQuote.SetActive(true);
             }
-            else if (aphroditeWin)
+            else if (GameplayScoreManager.GameScores[3] >= GameplayScoreManager.GameScores[0] &&
+                GameplayScoreManager.GameScores[3] >= GameplayScoreManager.GameScores[1] &&
+                GameplayScoreManager.GameScores[3] >= GameplayScoreManager.GameScores[2])
             {
                 aphroditeWinName.SetActive(true);
                 aphroditeWinQuote.SetActive(true);
@@ -69,27 +74,6 @@ namespace GGL
                 i--;
             }
             SceneManager.LoadScene("StartScene");
-        }
-
-        public void RecieveScores(int[] scores)
-        {
-            //zeus, poseidon, athena, aphrodite
-            if (scores[0] > scores[1] && scores[0] > scores[2] && scores[0] > scores[3])
-            {
-                zeusWin = true;
-            }
-            else if (scores[1] > scores[0] && scores[1] > scores[2] && scores[1] > scores[3])
-            {
-                poseidonWin = true;
-            }
-            else if (scores[2] > scores[0] && scores[2] > scores[1] && scores[2] > scores[3])
-            {
-                athenaWin = true;
-            }
-            else if (scores[3] > scores[0] && scores[3] > scores[1] && scores[3] > scores[2])
-            {
-                aphroditeWin = true;
-            }
         }
     }
 }

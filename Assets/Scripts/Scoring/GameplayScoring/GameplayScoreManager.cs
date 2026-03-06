@@ -16,9 +16,13 @@ namespace GGL.Scoring
     [RequireComponent(typeof(NetworkMessenger))]
     public class GameplayScoreManager : MonoBehaviour
     {
-        private int[] scores;
+        private static int[] scores;
 
         public static event Action<int, GodID> OnScoreUpdate;
+
+        #region Properties
+        public static int[] GameScores => scores;
+        #endregion
 
         #region Component References
         [Header("Components")]

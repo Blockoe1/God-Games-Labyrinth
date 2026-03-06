@@ -1,14 +1,15 @@
 using FMOD.Studio;
 using FMODUnity;
+using GGL.Audio;
 using UnityEngine;
 
 namespace GGL
 {
     public class AudioManager : MonoBehaviour
     {
-        private EventInstance musicEventInstance;
-
         public static AudioManager instance { get; private set; }
+
+        public MusicManager MusicManager { get; private set; }
 
         private void Awake()
         {
@@ -22,19 +23,11 @@ namespace GGL
             {
                 instance = this;
                 DontDestroyOnLoad(gameObject);
+                MusicManager = GetComponent<MusicManager>();
+                MusicManager.InitializeMusic();
             }
         }
 
-        private void Start()
-        {
-            InitializeMusic(FmodEvents.instance.music);
-        }
-
-        private void InitializeMusic(EventReference musicEventReference)
-        {
-            musicEventInstance = CreateInstance(musicEventReference);
-            musicEventInstance.start();
-        }
 
         public void PlayOneShot(EventReference sound, Vector3 worldPos)
         {

@@ -1101,6 +1101,7 @@ GameObject:
   - component: {fileID: 1550016460}
   - component: {fileID: 1550016459}
   - component: {fileID: 1550016461}
+  - component: {fileID: 1550016462}
   m_Layer: 0
   m_Name: ScoreboardManager
   m_TagString: Untagged
@@ -1135,6 +1136,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1550016462}
+        m_TargetAssemblyTypeName: GGL.Audio.AudioRelay, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ScoreboardUpdate
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1550016460
 Transform:
   m_ObjectHideFlags: 0
@@ -1162,6 +1175,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 107f1d65da61cef4f947e20c853ee2f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Scoring.ScoreboardManager
+--- !u!114 &1550016462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550016458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3588f6df0103e3c43bebf097637efda7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Audio.AudioRelay
+  enableSound: 
 --- !u!1001 &1695139092
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1485,14 +1511,7 @@ MonoBehaviour:
         Data2: 1136509000
         Data3: 2007014820
         Data4: 149650642
-      Path: event:/UI/ScoreboardUpdate
-  <music>k__BackingField:
-    Guid:
-      Data1: 1455658395
-      Data2: 1115540922
-      Data3: 1422608039
-      Data4: -1624918118
-    Path: event:/Music/GameMusic
+      Path: event:/SFX/UI/ScoreboardUpdate
 --- !u!1001 &5745127393619044813
 PrefabInstance:
   m_ObjectHideFlags: 0

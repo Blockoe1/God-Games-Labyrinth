@@ -1485,14 +1485,7 @@ MonoBehaviour:
         Data2: 1136509000
         Data3: 2007014820
         Data4: 149650642
-      Path: event:/UI/ScoreboardUpdate
-  <music>k__BackingField:
-    Guid:
-      Data1: 1455658395
-      Data2: 1115540922
-      Data3: 1422608039
-      Data4: -1624918118
-    Path: event:/Music/GameMusic
+      Path: event:/SFX/UI/ScoreboardUpdate
 --- !u!1001 &5745127393619044813
 PrefabInstance:
   m_ObjectHideFlags: 0

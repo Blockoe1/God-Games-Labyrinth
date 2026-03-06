@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8922281258296375391}
   - component: {fileID: 178641748154943055}
   - component: {fileID: 5568326108363138536}
+  - component: {fileID: 5427923423324089921}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -105,7 +106,7 @@ MonoBehaviour:
         Data2: 1313630937
         Data3: 1775011462
         Data4: -1110056847
-      Path: event:/UI/PlayerReady
+      Path: event:/SFX/UI/PlayerReady
   - name: WinCheer
     eventRef:
       Guid:
@@ -113,11 +114,23 @@ MonoBehaviour:
         Data2: 1105746875
         Data3: 1779357109
         Data4: -1500118143
-      Path: event:/UI/WinCheer
-  <music>k__BackingField:
+      Path: event:/SFX/UI/WinCheer
+--- !u!114 &5427923423324089921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8379383954568173470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dd5ac32b9210db4ca971da688145d8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Audio.MusicManager
+  musicEvent:
     Guid:
-      Data1: 1455658395
-      Data2: 1115540922
-      Data3: 1422608039
-      Data4: -1624918118
-    Path: event:/Music/GameMusic
+      Data1: 1627173258
+      Data2: 1157084676
+      Data3: 493152681
+      Data4: 2096803001
+    Path: event:/Music/Music

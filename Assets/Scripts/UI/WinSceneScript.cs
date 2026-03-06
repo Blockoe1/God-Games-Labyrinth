@@ -20,6 +20,9 @@ namespace GGL
 
         IEnumerator WinScreenTimer()
         {
+            yield return new WaitForSecondsRealtime(1f);
+            //check which god won
+            //enable their UI
             int i = 5;
             while (i > 0)
             {

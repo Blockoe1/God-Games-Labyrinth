@@ -24,7 +24,6 @@ namespace GGL
             Vector2.down, 
             Vector2.left
         };
-        private const string MOVE_CHECK_MASK = "MoveCheck";
         #endregion
 
         [SerializeField] private float maxSpeed;
@@ -129,7 +128,7 @@ namespace GGL
                 foreach (var direction in MOVEMENT_DIRECTIONS)
                 {
                     RaycastHit2D ray = Physics2D.Raycast(rb.position, direction, maxWallCheckDistance, 
-                        LayerMask.GetMask(MOVE_CHECK_MASK) | GGLHelpers.MazeMask);
+                        GGLHelpers.MoveCheckMask | GGLHelpers.MazeMask);
                     Debug.DrawRay(rb.position, direction * maxWallCheckDistance, Color.green);
                     // If the raycast hit nothing, this is a valid direction.
                     if (!ray)

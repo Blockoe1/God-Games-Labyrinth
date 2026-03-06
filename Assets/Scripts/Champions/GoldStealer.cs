@@ -93,6 +93,7 @@ namespace GGL.Champions
             // Force-Collect all the stolen collectables.
             foreach(Collectable collectable in stoleCollectables)
             {
+                collectable.transform.position = transform.position;
                 collector.ForceCollect(collectable);
             }
             Cooldown();

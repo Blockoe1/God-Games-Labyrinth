@@ -17,8 +17,9 @@ namespace GGL.Audio
         /// <summary>
         /// Sets the music to play on enable.
         /// </summary>
-        private void OnEnable()
+        private void Start()
         {
+            Debug.Log(AudioManager.instance);
             if (AudioManager.instance != null && AudioManager.instance.MusicManager != null)
             {
                 AudioManager.instance.MusicManager.SetMusic(sceneMusic);

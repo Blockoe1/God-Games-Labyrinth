@@ -1,31 +1,10 @@
 fileFormatVersion: 2
-guid: 452ab7138ceff734e90feca43cdaa06c
+guid: 0d8262373edb65d489ebe78e4b4ddeb4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1813724097217694259
-    second: Aphrodite Spawner_0
-  - first:
-      213: -7588984347076044078
-    second: Aphrodite Spawner_1
-  - first:
-      213: 8967316703296705904
-    second: Aphrodite Spawner_2
-  - first:
-      213: -4870322825564275268
-    second: Aphrodite Spawner_3
-  - first:
-      213: -9059316184217189630
-    second: Aphrodite Spawner_4
-  - first:
-      213: 941618827398861794
-    second: Aphrodite Spawner_5
-  - first:
-      213: -6478734210349229628
-    second: Aphrodite Spawner_6
-  - first:
-      213: -8669657471896474420
-    second: Aphrodite Spawner_7
+      213: 4638780022827578646
+    second: Zeus Walls (1) (1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -121,73 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Aphrodite Spawner_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3d0d5b6b96f5e0d418bd767aad01c10e
-      internalID: 2087303361
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Aphrodite Spawner_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6c12dbac2d92de3439a2ae279a8b5c01
-      internalID: 1909780634
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Aphrodite Spawner_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a595b8a8838c94342973847848d4a488
-      internalID: 1522974708
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Aphrodite Spawner_3
+      name: Zeus Walls (1) (1)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -202,14 +115,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b8736477dedf1c4fbc9a01143ffeab8
-      internalID: 804448890
+      spriteID: 86939958cb3738a419de083489896c95
+      internalID: 992694633
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Aphrodite Spawner_4
+      name: Zeus Walls (1) (1)_1
       rect:
         serializedVersion: 2
         x: 16
@@ -224,36 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f381e4af622ad38498fb1fe561db3924
-      internalID: 1304677806
+      spriteID: 4b1ca0ff8dd2e084caa3200ef69a1b60
+      internalID: 1571358863
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Aphrodite Spawner_5
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 417394cf66e94244a9e06dca0d695bee
-      internalID: -402713808
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Aphrodite Spawner_6
+      name: Zeus Walls (1) (1)_2
       rect:
         serializedVersion: 2
         x: 0
@@ -268,14 +159,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d1fee071ddea5f44969adf973a4306c
-      internalID: -284408289
+      spriteID: 9fbf2d5ec828d834899a17acdbdd4343
+      internalID: -827419884
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Aphrodite Spawner_7
+      name: Zeus Walls (1) (1)_3
       rect:
         serializedVersion: 2
         x: 16
@@ -290,8 +181,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1efcfce30cdd5644a8ec6cbbd39a1ed9
-      internalID: -40079910
+      spriteID: 551ecec453fe3bb41bf14f5e6e698a85
+      internalID: 631062151
       vertices: []
       indices: 
       edges: []
@@ -300,7 +191,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 6f8415e88a9ae314087c80182bbdfa76
+    spriteID: a95e446d4b7c2f84eb9ab4afda8c080a
     internalID: 0
     vertices: []
     indices: 
@@ -310,16 +201,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":3.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":2.0,"y":2.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Aphrodite Spawner_0: 2087303361
-      Aphrodite Spawner_1: 1909780634
-      Aphrodite Spawner_2: 1522974708
-      Aphrodite Spawner_3: 804448890
-      Aphrodite Spawner_4: 1304677806
-      Aphrodite Spawner_5: -402713808
-      Aphrodite Spawner_6: -284408289
-      Aphrodite Spawner_7: -40079910
+      Zeus Walls (1) (1)_0: 992694633
+      Zeus Walls (1) (1)_1: 1571358863
+      Zeus Walls (1) (1)_2: -827419884
+      Zeus Walls (1) (1)_3: 631062151
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

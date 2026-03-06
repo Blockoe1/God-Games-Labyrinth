@@ -79,7 +79,11 @@ namespace GGL.Champions
             if (!suspendInput)
             {
                 Vector2Int input = MathHelpers.RoundVectorToInt(moveAction.ReadValue<Vector2>());
-                TargetDirection = input;
+                // Ignore diagonal inputs.
+                if (input.x == 0 || input.y == 0)
+                {
+                    TargetDirection = input;
+                }
             }
         }
         private void MoveAction_canceled(InputAction.CallbackContext obj)

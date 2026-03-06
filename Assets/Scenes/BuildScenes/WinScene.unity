@@ -320,6 +320,7 @@ GameObject:
   - component: {fileID: 493451987}
   - component: {fileID: 493451986}
   - component: {fileID: 493451989}
+  - component: {fileID: 493451990}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -454,6 +455,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.WinSceneScript
   timerText: {fileID: 738916584}
+  zeusWinName: {fileID: 903069707}
+  zeusWinQuote: {fileID: 1674610662}
+  poseidonWinName: {fileID: 2017235854}
+  poseidonWinQuote: {fileID: 672970696}
+  athenaWinName: {fileID: 944672091}
+  athenaWinQuote: {fileID: 762162161}
+  aphroditeWinName: {fileID: 1248196109}
+  aphroditeWinQuote: {fileID: 1064830508}
+--- !u!114 &493451990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493451983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eae15fbb100ee1e49b4686fc103524a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Networking.NetworkReciever
+  OnMessageRecieved:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 493451989}
+        m_TargetAssemblyTypeName: GGL.WinSceneScript, Assembly-CSharp
+        m_MethodName: RecieveScores
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!1 &672970696
 GameObject:
   m_ObjectHideFlags: 0
@@ -1727,11 +1763,11 @@ SceneRoots:
   - {fileID: 2024898753}
   - {fileID: 1980142079}
   - {fileID: 1568588227}
-  - {fileID: 944672093}
-  - {fileID: 2017235856}
   - {fileID: 903069709}
-  - {fileID: 1248196111}
-  - {fileID: 762162163}
-  - {fileID: 672970698}
   - {fileID: 1674610664}
+  - {fileID: 2017235856}
+  - {fileID: 672970698}
+  - {fileID: 944672093}
+  - {fileID: 762162163}
+  - {fileID: 1248196111}
   - {fileID: 1064830510}

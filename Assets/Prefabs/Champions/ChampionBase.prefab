@@ -5158,7 +5158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b80a45e4d802c8c42be45e7e7812226f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Attackable
-  iFrames: 1
+  iFrames: 3
   OnHitEvent:
     m_PersistentCalls:
       m_Calls:
@@ -5383,6 +5383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dd13d5002574fb449f6482b31c5c5ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Champions.ChampionAudio
+  enableSound: 
   sounds:
   - name: Dash
     eventRef:

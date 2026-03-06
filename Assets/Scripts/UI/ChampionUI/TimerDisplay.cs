@@ -38,7 +38,7 @@ namespace GGL.UI.ChampionUI
         {
             if (fillImage != null)
             {
-                Debug.Log(maxTime == 0 ? 0 : (time / maxTime));
+                //Debug.Log(maxTime == 0 ? 0 : (time / maxTime));
                 fillImage.fillAmount = maxTime == 0 ? 0 : (time / maxTime);
             }
         }

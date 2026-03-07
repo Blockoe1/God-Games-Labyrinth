@@ -78,6 +78,13 @@ namespace GGL.Minotaur
             patrolTarget = (patrolTarget + 1) % champions.Length;
             Vector2 destination = champions[patrolTarget].transform.position;
             minotaur.movement.SetDestination(destination);
+            // If no path was found, set a path for a random collectable instead.
+            if (minotaur.movement.CurrentPath == null)
+            {
+                destination = CollectableSpawner.Collectables[Random.Range(0,
+                CollectableSpawner.Collectables.Count)].transform.position;
+                minotaur.movement.SetDestination(destination);
+            }
         }
         #endregion
 

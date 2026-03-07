@@ -22,7 +22,7 @@ namespace GGL.Champions
         #endregion
 
         [SerializeField] private float knockbackTime;
-        [SerializeField] private bool autoTurn;
+        [SerializeField] private bool inputCorrection;
 
         private InputAction moveAction;
 
@@ -79,10 +79,25 @@ namespace GGL.Champions
             if (!suspendInput)
             {
                 Vector2Int input = MathHelpers.RoundVectorToInt(moveAction.ReadValue<Vector2>());
-                // Ignore diagonal inputs.
+                // Perfect inputs are treated as absolute.
                 if (input.x == 0 || input.y == 0)
                 {
                     TargetDirection = input;
+                }
+                else
+                {
+                    // If the input is dingaonal in the opposite direction of Direction, reverse direction
+                    if (input.x + Direction.x == 0 || input.y + Direction.y == 0)
+                    {
+                        TargetDirection = -Direction;
+
+                    }
+                    // If the input is diagonal in the same direction as Direction, set TargetDirection to that
+                    // parellel vector component.
+                    else
+                    {
+                        TargetDirection = input - Direction;
+                    }
                 }
             }
         }
@@ -96,37 +111,40 @@ namespace GGL.Champions
         /// </summary>
         protected override void OnFixedUpdate()
         {
-            if (autoTurn && IsMoving && TargetDirection == Direction)
+            if (inputCorrection && IsMoving)
             {
                 // Check for if the champion is running into a wall.
                 RaycastHit2D isFacingWall = Physics2D.Raycast(rb.position, Direction, MaxWallCheckDistance, GGLHelpers.MazeMask);
                 if (isFacingWall)
                 {
-                    // Check for valid directions to auto-turn.
-                    Vector2 perpVector = new Vector2(Direction.y, -Direction.x);
-                    for (int i = 1; i >= -1; i -= 2)
-                    {
-                        // Check both perpendicular directions
-                        perpVector = perpVector * i;
+                    //// Check for valid directions to auto-turn.
+                    //Vector2 perpVector = new Vector2(Direction.y, -Direction.x);
+                    //for (int i = 1; i >= -1; i -= 2)
+                    //{
+                    //    // Check both perpendicular directions
+                    //    perpVector = perpVector * i;
 
-                        RaycastHit2D isWallCheck = Physics2D.Raycast(rb.position, perpVector,
-                            MaxWallCheckDistance, GGLHelpers.MazeMask);
-                        if (!isWallCheck)
-                        {
-                            RaycastHit2D isHallCheck = Physics2D.Raycast(rb.position + (perpVector), TargetDirection,
-                                MaxWallCheckDistance, GGLHelpers.MazeMask);
-                            Debug.DrawRay(rb.position + (perpVector), Direction * MaxWallCheckDistance, Color.green);
-                            // If this direction is available, auto-turn in that direction.
-                            if (!isHallCheck)
-                            {
-                                Debug.Log($"Found {perpVector} direction to auto-turn");
-                                Direction = perpVector;
-                                break;
-                            }
-                        }
-                    }
+                    //    RaycastHit2D isWallCheck = Physics2D.Raycast(rb.position, perpVector,
+                    //        MaxWallCheckDistance, GGLHelpers.MazeMask);
+                    //    if (!isWallCheck)
+                    //    {
+                    //        RaycastHit2D isHallCheck = Physics2D.Raycast(rb.position + (perpVector), TargetDirection,
+                    //            MaxWallCheckDistance, GGLHelpers.MazeMask);
+                    //        Debug.DrawRay(rb.position + (perpVector), Direction * MaxWallCheckDistance, Color.green);
+                    //        // If this direction is available, auto-turn in that direction.
+                    //        if (!isHallCheck)
+                    //        {
+                    //            Debug.Log($"Found {perpVector} direction to auto-turn");
+                    //            Direction = perpVector;
+                    //            break;
+                    //        }
+                    //    }
+                    //}
+                    MoveAction_performed(new InputAction.CallbackContext());
                 }
             }
+
+
         }
 
         /// <summary>

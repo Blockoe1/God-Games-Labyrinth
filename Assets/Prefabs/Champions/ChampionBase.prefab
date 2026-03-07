@@ -5097,7 +5097,7 @@ MonoBehaviour:
   positionSnap: 1
   rb: {fileID: 1706004363272337}
   knockbackTime: 0.5
-  autoTurn: 0
+  inputCorrection: 0
   input: {fileID: 8650097738718565955}
 --- !u!114 &5887644586341638842
 MonoBehaviour:
@@ -5392,7 +5392,7 @@ MonoBehaviour:
         Data2: 1116556695
         Data3: 1180336804
         Data4: -1826723750
-      Path: event:/Zeus/ZeusDash
+      Path: event:/SFX/Zeus/ZeusDash
   - name: Shoot
     eventRef:
       Guid:
@@ -5400,7 +5400,7 @@ MonoBehaviour:
         Data2: 1323020702
         Data3: 1484801685
         Data4: 583292660
-      Path: event:/Zeus/ZeusShoot
+      Path: event:/SFX/Zeus/ZeusShoot
 --- !u!114 &7795094476502601569
 MonoBehaviour:
   m_ObjectHideFlags: 0

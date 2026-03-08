@@ -23,6 +23,8 @@ namespace GGL.Scoring
         [SerializeField] private int spawnAmount;
         [SerializeField] private float spawnDelay;
         [SerializeField] private int startingGoldAmount;
+        [SerializeField, Tooltip("Controls how heavily gold skews towards spawning in the center.")] 
+        private float centerSkew;
 
         [Header("Spawn Map Settings")]
         [SerializeField] private Tilemap mazeCollisionTilemap;
@@ -35,8 +37,10 @@ namespace GGL.Scoring
         private GameObject[] excludedAreas;
 
         [SerializeField, ReadOnly] private Vector2Int[] spawnMap;
+        [SerializeField, ReadOnly] private int totalMapWeight;
 
         private List<Vector2Int> validPositions;
+        private int totalValidWeight;
 
         public static List<Collectable> Collectables { get; private set; } = new List<Collectable>();
 
@@ -58,6 +62,7 @@ namespace GGL.Scoring
         [Button]
         private void BakeSpawnPositions()
         {
+            totalMapWeight = 0;
             List<Vector2Int> spawnPositions = new List<Vector2Int>();
             for (int i = minBounds.y; i <= maxBounds.y; i++)
             {
@@ -86,7 +91,9 @@ namespace GGL.Scoring
                     if (inValidArea && tile == null)
                     {
                         Debug.DrawLine(position, position + Vector2.up, Color.green, 5f);
-                        spawnPositions.Add(new Vector2Int(j, i));
+                        Vector2Int intPos = new Vector2Int(j, i);
+                        spawnPositions.Add(intPos);
+                        totalMapWeight += intPos.x + intPos.y;
                     }
                 }
             }
@@ -104,6 +111,7 @@ namespace GGL.Scoring
 #endif
 
             validPositions = spawnMap.ToList();
+            totalValidWeight = totalMapWeight;
 
             // Log any gold placed in the scene already by designers.
             Collectable[] inSceneCollectables = GetComponentsInChildren<Collectable>();
@@ -165,10 +173,31 @@ namespace GGL.Scoring
         {
             if (validPositions.Count > 0)
             {
-                Vector2Int position = validPositions[Random.Range(0, validPositions.Count)];
-
+                Vector2Int position = GetWeightedRandomPosition();
                 SpawnAtPosition(position);
             }
+        }
+
+        /// <summary>
+        /// Gets a position to spawn gold at using weighted randomness, with gold skewing towards the middle.
+        /// </summary>
+        /// <returns></returns>
+        private Vector2Int GetWeightedRandomPosition()
+        {
+            InverseNormalDist(,0, centerSkew);
+            return validPositions[Random.Range(0, validPositions.Count)];
+        }
+
+        /// <summary>
+        /// Calculates the probability density of a value based on the mean and standard deviation of a normal distribution.
+        /// </summary>
+        /// <param name="value">The value to find the probability density of.</param>
+        /// <param name="mean">The mean of the normal distribution.</param>
+        /// <param name="centerSkew">The standard deviation of the normal distribution.</param>
+        public static float InverseNormalDist(float value, float mean, float centerSkew)
+        {
+            return (centerSkew * Mathf.Pow(System.MathF.E, (Mathf.Pow((value - mean) * centerSkew, 2) / -2))) /
+                Mathf.Sqrt(2 * Mathf.PI);
         }
 
         /// <summary>
@@ -209,6 +238,7 @@ namespace GGL.Scoring
 
             // Remove the position this object was spawned at from our valid positions. (cant have double coins)
             validPositions.Remove(position);
+            totalValidWeight -= position.x + position.y;
 
             Collectables.Add(collectable);
         }
@@ -221,6 +251,7 @@ namespace GGL.Scoring
         {
             //Debug.Log("Logged " + position + " as collected");
             validPositions.Add(position);
+            totalValidWeight += position.x + position.y;
             Collectables.Remove(collectable);
         }
 

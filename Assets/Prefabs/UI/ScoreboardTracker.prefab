@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2363394593235423207}
   - component: {fileID: 1735464151642440841}
   - component: {fileID: 3795239406926796836}
+  - component: {fileID: 6335771674323580022}
+  - component: {fileID: 7858280367334525060}
   m_Layer: 5
   m_Name: GodBird
   m_TagString: Untagged
@@ -75,6 +77,42 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &6335771674323580022
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308985923325400204}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: fd5680323f481904b92b019d100544df, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7858280367334525060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308985923325400204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e24cd2bc4057c04eb8e6f1ca1de91ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Champions.ChampionAnimator
+  movement: {fileID: 0}
+  anim: {fileID: 6335771674323580022}
 --- !u!1 &4453240864755631080
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,6 +465,7 @@ MonoBehaviour:
   tweenTime: 5
   minWidth: 600
   maxWidth: 1770
+  birdAnimator: {fileID: 7858280367334525060}
 --- !u!114 &8436142561641939332
 MonoBehaviour:
   m_ObjectHideFlags: 0

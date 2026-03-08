@@ -6,6 +6,7 @@
 //
 // Brief Description : Changes the width of a UI element based on the relative amount of score the designated team has.
 *****************************************************************************/
+using GGL.Champions;
 using GGL.Scoring;
 using System.Collections;
 using System.Linq;
@@ -19,6 +20,7 @@ namespace GGL.UI.Scoreboard
         [SerializeField] private float tweenTime;
         [SerializeField] private float minWidth;
         [SerializeField] private float maxWidth;
+        [SerializeField] private ChampionAnimator birdAnimator;
 
         private Coroutine animationCoroutine;
 
@@ -72,6 +74,10 @@ namespace GGL.UI.Scoreboard
         /// <returns></returns>
         private IEnumerator ScoreboardAnimateRoutine(float targetWidth, float time)
         {
+            if (birdAnimator != null)
+            {
+                birdAnimator.SetMoving(true);
+            }
             float step = Mathf.Abs((rTrans.sizeDelta.x - targetWidth) / time);
             while (time > 0)
             {
@@ -81,6 +87,10 @@ namespace GGL.UI.Scoreboard
 
                 time -= Time.deltaTime;
                 yield return null;
+            }
+            if (birdAnimator != null)
+            {
+                birdAnimator.SetMoving(false);
             }
             animationCoroutine = null;
         }

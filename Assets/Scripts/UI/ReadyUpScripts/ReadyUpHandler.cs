@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
@@ -8,6 +9,7 @@ namespace GGL
 {
     public class ReadyUpHandler : MonoBehaviour
     {
+        [SerializeField, Scene] private string mazeScene;
         [SerializeField] private GameObject Player1;
         [SerializeField] private GameObject Player2;
         [SerializeField] private GameObject Player3;
@@ -50,7 +52,7 @@ namespace GGL
             else if (Player1.GetComponent<ReadyUpSystem1>().ready && Player2.GetComponent<ReadyUpSystem2>().ready &&
                 Player3.GetComponent<ReadyUpSystem3>().ready && Player4.GetComponent<ReadyUpSystem4>().ready)
             {
-                SceneManager.LoadScene("MazeScene");
+                SceneManager.LoadScene(mazeScene);
             }
         }
     }

@@ -74,11 +74,13 @@ namespace GGL.UI.Scoreboard
         /// <returns></returns>
         private IEnumerator ScoreboardAnimateRoutine(float targetWidth, float time)
         {
-            if (birdAnimator != null)
+            
+            float step = Mathf.Abs((rTrans.sizeDelta.x - targetWidth) / time);
+            // Only animate the bird if the width is increasing.
+            if (targetWidth > rTrans.sizeDelta.x && birdAnimator != null)
             {
                 birdAnimator.SetMoving(true);
             }
-            float step = Mathf.Abs((rTrans.sizeDelta.x - targetWidth) / time);
             while (time > 0)
             {
                 Vector2 size = rTrans.sizeDelta;

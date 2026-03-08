@@ -56,6 +56,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1426306323422705125, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: sounds.Array.data[0].eventRef.Path
+      value: event:/SFX/Poseidon/PoseidonDash
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426306323422705125, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: sounds.Array.data[1].eventRef.Path
+      value: event:/SFX/Poseidon/PoseidonShoot
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426306323422705125, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: sounds.Array.data[0].eventRef.Guid.Data1
+      value: -729231759
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426306323422705125, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: sounds.Array.data[0].eventRef.Guid.Data2
+      value: 1158894246
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426306323422705125, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: sounds.Array.data[0].eventRef.Guid.Data3
+      value: 326790288
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426306323422705125, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: sounds.Array.data[0].eventRef.Guid.Data4
+      value: -1912676446
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426306323422705125, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: sounds.Array.data[1].eventRef.Guid.Data1
+      value: 1877322509
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426306323422705125, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: sounds.Array.data[1].eventRef.Guid.Data2
+      value: 1220759426
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426306323422705125, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: sounds.Array.data[1].eventRef.Guid.Data3
+      value: 580422573
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426306323422705125, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: sounds.Array.data[1].eventRef.Guid.Data4
+      value: -418953969
+      objectReference: {fileID: 0}
     - target: {fileID: 4254817847457918461, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
       propertyPath: m_Name
       value: PoseidonChampion

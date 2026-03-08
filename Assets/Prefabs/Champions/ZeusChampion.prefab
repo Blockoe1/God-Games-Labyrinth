@@ -52,6 +52,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1426306323422705125, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: sounds.Array.data[0].eventRef.Path
+      value: event:/SFX/Zeus/ZeusDash
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426306323422705125, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: sounds.Array.data[1].eventRef.Path
+      value: event:/SFX/Zeus/ZeusShoot
+      objectReference: {fileID: 0}
     - target: {fileID: 4254817847457918461, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
       propertyPath: m_Name
       value: ZeusChampion

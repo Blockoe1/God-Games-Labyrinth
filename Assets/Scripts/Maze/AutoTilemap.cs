@@ -12,7 +12,7 @@ using UnityEngine.Tilemaps;
 
 namespace GGL.Maze
 {
-    public class AutoMoveCollision : MonoBehaviour
+    public class AutoTilemap : MonoBehaviour
     {
         [SerializeField] private Tilemap referenceTilemap;
         [SerializeField] private Tilemap targetTilemap;

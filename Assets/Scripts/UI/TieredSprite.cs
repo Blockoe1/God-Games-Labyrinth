@@ -37,7 +37,7 @@ namespace GGL.UI
         private void SetSprite(float value)
         {
             int spriteIndex = (int)(value * (sprites.Length - 1));
-            Debug.Log(spriteIndex);
+            //Debug.Log(spriteIndex);
             targetImage.sprite = sprites[spriteIndex];
         }
     }

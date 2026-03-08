@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AthenaSMove
+  m_Name: AphroditeSMove
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,11 +21,11 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -1475191007, guid: deed1c1686da9104da45f57be81d9088, type: 3}
+      value: {fileID: 72825554, guid: 1ca305763ea3fec4f8edbf482c0f57d4, type: 3}
+    - time: 0.083333336
+      value: {fileID: -665597183, guid: 1ca305763ea3fec4f8edbf482c0f57d4, type: 3}
     - time: 0.16666667
-      value: {fileID: -1950423514, guid: deed1c1686da9104da45f57be81d9088, type: 3}
-    - time: 0.41666666
-      value: {fileID: -1475191007, guid: deed1c1686da9104da45f57be81d9088, type: 3}
+      value: {fileID: 1322049524, guid: 1ca305763ea3fec4f8edbf482c0f57d4, type: 3}
     attribute: m_Sprite
     path: 
     classID: 114
@@ -48,15 +48,15 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -1475191007, guid: deed1c1686da9104da45f57be81d9088, type: 3}
-    - {fileID: -1950423514, guid: deed1c1686da9104da45f57be81d9088, type: 3}
-    - {fileID: -1475191007, guid: deed1c1686da9104da45f57be81d9088, type: 3}
+    - {fileID: 72825554, guid: 1ca305763ea3fec4f8edbf482c0f57d4, type: 3}
+    - {fileID: -665597183, guid: 1ca305763ea3fec4f8edbf482c0f57d4, type: 3}
+    - {fileID: 1322049524, guid: 1ca305763ea3fec4f8edbf482c0f57d4, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.5
+    m_StopTime: 0.25
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

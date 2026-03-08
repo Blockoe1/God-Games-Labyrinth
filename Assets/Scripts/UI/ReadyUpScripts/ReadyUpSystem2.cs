@@ -5,17 +5,22 @@ namespace GGL
     public class ReadyUpSystem2 : MonoBehaviour
     {
         public bool ready;
+        [SerializeField] private GameObject notReadyObject;
+        [SerializeField] private GameObject readyObject;
+
         void OnDash()
         {
             if (!ready)
             {
                 ready = true;
-                GetComponent<UnityEngine.UI.Image>().color = new Vector4(0.4352941f, 0.8039216f, 1, 1);
+                notReadyObject.SetActive(false);
+                readyObject.SetActive(true);
             }
             else if (ready)
             {
                 ready = false;
-                GetComponent<UnityEngine.UI.Image>().color = new Vector4(1, 1, 1, 1);
+                readyObject.SetActive(false);
+                notReadyObject.SetActive(true);
             }
         }
     }

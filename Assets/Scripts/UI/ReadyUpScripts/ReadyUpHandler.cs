@@ -19,6 +19,12 @@ namespace GGL
 
         private bool timerRunning = false;
 
+        public string MazeScene
+        {
+            get { return mazeScene; }
+            set { mazeScene = value; }
+        }
+
         private void Update()
         {
             if (Player1.GetComponent<ReadyUpSystem1>().ready && Player2.GetComponent<ReadyUpSystem2>().ready && 

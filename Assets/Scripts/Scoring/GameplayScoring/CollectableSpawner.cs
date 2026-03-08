@@ -24,7 +24,9 @@ namespace GGL.Scoring
         [SerializeField] private float spawnDelay;
         [SerializeField] private int startingGoldAmount;
         [SerializeField, Tooltip("Controls how heavily gold skews towards spawning in the center.")] 
-        private float centerSkew;
+        private float skewSpread;
+        [SerializeField, Tooltip("Controls how heavily gold skews towards spawning in the center.")]
+        private float skewStrength;
 
         [Header("Spawn Map Settings")]
         [SerializeField] private Tilemap mazeCollisionTilemap;
@@ -90,10 +92,10 @@ namespace GGL.Scoring
                     TileBase tile = mazeCollisionTilemap.GetTile(mazeCollisionTilemap.WorldToCell(position));
                     if (inValidArea && tile == null)
                     {
-                        Debug.DrawLine(position, position + Vector2.up, Color.green, 5f);
                         Vector2Int intPos = new Vector2Int(j, i);
+                        Debug.DrawLine(position, position + (Vector2.up * GetWeight(intPos) / 10), Color.green, 5f);
                         spawnPositions.Add(intPos);
-                        totalMapWeight += intPos.x + intPos.y;
+                        totalMapWeight += GetWeight(intPos);
                     }
                 }
             }
@@ -184,8 +186,24 @@ namespace GGL.Scoring
         /// <returns></returns>
         private Vector2Int GetWeightedRandomPosition()
         {
-            InverseNormalDist(,0, centerSkew);
-            return validPositions[Random.Range(0, validPositions.Count)];
+            int random = Random.Range(0, totalValidWeight);
+            int index = -1;
+            while(random >= 0 && index < validPositions.Count - 1)
+            {
+                index++;
+                random -= GetWeight(validPositions[index]);
+            }
+            return validPositions[index];
+        }
+
+        /// <summary>
+        /// Gets the weight of a given position.
+        /// </summary>
+        /// <param name="position"></param>
+        /// <returns></returns>
+        private int GetWeight(Vector2Int position)
+        {
+            return Mathf.RoundToInt(CalculateWeight(position.magnitude, 0)) + 1;
         }
 
         /// <summary>
@@ -194,9 +212,9 @@ namespace GGL.Scoring
         /// <param name="value">The value to find the probability density of.</param>
         /// <param name="mean">The mean of the normal distribution.</param>
         /// <param name="centerSkew">The standard deviation of the normal distribution.</param>
-        public static float InverseNormalDist(float value, float mean, float centerSkew)
+        public float CalculateWeight(float value, float mean)
         {
-            return (centerSkew * Mathf.Pow(System.MathF.E, (Mathf.Pow((value - mean) * centerSkew, 2) / -2))) /
+            return (skewStrength * Mathf.Pow(System.MathF.E, (Mathf.Pow((value - mean) / skewSpread, 2) / -2))) /
                 Mathf.Sqrt(2 * Mathf.PI);
         }
 
@@ -238,7 +256,7 @@ namespace GGL.Scoring
 
             // Remove the position this object was spawned at from our valid positions. (cant have double coins)
             validPositions.Remove(position);
-            totalValidWeight -= position.x + position.y;
+            totalValidWeight -= GetWeight(position);
 
             Collectables.Add(collectable);
         }
@@ -251,7 +269,7 @@ namespace GGL.Scoring
         {
             //Debug.Log("Logged " + position + " as collected");
             validPositions.Add(position);
-            totalValidWeight += position.x + position.y;
+            totalValidWeight += GetWeight(position);
             Collectables.Remove(collectable);
         }
 

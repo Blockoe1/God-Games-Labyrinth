@@ -21,7 +21,6 @@ namespace GGL
             }
             else
             {
-                Debug.Log("Set Audio Manager");
                 instance = this;
                 DontDestroyOnLoad(gameObject);
                 MusicManager = GetComponent<MusicManager>();

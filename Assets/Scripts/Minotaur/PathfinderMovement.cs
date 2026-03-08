@@ -20,7 +20,9 @@ namespace GGL.Minotaur
         #endregion
 
         [Header("Pathfinder Settings")]
-        [SerializeField, Tooltip("The tilemap to use as wall based tiles.")] private Tilemap collisionTilemap;
+        [SerializeField, Tooltip("The tilemap to use as wall based tiles.  The first tilemap will be used " +
+            "for positioning.")] 
+        private Tilemap[] collisionTilemap;
 
         public event Action<Vector2> OnReachNode;
         public event Action OnCompletePath;
@@ -36,16 +38,24 @@ namespace GGL.Minotaur
         /// Sets a destination position to navigate this entity to.
         /// </summary>
         /// <param name="destination">The destination position.</param>
-        public void SetDestination(Vector2 destination)
+        /// <returns>
+        /// True if a valid path was found and the entity is now moving, false if no valid path was found.
+        /// </returns>
+        public bool SetDestination(Vector2 destination)
         {
             currentPathNode = 0;
             currentPath = Pathfinder.FindPath(collisionTilemap, rb.position, destination);
+            if (currentPath == null)
+            {
+                return false;
+            }
             // If not already moving, set moving and start the follow coroutine.
             if (!IsMoving)
             {
                 IsMoving = true;
                 StartCoroutine(FollowPathRoutine());
             }
+            return true;
         }
 
         /// <summary>
@@ -75,18 +85,22 @@ namespace GGL.Minotaur
                 // If we've reached the next node in the path, update the target direction and move to the next node.
                 if (Vector2.Distance(rb.position, currentPath[currentPathNode]) < REQUIRED_PATH_DIST)
                 {
+
+                    // Get a new path if we've reached the end of this current path.
+                    Debug.Log(currentPath);
                     // Only call the event for nodes after the first, as the first node is the current position.
                     if (currentPathNode > 0)
                     {
                         OnReachNode?.Invoke(currentPath[currentPathNode]);
+                        if (currentPath == null) { break; }
                     }
                     currentPathNode++;
 
-                    // Get a new path if we've reached the end of this current path.
                     if (currentPathNode >= currentPath.Length)
                     {
                         // Broadcast an on complete event when the end of the path is reached.
                         OnCompletePath?.Invoke();
+                        if (currentPath == null) { break; }
                         continue;
                     }
 

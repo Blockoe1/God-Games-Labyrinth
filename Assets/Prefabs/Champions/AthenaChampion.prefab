@@ -56,6 +56,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1426306323422705125, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: sounds.Array.data[0].eventRef.Path
+      value: event:/SFX/Athena/AthenaDash
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426306323422705125, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: sounds.Array.data[1].eventRef.Path
+      value: event:/SFX/Athena/AthenaShoot
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426306323422705125, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: sounds.Array.data[0].eventRef.Guid.Data1
+      value: 67324252
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426306323422705125, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: sounds.Array.data[0].eventRef.Guid.Data2
+      value: 1162339801
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426306323422705125, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: sounds.Array.data[0].eventRef.Guid.Data3
+      value: -523356000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426306323422705125, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: sounds.Array.data[0].eventRef.Guid.Data4
+      value: 845268633
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426306323422705125, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: sounds.Array.data[1].eventRef.Guid.Data1
+      value: -1210472594
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426306323422705125, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: sounds.Array.data[1].eventRef.Guid.Data2
+      value: 1310097234
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426306323422705125, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: sounds.Array.data[1].eventRef.Guid.Data3
+      value: 18233767
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426306323422705125, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: sounds.Array.data[1].eventRef.Guid.Data4
+      value: -2085897914
+      objectReference: {fileID: 0}
     - target: {fileID: 4254817847457918461, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
       propertyPath: m_Name
       value: AthenaChampion

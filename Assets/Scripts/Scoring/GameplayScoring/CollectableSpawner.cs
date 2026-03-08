@@ -166,6 +166,7 @@ namespace GGL.Scoring
             if (validPositions.Count > 0)
             {
                 Vector2Int position = validPositions[Random.Range(0, validPositions.Count)];
+
                 SpawnAtPosition(position);
             }
         }

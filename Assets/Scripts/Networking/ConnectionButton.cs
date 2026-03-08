@@ -24,10 +24,29 @@ namespace GGL.Networking
         {
             connectAction.Enable();
             connectAction.performed += ConnectAction_performed;
+
+            NetworkManager.OnInstantiated += OnNetworkManagerInstantiated;
+            if (NetworkManager.Singleton != null)
+            {
+                OnNetworkManagerInstantiated(NetworkManager.Singleton);
+                if (NetworkManager.Singleton.IsClient)
+                {
+                    
+                }
+            }
         }
         private void OnDestroy()
         {
             connectAction.performed -= ConnectAction_performed;
+            NetworkManager.OnInstantiated -= OnNetworkManagerInstantiated;
+        }
+
+        /// <summary>
+        /// Called by the NetworkManager when it's spawned/destroyed to subscribe/unsubscrive singleton events.
+        /// </summary>
+        private void OnNetworkManagerInstantiated(NetworkManager manager)
+        {
+            
         }
 
         /// <summary>

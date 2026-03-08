@@ -25,7 +25,10 @@ namespace GGL
                 instance = this;
                 DontDestroyOnLoad(gameObject);
                 MusicManager = GetComponent<MusicManager>();
-                MusicManager.InitializeMusic();
+                if (MusicManager != null)
+                {
+                    MusicManager.InitializeMusic();
+                }
             }
         }
 

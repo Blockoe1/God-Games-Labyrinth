@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e05c5322e8644df4c8ef5a5a6c9f05d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.ReadyUpHandler
+  mazeScene: MazeScene
   Player1: {fileID: 973914255}
   Player2: {fileID: 1772287630}
   Player3: {fileID: 1715769656}

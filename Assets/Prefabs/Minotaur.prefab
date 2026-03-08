@@ -165,11 +165,7 @@ MonoBehaviour:
           rid: -2
         <minotaur>k__BackingField: {fileID: 5871052308712400146}
         visionDelay: 3
-        champions:
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
+        champions: []
     - rid: 2241602981746442322
       type: {class: AggroState, ns: GGL.Minotaur, asm: Assembly-CSharp}
       data:

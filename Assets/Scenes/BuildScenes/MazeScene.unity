@@ -904,10 +904,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1356239668325574234, guid: 44128fb1af1239244aabf4260bd47967, type: 3}
+      propertyPath: collector
+      value: 
+      objectReference: {fileID: 1155877951}
+    - target: {fileID: 2632539832633971129, guid: 44128fb1af1239244aabf4260bd47967, type: 3}
+      propertyPath: collector
+      value: 
+      objectReference: {fileID: 251288655}
+    - target: {fileID: 3585002401801832232, guid: 44128fb1af1239244aabf4260bd47967, type: 3}
+      propertyPath: collector
+      value: 
+      objectReference: {fileID: 1817073354}
     - target: {fileID: 4589376948979646490, guid: 44128fb1af1239244aabf4260bd47967, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 867199673}
+    - target: {fileID: 5080490617503191302, guid: 44128fb1af1239244aabf4260bd47967, type: 3}
+      propertyPath: collector
+      value: 
+      objectReference: {fileID: 1714213595}
     - target: {fileID: 5229335503657087555, guid: 44128fb1af1239244aabf4260bd47967, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -1095,6 +1111,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4859603225673024022, guid: 4e31b594f0e4ddc4db1b6f71b3c246c7, type: 3}
   m_PrefabInstance: {fileID: 251288644}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &251288655 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3011215616952028497, guid: 4e31b594f0e4ddc4db1b6f71b3c246c7, type: 3}
+  m_PrefabInstance: {fileID: 251288644}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251288646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53f7b64e21a0ad64bb809f41e9cee231, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Scoring.Collector
 --- !u!114 &364927694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2056,6 +2083,8 @@ MonoBehaviour:
   spawnAmount: 1
   spawnDelay: 5
   startingGoldAmount: 200
+  skewSpread: 0
+  skewStrength: 0
   mazeCollisionTilemap: {fileID: 1581354546}
   minBounds: {x: -26, y: -13}
   maxBounds: {x: 27, y: 14}
@@ -2798,6 +2827,7 @@ MonoBehaviour:
   - {x: 3, y: 13}
   - {x: 22, y: 13}
   - {x: 23, y: 13}
+  totalMapWeight: 0
 --- !u!1 &1023368000
 GameObject:
   m_ObjectHideFlags: 0
@@ -3091,6 +3121,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7203903553948511295, guid: 797e384ad3ae8df43abd9e700147a76d, type: 3}
   m_PrefabInstance: {fileID: 1155877940}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1155877951 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 666624940087960440, guid: 797e384ad3ae8df43abd9e700147a76d, type: 3}
+  m_PrefabInstance: {fileID: 1155877940}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155877942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53f7b64e21a0ad64bb809f41e9cee231, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Scoring.Collector
 --- !u!1 &1340197524
 GameObject:
   m_ObjectHideFlags: 0
@@ -97199,6 +97240,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3358876401124813668, guid: 6522047497df7cf42a2ddb99d8fdc7b7, type: 3}
   m_PrefabInstance: {fileID: 1714213584}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1714213595 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4910079793734689827, guid: 6522047497df7cf42a2ddb99d8fdc7b7, type: 3}
+  m_PrefabInstance: {fileID: 1714213584}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714213586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53f7b64e21a0ad64bb809f41e9cee231, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Scoring.Collector
 --- !u!1001 &1728097264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -97366,6 +97418,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7581548830205266949, guid: f901d6f675cd5484681ff28cd263affd, type: 3}
   m_PrefabInstance: {fileID: 1817073343}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1817073354 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 256188110578402114, guid: f901d6f675cd5484681ff28cd263affd, type: 3}
+  m_PrefabInstance: {fileID: 1817073343}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817073345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53f7b64e21a0ad64bb809f41e9cee231, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Scoring.Collector
 --- !u!114 &1879178686 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4573789797530958991, guid: 44128fb1af1239244aabf4260bd47967, type: 3}

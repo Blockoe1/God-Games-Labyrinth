@@ -44,6 +44,8 @@ namespace GGL.Scoring
         public UnityEvent<int> OnDropEvent => onDropEvent;
         public UnityEvent<int> OnDepositEvent => onDepositEvent;
         public int GoldCapacity => goldCapacity;
+
+        public int HeldGold => heldCollectables.Count;
         private int TotalPointsHeld
         {
             get

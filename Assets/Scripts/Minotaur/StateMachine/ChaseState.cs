@@ -59,6 +59,15 @@ namespace GGL.Minotaur
         /// <param name="reachedNode">The new node that was reached.</param>
         private void UpdatePath(Vector2 reachedNode)
         {
+            // Check for transition to charge state.
+            // Raycast in the current direction, and if there is a champion in that direction, charge down this hallway.
+            RaycastHit2D ray = Physics2D.Raycast(minotaur.transform.position, minotaur.movement.Direction, 100f, 
+                GGLHelpers.ChampionMask | GGLHelpers.MoveCheckMask);
+            if (ray.collider.gameObject.CompareTag("Player"))
+            {
+                parent.SetState<ChargeState>();
+            }
+
             //Debug.Log(aggroState.AggroTarget);
             minotaur.movement.SetDestination(aggroState.AggroTarget.transform.position);
             // If a null path was found, delay for a bit and re-path;

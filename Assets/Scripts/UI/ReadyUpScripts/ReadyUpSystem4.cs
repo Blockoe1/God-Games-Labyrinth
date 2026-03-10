@@ -8,36 +8,6 @@ namespace GGL
         [SerializeField] private GameObject notReadyObject;
         [SerializeField] private GameObject readyObject;
 
-        void OnDash()
-        {
-            if (!ready)
-            {
-                ready = true;
-                notReadyObject.SetActive(false);
-                readyObject.SetActive(true);
-            }
-            else if (ready)
-            {
-                ready = false;
-                readyObject.SetActive(false);
-                notReadyObject.SetActive(true);
-            }
-        }
-        void OnSteal()
-        {
-            if (!ready)
-            {
-                ready = true;
-                notReadyObject.SetActive(false);
-                readyObject.SetActive(true);
-            }
-            else if (ready)
-            {
-                ready = false;
-                readyObject.SetActive(false);
-                notReadyObject.SetActive(true);
-            }
-        }
         void OnReady()
         {
             if (!ready)

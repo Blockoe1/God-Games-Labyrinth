@@ -115,6 +115,14 @@ MonoBehaviour:
         Data3: 1779357109
         Data4: -1500118143
       Path: event:/SFX/UI/WinCheer
+  - name: CoinsFull
+    eventRef:
+      Guid:
+        Data1: -1498674231
+        Data2: 1321919235
+        Data3: -306753355
+        Data4: 1822245613
+      Path: event:/SFX/Game/CoinsFull
 --- !u!114 &5427923423324089921
 MonoBehaviour:
   m_ObjectHideFlags: 0

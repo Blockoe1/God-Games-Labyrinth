@@ -55,7 +55,6 @@ namespace GGL.UI.Scoreboard
             // Calculate the proportion of the total score this team's sscore takes up.
             int score = scoreboard[(int)team];
             float sign = score > avgScore ? 1 : -1;
-            Debug.Log(score + " " + avgScore + " " + MathHelpers.NormalDistribution01(score, avgScore, stdDev) + " " + stdDev);
             float normalizedWidth = 0.5f + (sign * (1 - MathHelpers.NormalDistribution01(score, avgScore, stdDev)));
 
             float width = Mathf.Lerp(minWidth, maxWidth, normalizedWidth);

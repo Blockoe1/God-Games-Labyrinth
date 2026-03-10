@@ -1476,9 +1476,11 @@ MonoBehaviour:
   - {fileID: 1309305341803330743, guid: fdd1119c331f1424a8d81f2f657ceee2, type: 3}
   - {fileID: 3285001252188154445, guid: 2ce2f2eb1345a664d9e44909c3aa9f64, type: 3}
   - {fileID: 5067606692798499484, guid: f0a08f3edd1a8eb43a13a81e8de1f8a8, type: 3}
-  spawnAmount: 1
-  spawnDelay: 5
+  spawnAmount: 3
+  spawnDelay: 3
   startingGoldAmount: 200
+  skewSpread: 10
+  skewStrength: 25
   mazeCollisionTilemap: {fileID: 1581354546}
   minBounds: {x: -26, y: -13}
   maxBounds: {x: 27, y: 14}
@@ -2221,6 +2223,7 @@ MonoBehaviour:
   - {x: 3, y: 13}
   - {x: 22, y: 13}
   - {x: 23, y: 13}
+  totalMapWeight: 3579
 --- !u!1 &1023368000
 GameObject:
   m_ObjectHideFlags: 0
@@ -2417,19 +2420,19 @@ PrefabInstance:
     - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
       propertyPath: 'managedReferences[6611772050505817].champions.Array.data[0]'
       value: 
-      objectReference: {fileID: 251288646}
+      objectReference: {fileID: 1155877942}
     - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
       propertyPath: 'managedReferences[6611772050505817].champions.Array.data[1]'
       value: 
-      objectReference: {fileID: 1155877942}
+      objectReference: {fileID: 1714213586}
     - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
       propertyPath: 'managedReferences[6611772050505817].champions.Array.data[2]'
       value: 
-      objectReference: {fileID: 1714213586}
+      objectReference: {fileID: 1817073345}
     - target: {fileID: 5871052308712400146, guid: 045d65cdf0d63f6479f81e95050e9277, type: 3}
       propertyPath: 'managedReferences[6611772050505817].champions.Array.data[3]'
       value: 
-      objectReference: {fileID: 1817073345}
+      objectReference: {fileID: 251288646}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

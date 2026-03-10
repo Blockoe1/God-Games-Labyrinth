@@ -115,6 +115,8 @@ namespace GGL.Champions
             rb.linearVelocity = Vector2.MoveTowards(rb.linearVelocity, toTarget.normalized * shooter.ReturnVelocity, 
                 shooter.ReturnAcceleration * Time.fixedDeltaTime);
 
+            rb.rotation = MathHelpers.VectorToDegAngle(rb.linearVelocity);
+
             AttractCollectables();
         }
 

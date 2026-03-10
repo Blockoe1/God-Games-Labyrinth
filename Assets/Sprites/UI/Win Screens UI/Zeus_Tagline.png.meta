@@ -1,0 +1,949 @@
+fileFormatVersion: 2
+guid: 5ef86734d4c6ed247be47f4a177e171b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2723658022707675047
+    second: Zeus_Tagline_0
+  - first:
+      213: 5391340487278983928
+    second: Zeus_Tagline_1
+  - first:
+      213: -7040728452060440862
+    second: Zeus_Tagline_2
+  - first:
+      213: -7206550220470762038
+    second: Zeus_Tagline_3
+  - first:
+      213: -888577469741112744
+    second: Zeus_Tagline_4
+  - first:
+      213: -5615498225401770308
+    second: Zeus_Tagline_5
+  - first:
+      213: 4274259326874519293
+    second: Zeus_Tagline_6
+  - first:
+      213: -1221229538714162269
+    second: Zeus_Tagline_7
+  - first:
+      213: -2740873495789548486
+    second: Zeus_Tagline_8
+  - first:
+      213: 6343248149758004910
+    second: Zeus_Tagline_9
+  - first:
+      213: 2028343888214475875
+    second: Zeus_Tagline_10
+  - first:
+      213: -1041630413062692720
+    second: Zeus_Tagline_11
+  - first:
+      213: -8683176225783027881
+    second: Zeus_Tagline_12
+  - first:
+      213: -6899626206357136513
+    second: Zeus_Tagline_13
+  - first:
+      213: 6221290140810841116
+    second: Zeus_Tagline_14
+  - first:
+      213: -655800519751021919
+    second: Zeus_Tagline_15
+  - first:
+      213: -3277174714129010202
+    second: Zeus_Tagline_16
+  - first:
+      213: -9076488214373851532
+    second: Zeus_Tagline_17
+  - first:
+      213: -3785415348332807802
+    second: Zeus_Tagline_18
+  - first:
+      213: -1629722817203891109
+    second: Zeus_Tagline_19
+  - first:
+      213: 6027636771721176964
+    second: Zeus_Tagline_20
+  - first:
+      213: -3831217683658891991
+    second: Zeus_Tagline_21
+  - first:
+      213: -8538987868673816095
+    second: Zeus_Tagline_22
+  - first:
+      213: 1813229027336913966
+    second: Zeus_Tagline_23
+  - first:
+      213: -1341707851086476306
+    second: Zeus_Tagline_24
+  - first:
+      213: 7505572268975229701
+    second: Zeus_Tagline_25
+  - first:
+      213: 9028775255924249008
+    second: Zeus_Tagline_26
+  - first:
+      213: 5494488393969261285
+    second: Zeus_Tagline_27
+  - first:
+      213: -770860381787598575
+    second: Zeus_Tagline_28
+  - first:
+      213: 8637712888765165465
+    second: Zeus_Tagline_29
+  - first:
+      213: -8098877524346146882
+    second: Zeus_Tagline_30
+  - first:
+      213: -7957917693284681856
+    second: Zeus_Tagline_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Zeus_Tagline_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4
+        width: 36
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7af32258a806cc520800000000000000
+      internalID: 2723658022707675047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus_Tagline_1
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 4
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8faf17fcb93e1da40800000000000000
+      internalID: 5391340487278983928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus_Tagline_2
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 4
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e693f6b6ce4a4e90800000000000000
+      internalID: -7040728452060440862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus_Tagline_3
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 4
+        width: 17
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac5c3d4a1c03dfb90800000000000000
+      internalID: -7206550220470762038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus_Tagline_4
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 4
+        width: 27
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8526aa8cf732ba3f0800000000000000
+      internalID: -888577469741112744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus_Tagline_5
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 4
+        width: 27
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbe471ebd1eb112b0800000000000000
+      internalID: -5615498225401770308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus_Tagline_6
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 4
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df681483638315b30800000000000000
+      internalID: 4274259326874519293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus_Tagline_7
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 4
+        width: 37
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ab6ab374325d0fe0800000000000000
+      internalID: -1221229538714162269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus_Tagline_8
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 4
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3c4e2dc31676f9d0800000000000000
+      internalID: -2740873495789548486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus_Tagline_9
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 4
+        width: 37
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaeca70959eb70850800000000000000
+      internalID: 6343248149758004910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus_Tagline_10
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 4
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 364cb5b0500262c10800000000000000
+      internalID: 2028343888214475875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus_Tagline_11
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 4
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 090a72a78a26b81f0800000000000000
+      internalID: -1041630413062692720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus_Tagline_12
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 4
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 757e5146a392f7780800000000000000
+      internalID: -8683176225783027881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus_Tagline_13
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 4
+        width: 27
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7b5b17658a9f30a0800000000000000
+      internalID: -6899626206357136513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus_Tagline_14
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 4
+        width: 27
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1c8ba7db66765650800000000000000
+      internalID: 6221290140810841116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus_Tagline_15
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 4
+        width: 27
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1aa49b0e6e026e6f0800000000000000
+      internalID: -655800519751021919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus_Tagline_16
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 4
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e1b271f5f22582d0800000000000000
+      internalID: -3277174714129010202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus_Tagline_17
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 4
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47e1a3eee06d90280800000000000000
+      internalID: -9076488214373851532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus_Tagline_18
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 4
+        width: 27
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 689bf43fbc0877bc0800000000000000
+      internalID: -3785415348332807802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus_Tagline_19
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 4
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b54963e7bbf0269e0800000000000000
+      internalID: -1629722817203891109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus_Tagline_20
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 4
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 487e58545b776a350800000000000000
+      internalID: 6027636771721176964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus_Tagline_21
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 4
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92d115cb0d7c4dac0800000000000000
+      internalID: -3831217683658891991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus_Tagline_22
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 4
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e9c35266cb6f7980800000000000000
+      internalID: -8538987868673816095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus_Tagline_23
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 4
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2408d68132e92910800000000000000
+      internalID: 1813229027336913966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus_Tagline_24
+      rect:
+        serializedVersion: 2
+        x: 1079
+        y: 4
+        width: 37
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eeb43af61db416de0800000000000000
+      internalID: -1341707851086476306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus_Tagline_25
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 4
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50b8a406636292860800000000000000
+      internalID: 7505572268975229701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus_Tagline_26
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 4
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b1933e3247ac4d70800000000000000
+      internalID: 9028775255924249008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus_Tagline_27
+      rect:
+        serializedVersion: 2
+        x: 1166
+        y: 29
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ea5b015518504c40800000000000000
+      internalID: 5494488393969261285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus_Tagline_28
+      rect:
+        serializedVersion: 2
+        x: 1187
+        y: 4
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 111d024219a5d45f0800000000000000
+      internalID: -770860381787598575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus_Tagline_29
+      rect:
+        serializedVersion: 2
+        x: 1228
+        y: 0
+        width: 27
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99f29a69b125fd770800000000000000
+      internalID: 8637712888765165465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus_Tagline_30
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 4
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebfe3f12dc10b9f80800000000000000
+      internalID: -8098877524346146882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus_Tagline_31
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 4
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08778f3550ccf8190800000000000000
+      internalID: -7957917693284681856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Zeus_Tagline_0: 2723658022707675047
+      Zeus_Tagline_1: 5391340487278983928
+      Zeus_Tagline_10: 2028343888214475875
+      Zeus_Tagline_11: -1041630413062692720
+      Zeus_Tagline_12: -8683176225783027881
+      Zeus_Tagline_13: -6899626206357136513
+      Zeus_Tagline_14: 6221290140810841116
+      Zeus_Tagline_15: -655800519751021919
+      Zeus_Tagline_16: -3277174714129010202
+      Zeus_Tagline_17: -9076488214373851532
+      Zeus_Tagline_18: -3785415348332807802
+      Zeus_Tagline_19: -1629722817203891109
+      Zeus_Tagline_2: -7040728452060440862
+      Zeus_Tagline_20: 6027636771721176964
+      Zeus_Tagline_21: -3831217683658891991
+      Zeus_Tagline_22: -8538987868673816095
+      Zeus_Tagline_23: 1813229027336913966
+      Zeus_Tagline_24: -1341707851086476306
+      Zeus_Tagline_25: 7505572268975229701
+      Zeus_Tagline_26: 9028775255924249008
+      Zeus_Tagline_27: 5494488393969261285
+      Zeus_Tagline_28: -770860381787598575
+      Zeus_Tagline_29: 8637712888765165465
+      Zeus_Tagline_3: -7206550220470762038
+      Zeus_Tagline_30: -8098877524346146882
+      Zeus_Tagline_31: -7957917693284681856
+      Zeus_Tagline_4: -888577469741112744
+      Zeus_Tagline_5: -5615498225401770308
+      Zeus_Tagline_6: 4274259326874519293
+      Zeus_Tagline_7: -1221229538714162269
+      Zeus_Tagline_8: -2740873495789548486
+      Zeus_Tagline_9: 6343248149758004910
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

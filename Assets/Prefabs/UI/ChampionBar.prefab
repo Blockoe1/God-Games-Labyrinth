@@ -431,6 +431,7 @@ GameObject:
   - component: {fileID: 8833193263373918490}
   - component: {fileID: 5747249971122717889}
   - component: {fileID: 8372915884401939204}
+  - component: {fileID: 3296437835681633932}
   m_Layer: 5
   m_Name: GoldPurse
   m_TagString: Untagged
@@ -534,6 +535,34 @@ MonoBehaviour:
   flashPeriod: 0.2
   goldDecreaseTime: 1
   goldDepositePeriod: 0.25
+  OnGoldFull:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3296437835681633932}
+        m_TargetAssemblyTypeName: GGL.Audio.AudioRelay, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: CoinsFull
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3296437835681633932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278687914615418615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3588f6df0103e3c43bebf097637efda7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Audio.AudioRelay
+  enableSound: 
 --- !u!1 &1988863105653267170
 GameObject:
   m_ObjectHideFlags: 0

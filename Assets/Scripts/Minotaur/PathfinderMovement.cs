@@ -87,7 +87,6 @@ namespace GGL.Minotaur
                 {
 
                     // Get a new path if we've reached the end of this current path.
-                    Debug.Log(currentPath);
                     // Only call the event for nodes after the first, as the first node is the current position.
                     if (currentPathNode > 0)
                     {

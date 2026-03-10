@@ -15,6 +15,7 @@ namespace GGL.Scoring
     public class CollectableCashZone : MonoBehaviour
     {
         [SerializeField] private GodID team;
+        [SerializeField] private float scoreMultiplier = 1f;
         [SerializeField] private UnityEvent<int, GodID> OnChampionScore;
 
         #region Properties
@@ -30,7 +31,7 @@ namespace GGL.Scoring
             int totalScore = 0;
             foreach (Collectable collectable in collectables)
             {
-                totalScore += collectable.PointValue;
+                totalScore += Mathf.RoundToInt(collectable.PointValue * scoreMultiplier);
                 collectable.OnCashed();
             }
             OnChampionScore?.Invoke(totalScore, team);

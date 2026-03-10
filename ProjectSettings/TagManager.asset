@@ -46,6 +46,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: NoLight
+    uniqueID: 2456930923
+    locked: 0
   - name: Front
     uniqueID: 1666798879
     locked: 0

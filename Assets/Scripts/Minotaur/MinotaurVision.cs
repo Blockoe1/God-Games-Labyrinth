@@ -16,7 +16,7 @@ namespace GGL.Minotaur
     public class MinotaurVision : MonoBehaviour
     {
         #region CONSTS
-        private const int VISION_RESOLUTION = 10;
+        public const int VISION_RESOLUTION = 10;
         private const string PLAYER_TAG = "Player";
         #endregion
 
@@ -40,15 +40,9 @@ namespace GGL.Minotaur
         private void OnValidate()
         {
             relay = GetComponentInChildren<VisionRelay>();
-            Vector2[] points = new Vector2[VISION_RESOLUTION + 1];
-            points[0] = Vector2.zero;
-            float subdividedAngle = visionAngle / VISION_RESOLUTION;
-            for (int i = 1; i < points.Length; i++)
-            {
-                points[i] = MathHelpers.DegAngleToUnitVector((subdividedAngle * i) - (visionAngle / 2)) * visionRange;
-            }
+            
 
-            relay.SetPath(points);
+            relay.UpdateVision(visionAngle, visionRange);
         }
 
         /// <summary>

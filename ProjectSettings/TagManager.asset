@@ -43,8 +43,14 @@ TagManager:
   - name: Tilemap
     uniqueID: 658886657
     locked: 0
+  - name: NoLightTM
+    uniqueID: 2456930923
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Minotaur
+    uniqueID: 3976549483
     locked: 0
   - name: Front
     uniqueID: 1666798879

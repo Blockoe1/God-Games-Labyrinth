@@ -1,3 +1,4 @@
+using GGL.Audio;
 using UnityEngine;
 
 namespace GGL
@@ -7,11 +8,14 @@ namespace GGL
         public bool ready;
         [SerializeField] private GameObject notReadyObject;
         [SerializeField] private GameObject readyObject;
+        [SerializeField] private AudioRelay relay;
+        [SerializeField] private string readySoundName;
 
         void OnReady()
         {
             if (!ready)
             {
+                relay.PlaySound(readySoundName);
                 ready = true;
                 notReadyObject.SetActive(false);
                 readyObject.SetActive(true);

@@ -330,6 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.ReadyUpHandler
   mazeScene: MazeScene
+  cancelText: Press Dash to ready
   Player1: {fileID: 1268843516}
   Player2: {fileID: 336125448}
   Player3: {fileID: 224477048}
@@ -410,6 +411,7 @@ GameObject:
   - component: {fileID: 224477051}
   - component: {fileID: 224477050}
   - component: {fileID: 224477049}
+  - component: {fileID: 224477052}
   m_Layer: 0
   m_Name: Aphrodite
   m_TagString: Untagged
@@ -444,7 +446,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Arcade Player 3
+  m_DefaultActionMap: Arcade Player 4
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &224477050
@@ -462,6 +464,8 @@ MonoBehaviour:
   ready: 0
   notReadyObject: {fileID: 828241178}
   readyObject: {fileID: 667724645}
+  relay: {fileID: 224477052}
+  readySoundName: PlayerReady
 --- !u!4 &224477051
 Transform:
   m_ObjectHideFlags: 0
@@ -479,6 +483,19 @@ Transform:
   - {fileID: 667724646}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &224477052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224477048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3588f6df0103e3c43bebf097637efda7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Audio.AudioRelay
+  enableSound: 
 --- !u!1 &248890951
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,6 +642,7 @@ GameObject:
   - component: {fileID: 336125451}
   - component: {fileID: 336125450}
   - component: {fileID: 336125449}
+  - component: {fileID: 336125452}
   m_Layer: 0
   m_Name: Poseidon
   m_TagString: Untagged
@@ -677,6 +695,8 @@ MonoBehaviour:
   ready: 0
   notReadyObject: {fileID: 1938268995}
   readyObject: {fileID: 2139491887}
+  relay: {fileID: 336125452}
+  readySoundName: PlayerReady
 --- !u!4 &336125451
 Transform:
   m_ObjectHideFlags: 0
@@ -694,6 +714,19 @@ Transform:
   - {fileID: 2139491888}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &336125452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336125448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3588f6df0103e3c43bebf097637efda7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Audio.AudioRelay
+  enableSound: 
 --- !u!1 &474721842
 GameObject:
   m_ObjectHideFlags: 0
@@ -1033,7 +1066,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 3
   m_Sprite: {fileID: -2463323882041622244, guid: 6ed59246f3c735f4eb35ff6105ef3030, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1627,6 +1660,8 @@ MonoBehaviour:
   ready: 0
   notReadyObject: {fileID: 0}
   readyObject: {fileID: 0}
+  relay: {fileID: 0}
+  readySoundName: 
 --- !u!1 &983903937
 GameObject:
   m_ObjectHideFlags: 0
@@ -1749,6 +1784,8 @@ MonoBehaviour:
   ready: 0
   notReadyObject: {fileID: 0}
   readyObject: {fileID: 0}
+  relay: {fileID: 0}
+  readySoundName: 
 --- !u!1 &1118270497
 GameObject:
   m_ObjectHideFlags: 0
@@ -2223,6 +2260,7 @@ GameObject:
   - component: {fileID: 1233810396}
   - component: {fileID: 1233810395}
   - component: {fileID: 1233810394}
+  - component: {fileID: 1233810397}
   m_Layer: 0
   m_Name: Athena
   m_TagString: Untagged
@@ -2257,7 +2295,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Arcade Player 4
+  m_DefaultActionMap: Arcade Player 3
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &1233810395
@@ -2275,6 +2313,8 @@ MonoBehaviour:
   ready: 0
   notReadyObject: {fileID: 1551486109}
   readyObject: {fileID: 788478682}
+  relay: {fileID: 1233810397}
+  readySoundName: PlayerReady
 --- !u!4 &1233810396
 Transform:
   m_ObjectHideFlags: 0
@@ -2292,6 +2332,19 @@ Transform:
   - {fileID: 788478683}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1233810397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233810393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3588f6df0103e3c43bebf097637efda7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Audio.AudioRelay
+  enableSound: 
 --- !u!1 &1241741643
 GameObject:
   m_ObjectHideFlags: 0
@@ -2484,6 +2537,7 @@ GameObject:
   - component: {fileID: 1268843519}
   - component: {fileID: 1268843518}
   - component: {fileID: 1268843517}
+  - component: {fileID: 1268843520}
   m_Layer: 0
   m_Name: Zeus
   m_TagString: Untagged
@@ -2536,6 +2590,8 @@ MonoBehaviour:
   ready: 0
   notReadyObject: {fileID: 1180342862}
   readyObject: {fileID: 1265956963}
+  relay: {fileID: 1268843520}
+  readySoundName: PlayerReady
 --- !u!4 &1268843519
 Transform:
   m_ObjectHideFlags: 0
@@ -2553,6 +2609,19 @@ Transform:
   - {fileID: 1265956964}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1268843520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268843516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3588f6df0103e3c43bebf097637efda7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Audio.AudioRelay
+  enableSound: 
 --- !u!1 &1457379439
 GameObject:
   m_ObjectHideFlags: 0
@@ -3082,6 +3151,8 @@ MonoBehaviour:
   ready: 0
   notReadyObject: {fileID: 0}
   readyObject: {fileID: 0}
+  relay: {fileID: 0}
+  readySoundName: 
 --- !u!1 &1772287630
 GameObject:
   m_ObjectHideFlags: 0
@@ -3204,6 +3275,8 @@ MonoBehaviour:
   ready: 0
   notReadyObject: {fileID: 0}
   readyObject: {fileID: 0}
+  relay: {fileID: 0}
+  readySoundName: 
 --- !u!1 &1938268995
 GameObject:
   m_ObjectHideFlags: 0

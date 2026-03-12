@@ -49,6 +49,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Champion
+    uniqueID: 645594057
+    locked: 0
   - name: Minotaur
     uniqueID: 3976549483
     locked: 0

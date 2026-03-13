@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
@@ -8,6 +9,8 @@ namespace GGL
 {
     public class ReadyUpHandler : MonoBehaviour
     {
+        [SerializeField, Scene] private string mazeScene;
+        [SerializeField] private string cancelText;
         [SerializeField] private GameObject Player1;
         [SerializeField] private GameObject Player2;
         [SerializeField] private GameObject Player3;
@@ -16,6 +19,12 @@ namespace GGL
         [SerializeField] private TMP_Text timerText;
 
         private bool timerRunning = false;
+
+        public string MazeScene
+        {
+            get { return mazeScene; }
+            set { mazeScene = value; }
+        }
 
         private void Update()
         {
@@ -45,12 +54,12 @@ namespace GGL
             {
                 StopCoroutine(StartGame());
                 timerRunning = false;
-                timerText.text = "";
+                timerText.text = cancelText;
             }
             else if (Player1.GetComponent<ReadyUpSystem1>().ready && Player2.GetComponent<ReadyUpSystem2>().ready &&
                 Player3.GetComponent<ReadyUpSystem3>().ready && Player4.GetComponent<ReadyUpSystem4>().ready)
             {
-                SceneManager.LoadScene("MazeScene");
+                SceneManager.LoadScene(mazeScene);
             }
         }
     }

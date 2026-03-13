@@ -134,8 +134,9 @@ namespace GGL.Scoring
         /// <param name="ignore">True if collisions should be ignored, false if not.</param>
         public void IgnoreMazeCollision(bool ignore)
         {
-            rb.excludeLayers = ignore ? rb.excludeLayers | GGLHelpers.MazeMask : 
-                rb.excludeLayers & ~GGLHelpers.MazeMask;
+            LayerMask mazeMask = GGLHelpers.MazeMask | GGLHelpers.MoveCheckMask;
+            rb.excludeLayers = ignore ? rb.excludeLayers |  mazeMask: 
+                rb.excludeLayers & ~mazeMask;
         }
 
         #region Event Subscriptions

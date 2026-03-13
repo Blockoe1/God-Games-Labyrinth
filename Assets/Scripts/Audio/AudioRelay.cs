@@ -38,6 +38,10 @@ namespace GGL.Audio
                 EventReference eventInst = FmodEvents.instance.FindEvent(soundName);
                 AudioManager.instance.PlayOneShot(eventInst, transform.position);
             }
+            else
+            {
+                Debug.LogWarning($"Cannot play sound {soundName} as no AudioManager exists.");
+            }
         }
     }
 }

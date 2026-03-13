@@ -16,9 +16,11 @@ namespace GGL.Minotaur
     public class PatrolState : MinotaurState
     {
         [SerializeField] private float visionDelay = 1f;
+        [SerializeField] private float repathDelay = 15f;
         [SerializeField, ReadOnly, AllowNesting] private GameObject[] champions;
 
         private int patrolTarget;
+        private float repathTimer;
 
         /// <summary>
         /// Gets references to the champions to patrol to.
@@ -64,6 +66,20 @@ namespace GGL.Minotaur
             yield return new WaitForSeconds(visionDelay);
             // Setup the transition to the aggro state.
             minotaur.vision.OnChampionFound += OnDetectChampion;
+
+            repathTimer = 0;
+            while(true)
+            {
+                // Continually re-find a path if we haven't finished the path to avoid bugs.
+                while(repathTimer <= repathDelay)
+                {
+                    repathTimer += Time.deltaTime;
+                    yield return null;
+                }
+
+                Debug.Log("Repathed");
+                SetNewPatrolPath();
+            }
         }
 
         #region Patrolling
@@ -78,6 +94,22 @@ namespace GGL.Minotaur
             patrolTarget = (patrolTarget + 1) % champions.Length;
             Vector2 destination = champions[patrolTarget].transform.position;
             minotaur.movement.SetDestination(destination);
+            repathTimer = 0;
+            // If no path was found, set a path for a random collectable instead.
+            if (minotaur.movement.CurrentPath == null)
+            {
+                Collectable foundDest = CollectableSpawner.Collectables[Random.Range(0,
+                CollectableSpawner.Collectables.Count)];
+                if (foundDest != null)
+                {
+                    destination = foundDest.transform.position;
+                }
+                else
+                {
+                    destination = new Vector2(0, 3);
+                }
+                minotaur.movement.SetDestination(destination);
+            }
         }
         #endregion
 

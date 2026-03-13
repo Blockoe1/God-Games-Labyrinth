@@ -1,0 +1,715 @@
+fileFormatVersion: 2
+guid: 5c3cfec8891dcf0439e3fff5594865b0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3071764256513947938
+    second: Athena_Tagline_0
+  - first:
+      213: -6500860078707048337
+    second: Athena_Tagline_1
+  - first:
+      213: 8152161453268481768
+    second: Athena_Tagline_2
+  - first:
+      213: -2961560514505576668
+    second: Athena_Tagline_3
+  - first:
+      213: -3665856643920905774
+    second: Athena_Tagline_4
+  - first:
+      213: 6916759895177618309
+    second: Athena_Tagline_5
+  - first:
+      213: -8986624047199956736
+    second: Athena_Tagline_6
+  - first:
+      213: 3963299089381048637
+    second: Athena_Tagline_7
+  - first:
+      213: 5582614730132269065
+    second: Athena_Tagline_8
+  - first:
+      213: -3093068230884287243
+    second: Athena_Tagline_9
+  - first:
+      213: 8478262940065438171
+    second: Athena_Tagline_10
+  - first:
+      213: 8585765335656403636
+    second: Athena_Tagline_11
+  - first:
+      213: 2709528351685385103
+    second: Athena_Tagline_12
+  - first:
+      213: -4957168804350655821
+    second: Athena_Tagline_13
+  - first:
+      213: 8610516171204409823
+    second: Athena_Tagline_14
+  - first:
+      213: 8732943023935964155
+    second: Athena_Tagline_15
+  - first:
+      213: -8439286300310168260
+    second: Athena_Tagline_16
+  - first:
+      213: -7216083986548533345
+    second: Athena_Tagline_17
+  - first:
+      213: -246502292538761006
+    second: Athena_Tagline_18
+  - first:
+      213: -7894696590143927729
+    second: Athena_Tagline_19
+  - first:
+      213: -2074926205901243843
+    second: Athena_Tagline_20
+  - first:
+      213: -8174580683176141362
+    second: Athena_Tagline_21
+  - first:
+      213: 3660724091442344446
+    second: Athena_Tagline_22
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Athena_Tagline_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 36
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 229714ff05911aa20800000000000000
+      internalID: 3071764256513947938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena_Tagline_1
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 0
+        width: 27
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f600622933e48c5a0800000000000000
+      internalID: -6500860078707048337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena_Tagline_2
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e633b556ab422170800000000000000
+      internalID: 8152161453268481768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena_Tagline_3
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 0
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42f6210376c66e6d0800000000000000
+      internalID: -2961560514505576668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena_Tagline_4
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 0
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d9b69d0ec2402dc0800000000000000
+      internalID: -3665856643920905774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena_Tagline_5
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 0
+        width: 37
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 583eab46a744dff50800000000000000
+      internalID: 6916759895177618309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena_Tagline_6
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 0
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 001d9a0da09194380800000000000000
+      internalID: -8986624047199956736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena_Tagline_7
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 0
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d31cf29f587700730800000000000000
+      internalID: 3963299089381048637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena_Tagline_8
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 0
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 908a563e48e697d40800000000000000
+      internalID: 5582614730132269065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena_Tagline_9
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 0
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fc9810f4d63315d0800000000000000
+      internalID: -3093068230884287243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena_Tagline_10
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 24
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd995f66937d8a570800000000000000
+      internalID: 8478262940065438171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena_Tagline_11
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 0
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b299ac5514c62770800000000000000
+      internalID: 8585765335656403636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena_Tagline_12
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 0
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8b9e0f1ead2a9520800000000000000
+      internalID: 2709528351685385103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena_Tagline_13
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 0
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b208059c39943bb0800000000000000
+      internalID: -4957168804350655821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena_Tagline_14
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 0
+        width: 27
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd9356556d2be7770800000000000000
+      internalID: 8610516171204409823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena_Tagline_15
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 0
+        width: 27
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf3cd614965a13970800000000000000
+      internalID: 8732943023935964155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena_Tagline_16
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 0
+        width: 27
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3d1138b2d1a1ea80800000000000000
+      internalID: -8439286300310168260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena_Tagline_17
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 0
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f97d360c8d15bdb90800000000000000
+      internalID: -7216083986548533345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena_Tagline_18
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 0
+        width: 37
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d068e0987f349cf0800000000000000
+      internalID: -246502292538761006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena_Tagline_19
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 0
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4acbf67747607290800000000000000
+      internalID: -7894696590143927729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena_Tagline_20
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 24
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3a7b12fb916433e0800000000000000
+      internalID: -2074926205901243843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena_Tagline_21
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 0
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecd148fed2e0e8e80800000000000000
+      internalID: -8174580683176141362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena_Tagline_22
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 0
+        width: 31
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef1b2237a218dc230800000000000000
+      internalID: 3660724091442344446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Athena_Tagline_0: 3071764256513947938
+      Athena_Tagline_1: -6500860078707048337
+      Athena_Tagline_10: 8478262940065438171
+      Athena_Tagline_11: 8585765335656403636
+      Athena_Tagline_12: 2709528351685385103
+      Athena_Tagline_13: -4957168804350655821
+      Athena_Tagline_14: 8610516171204409823
+      Athena_Tagline_15: 8732943023935964155
+      Athena_Tagline_16: -8439286300310168260
+      Athena_Tagline_17: -7216083986548533345
+      Athena_Tagline_18: -246502292538761006
+      Athena_Tagline_19: -7894696590143927729
+      Athena_Tagline_2: 8152161453268481768
+      Athena_Tagline_20: -2074926205901243843
+      Athena_Tagline_21: -8174580683176141362
+      Athena_Tagline_22: 3660724091442344446
+      Athena_Tagline_3: -2961560514505576668
+      Athena_Tagline_4: -3665856643920905774
+      Athena_Tagline_5: 6916759895177618309
+      Athena_Tagline_6: -8986624047199956736
+      Athena_Tagline_7: 3963299089381048637
+      Athena_Tagline_8: 5582614730132269065
+      Athena_Tagline_9: -3093068230884287243
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

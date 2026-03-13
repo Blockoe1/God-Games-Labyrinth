@@ -1,3 +1,4 @@
+using GGL.Audio;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,17 +7,25 @@ namespace GGL
     public class ReadyUpSystem1 : MonoBehaviour
     {
         public bool ready;
-        void OnDash()
+        [SerializeField] private GameObject notReadyObject;
+        [SerializeField] private GameObject readyObject;
+        [SerializeField] private AudioRelay relay;
+        [SerializeField] private string readySoundName;
+
+        void OnReady()
         {
             if (!ready)
             {
+                relay.PlaySound(readySoundName);
                 ready = true;
-                GetComponent<UnityEngine.UI.Image>().color = new Vector4(1, 0.9254902f, 0.2980392f, 1);
+                notReadyObject.SetActive(false);
+                readyObject.SetActive(true);
             }
             else if (ready)
             {
                 ready = false;
-                GetComponent<UnityEngine.UI.Image>().color = new Vector4(1, 1, 1, 1);
+                readyObject.SetActive(false);
+                notReadyObject.SetActive(true);
             }
         }
     }

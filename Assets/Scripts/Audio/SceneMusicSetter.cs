@@ -19,7 +19,6 @@ namespace GGL.Audio
         /// </summary>
         private void Start()
         {
-            Debug.Log(AudioManager.instance);
             if (AudioManager.instance != null && AudioManager.instance.MusicManager != null)
             {
                 AudioManager.instance.MusicManager.SetMusic(sceneMusic);

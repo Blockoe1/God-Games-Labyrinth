@@ -82,7 +82,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 6f07c422b1296cc4fa41c8023d78ac92, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -169,9 +169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f7e4aed8c801e94887d75a9595a2b02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Champions.StealProjectile
-  returnVelocity: 30
-  returnAcceleration: 40
-  collectableAttractionForce: 35
   rb: {fileID: 1795915871495244364}
 --- !u!95 &5993998788028812006
 Animator:

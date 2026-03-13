@@ -1,5 +1,6 @@
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 namespace GGL.Minotaur
 {
@@ -14,6 +15,7 @@ namespace GGL.Minotaur
         [Header("Components")]
         [SerializeReference, ReadOnly] protected PolygonCollider2D visionCollider;
         [SerializeReference, ReadOnly] private MinotaurVision vision;
+        [SerializeReference, ReadOnly] private Light2D visionLight;
 
         /// <summary>
         /// Get components on reset.
@@ -23,6 +25,7 @@ namespace GGL.Minotaur
         {
             visionCollider = GetComponent<PolygonCollider2D>();
             vision = GetComponentInParent<MinotaurVision>();
+            visionLight = GetComponentInChildren<Light2D>();
         }
         #endregion
 
@@ -30,8 +33,24 @@ namespace GGL.Minotaur
         /// Sets the points of this trigger collider.
         /// </summary>
         /// <param name="points"></param>
-        internal void SetPath(Vector2[] points)
+        internal void UpdateVision(float visionAngle, float visionRange)
         {
+            Vector2[] points = new Vector2[MinotaurVision.VISION_RESOLUTION + 1];
+            points[0] = Vector2.zero;
+            float subdividedAngle = visionAngle / MinotaurVision.VISION_RESOLUTION;
+            for (int i = 1; i < points.Length; i++)
+            {
+                points[i] = MathHelpers.DegAngleToUnitVector((subdividedAngle * i) - (visionAngle / 2)) * visionRange;
+            }
+            
+            if (visionLight != null)
+            {
+                visionLight.pointLightOuterRadius = visionRange;
+                visionLight.pointLightInnerRadius = visionRange - 1;
+                visionLight.pointLightInnerAngle = visionAngle;
+                visionLight.pointLightOuterAngle = visionAngle;
+            }
+
             visionCollider.pathCount = 1;
             visionCollider.SetPath(0, points);
         }

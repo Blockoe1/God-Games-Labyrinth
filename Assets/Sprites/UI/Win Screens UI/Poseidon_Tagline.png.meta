@@ -1,0 +1,975 @@
+fileFormatVersion: 2
+guid: e4e5acb1e82d20c40aaf28603f6eaa9c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3505489007397006170
+    second: Poseidon_Tagline_0
+  - first:
+      213: 3799414491694250178
+    second: Poseidon_Tagline_1
+  - first:
+      213: 6611464712603489724
+    second: Poseidon_Tagline_2
+  - first:
+      213: 8990558673424177072
+    second: Poseidon_Tagline_3
+  - first:
+      213: 4992406186006834221
+    second: Poseidon_Tagline_4
+  - first:
+      213: 3651385613463164479
+    second: Poseidon_Tagline_5
+  - first:
+      213: 6592145980377523603
+    second: Poseidon_Tagline_6
+  - first:
+      213: -3106230938261642536
+    second: Poseidon_Tagline_7
+  - first:
+      213: 804521950140850930
+    second: Poseidon_Tagline_8
+  - first:
+      213: 2469139119499198344
+    second: Poseidon_Tagline_9
+  - first:
+      213: 5932964914977917911
+    second: Poseidon_Tagline_10
+  - first:
+      213: 8424599812644736154
+    second: Poseidon_Tagline_11
+  - first:
+      213: -7567488919374823870
+    second: Poseidon_Tagline_12
+  - first:
+      213: 1605365443483505420
+    second: Poseidon_Tagline_13
+  - first:
+      213: -3447833288003269420
+    second: Poseidon_Tagline_14
+  - first:
+      213: 7320673942239450686
+    second: Poseidon_Tagline_15
+  - first:
+      213: -5308911467715489784
+    second: Poseidon_Tagline_16
+  - first:
+      213: 2558928961272697721
+    second: Poseidon_Tagline_17
+  - first:
+      213: 777511067495753759
+    second: Poseidon_Tagline_18
+  - first:
+      213: -8633074960310150196
+    second: Poseidon_Tagline_19
+  - first:
+      213: 2790135584781652411
+    second: Poseidon_Tagline_20
+  - first:
+      213: -9041791729722318412
+    second: Poseidon_Tagline_21
+  - first:
+      213: 3190266218921046511
+    second: Poseidon_Tagline_22
+  - first:
+      213: 4623245333410253503
+    second: Poseidon_Tagline_23
+  - first:
+      213: -6044527284287527805
+    second: Poseidon_Tagline_24
+  - first:
+      213: 6073930251112646491
+    second: Poseidon_Tagline_25
+  - first:
+      213: -6039332619310494536
+    second: Poseidon_Tagline_26
+  - first:
+      213: -7928876756491282362
+    second: Poseidon_Tagline_27
+  - first:
+      213: 3684854170311589470
+    second: Poseidon_Tagline_28
+  - first:
+      213: -6467358258623995378
+    second: Poseidon_Tagline_29
+  - first:
+      213: 8249995642057411644
+    second: Poseidon_Tagline_30
+  - first:
+      213: -5003511769462243481
+    second: Poseidon_Tagline_31
+  - first:
+      213: 2197312775854660565
+    second: Poseidon_Tagline_32
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Poseidon_Tagline_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4
+        width: 36
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a4901612500a5fc0800000000000000
+      internalID: -3505489007397006170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poseidon_Tagline_1
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 4
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c838eb995b3ab430800000000000000
+      internalID: 3799414491694250178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poseidon_Tagline_2
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 4
+        width: 27
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb5d2c78024a0cb50800000000000000
+      internalID: 6611464712603489724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poseidon_Tagline_3
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 4
+        width: 27
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b751cdba71e4cc70800000000000000
+      internalID: 8990558673424177072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poseidon_Tagline_4
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 4
+        width: 17
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2c666ba9f6984540800000000000000
+      internalID: 4992406186006834221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poseidon_Tagline_5
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 4
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f36917c9ed35ca230800000000000000
+      internalID: 3651385613463164479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poseidon_Tagline_6
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 4
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 395ebeba7d10c7b50800000000000000
+      internalID: 6592145980377523603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poseidon_Tagline_7
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 4
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d2269e4b6374e4d0800000000000000
+      internalID: -3106230938261642536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poseidon_Tagline_8
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 4
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f2662c737c3a2b00800000000000000
+      internalID: 804521950140850930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poseidon_Tagline_9
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 4
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88f35c672f4244220800000000000000
+      internalID: 2469139119499198344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poseidon_Tagline_10
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 4
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7db4d1ee720265250800000000000000
+      internalID: 5932964914977917911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poseidon_Tagline_11
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 4
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9c0387e4e03ae470800000000000000
+      internalID: 8424599812644736154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poseidon_Tagline_12
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 4
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24e75fe0ce0eaf690800000000000000
+      internalID: -7567488919374823870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poseidon_Tagline_13
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 29
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0395818d57674610800000000000000
+      internalID: 1605365443483505420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poseidon_Tagline_14
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 4
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dc4cc754e5d620d0800000000000000
+      internalID: -3447833288003269420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poseidon_Tagline_15
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 4
+        width: 37
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3614a3f922489560800000000000000
+      internalID: 7320673942239450686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poseidon_Tagline_16
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 4
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80012ded525f256b0800000000000000
+      internalID: -5308911467715489784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poseidon_Tagline_17
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 4
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9735e1e1554238320800000000000000
+      internalID: 2558928961272697721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poseidon_Tagline_18
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 4
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f18e40b42364aca00800000000000000
+      internalID: 777511067495753759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poseidon_Tagline_19
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 0
+        width: 32
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccbd4674018213880800000000000000
+      internalID: -8633074960310150196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poseidon_Tagline_20
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 4
+        width: 37
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb15616188d88b620800000000000000
+      internalID: 2790135584781652411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poseidon_Tagline_21
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 0
+        width: 32
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b126d8c35a158280800000000000000
+      internalID: -9041791729722318412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poseidon_Tagline_22
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 4
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe1b7bd293a164c20800000000000000
+      internalID: 3190266218921046511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poseidon_Tagline_23
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 4
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fba866fb221192040800000000000000
+      internalID: 4623245333410253503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poseidon_Tagline_24
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 4
+        width: 37
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 384a2e0d5768d1ca0800000000000000
+      internalID: -6044527284287527805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poseidon_Tagline_25
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 4
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b578110e16fea4450800000000000000
+      internalID: 6073930251112646491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poseidon_Tagline_26
+      rect:
+        serializedVersion: 2
+        x: 1048
+        y: 4
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bc81910bfaff2ca0800000000000000
+      internalID: -6039332619310494536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poseidon_Tagline_27
+      rect:
+        serializedVersion: 2
+        x: 1084
+        y: 4
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6485c755998f6f190800000000000000
+      internalID: -7928876756491282362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poseidon_Tagline_28
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 4
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5ef98e385b332330800000000000000
+      internalID: 3684854170311589470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poseidon_Tagline_29
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 4
+        width: 17
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e022787ede35f36a0800000000000000
+      internalID: -6467358258623995378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poseidon_Tagline_30
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 4
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3c4a5b735fdd7270800000000000000
+      internalID: 8249995642057411644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poseidon_Tagline_31
+      rect:
+        serializedVersion: 2
+        x: 1228
+        y: 4
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76f77bf2e84ff8ab0800000000000000
+      internalID: -5003511769462243481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poseidon_Tagline_32
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 4
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5db9e39e35c6e7e10800000000000000
+      internalID: 2197312775854660565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Poseidon_Tagline_0: -3505489007397006170
+      Poseidon_Tagline_1: 3799414491694250178
+      Poseidon_Tagline_10: 5932964914977917911
+      Poseidon_Tagline_11: 8424599812644736154
+      Poseidon_Tagline_12: -7567488919374823870
+      Poseidon_Tagline_13: 1605365443483505420
+      Poseidon_Tagline_14: -3447833288003269420
+      Poseidon_Tagline_15: 7320673942239450686
+      Poseidon_Tagline_16: -5308911467715489784
+      Poseidon_Tagline_17: 2558928961272697721
+      Poseidon_Tagline_18: 777511067495753759
+      Poseidon_Tagline_19: -8633074960310150196
+      Poseidon_Tagline_2: 6611464712603489724
+      Poseidon_Tagline_20: 2790135584781652411
+      Poseidon_Tagline_21: -9041791729722318412
+      Poseidon_Tagline_22: 3190266218921046511
+      Poseidon_Tagline_23: 4623245333410253503
+      Poseidon_Tagline_24: -6044527284287527805
+      Poseidon_Tagline_25: 6073930251112646491
+      Poseidon_Tagline_26: -6039332619310494536
+      Poseidon_Tagline_27: -7928876756491282362
+      Poseidon_Tagline_28: 3684854170311589470
+      Poseidon_Tagline_29: -6467358258623995378
+      Poseidon_Tagline_3: 8990558673424177072
+      Poseidon_Tagline_30: 8249995642057411644
+      Poseidon_Tagline_31: -5003511769462243481
+      Poseidon_Tagline_32: 2197312775854660565
+      Poseidon_Tagline_4: 4992406186006834221
+      Poseidon_Tagline_5: 3651385613463164479
+      Poseidon_Tagline_6: 6592145980377523603
+      Poseidon_Tagline_7: -3106230938261642536
+      Poseidon_Tagline_8: 804521950140850930
+      Poseidon_Tagline_9: 2469139119499198344
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

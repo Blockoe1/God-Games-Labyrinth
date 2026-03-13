@@ -21,6 +21,7 @@ namespace GGL.Scoring
         [SerializeField] private UnityEvent<int> onCollectEvent;
         [SerializeField] private UnityEvent<int> onDropEvent;
         [SerializeField] private UnityEvent<int> onDepositEvent;
+        [SerializeField] private CollectableCashZone autoDepositTarget; 
         private readonly Queue<Collectable> heldCollectables = new();
 
         public bool DisableCollection { get; set; }
@@ -44,6 +45,8 @@ namespace GGL.Scoring
         public UnityEvent<int> OnDropEvent => onDropEvent;
         public UnityEvent<int> OnDepositEvent => onDepositEvent;
         public int GoldCapacity => goldCapacity;
+
+        public int HeldGold => heldCollectables.Count;
         private int TotalPointsHeld
         {
             get
@@ -70,18 +73,27 @@ namespace GGL.Scoring
                 collision.gameObject.TryGetComponent(out Collectable collectable) && collectable.IsCollectable)
             {
                 ForceCollect(collectable);
+                if (autoDepositTarget != null)
+                {
+                    DepositCollectables(autoDepositTarget);
+                }
             }
 
             // Handles cashing collectables at a GoldCashZone
             if (collision.gameObject.TryGetComponent(out CollectableCashZone cashZone) && cashZone.Team == id.Team 
                 && heldCollectables.Count > 0)
             {
-                cashZone.CashCollectables(heldCollectables);
-                heldCollectables.Clear();
-                onDepositEvent?.Invoke(heldCollectables.Count);
+                DepositCollectables(cashZone);
 
                 //OnDeposit?.Invoke(heldCollectables.Count);
             }
+        }
+
+        private void DepositCollectables(CollectableCashZone cashZone)
+        {
+            cashZone.CashCollectables(heldCollectables);
+            heldCollectables.Clear();
+            onDepositEvent?.Invoke(heldCollectables.Count);
         }
 
         /// <summary>

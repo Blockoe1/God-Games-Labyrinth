@@ -42,11 +42,17 @@ namespace GGL.Champions
         /// </summary>
         private void Awake()
         {
-            movement.OnMove += SetMoving;
+            if (movement != null)
+            {
+                movement.OnMove += SetMoving;
+            }
         }
         private void OnDestroy()
         {
-            movement.OnMove -= SetMoving;
+            if (movement != null)
+            {
+                movement.OnMove -= SetMoving;
+            }
         }
 
         /// <summary>

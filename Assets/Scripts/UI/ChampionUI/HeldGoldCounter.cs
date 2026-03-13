@@ -10,6 +10,7 @@ using GGL.Scoring;
 using NaughtyAttributes;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace GGL.UI.ChampionUI
@@ -26,6 +27,7 @@ namespace GGL.UI.ChampionUI
         [SerializeField] private float flashPeriod;
         [SerializeField] private float goldDecreaseTime = 1f;
         [SerializeField] private float goldDepositePeriod;
+        [SerializeField] private UnityEvent OnGoldFull;
         //[SerializeField] private TMP_Text pointsText;
 
         private Collector collector;
@@ -33,7 +35,7 @@ namespace GGL.UI.ChampionUI
         private Coroutine animateRoutine;
 
         private int lastHeld;
-        private bool isFlashing;
+        private bool isFull;
 
         /// <summary>
         /// Get a reference to the collector on the found champion.
@@ -132,18 +134,22 @@ namespace GGL.UI.ChampionUI
             }
             if (normalizedGold == 1)
             {
-                
-                if (flashingImages != null && !isFlashing)
+                if (!isFull)
                 {
-                    foreach (var image in flashingImages)
+                    OnGoldFull?.Invoke();
+
+                    if (flashingImages != null)
                     {
-                        StartCoroutine(FlashRoutine(image));
+                        foreach (var image in flashingImages)
+                        {
+                            StartCoroutine(FlashRoutine(image));
+                        }
                     }
                 }
             }
             else
             {
-                isFlashing = false;
+                isFull = false;
             }
             lastHeld = heldCount;
         }
@@ -156,8 +162,8 @@ namespace GGL.UI.ChampionUI
         private IEnumerator FlashRoutine(Image flashingImage)
         {
             Color baseColor = flashingImage.color;
-            isFlashing = true;
-            while(isFlashing)
+            isFull = true;
+            while(isFull)
             {
                 flashingImage.color = flashColor;
                 yield return new WaitForSeconds(flashPeriod);

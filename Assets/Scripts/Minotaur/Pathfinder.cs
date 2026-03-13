@@ -67,7 +67,7 @@ namespace GGL.Minotaur
         }
         #endregion
 
-        public static Vector2[] FindPath(Tilemap collisionTilemap, Vector2 startingPos, Vector2 endingPos)
+        public static Vector2[] FindPath(Tilemap[] collisionTilemap, Vector2 startingPos, Vector2 endingPos)
         {
             return FindPath(collisionTilemap, PosToTile(collisionTilemap, startingPos), 
                 PosToTile(collisionTilemap, endingPos));
@@ -80,7 +80,7 @@ namespace GGL.Minotaur
         /// <param name="startingTile">The starting tile of the path.</param>
         /// <param name="endingTile">The ending tile of the path.</param>
         /// <returns>The sequence of nodes from the starting to the ending tiles.</returns>
-        public static Vector2[] FindPath(Tilemap collisionTilemap, Vector2Int startingTile, Vector2Int endingTile)
+        public static Vector2[] FindPath(Tilemap[] collisionTilemap, Vector2Int startingTile, Vector2Int endingTile)
         {
             // Finalizes the path by looping through nodes in reverse order and adding their position to a list.
             Vector2[] FinalizePath(PathNode startNode, PathNode lastNode)
@@ -249,12 +249,27 @@ namespace GGL.Minotaur
         /// Checks if a given tile is empty on the collision tilemap.
         /// </summary>
         /// <param name="tile">The tile to check.</param>
-        /// <returns></returns>
-        private static bool CheckObscured(Tilemap collisionTilemap, Vector2Int tile)
+        /// <returns>True if obscured, false otherwise.</returns>
+        private static bool CheckObscured(Tilemap[] collisionTilemap, Vector2Int tile)
         {
-            return collisionTilemap.GetTile((Vector3Int)tile) != null ||
-                tile.x > GRID_BOUNDS || 
-                tile.y > GRID_BOUNDS;
+            // If no tilemaps are given, then the point is not obscured.
+            if (collisionTilemap == null) { return false; }
+            // If the tile is outside the bounds, then it is obscured.
+            if (tile.x > GRID_BOUNDS ||
+                tile.y > GRID_BOUNDS)
+            {
+                return true;
+            }
+            // Check if the tile is not obscured on any collision tilemap.
+            foreach(Tilemap tilemap in collisionTilemap)
+            {
+                if(tilemap.GetTile((Vector3Int)tile) != null)
+                {
+                    return true;
+                }
+            }
+            return false;
+                
         }
 
         /// <summary>
@@ -262,9 +277,14 @@ namespace GGL.Minotaur
         /// </summary>
         /// <param name="pos">The world position to get the tile position of.</param>
         /// <returns>The tile position</returns>
-        private static Vector2Int PosToTile(Tilemap collisionTilemap, Vector2 pos)
+        private static Vector2Int PosToTile(Tilemap[] collisionTilemap, Vector2 pos)
         {
-            return (Vector2Int)collisionTilemap.WorldToCell(pos);  
+            // If there is no tilemap, just convert the vector to a position by rounding.
+            if (collisionTilemap == null || collisionTilemap.Length == 0) 
+            { 
+                return MathHelpers.RoundVectorToInt(pos);
+            } 
+            return (Vector2Int)collisionTilemap[0].WorldToCell(pos);  
         }
 
         /// <summary>
@@ -272,10 +292,15 @@ namespace GGL.Minotaur
         /// </summary>
         /// <param name="tile">The tile to convert.</param>
         /// <returns>The position of the tile in world space.</returns>
-        private static Vector2 TileToPos(Tilemap collisionTilemap, Vector2Int tile)
+        private static Vector2 TileToPos(Tilemap[] collisionTilemap, Vector2Int tile)
         {
-            return collisionTilemap.LocalToWorld(collisionTilemap.CellToLocal((Vector3Int)tile)) + 
-                collisionTilemap.tileAnchor;
+            // If there is no tilemap, just convert the vector to a position by rounding.
+            if (collisionTilemap == null || collisionTilemap.Length == 0)
+            {
+                return tile;
+            }
+            return collisionTilemap[0].LocalToWorld(collisionTilemap[0].CellToLocal((Vector3Int)tile)) +
+                collisionTilemap[0].tileAnchor;
         }
 
         /// <summary>

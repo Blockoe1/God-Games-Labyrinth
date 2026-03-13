@@ -104,6 +104,18 @@ PrefabInstance:
       propertyPath: projectilePrefab
       value: 
       objectReference: {fileID: 7306666121951689013, guid: ba1d1996de2ffb54da60ae0da6a05ca7, type: 3}
+    - target: {fileID: 5371832511913644717, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: m_Color.b
+      value: 0.93725497
+      objectReference: {fileID: 0}
+    - target: {fileID: 5371832511913644717, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6431373
+      objectReference: {fileID: 0}
+    - target: {fileID: 5371832511913644717, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9921569
+      objectReference: {fileID: 0}
     - target: {fileID: 5887644586341638842, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
       propertyPath: team
       value: 3

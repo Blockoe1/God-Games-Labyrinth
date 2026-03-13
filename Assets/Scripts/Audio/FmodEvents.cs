@@ -40,7 +40,12 @@ namespace GGL
         public EventReference FindEvent(string name)
         {
             //Debug.Log(sounds.Length);
-            return Array.Find(sounds, item => item.name == name).eventRef;
+            Sound foundSound = Array.Find(sounds, item => item.name == name);
+            if (foundSound != null)
+            {
+                return foundSound.eventRef;
+            }
+            return new EventReference();
         }
     }
 }

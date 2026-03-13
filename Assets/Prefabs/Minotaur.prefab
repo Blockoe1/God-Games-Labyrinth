@@ -110,13 +110,16 @@ GameObject:
   - component: {fileID: 3511338007652119557}
   - component: {fileID: 1557663963208992879}
   - component: {fileID: 3520188249698541510}
+  - component: {fileID: 5905039139881485816}
+  - component: {fileID: 8950101222830632436}
+  - component: {fileID: 4350987386890045512}
   m_Layer: 6
   m_Name: Minotaur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1267440585663404646
 Transform:
   m_ObjectHideFlags: 0
@@ -166,6 +169,7 @@ MonoBehaviour:
           rid: -2
         <minotaur>k__BackingField: {fileID: 5871052308712400146}
         visionDelay: 3
+        repathDelay: 15
         champions:
         - {fileID: 0}
         - {fileID: 0}
@@ -272,7 +276,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -318417813
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 10
   m_Sprite: {fileID: 709898840, guid: 86f3ce06934ec9d4ea83c4410555647e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -418,6 +422,72 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Audio.AudioRelay
   enableSound: MinotaurSpawn
+--- !u!114 &5905039139881485816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137432236905573919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 029f55d0889967f4ea3a87bfa4f4ef1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.GodIdentifier
+  <Team>k__BackingField: 4
+--- !u!114 &8950101222830632436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137432236905573919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53f7b64e21a0ad64bb809f41e9cee231, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Scoring.Collector
+  goldCapacity: 25
+  onCollectEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3520188249698541510}
+        m_TargetAssemblyTypeName: GGL.Audio.AudioRelay, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: CollectGold
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDropEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onDepositEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  autoDepositTarget: {fileID: 4350987386890045512}
+  id: {fileID: 5905039139881485816}
+--- !u!114 &4350987386890045512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137432236905573919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9127707dae8dc7949b73895e749d01ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Scoring.CollectableCashZone
+  team: 4
+  scoreMultiplier: 0.25
+  OnChampionScore:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6343835046107924701
 GameObject:
   m_ObjectHideFlags: 0

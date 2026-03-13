@@ -68,6 +68,18 @@ PrefabInstance:
       propertyPath: projectilePrefab
       value: 
       objectReference: {fileID: 632094704171903508, guid: 6bb1aad91f9603f4fa84f27561e8128b, type: 3}
+    - target: {fileID: 5371832511913644717, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: m_Color.b
+      value: 0.29411766
+      objectReference: {fileID: 0}
+    - target: {fileID: 5371832511913644717, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: m_Color.g
+      value: 0.92549026
+      objectReference: {fileID: 0}
+    - target: {fileID: 5371832511913644717, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9960785
+      objectReference: {fileID: 0}
     - target: {fileID: 8650097738718565955, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
       propertyPath: m_DefaultActionMap
       value: ArcadePlayer 1

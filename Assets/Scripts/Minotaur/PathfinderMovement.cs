@@ -63,6 +63,7 @@ namespace GGL.Minotaur
         /// </summary>
         public void Stop()
         {
+            //Debug.Log("Stopped");
             IsMoving = false;
             currentPath = null;
             currentPathNode = 0;

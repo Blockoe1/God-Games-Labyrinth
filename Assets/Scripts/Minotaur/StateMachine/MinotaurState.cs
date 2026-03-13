@@ -18,6 +18,8 @@ namespace GGL.Minotaur
 
         private Coroutine stateRoutine;
         [SerializeReference, HideInInspector] private IStateHandler parentState;
+
+        protected bool isState { get; private set; }
         [field: SerializeField, HideInInspector] protected MinotaurController minotaur { get; private set; }
 
         #region Properties
@@ -47,6 +49,7 @@ namespace GGL.Minotaur
         /// <param name="controller">The MinotaurController parent that this state belongs to.</param>
         public virtual void OnStateEnter() 
         { 
+            isState = true;
             // Debug to visualize colors.
             minotaur.GetComponent<SpriteRenderer>().color = debugColor;
             // Start the coroutine for this state.
@@ -59,6 +62,7 @@ namespace GGL.Minotaur
         /// <param name="controller">The MinotaurController parent that this state belongs to.</param>
         public virtual void OnStateExit() 
         {
+            isState = false;
             if (stateRoutine != null)
             {
                 minotaur.StopCoroutine(stateRoutine);

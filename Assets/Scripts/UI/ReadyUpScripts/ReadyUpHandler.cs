@@ -10,6 +10,7 @@ namespace GGL
     public class ReadyUpHandler : MonoBehaviour
     {
         [SerializeField, Scene] private string mazeScene;
+        [SerializeField] private string cancelText;
         [SerializeField] private GameObject Player1;
         [SerializeField] private GameObject Player2;
         [SerializeField] private GameObject Player3;
@@ -53,7 +54,7 @@ namespace GGL
             {
                 StopCoroutine(StartGame());
                 timerRunning = false;
-                timerText.text = "";
+                timerText.text = cancelText;
             }
             else if (Player1.GetComponent<ReadyUpSystem1>().ready && Player2.GetComponent<ReadyUpSystem2>().ready &&
                 Player3.GetComponent<ReadyUpSystem3>().ready && Player4.GetComponent<ReadyUpSystem4>().ready)

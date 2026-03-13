@@ -76,6 +76,7 @@ namespace GGL.Minotaur
         private IEnumerator RePathRoutine(float time)
         {
             yield return new WaitForSeconds(time);
+            if (!isState) { yield break; }
             UpdatePath(Vector2.zero);
         }
     }

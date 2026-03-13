@@ -15,12 +15,15 @@ namespace GGL.Minotaur
     public class ChaseState : MinotaurState
     {
         [SerializeField] private float chaseSpeed;
+        [SerializeField, Tooltip("The amount of time that the minotaur is guranteed to chase the player " +
+            "before transitioning.")] 
+        private float requiredChaseTime;
         [SerializeField, Tooltip("If the minotaur fails to find a path to the chased player, wait this many " +
             "seconds before attempting to find a path again.")] 
         private float rePathDelay;
 
         private float baseSpeed;
-
+        private bool canTransition;
         private AggroState aggroState => parent as AggroState;
 
         /// <summary>
@@ -29,6 +32,7 @@ namespace GGL.Minotaur
         /// <param name="minotaur"></param>
         public override void OnStateEnter()
         {
+            canTransition = false;
             base.OnStateEnter();
             // Set a custom movement speed for chases.
             baseSpeed = minotaur.movement.MaxSpeed;
@@ -39,6 +43,12 @@ namespace GGL.Minotaur
             minotaur.movement.OnReachNode += UpdatePath;
             // Set a default chase path.
             UpdatePath(Vector2.zero);
+        }
+
+        protected override IEnumerator StateRoutine()
+        {
+            yield return new WaitForSeconds(requiredChaseTime);
+            canTransition = true;
         }
 
         /// <summary>
@@ -61,11 +71,14 @@ namespace GGL.Minotaur
         {
             // Check for transition to charge state.
             // Raycast in the current direction, and if there is a champion in that direction, charge down this hallway.
-            RaycastHit2D ray = Physics2D.Raycast(minotaur.transform.position, minotaur.movement.Direction, 100f, 
-                GGLHelpers.ChampionMask | GGLHelpers.MoveCheckMask);
-            if (ray.collider.gameObject.CompareTag("Player"))
+            if (canTransition)
             {
-                parent.SetState<ChargeState>();
+                RaycastHit2D ray = Physics2D.Raycast(minotaur.transform.position, minotaur.movement.Direction, 100f,
+                    GGLHelpers.ChampionMask | GGLHelpers.MoveCheckMask | GGLHelpers.RoomMask);
+                if (ray.collider.gameObject.CompareTag("Player"))
+                {
+                    parent.SetState<ChargeState>();
+                }
             }
 
             //Debug.Log(aggroState.AggroTarget);

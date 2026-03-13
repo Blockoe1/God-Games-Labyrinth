@@ -8,13 +8,20 @@
 *****************************************************************************/
 using System.Collections;
 using System.Linq;
+using UnityEditor.EventSystems;
 using UnityEngine;
 
 namespace GGL.Minotaur
 {
     public class ChargeState : MinotaurState
     {
+        #region CONSTS
+        private const float CRASH_CHECK_DISTANCE = 0.75f;
+        #endregion
+
         [SerializeField] private float chargeSpeed;
+        [SerializeField] private float crashDelay;
+        [SerializeField] private float crashKnockback;
         [SerializeField] private ParticleSystem[] snortParticles;
         [SerializeField] private ParticleSystem chargeParticles;
         [SerializeField] private ParticleSystem crashParticles;
@@ -22,11 +29,13 @@ namespace GGL.Minotaur
         private Vector2 chargeDirection;
 
         private float snortTime;
+
+        private Rigidbody2D rb => minotaur.movement.Rigidbody;
         public override void OnStateEnter()
         {
-            base.OnStateEnter();
             var main = snortParticles.FirstOrDefault().main;
             snortTime = main.duration + main.startLifetime.constant;
+            base.OnStateEnter();
         }
 
         /// <summary>
@@ -51,18 +60,35 @@ namespace GGL.Minotaur
 
             while(true)
             {
-                minotaur.movement.Rigidbody.linearVelocity = chargeDirection * chargeSpeed;
+                rb.linearVelocity = chargeDirection * chargeSpeed;
 
                 // Detect wall for crash.
-                RaycastHit2D ray = Physics2D.Raycast(minotaur.movement.Rigidbody.position, direction, maxWallCheckDistance,
+                RaycastHit2D ray = Physics2D.Raycast(rb.position,  chargeDirection, CRASH_CHECK_DISTANCE,
                         GGLHelpers.MoveCheckMask | GGLHelpers.MazeMask);
-                // If the raycast hit nothing, this is a valid direction.
-                if (!ray)
+                // If the raycast hit something, the minotaur hit a wall.
+                if (ray)
                 {
-                    
+                    break;
                 }
+                yield return new WaitForFixedUpdate();
             }
 
+            chargeParticles.Stop();
+            minotaur.movement.enabled = true;
+            minotaur.movement.ApplyKnockback(-chargeDirection, crashKnockback);
+            crashParticles.Play();
+
+            yield return new WaitForSeconds(crashDelay);
+
+            // Return to chasing.
+            parent.SetState<ChaseState>();
+        }
+
+        public override void OnStateExit()
+        {
+            base.OnStateExit();
+            chargeParticles.Stop();
+            minotaur.movement.enabled = true;
         }
     }
 }

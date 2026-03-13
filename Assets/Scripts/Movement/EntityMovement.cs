@@ -167,5 +167,16 @@ namespace GGL
             rb.MovePosition((Vector2)MathHelpers.RoundVectorToInt(rb.position));
             markForSnap = false;
         }
+
+        /// <summary>
+        /// Forcibly rotates and applies speed to this champion to simulate knockback.
+        /// </summary>
+        /// <param name="direction">The direction to force the champion in.</param>
+        /// <param name="force">The magnitude of the force.</param>
+        public virtual void ApplyKnockback(Vector2 direction, float force)
+        {
+            Direction = -direction;
+            speed = -force;
+        }
     }
 }

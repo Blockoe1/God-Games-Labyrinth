@@ -17,10 +17,12 @@ namespace GGL
         private const string MAZE_LAYER_NAME = "Maze";
         private const string CHAMPION_LAYER_NAME = "Champion";
         private const string MOVE_LAYER_NAME = "MoveCheck";
+        private const string ROOM_LAYER_NAME = "Room";
 
         private static LayerMask mazeMask;
         private static LayerMask championMask;
         private static LayerMask moveCheckMask;
+        private static LayerMask roomMask;
 
         public static LayerMask MazeMask
         {
@@ -54,6 +56,18 @@ namespace GGL
                     moveCheckMask = LayerMask.GetMask(MOVE_LAYER_NAME);
                 }
                 return moveCheckMask;
+            }
+        }
+
+        public static LayerMask RoomMask
+        {
+            get
+            {
+                if (roomMask == 0)
+                {
+                    roomMask = LayerMask.GetMask(ROOM_LAYER_NAME);
+                }
+                return roomMask;
             }
         }
 

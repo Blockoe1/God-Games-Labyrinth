@@ -17,6 +17,7 @@ namespace GGL.Minotaur
         private float aggroTime;
         [SerializeField, Range(0, 100)] 
         private int aggroChangeChance;
+        [SerializeField] private GameObject aggroEffects;
 
         private GameObject aggroTarget;
         private float aggroTimer;
@@ -34,12 +35,14 @@ namespace GGL.Minotaur
             base.OnStateEnter();
             minotaur.vision.OnChampionFound += OnDetectChampion;
             minotaur.attacker.OnHitObject += OnHit;
+            aggroEffects.SetActive(true);
         }
         public override void OnStateExit()
         {
             base.OnStateExit();
             minotaur.vision.OnChampionFound -= OnDetectChampion;
             minotaur.attacker.OnHitObject -= OnHit;
+            aggroEffects.SetActive(false);
         }
 
         /// <summary>
@@ -94,6 +97,11 @@ namespace GGL.Minotaur
                 yield return null;
             }
 
+            // Only allow leaving the aggro state while in the base state.
+            if (SubStates.Length > 0)
+            {
+                yield return new WaitUntil(() => currentState == SubStates[0]);
+            }
             // Transition back to the patrol state.
             parent.SetState<PatrolState>();
         }

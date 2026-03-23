@@ -22,6 +22,7 @@ namespace GGL.Minotaur
         [SerializeField] private float chargeSpeed;
         [SerializeField] private float crashDelay;
         [SerializeField] private float crashKnockback;
+        [SerializeField] private string snortSound;
         [SerializeField] private ParticleSystem[] snortParticles;
         [SerializeField] private ParticleSystem chargeParticles;
         [SerializeField] private ParticleSystem crashParticles;
@@ -35,8 +36,9 @@ namespace GGL.Minotaur
         {
             var main = snortParticles.FirstOrDefault().main;
             snortTime = main.duration + main.startLifetime.constant;
-            minotaur.movement.Stop(true);
             base.OnStateEnter();
+            minotaur.movement.Stop(true);
+            minotaur.audioRelay.PlaySound(snortSound);
         }
 
         /// <summary>
@@ -65,7 +67,7 @@ namespace GGL.Minotaur
 
                 // Detect wall for crash.
                 RaycastHit2D ray = Physics2D.Raycast(rb.position,  chargeDirection, CRASH_CHECK_DISTANCE,
-                        GGLHelpers.MoveCheckMask | GGLHelpers.MazeMask);
+                        GGLHelpers.MoveCheckMask | GGLHelpers.MazeMask | GGLHelpers.RoomMask);
                 // If the raycast hit something, the minotaur hit a wall.
                 if (ray)
                 {

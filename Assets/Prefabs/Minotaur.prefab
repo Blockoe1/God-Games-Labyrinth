@@ -157,6 +157,7 @@ MonoBehaviour:
   - rid: 6611772050505817
   - rid: 2241602981746442322
   <movement>k__BackingField: {fileID: 3511338007652119557}
+  <audio>k__BackingField: {fileID: 3520188249698541510}
   <vision>k__BackingField: {fileID: 464855989588843931}
   <attacker>k__BackingField: {fileID: 8163698570004376742}
   references:
@@ -198,8 +199,8 @@ MonoBehaviour:
           rid: 2241602981746442322
         <minotaur>k__BackingField: {fileID: 5871052308712400146}
         chaseSpeed: 5
-        requiredChaseTime: 0
-        rePathDelay: 0
+        requiredChaseTime: 0.5
+        rePathDelay: 0.5
     - rid: 2241603255916560467
       type: {class: ChargeState, ns: GGL.Minotaur, asm: Assembly-CSharp}
       data:
@@ -210,6 +211,7 @@ MonoBehaviour:
         chargeSpeed: 12
         crashDelay: 1
         crashKnockback: 10
+        snortSound: MinotaurSnort
         snortParticles:
         - {fileID: 4678832447536586949}
         - {fileID: 7380248062200937316}

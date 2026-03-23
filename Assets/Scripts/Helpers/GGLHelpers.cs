@@ -17,7 +17,7 @@ namespace GGL
         private const string MAZE_LAYER_NAME = "Maze";
         private const string CHAMPION_LAYER_NAME = "Champion";
         private const string MOVE_LAYER_NAME = "MoveCheck";
-        private const string ROOM_LAYER_NAME = "Room";
+        private const string ROOM_LAYER_NAME = "Rooms";
 
         private static LayerMask mazeMask;
         private static LayerMask championMask;

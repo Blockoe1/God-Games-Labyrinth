@@ -144,7 +144,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_AngularDamping: 4
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -169,6 +169,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f7e4aed8c801e94887d75a9595a2b02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Champions.StealProjectile
+  bounceForce: 30
+  bounceTorque: 20
+  bounceDelay: 0.75
+  bounceDamping: 7
   rb: {fileID: 1795915871495244364}
 --- !u!95 &5993998788028812006
 Animator:

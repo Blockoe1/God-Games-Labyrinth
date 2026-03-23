@@ -35,6 +35,7 @@ namespace GGL.Minotaur
         {
             var main = snortParticles.FirstOrDefault().main;
             snortTime = main.duration + main.startLifetime.constant;
+            minotaur.movement.Stop(true);
             base.OnStateEnter();
         }
 

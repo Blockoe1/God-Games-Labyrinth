@@ -203,7 +203,7 @@ MonoBehaviour:
     - rid: 2241603255916560467
       type: {class: ChargeState, ns: GGL.Minotaur, asm: Assembly-CSharp}
       data:
-        debugColor: {r: 0.9622642, g: 0.59006757, b: 0.59006757, a: 1}
+        debugColor: {r: 0.52156866, g: 0.023529412, b: 0.023529412, a: 1}
         parentState:
           rid: 2241602981746442322
         <minotaur>k__BackingField: {fileID: 5871052308712400146}

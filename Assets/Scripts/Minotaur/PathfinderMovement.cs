@@ -61,12 +61,16 @@ namespace GGL.Minotaur
         /// <summary>
         /// Stops this entity's movement along the path.
         /// </summary>
-        public void Stop()
+        public void Stop(bool immediate = false)
         {
             //Debug.Log("Stopped");
             IsMoving = false;
             currentPath = null;
             currentPathNode = 0;
+            if (immediate)
+            {
+                speed = 0;
+            }
         }
 
         /// <summary>

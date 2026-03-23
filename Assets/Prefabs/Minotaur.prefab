@@ -247,6 +247,7 @@ MonoBehaviour:
   states:
   - rid: 6611772050505817
   - rid: 2241602981746442322
+  - rid: 2241603465740288152
   <movement>k__BackingField: {fileID: 3511338007652119557}
   <audioRelay>k__BackingField: {fileID: 3520188249698541510}
   <vision>k__BackingField: {fileID: 464855989588843931}
@@ -264,7 +265,8 @@ MonoBehaviour:
           rid: -2
         <minotaur>k__BackingField: {fileID: 5871052308712400146}
         visionDelay: 3
-        repathDelay: 15
+        patrolTime: 15
+        jumpOnPatrolExpire: 0
         champions:
         - {fileID: 0}
         - {fileID: 0}
@@ -309,6 +311,14 @@ MonoBehaviour:
         - {fileID: 7380248062200937316}
         chargeParticles: {fileID: 6643304783760201330}
         crashParticles: {fileID: 2557613765310315159}
+    - rid: 2241603465740288152
+      type: {class: JumpState, ns: GGL.Minotaur, asm: Assembly-CSharp}
+      data:
+        debugColor: {r: 1, g: 1, b: 1, a: 1}
+        parentState:
+          rid: -2
+        <minotaur>k__BackingField: {fileID: 5871052308712400146}
+        landingTelegraph: {fileID: 0}
 --- !u!114 &464855989588843931
 MonoBehaviour:
   m_ObjectHideFlags: 0

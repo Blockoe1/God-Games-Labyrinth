@@ -16,11 +16,14 @@ namespace GGL.Minotaur
     public class PatrolState : MinotaurState
     {
         [SerializeField] private float visionDelay = 1f;
-        [SerializeField] private float repathDelay = 15f;
+        [SerializeField] private float patrolTime = 15f;
+        [SerializeField, Tooltip("If true, the minotaur will perform a jump attack instead of finding a new path " +
+            "when the patrol timer expires.")]
+        private bool jumpOnPatrolExpire;
         [SerializeField, ReadOnly, AllowNesting] private GameObject[] champions;
 
         private int patrolTarget;
-        private float repathTimer;
+        private float patrolTimer;
 
         /// <summary>
         /// Gets references to the champions to patrol to.
@@ -67,18 +70,27 @@ namespace GGL.Minotaur
             // Setup the transition to the aggro state.
             minotaur.vision.OnChampionFound += OnDetectChampion;
 
-            repathTimer = 0;
+            patrolTimer = 0;
             while(true)
             {
                 // Continually re-find a path if we haven't finished the path to avoid bugs.
-                while(repathTimer <= repathDelay)
+                while(patrolTimer <= patrolTime)
                 {
-                    repathTimer += Time.deltaTime;
+                    patrolTimer += Time.deltaTime;
                     yield return null;
                 }
 
-                Debug.Log("Repathed");
-                SetNewPatrolPath();
+                if(jumpOnPatrolExpire)
+                {
+                    JumpState jumpState = parent.GetState<JumpState>();
+                    jumpState.Initialize(champions);
+                    parent.SetState(jumpState);
+                }
+                else
+                {
+                    Debug.Log("Repathed");
+                    SetNewPatrolPath();
+                }
             }
         }
 
@@ -94,7 +106,11 @@ namespace GGL.Minotaur
             patrolTarget = (patrolTarget + 1) % champions.Length;
             Vector2 destination = champions[patrolTarget].transform.position;
             minotaur.movement.SetDestination(destination);
-            repathTimer = 0;
+            // Only reset the timer if a jump attack is not set.
+            if (!jumpOnPatrolExpire)
+            {
+                patrolTimer = 0;
+            }
             // If no path was found, set a path for a random collectable instead.
             if (minotaur.movement.CurrentPath == null)
             {

@@ -23,7 +23,6 @@ namespace GGL.Minotaur
         [SerializeField] private float crashDelay;
         [SerializeField] private float crashKnockback;
         [SerializeField] private string snortSound;
-        [SerializeField] private ParticleSystem[] snortParticles;
         [SerializeField] private ParticleSystem chargeParticles;
         [SerializeField] private ParticleSystem crashParticles;
 
@@ -34,7 +33,7 @@ namespace GGL.Minotaur
         private Rigidbody2D rb => minotaur.movement.Rigidbody;
         public override void OnStateEnter()
         {
-            var main = snortParticles.FirstOrDefault().main;
+            var main = minotaur.snortParticles.FirstOrDefault().main;
             snortTime = main.duration + main.startLifetime.constant;
             base.OnStateEnter();
             minotaur.movement.Stop(true);
@@ -50,7 +49,7 @@ namespace GGL.Minotaur
             chargeDirection = minotaur.movement.Direction;
 
             // Play snort particles
-            foreach(var particle in snortParticles )
+            foreach(var particle in minotaur.snortParticles )
             {
                 particle.Play();
             }

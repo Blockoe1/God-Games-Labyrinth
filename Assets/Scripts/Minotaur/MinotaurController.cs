@@ -15,6 +15,7 @@ namespace GGL.Minotaur
 {
     public class MinotaurController : MonoBehaviour, IStateHandler
     {
+        [field: SerializeField] public ParticleSystem[] snortParticles { get; private set; }
         [SerializeReference, ClassDropdown(typeof(MinotaurState))] private MinotaurState[] states;
 
         private MinotaurState currentState;

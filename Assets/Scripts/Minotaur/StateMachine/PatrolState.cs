@@ -83,7 +83,8 @@ namespace GGL.Minotaur
                 if(jumpOnPatrolExpire)
                 {
                     JumpState jumpState = parent.GetState<JumpState>();
-                    jumpState.Initialize(champions);
+                    patrolTarget = (patrolTarget + 1) % champions.Length;
+                    jumpState.Initialize(champions[patrolTarget].transform.position);
                     parent.SetState(jumpState);
                 }
                 else

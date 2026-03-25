@@ -148,14 +148,13 @@ namespace GGL.Champions
         }
 
         /// <summary>
-        /// Forcibly rotates and applies speed to this champion to simulate knockback.
+        /// Applies knockback and removes player input control.
         /// </summary>
-        /// <param name="direction">The direction to force the champion in.</param>
-        /// <param name="force">The magnitude of the force.</param>
-        public void ApplyKnockback(Vector2 direction, float force)
+        /// <param name="direction"></param>
+        /// <param name="force"></param>
+        public override void ApplyKnockback(Vector2 direction, float force)
         {
-            Direction = -direction;
-            speed = -force;
+            base.ApplyKnockback(direction, force);
             StartCoroutine(SuspendInput(knockbackTime));
         }
 

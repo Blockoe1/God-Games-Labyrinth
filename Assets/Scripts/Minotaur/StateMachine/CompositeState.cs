@@ -17,7 +17,11 @@ namespace GGL.Minotaur
     {
         [SerializeReference, ClassDropdown(typeof(MinotaurState))] private MinotaurState[] subStates;
 
-        private MinotaurState currentState;
+        protected MinotaurState currentState { get; private set; }
+
+        #region Properties
+        protected MinotaurState[] SubStates => subStates;
+        #endregion
 
         /// <summary>
         /// When the minotaur is validated, validate this state and all sub-states, with this composite state as the

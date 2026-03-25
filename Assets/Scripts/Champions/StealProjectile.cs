@@ -6,8 +6,10 @@
 //
 // Brief Description : Projectile fired from a champion to steal gold from another player.
 *****************************************************************************/
+using GGL.Minotaur;
 using GGL.Scoring;
 using NaughtyAttributes;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,11 +18,19 @@ namespace GGL.Champions
     [RequireComponent(typeof(Rigidbody2D))]
     public class StealProjectile : MonoBehaviour
     {
+        [SerializeField] private float bounceForce = 20f;
+        [SerializeField] private float bounceTorque;
+        [SerializeField] private float bounceDelay = 0.75f;
+        [SerializeField] private float bounceDamping = 2;
+
         private GoldStealer shooter;
 
         private readonly List<Collectable> attractedCollectables = new List<Collectable>();
 
+        private float baseDamping;
+
         private bool isLaunched;
+        private bool pauseReturn;
         private bool allowReturn;
 
         #region Component References
@@ -48,6 +58,7 @@ namespace GGL.Champions
         public void Initialize(GoldStealer shooter)
         {
             this.shooter = shooter;
+            baseDamping = rb.linearDamping;   
         }
 
         /// <summary>
@@ -82,6 +93,11 @@ namespace GGL.Champions
 
                 ResetCollectables();
             }
+            // Bounce off the minotaur.
+            else if (collider.TryGetComponent(out MinotaurController mc))
+            {
+                StartCoroutine(BounceOffMinotaur(collider.transform.position));
+            }
             // Make a collector drop held gold and then grab it with this projectile.
             else if (collider.gameObject != shooter.gameObject &&
                 collider.TryGetComponent(out Attackable attackable) &&
@@ -89,6 +105,39 @@ namespace GGL.Champions
             {
                 OnHitAttackable(attackable);
             }
+        }
+
+        private void OnDisable()
+        {
+            ResetAfterBounce();
+        }
+
+        /// <summary>
+        /// Causes the projectile to bounce off the minotaur.
+        /// </summary>
+        /// <param name="minotaurPosition">The position of the minotaur.</param>
+        /// <returns>Coroutine.</returns>
+        private IEnumerator BounceOffMinotaur(Vector2 minotaurPosition)
+        {
+            // Apply force deflecting the projectile.
+            Vector2 deflectDirection = (rb.position - minotaurPosition).normalized;
+            rb.AddForce(deflectDirection * bounceForce, ForceMode2D.Impulse);
+            rb.AddTorque(bounceTorque, ForceMode2D.Impulse);
+            rb.linearDamping = bounceDamping;
+
+            pauseReturn = true;
+            yield return new WaitForSeconds(bounceDelay);
+            ResetAfterBounce();
+        }
+
+        /// <summary>
+        /// Resets the projectile's values after a bounce has finished.
+        /// </summary>
+        private void ResetAfterBounce()
+        {
+            pauseReturn = false;
+            rb.angularVelocity = 0;
+            rb.linearDamping = baseDamping;
         }
 
         /// <summary>
@@ -108,14 +157,17 @@ namespace GGL.Champions
         /// </summary>
         private void FixedUpdate()
         {
-            Vector2 toTarget = (Vector2)shooter.transform.position - rb.position;
-            //rb.AddForce(toTarget.normalized * returnForce, ForceMode2D.Force);
-            //rb.MovePosition(Vector2.MoveTowards(ReturnTarget.transform.position, rb.position, returnForce));
+            if (!pauseReturn)
+            {
+                Vector2 toTarget = (Vector2)shooter.transform.position - rb.position;
+                //rb.AddForce(toTarget.normalized * returnForce, ForceMode2D.Force);
+                //rb.MovePosition(Vector2.MoveTowards(ReturnTarget.transform.position, rb.position, returnForce));
 
-            rb.linearVelocity = Vector2.MoveTowards(rb.linearVelocity, toTarget.normalized * shooter.ReturnVelocity, 
-                shooter.ReturnAcceleration * Time.fixedDeltaTime);
+                rb.linearVelocity = Vector2.MoveTowards(rb.linearVelocity, toTarget.normalized * shooter.ReturnVelocity,
+                    shooter.ReturnAcceleration * Time.fixedDeltaTime);
 
-            rb.rotation = MathHelpers.VectorToDegAngle(rb.linearVelocity);
+                rb.rotation = MathHelpers.VectorToDegAngle(rb.linearVelocity);
+            }
 
             AttractCollectables();
         }

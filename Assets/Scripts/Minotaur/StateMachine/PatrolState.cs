@@ -9,6 +9,7 @@
 using GGL.Scoring;
 using NaughtyAttributes;
 using System.Collections;
+using System.IO.IsolatedStorage;
 using UnityEngine;
 
 namespace GGL.Minotaur
@@ -16,11 +17,15 @@ namespace GGL.Minotaur
     public class PatrolState : MinotaurState
     {
         [SerializeField] private float visionDelay = 1f;
-        [SerializeField] private float repathDelay = 15f;
+        [SerializeField] private float patrolTime = 15f;
+        [SerializeField, Tooltip("If true, the minotaur will perform a jump attack instead of finding a new path " +
+            "when the patrol timer expires.")]
+        private bool jumpOnPatrolExpire;
         [SerializeField, ReadOnly, AllowNesting] private GameObject[] champions;
 
-        private int patrolTarget;
-        private float repathTimer;
+        [SerializeField] private int patrolTarget;
+        private float patrolTimer;
+        private bool isVisionEnabled; 
 
         /// <summary>
         /// Gets references to the champions to patrol to.
@@ -39,7 +44,6 @@ namespace GGL.Minotaur
             base.OnStateEnter();
             // When the minotaur finishes it's current path, get a new path.
             minotaur.movement.OnCompletePath += SetNewPatrolPath;
-
             // Set a starting patrol path.
             SetNewPatrolPath();
         }
@@ -52,7 +56,7 @@ namespace GGL.Minotaur
         {
             base.OnStateExit();
             minotaur.movement.Stop();
-            minotaur.vision.OnChampionFound -= OnDetectChampion;
+            ToggleVision(false);
             // When the minotaur finishes it's current path, get a new path.
             minotaur.movement.OnCompletePath -= SetNewPatrolPath;
         }
@@ -64,21 +68,70 @@ namespace GGL.Minotaur
         protected override IEnumerator StateRoutine()
         {
             yield return new WaitForSeconds(visionDelay);
-            // Setup the transition to the aggro state.
-            minotaur.vision.OnChampionFound += OnDetectChampion;
+            ToggleVision(true);
 
-            repathTimer = 0;
+            patrolTimer = 0;
             while(true)
             {
                 // Continually re-find a path if we haven't finished the path to avoid bugs.
-                while(repathTimer <= repathDelay)
+                while(patrolTimer <= patrolTime)
                 {
-                    repathTimer += Time.deltaTime;
+                    patrolTimer += Time.deltaTime;
                     yield return null;
                 }
 
-                Debug.Log("Repathed");
-                SetNewPatrolPath();
+                if(jumpOnPatrolExpire)
+                {
+                    // Check if the champion is valid to jump to.  If not, then just set a new patrol path.
+                    Vector2 jumpLocation = champions[patrolTarget].transform.position;
+                    if (minotaur.movement.CheckPathValid(jumpLocation))
+                    {
+                        JumpState jumpState = parent.GetState<JumpState>();
+                        jumpState.Initialize(jumpLocation);
+                        parent.SetState(jumpState);
+                    }
+                    else
+                    {
+                        Debug.Log($"Path to {champions[patrolTarget]} Invalid.");
+                        SetNewPatrolPath();
+                        patrolTimer = 0;
+                    }
+                }
+                else
+                {
+                    Debug.Log("Repathed");
+                    SetNewPatrolPath();
+                    patrolTimer = 0;
+                }
+                yield return null;
+            }
+        }
+
+        /// <summary>
+        /// Gets the position of the next champion to be soft targeted.
+        /// </summary>
+        /// <returns></returns>
+        private Vector2 GetNextChampionPosition()
+        {
+            patrolTarget = (patrolTarget + 1) % champions.Length;
+            return champions[patrolTarget].transform.position;
+        }
+
+        /// <summary>
+        /// Immediately enables the minotaur's vision.
+        /// </summary>
+        public void ToggleVision(bool isEnabled)
+        {
+            if (isVisionEnabled == isEnabled) { return; }
+            // Setup the transition to the aggro state.
+            isVisionEnabled = isEnabled;
+            if(isEnabled)
+            {
+                minotaur.vision.OnChampionFound += OnDetectChampion;
+            }
+            else
+            {
+                minotaur.vision.OnChampionFound -= OnDetectChampion;
             }
         }
 
@@ -91,10 +144,13 @@ namespace GGL.Minotaur
         {
             //Vector2 destination = CollectableSpawner.Collectables[Random.Range(0, 
             //    CollectableSpawner.Collectables.Count)].transform.position;
-            patrolTarget = (patrolTarget + 1) % champions.Length;
-            Vector2 destination = champions[patrolTarget].transform.position;
+            Vector2 destination = GetNextChampionPosition();
             minotaur.movement.SetDestination(destination);
-            repathTimer = 0;
+            // Only reset the timer if a jump attack is not set.
+            if (!jumpOnPatrolExpire)
+            {
+                patrolTimer = 0;
+            }
             // If no path was found, set a path for a random collectable instead.
             if (minotaur.movement.CurrentPath == null)
             {

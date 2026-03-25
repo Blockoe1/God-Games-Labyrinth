@@ -6,6 +6,7 @@
 //
 // Brief Description : Main control script for the minotaur that utilizes a state machine to swap between states.
 *****************************************************************************/
+using GGL.Audio;
 using NaughtyAttributes;
 using System;
 using UnityEngine;
@@ -14,6 +15,7 @@ namespace GGL.Minotaur
 {
     public class MinotaurController : MonoBehaviour, IStateHandler
     {
+        [field: SerializeField] public ParticleSystem[] snortParticles { get; private set; }
         [SerializeReference, ClassDropdown(typeof(MinotaurState))] private MinotaurState[] states;
 
         private MinotaurState currentState;
@@ -21,8 +23,10 @@ namespace GGL.Minotaur
         #region Base Component References
         [field: Header("Components")]
         [field: SerializeReference, ReadOnly] internal PathfinderMovement movement { get; private set; }
+        [field: SerializeReference, ReadOnly] internal AudioRelay audioRelay { get; private set; }
         [field: SerializeReference, ReadOnly] internal MinotaurVision vision { get; private set; }
         [field: SerializeReference, ReadOnly] internal MinotaurAttacker attacker { get; private set; }
+        [field: SerializeReference, ReadOnly] internal MovementRotation rotation { get; private set; }
         #endregion
 
         /// <summary>
@@ -33,6 +37,8 @@ namespace GGL.Minotaur
             movement = GetComponent<PathfinderMovement>();
             vision = GetComponent<MinotaurVision>();
             attacker = GetComponent<MinotaurAttacker>();
+            audioRelay = GetComponent<AudioRelay>();
+            rotation = GetComponent<MovementRotation>();
             foreach(MinotaurState state in states)
             {
                 if (state == null) { continue; }

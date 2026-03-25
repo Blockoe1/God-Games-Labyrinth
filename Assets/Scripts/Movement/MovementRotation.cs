@@ -45,13 +45,23 @@ namespace GGL
         /// </summary>
         private void Awake()
         {
-            movement.OnDirectionChanged += SetRotation;
-            movement.OnTargetDirectionChanged += SetRotation;
+            movement.OnDirectionChanged += UpdateRotation;
+            movement.OnTargetDirectionChanged += UpdateRotation;
         }
         private void OnDestroy()
         {
-            movement.OnDirectionChanged -= SetRotation;
-            movement.OnTargetDirectionChanged -= SetRotation;
+            movement.OnDirectionChanged -= UpdateRotation;
+            movement.OnTargetDirectionChanged -= UpdateRotation;
+        }
+
+        /// <summary>
+        /// Updates the rotation of the objecct based on the target and actual directions of the entity.
+        /// </summary>
+        /// <param name="direction"></param>
+        public void UpdateRotation(Vector2 direction)
+        {
+            SetRotation(Vector2.Lerp(movement.Direction,
+                movement.TargetDirection, 0.5f));
         }
 
         /// <summary>
@@ -69,8 +79,7 @@ namespace GGL
                 rotateRoutine = null;
             }
             //Debug.Log(MathHelpers.VectorToDegAngleUnity(direction));
-            rotateRoutine = StartCoroutine(RotateRoutine(MathHelpers.VectorToDegAngle(Vector2.Lerp(movement.Direction, 
-                movement.TargetDirection, 0.5f))));
+            rotateRoutine = StartCoroutine(RotateRoutine(MathHelpers.VectorToDegAngle(direction)));
         }
 
         /// <summary>

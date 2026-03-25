@@ -59,6 +59,16 @@ namespace GGL.Minotaur
         }
 
         /// <summary>
+        /// Checks if there is a valid path to a given destination position.
+        /// </summary>
+        /// <param name="destination"></param>
+        /// <returns></returns>
+        public bool CheckPathValid(Vector2 destination)
+        {
+            return Pathfinder.FindPath(collisionTilemap, rb.position, destination) != null;
+        }
+
+        /// <summary>
         /// Stops this entity's movement along the path.
         /// </summary>
         public void Stop(bool immediate = false)

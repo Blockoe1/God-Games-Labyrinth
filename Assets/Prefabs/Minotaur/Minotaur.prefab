@@ -5135,6 +5135,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e91b2bc71d013744a0b8a16d0367604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Minotaur.MinotaurController
+  <snortSoundName>k__BackingField: MinotaurSnort
+  <dashSoundName>k__BackingField: MinotaurDash
+  <crashSoundName>k__BackingField: MinotaurCrash
   <snortParticles>k__BackingField:
   - {fileID: 4678832447536586949}
   - {fileID: 6157759867010875854}
@@ -5201,7 +5204,6 @@ MonoBehaviour:
         chargeSpeed: 12
         crashDelay: 1
         crashKnockback: 10
-        snortSound: MinotaurSnort
         chargeParticles: {fileID: 6643304783760201330}
         crashParticles: {fileID: 2557613765310315159}
     - rid: 2241603465740288152
@@ -5211,13 +5213,6 @@ MonoBehaviour:
         parentState:
           rid: -2
         <minotaur>k__BackingField: {fileID: 5871052308712400146}
-        jumpChargeTime: 1.5
-        postJumpDelay: 0.5
-        landingTelegraph: {fileID: 0}
-        jumpHitbox: {fileID: 6203251917918860199}
-        disabledObjects:
-        - {fileID: 7953083175107892413}
-        landParticles: {fileID: 6624640764848345241}
         jumpSpeed: 15
         jumpSpeedCurve:
           serializedVersion: 2
@@ -5277,6 +5272,13 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
+        jumpChargeTime: 1.5
+        postJumpDelay: 0.5
+        landingTelegraph: {fileID: 0}
+        jumpHitbox: {fileID: 6203251917918860199}
+        disabledObjects:
+        - {fileID: 7953083175107892413}
+        landParticles: {fileID: 6624640764848345241}
 --- !u!114 &464855989588843931
 MonoBehaviour:
   m_ObjectHideFlags: 0

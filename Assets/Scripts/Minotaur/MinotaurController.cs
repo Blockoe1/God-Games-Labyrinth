@@ -15,6 +15,10 @@ namespace GGL.Minotaur
 {
     public class MinotaurController : MonoBehaviour, IStateHandler
     {
+        [Header("SFX")]
+        [field: SerializeField] public string snortSoundName { get; private set; }
+        [field: SerializeField] public string dashSoundName { get; private set; }
+        [field: SerializeField] public string crashSoundName { get; private set; }
         [field: SerializeField] public ParticleSystem[] snortParticles { get; private set; }
         [SerializeReference, ClassDropdown(typeof(MinotaurState))] private MinotaurState[] states;
 

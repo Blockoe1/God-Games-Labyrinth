@@ -22,7 +22,6 @@ namespace GGL.Minotaur
         [SerializeField] private float chargeSpeed;
         [SerializeField] private float crashDelay;
         [SerializeField] private float crashKnockback;
-        [SerializeField] private string snortSound;
         [SerializeField] private ParticleSystem chargeParticles;
         [SerializeField] private ParticleSystem crashParticles;
 
@@ -37,7 +36,7 @@ namespace GGL.Minotaur
             snortTime = main.duration + main.startLifetime.constant;
             base.OnStateEnter();
             minotaur.movement.Stop(true);
-            minotaur.audioRelay.PlaySound(snortSound);
+            minotaur.audioRelay.PlaySound(minotaur.snortSoundName);
         }
 
         /// <summary>
@@ -58,6 +57,7 @@ namespace GGL.Minotaur
 
             // Set velocity for charge.
             chargeParticles.Play();
+            minotaur.audioRelay.PlaySound(minotaur.dashSoundName);
             minotaur.movement.enabled = false;
 
             while(true)
@@ -78,6 +78,7 @@ namespace GGL.Minotaur
             chargeParticles.Stop();
             minotaur.movement.enabled = true;
             minotaur.movement.ApplyKnockback(-chargeDirection, crashKnockback);
+            minotaur.audioRelay.PlaySound(minotaur.crashSoundName);
             crashParticles.Play();
 
             yield return new WaitForSeconds(crashDelay);

@@ -9,6 +9,7 @@
 using GGL.Audio;
 using NaughtyAttributes;
 using System;
+using Unity.Cinemachine;
 using UnityEngine;
 
 namespace GGL.Minotaur
@@ -31,6 +32,7 @@ namespace GGL.Minotaur
         [field: SerializeReference, ReadOnly] internal MinotaurVision vision { get; private set; }
         [field: SerializeReference, ReadOnly] internal MinotaurAttacker attacker { get; private set; }
         [field: SerializeReference, ReadOnly] internal MovementRotation rotation { get; private set; }
+        [field: SerializeReference, ReadOnly] internal CinemachineImpulseSource screenShake { get; private set; }
         #endregion
 
         /// <summary>
@@ -43,6 +45,7 @@ namespace GGL.Minotaur
             attacker = GetComponent<MinotaurAttacker>();
             audioRelay = GetComponent<AudioRelay>();
             rotation = GetComponent<MovementRotation>();
+            screenShake = GetComponent<CinemachineImpulseSource>();
             foreach(MinotaurState state in states)
             {
                 if (state == null) { continue; }

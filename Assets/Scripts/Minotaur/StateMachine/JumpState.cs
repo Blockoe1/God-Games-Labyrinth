@@ -31,6 +31,7 @@ namespace GGL.Minotaur
         [SerializeField] private GameObject jumpHitbox;
         [SerializeField] private GameObject[] disabledObjects;
         [SerializeField] private ParticleSystem landParticles;
+        [SerializeField] private float screenShakeImpulse;
 
         private Vector2 jumpLocation;
         private int iterationNum;
@@ -113,6 +114,7 @@ namespace GGL.Minotaur
             minotaur.movement.Rigidbody.excludeLayers = 0;
 
             // Hitbox impact.
+            minotaur.screenShake.GenerateImpulse(screenShakeImpulse);
             landingTelegraph.SetActive(false);
             landParticles.Play();
             minotaur.audioRelay.PlaySound(minotaur.crashSoundName);

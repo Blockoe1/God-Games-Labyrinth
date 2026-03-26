@@ -24,6 +24,7 @@ namespace GGL.Minotaur
         [SerializeField] private float crashKnockback;
         [SerializeField] private ParticleSystem chargeParticles;
         [SerializeField] private ParticleSystem crashParticles;
+        [SerializeField] private float screenShakeImpulse;
 
         private Vector2 chargeDirection;
 
@@ -75,6 +76,7 @@ namespace GGL.Minotaur
                 yield return new WaitForFixedUpdate();
             }
 
+            minotaur.screenShake.GenerateImpulse(screenShakeImpulse);
             chargeParticles.Stop();
             minotaur.movement.enabled = true;
             minotaur.movement.ApplyKnockback(-chargeDirection, crashKnockback);

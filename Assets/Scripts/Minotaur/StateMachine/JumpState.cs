@@ -18,6 +18,11 @@ namespace GGL.Minotaur
         private const float HITBOX_IMPACT_TIME = 0.25f;
         #endregion
 
+        [Header("Jump Settings")]
+        [SerializeField] private float jumpSpeed;
+        [SerializeField] private AnimationCurve jumpSpeedCurve;
+        [SerializeField] private float maxJumpScaleMultiplier;
+        [SerializeField] private AnimationCurve jumpSizeCurve;
         [Header("Timing")]
         [SerializeField] private float jumpChargeTime = 2f;
         [SerializeField] private float postJumpDelay = 0.5f;
@@ -26,11 +31,7 @@ namespace GGL.Minotaur
         [SerializeField] private GameObject jumpHitbox;
         [SerializeField] private GameObject[] disabledObjects;
         [SerializeField] private ParticleSystem landParticles;
-        [Header("Jump Settings")]
-        [SerializeField] private float jumpSpeed;
-        [SerializeField] private AnimationCurve jumpSpeedCurve;
-        [SerializeField] private float maxJumpScaleMultiplier;
-        [SerializeField] private AnimationCurve jumpSizeCurve;
+        [SerializeField] private float screenShakeImpulse;
 
         private Vector2 jumpLocation;
         private int iterationNum;
@@ -77,6 +78,7 @@ namespace GGL.Minotaur
         /// <returns></returns>
         protected override IEnumerator StateRoutine()
         {
+            minotaur.audioRelay.PlaySound(minotaur.snortSoundName);
             // Play snort particles
             foreach (var particle in minotaur.snortParticles)
             {
@@ -88,6 +90,7 @@ namespace GGL.Minotaur
 
             // Disable minotaur collision.
             minotaur.movement.Rigidbody.excludeLayers = ~0;
+            minotaur.audioRelay.PlaySound(minotaur.dashSoundName);
 
             // Jump logic.
             Vector3 baseScale = minotaur.transform.localScale;
@@ -105,13 +108,16 @@ namespace GGL.Minotaur
                 timer += Time.fixedDeltaTime;
                 yield return new WaitForFixedUpdate();
             }
+            minotaur.transform.localScale = baseScale;
 
             // Re-Enable minotaur collision.
             minotaur.movement.Rigidbody.excludeLayers = 0;
 
             // Hitbox impact.
+            minotaur.screenShake.GenerateImpulse(screenShakeImpulse);
             landingTelegraph.SetActive(false);
             landParticles.Play();
+            minotaur.audioRelay.PlaySound(minotaur.crashSoundName);
             jumpHitbox.SetActive(true);
             yield return new WaitForSeconds(HITBOX_IMPACT_TIME);
             jumpHitbox.SetActive(false);

@@ -18,6 +18,7 @@ namespace GGL.Minotaur
         [SerializeField, Range(0, 100)] 
         private int aggroChangeChance;
         [SerializeField] private GameObject aggroEffects;
+        [SerializeField] private string roarSoundName;
 
         private GameObject aggroTarget;
         private float aggroTimer;
@@ -36,6 +37,7 @@ namespace GGL.Minotaur
             minotaur.vision.OnChampionFound += OnDetectChampion;
             minotaur.attacker.OnHitObject += OnHit;
             aggroEffects.SetActive(true);
+            minotaur.audioRelay.PlaySound(roarSoundName);
         }
         public override void OnStateExit()
         {

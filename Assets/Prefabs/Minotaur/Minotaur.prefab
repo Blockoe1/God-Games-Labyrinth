@@ -5163,7 +5163,7 @@ MonoBehaviour:
           rid: -2
         <minotaur>k__BackingField: {fileID: 5871052308712400146}
         visionDelay: 3
-        patrolTime: 15
+        patrolTime: 10
         jumpOnPatrolExpire: 1
         champions:
         - {fileID: 0}
@@ -5181,9 +5181,10 @@ MonoBehaviour:
         subStates:
         - rid: 2241602981746442323
         - rid: 2241603255916560467
-        aggroTime: 5
+        aggroTime: 6
         aggroChangeChance: 0
         aggroEffects: {fileID: 1067211274180199747}
+        roarSoundName: MinotaurRoar
     - rid: 2241602981746442323
       type: {class: ChaseState, ns: GGL.Minotaur, asm: Assembly-CSharp}
       data:
@@ -5191,7 +5192,7 @@ MonoBehaviour:
         parentState:
           rid: 2241602981746442322
         <minotaur>k__BackingField: {fileID: 5871052308712400146}
-        chaseSpeed: 5
+        chaseSpeed: 6
         requiredChaseTime: 0.5
         rePathDelay: 0.5
     - rid: 2241603255916560467
@@ -5463,7 +5464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87fd40b229d3ce41a1d8f241d818172, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Minotaur.PathfinderMovement
-  maxSpeed: 3.5
+  maxSpeed: 4
   acceleration: 30
   maxWallCheckDistance: 1
   positionSnap: 1

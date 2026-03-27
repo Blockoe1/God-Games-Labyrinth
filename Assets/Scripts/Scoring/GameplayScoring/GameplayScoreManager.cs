@@ -22,6 +22,21 @@ namespace GGL.Scoring
 
         #region Properties
         public static int[] GameScores => scores;
+        public static GodID Winner
+        {
+            get
+            {
+                int winner = 0;
+                for(int i = 1; i < GameScores.Length - 1; i++)
+                {
+                    if (GameScores[i] > GameScores[winner])
+                    {
+                        winner = i;
+                    }
+                }
+                return (GodID)winner;
+            }
+        }
         #endregion
 
         #region Component References

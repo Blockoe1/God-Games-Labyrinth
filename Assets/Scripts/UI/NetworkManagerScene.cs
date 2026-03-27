@@ -6,6 +6,11 @@ namespace GGL
 {
     public class NetworkManagerScene : MonoBehaviour
     {
+        private void Awake()
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
         void Update()
         {
             if (FindFirstObjectByType<NetworkManager>() != null)

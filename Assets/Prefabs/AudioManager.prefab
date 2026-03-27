@@ -91,14 +91,6 @@ MonoBehaviour:
         Data3: -253870458
         Data4: -1999038577
       Path: event:/SFX/Game/DepositGold
-  - name: MinotaurSpawn
-    eventRef:
-      Guid:
-        Data1: -49893735
-        Data2: 1149766361
-        Data3: 30012036
-        Data4: -75520690
-      Path: event:/SFX/Game/MinotaurSpawn
   - name: PlayerReady
     eventRef:
       Guid:
@@ -123,6 +115,46 @@ MonoBehaviour:
         Data3: -306753355
         Data4: 1822245613
       Path: event:/SFX/Game/CoinsFull
+  - name: MinotaurSpawn
+    eventRef:
+      Guid:
+        Data1: -49893735
+        Data2: 1149766361
+        Data3: 30012036
+        Data4: -75520690
+      Path: event:/SFX/Minotaur/MinotaurSpawn
+  - name: MinotaurSnort
+    eventRef:
+      Guid:
+        Data1: 903501036
+        Data2: 1209756358
+        Data3: 788236731
+        Data4: 516657747
+      Path: event:/SFX/Minotaur/MinotaurSnort
+  - name: MinotaurRoar
+    eventRef:
+      Guid:
+        Data1: -327928424
+        Data2: 1106781835
+        Data3: -1983128146
+        Data4: -242492729
+      Path: event:/SFX/Minotaur/MinotaurRoar
+  - name: MinotaurDash
+    eventRef:
+      Guid:
+        Data1: 769457941
+        Data2: 1238315024
+        Data3: -1948970362
+        Data4: -1406460899
+      Path: event:/SFX/Minotaur/MinotaurDash
+  - name: MinotaurCrash
+    eventRef:
+      Guid:
+        Data1: 1254768082
+        Data2: 1267767899
+        Data3: 1428412817
+        Data4: -278511192
+      Path: event:/SFX/Minotaur/MinotaurCrash
 --- !u!114 &5427923423324089921
 MonoBehaviour:
   m_ObjectHideFlags: 0

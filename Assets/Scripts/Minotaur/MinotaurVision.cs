@@ -76,7 +76,7 @@ namespace GGL.Minotaur
                 // Raycast to the monitored object.
                 Vector2 toObj = monitoredObjects[i].transform.position - transform.position;
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, toObj.normalized, visionRange, 
-                    GGLHelpers.MazeMask | GGLHelpers.ChampionMask);
+                    GGLHelpers.MazeMask | GGLHelpers.ChampionMask | GGLHelpers.RoomMask);
                 // If the player was detected, mark it as a found champion.
                 if (hit.collider != null && hit.collider.gameObject.CompareTag(PLAYER_TAG))
                 {

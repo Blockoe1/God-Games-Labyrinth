@@ -29,6 +29,11 @@ namespace GGL.Audio
         {
             musicEventInstance.setParameterByName("music_type", (float)type);
         }
+
+        public void SetVictor(GodID victor)
+        {
+            musicEventInstance.setParameterByName("victor", (float)victor);
+        }
         #endregion
 
         /// <summary>

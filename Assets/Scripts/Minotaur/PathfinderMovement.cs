@@ -59,14 +59,35 @@ namespace GGL.Minotaur
         }
 
         /// <summary>
+        /// Checks if there is a valid path to a given destination position.
+        /// </summary>
+        /// <param name="destination"></param>
+        /// <returns>True if valid, false if not.</returns>
+        public bool CheckPathValid(Vector2 destination)
+        {
+            bool invalid = false;
+            // Check if the location is obscured by a tile.
+            foreach(var tilemap in collisionTilemap)
+            {
+                invalid |= (tilemap.GetTile(tilemap.WorldToCell(destination)) != null);
+            }
+            invalid |= Pathfinder.FindPath(collisionTilemap, rb.position, destination) == null;
+            return !invalid;
+        }
+
+        /// <summary>
         /// Stops this entity's movement along the path.
         /// </summary>
-        public void Stop()
+        public void Stop(bool immediate = false)
         {
             //Debug.Log("Stopped");
             IsMoving = false;
             currentPath = null;
             currentPathNode = 0;
+            if (immediate)
+            {
+                speed = 0;
+            }
         }
 
         /// <summary>

@@ -1,8 +1,11 @@
 using System;
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -23,6 +26,8 @@ namespace GGL
         [SerializeField] Image circleTimer;
         [SerializeField] TMP_Text timerText;
         [SerializeField] GameObject redFadeIn;
+        [SerializeField] Volume volume;
+        [SerializeField] Vignette vignette;
 
         [SerializeField] float currentTime;
 
@@ -33,6 +38,7 @@ namespace GGL
         {
             currentTime = time;
             StartCoroutine(Timer());
+            volume.profile.TryGet(out vignette);
         }
         
         IEnumerator Timer()
@@ -102,7 +108,8 @@ namespace GGL
                 Timer4.value = (currentTime / 15);
                 circleTimer.fillAmount = currentTime / 90;
                 OnTimerUpdate?.Invoke(currentTime, time);
-                redFadeIn.GetComponent<Image>().color = new Vector4(1,0,0, ((15-currentTime)/100));
+                //redFadeIn.GetComponent<Image>().color = new Vector4(1,0,0, ((15-currentTime)/100));
+                vignette.intensity.value = (15 - currentTime) / 15;
             }
             OnTimerComplete?.Invoke();
             SceneManager.LoadScene("WinScene");

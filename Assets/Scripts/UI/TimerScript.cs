@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -20,6 +21,8 @@ namespace GGL
         [SerializeField] Slider Timer4;
         [SerializeField] Image minotaurImage;
         [SerializeField] Image circleTimer;
+        [SerializeField] TMP_Text timerText;
+        [SerializeField] GameObject redFadeIn;
 
         [SerializeField] float currentTime;
 
@@ -90,14 +93,16 @@ namespace GGL
                 circleTimer.fillAmount = currentTime / 90;
                 OnTimerUpdate?.Invoke(currentTime, time);
             }
+            timerText.gameObject.SetActive(true);
             while (currentTime > 0)
             {
                 yield return null;
                 currentTime -= Time.deltaTime;
-                //timerText.text = "" + time;
+                timerText.text = "" + MathF.Floor(currentTime);
                 Timer4.value = (currentTime / 15);
                 circleTimer.fillAmount = currentTime / 90;
                 OnTimerUpdate?.Invoke(currentTime, time);
+                redFadeIn.GetComponent<Image>().color = new Vector4(1,0,0, ((15-currentTime)/100));
             }
             OnTimerComplete?.Invoke();
             SceneManager.LoadScene("WinScene");

@@ -24,10 +24,10 @@ namespace GGL
         [SerializeField] Slider Timer4;
         [SerializeField] Image minotaurImage;
         [SerializeField] Image circleTimer;
-        [SerializeField] TMP_Text timerText;
-        [SerializeField] GameObject redFadeIn;
+        [SerializeField] TMP_Text[] timerText;
         [SerializeField] Volume volume;
-        [SerializeField] Vignette vignette;
+        private Vignette vignette;
+        [SerializeField] private float maxVignette;
 
         [SerializeField] float currentTime;
 
@@ -99,17 +99,24 @@ namespace GGL
                 circleTimer.fillAmount = currentTime / 90;
                 OnTimerUpdate?.Invoke(currentTime, time);
             }
-            timerText.gameObject.SetActive(true);
+            foreach(var text in timerText)
+            {
+                text.gameObject.SetActive(true);
+            }
+            
             while (currentTime > 0)
             {
                 yield return null;
                 currentTime -= Time.deltaTime;
-                timerText.text = "" + MathF.Floor(currentTime);
+                foreach (var text in timerText)
+                {
+                    text.text = "" + MathF.Ceiling(currentTime);
+                }
                 Timer4.value = (currentTime / 15);
                 circleTimer.fillAmount = currentTime / 90;
                 OnTimerUpdate?.Invoke(currentTime, time);
                 //redFadeIn.GetComponent<Image>().color = new Vector4(1,0,0, ((15-currentTime)/100));
-                vignette.intensity.value = (15 - currentTime) / 15;
+                vignette.intensity.value = ((15 - currentTime) / 15) * maxVignette;
             }
             OnTimerComplete?.Invoke();
             SceneManager.LoadScene("WinScene");

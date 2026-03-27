@@ -62,10 +62,17 @@ namespace GGL.Minotaur
         /// Checks if there is a valid path to a given destination position.
         /// </summary>
         /// <param name="destination"></param>
-        /// <returns></returns>
+        /// <returns>True if valid, false if not.</returns>
         public bool CheckPathValid(Vector2 destination)
         {
-            return Pathfinder.FindPath(collisionTilemap, rb.position, destination) != null;
+            bool invalid = false;
+            // Check if the location is obscured by a tile.
+            foreach(var tilemap in collisionTilemap)
+            {
+                invalid |= (tilemap.GetTile(tilemap.WorldToCell(destination)) != null);
+            }
+            invalid |= Pathfinder.FindPath(collisionTilemap, rb.position, destination) == null;
+            return !invalid;
         }
 
         /// <summary>

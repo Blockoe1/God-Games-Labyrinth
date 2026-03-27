@@ -309,6 +309,7 @@ GameObject:
   m_Component:
   - component: {fileID: 171476919}
   - component: {fileID: 171476918}
+  - component: {fileID: 171476920}
   m_Layer: 0
   m_Name: ReadyUpHandler
   m_TagString: Untagged
@@ -350,6 +351,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &171476920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171476917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af1c6b5d8d7a04d4792c536edaf82c53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.UI.MazeSwitcher
+  handler: {fileID: 171476918}
+  abTest: {fileID: 1713275547}
+  swapIA:
+    m_Name: Swap IA
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 05cd4305-20c1-4dc5-9f2f-a592aa26cb9d
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: c67ecd21-6f64-489c-acd0-89773041b0c0
+      m_Path: <Keyboard>/f7
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Swap IA
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 7f0e1667-19ca-458f-9ffd-5e5c7dbbd3e4
+      m_Path: <Keyboard>/f6
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Swap IA
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 1ee5f8b4-7a43-4d28-a3b5-a544123fe8fd
+      m_Path: <Keyboard>/c
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Swap IA
+      m_Flags: 0
+    m_Flags: 0
+  mazeA: MazeScene
+  mazeB: MazeSceneB
 --- !u!1 &224477048
 GameObject:
   m_ObjectHideFlags: 0

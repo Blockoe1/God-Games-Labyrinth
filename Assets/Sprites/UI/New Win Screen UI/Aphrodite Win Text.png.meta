@@ -1,0 +1,923 @@
+fileFormatVersion: 2
+guid: e91187cec01fcbe4893c9d6a3df4ddd8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5055212771329704273
+    second: Aphrodite Win Text_0
+  - first:
+      213: -6167468453034775787
+    second: Aphrodite Win Text_1
+  - first:
+      213: -6381214874945576171
+    second: Aphrodite Win Text_2
+  - first:
+      213: -4080065667945040309
+    second: Aphrodite Win Text_3
+  - first:
+      213: 3284152276761724591
+    second: Aphrodite Win Text_4
+  - first:
+      213: 1576778259405492070
+    second: Aphrodite Win Text_5
+  - first:
+      213: 5805418564153007240
+    second: Aphrodite Win Text_6
+  - first:
+      213: 9115135440125737776
+    second: Aphrodite Win Text_7
+  - first:
+      213: 7781021071454757829
+    second: Aphrodite Win Text_8
+  - first:
+      213: 4808806116059970925
+    second: Aphrodite Win Text_9
+  - first:
+      213: -2141111871431878499
+    second: Aphrodite Win Text_10
+  - first:
+      213: -1721853317888186884
+    second: Aphrodite Win Text_11
+  - first:
+      213: 2861405875318822752
+    second: Aphrodite Win Text_12
+  - first:
+      213: -6509767312445020135
+    second: Aphrodite Win Text_13
+  - first:
+      213: 1443532040827123067
+    second: Aphrodite Win Text_14
+  - first:
+      213: 2604547140025100109
+    second: Aphrodite Win Text_15
+  - first:
+      213: -4560588401936896938
+    second: Aphrodite Win Text_16
+  - first:
+      213: -8569061477288277540
+    second: Aphrodite Win Text_17
+  - first:
+      213: 6659890730588434351
+    second: Aphrodite Win Text_18
+  - first:
+      213: -2391016693058605027
+    second: Aphrodite Win Text_19
+  - first:
+      213: -2983433500363893574
+    second: Aphrodite Win Text_20
+  - first:
+      213: 7905338539410923034
+    second: Aphrodite Win Text_21
+  - first:
+      213: 4338351339161751400
+    second: Aphrodite Win Text_22
+  - first:
+      213: 6129749560988685294
+    second: Aphrodite Win Text_23
+  - first:
+      213: 678971556699453389
+    second: Aphrodite Win Text_24
+  - first:
+      213: -3757584384193894246
+    second: Aphrodite Win Text_25
+  - first:
+      213: 2151393417929240817
+    second: Aphrodite Win Text_26
+  - first:
+      213: 3060354746852654352
+    second: Aphrodite Win Text_27
+  - first:
+      213: 2023643298299184223
+    second: Aphrodite Win Text_28
+  - first:
+      213: -545812654470608650
+    second: Aphrodite Win Text_29
+  - first:
+      213: -8410353345783452221
+    second: Aphrodite Win Text_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Aphrodite Win Text_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 151002b5b39b72640800000000000000
+      internalID: 5055212771329704273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aphrodite Win Text_1
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 23
+        width: 10
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51b2f6d5e10c86aa0800000000000000
+      internalID: -6167468453034775787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aphrodite Win Text_2
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 2
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5132e6f51ee5177a0800000000000000
+      internalID: -6381214874945576171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aphrodite Win Text_3
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 2
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b467ed164e1b067c0800000000000000
+      internalID: -4080065667945040309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aphrodite Win Text_4
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 2
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa64ca47817a39d20800000000000000
+      internalID: 3284152276761724591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aphrodite Win Text_5
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 23
+        width: 10
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66f4c690977d1e510800000000000000
+      internalID: 1576778259405492070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aphrodite Win Text_6
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 2
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88c5cc8fc6df09050800000000000000
+      internalID: 5805418564153007240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aphrodite Win Text_7
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 23
+        width: 10
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03bb44483677f7e70800000000000000
+      internalID: 9115135440125737776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aphrodite Win Text_8
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 2
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c3e3e9507dbbfb60800000000000000
+      internalID: 7781021071454757829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aphrodite Win Text_9
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 2
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6dfa753faf4cb240800000000000000
+      internalID: 4808806116059970925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aphrodite Win Text_10
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 2
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d985ee6d81e3942e0800000000000000
+      internalID: -2141111871431878499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aphrodite Win Text_11
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 2
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf562f7b78fba18e0800000000000000
+      internalID: -1721853317888186884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aphrodite Win Text_12
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 2
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0671894bb71c5b720800000000000000
+      internalID: 2861405875318822752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aphrodite Win Text_13
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 2
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 918e34b9e19a8a5a0800000000000000
+      internalID: -6509767312445020135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aphrodite Win Text_14
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 2
+        width: 27
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7535633eb4780410800000000000000
+      internalID: 1443532040827123067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aphrodite Win Text_15
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 2
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d47a4f903d5352420800000000000000
+      internalID: 2604547140025100109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aphrodite Win Text_16
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 2
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65ce8cfe20985b0c0800000000000000
+      internalID: -4560588401936896938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aphrodite Win Text_17
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 2
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd98fbbbcf3941980800000000000000
+      internalID: -8569061477288277540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aphrodite Win Text_18
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 0
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fafe3a7755fac6c50800000000000000
+      internalID: 6659890730588434351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aphrodite Win Text_19
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 2
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d10763e5cf661ded0800000000000000
+      internalID: -2391016693058605027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aphrodite Win Text_20
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 2
+        width: 27
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab45fcfc907b896d0800000000000000
+      internalID: -2983433500363893574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aphrodite Win Text_21
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 2
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1e1bce648765bd60800000000000000
+      internalID: 7905338539410923034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aphrodite Win Text_22
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 2
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86f8391be8be43c30800000000000000
+      internalID: 4338351339161751400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aphrodite Win Text_23
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 0
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee356d8bfbe311550800000000000000
+      internalID: 6129749560988685294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aphrodite Win Text_24
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 2
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc73aa198013c6900800000000000000
+      internalID: 678971556699453389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aphrodite Win Text_25
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 2
+        width: 27
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a98619e39e06adbc0800000000000000
+      internalID: -3757584384193894246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aphrodite Win Text_26
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 2
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f039cf3ae84bdd10800000000000000
+      internalID: 2151393417929240817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aphrodite Win Text_27
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 2
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01d35d48d60987a20800000000000000
+      internalID: 3060354746852654352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aphrodite Win Text_28
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 2
+        width: 27
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f54093babdc651c10800000000000000
+      internalID: 2023643298299184223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aphrodite Win Text_29
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 2
+        width: 27
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f8cd585842ec68f0800000000000000
+      internalID: -545812654470608650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aphrodite Win Text_30
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 2
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cd2f05213c684b80800000000000000
+      internalID: -8410353345783452221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Aphrodite Win Text_0: 5055212771329704273
+      Aphrodite Win Text_1: -6167468453034775787
+      Aphrodite Win Text_10: -2141111871431878499
+      Aphrodite Win Text_11: -1721853317888186884
+      Aphrodite Win Text_12: 2861405875318822752
+      Aphrodite Win Text_13: -6509767312445020135
+      Aphrodite Win Text_14: 1443532040827123067
+      Aphrodite Win Text_15: 2604547140025100109
+      Aphrodite Win Text_16: -4560588401936896938
+      Aphrodite Win Text_17: -8569061477288277540
+      Aphrodite Win Text_18: 6659890730588434351
+      Aphrodite Win Text_19: -2391016693058605027
+      Aphrodite Win Text_2: -6381214874945576171
+      Aphrodite Win Text_20: -2983433500363893574
+      Aphrodite Win Text_21: 7905338539410923034
+      Aphrodite Win Text_22: 4338351339161751400
+      Aphrodite Win Text_23: 6129749560988685294
+      Aphrodite Win Text_24: 678971556699453389
+      Aphrodite Win Text_25: -3757584384193894246
+      Aphrodite Win Text_26: 2151393417929240817
+      Aphrodite Win Text_27: 3060354746852654352
+      Aphrodite Win Text_28: 2023643298299184223
+      Aphrodite Win Text_29: -545812654470608650
+      Aphrodite Win Text_3: -4080065667945040309
+      Aphrodite Win Text_30: -8410353345783452221
+      Aphrodite Win Text_4: 3284152276761724591
+      Aphrodite Win Text_5: 1576778259405492070
+      Aphrodite Win Text_6: 5805418564153007240
+      Aphrodite Win Text_7: 9115135440125737776
+      Aphrodite Win Text_8: 7781021071454757829
+      Aphrodite Win Text_9: 4808806116059970925
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

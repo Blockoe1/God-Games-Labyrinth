@@ -1,0 +1,975 @@
+fileFormatVersion: 2
+guid: 2941ec15ebb1d164ba6b80e745e265f3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1564287938638822032
+    second: Posiedon Win Text_0
+  - first:
+      213: -5410742244682413269
+    second: Posiedon Win Text_1
+  - first:
+      213: -5518073089333928569
+    second: Posiedon Win Text_2
+  - first:
+      213: 3846218648006852856
+    second: Posiedon Win Text_3
+  - first:
+      213: 6688402918346839556
+    second: Posiedon Win Text_4
+  - first:
+      213: 3060273080731588366
+    second: Posiedon Win Text_5
+  - first:
+      213: -544652283609392027
+    second: Posiedon Win Text_6
+  - first:
+      213: 5546687567711033801
+    second: Posiedon Win Text_7
+  - first:
+      213: 8529085383458421049
+    second: Posiedon Win Text_8
+  - first:
+      213: -6176226474068801139
+    second: Posiedon Win Text_9
+  - first:
+      213: -2475811508676549786
+    second: Posiedon Win Text_10
+  - first:
+      213: 2851591405685230998
+    second: Posiedon Win Text_11
+  - first:
+      213: 1161358345061460284
+    second: Posiedon Win Text_12
+  - first:
+      213: -8743354233765821628
+    second: Posiedon Win Text_13
+  - first:
+      213: -3229456461913236734
+    second: Posiedon Win Text_14
+  - first:
+      213: 3232698247595409956
+    second: Posiedon Win Text_15
+  - first:
+      213: 2442588994925003118
+    second: Posiedon Win Text_16
+  - first:
+      213: 4264452029853133035
+    second: Posiedon Win Text_17
+  - first:
+      213: 5683330089334434070
+    second: Posiedon Win Text_18
+  - first:
+      213: -642319251654690993
+    second: Posiedon Win Text_19
+  - first:
+      213: 3413439551020760661
+    second: Posiedon Win Text_20
+  - first:
+      213: 7803019154739255098
+    second: Posiedon Win Text_21
+  - first:
+      213: 8206576653293565589
+    second: Posiedon Win Text_22
+  - first:
+      213: -6058183001413100858
+    second: Posiedon Win Text_23
+  - first:
+      213: -7841158492775657526
+    second: Posiedon Win Text_24
+  - first:
+      213: 5264172925726526064
+    second: Posiedon Win Text_25
+  - first:
+      213: 6069679285635393386
+    second: Posiedon Win Text_26
+  - first:
+      213: 8490083354896191505
+    second: Posiedon Win Text_27
+  - first:
+      213: -6228528933015603898
+    second: Posiedon Win Text_28
+  - first:
+      213: -6612575158964066905
+    second: Posiedon Win Text_29
+  - first:
+      213: 5693525399886122166
+    second: Posiedon Win Text_30
+  - first:
+      213: 5624517361779985013
+    second: Posiedon Win Text_31
+  - first:
+      213: 2732791270846871883
+    second: Posiedon Win Text_32
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Posiedon Win Text_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5
+        width: 24
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 075410368688a4ae0800000000000000
+      internalID: -1564287938638822032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Posiedon Win Text_1
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 5
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2b4186889e29e4b0800000000000000
+      internalID: -5410742244682413269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Posiedon Win Text_2
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 5
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78ddb91e2cddb63b0800000000000000
+      internalID: -5518073089333928569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Posiedon Win Text_3
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 0
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f08ee27b73806530800000000000000
+      internalID: 3846218648006852856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Posiedon Win Text_4
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 5
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 406dfbe740bf1dc50800000000000000
+      internalID: 6688402918346839556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Posiedon Win Text_5
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 5
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0752b42726487a20800000000000000
+      internalID: 3060273080731588366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Posiedon Win Text_6
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 5
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56c5b5d32a10178f0800000000000000
+      internalID: -544652283609392027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Posiedon Win Text_7
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 5
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c9dd7984fac9fc40800000000000000
+      internalID: 5546687567711033801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Posiedon Win Text_8
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 0
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 939f30c97f56d5670800000000000000
+      internalID: 8529085383458421049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Posiedon Win Text_9
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 5
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8904c0beb2a94aa0800000000000000
+      internalID: -6176226474068801139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Posiedon Win Text_10
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 5
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 663a28edc8624add0800000000000000
+      internalID: -2475811508676549786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Posiedon Win Text_11
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 5
+        width: 25
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69dcc6c6643e29720800000000000000
+      internalID: 2851591405685230998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Posiedon Win Text_12
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 0
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c39e25ef249fd1010800000000000000
+      internalID: 1161358345061460284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Posiedon Win Text_13
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 5
+        width: 25
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4430bfe06ad59a680800000000000000
+      internalID: -8743354233765821628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Posiedon Win Text_14
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 5
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20b5212557aae23d0800000000000000
+      internalID: -3229456461913236734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Posiedon Win Text_15
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 5
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 422c3f9bde9dcdc20800000000000000
+      internalID: 3232698247595409956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Posiedon Win Text_16
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 5
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6188cedfb1d5e120800000000000000
+      internalID: 2442588994925003118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Posiedon Win Text_17
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 0
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be8e611f6806e2b30800000000000000
+      internalID: 4264452029853133035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Posiedon Win Text_18
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 5
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 619611cca9e3fde40800000000000000
+      internalID: 5683330089334434070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Posiedon Win Text_19
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 5
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f473ab43b060617f0800000000000000
+      internalID: -642319251654690993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Posiedon Win Text_20
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 0
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55e7cdcbf29fe5f20800000000000000
+      internalID: 3413439551020760661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Posiedon Win Text_21
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 5
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a375dcd3494e94c60800000000000000
+      internalID: 7803019154739255098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Posiedon Win Text_22
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 5
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 596b3916cfd93e170800000000000000
+      internalID: 8206576653293565589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Posiedon Win Text_23
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 5
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ca567868a20deba0800000000000000
+      internalID: -6058183001413100858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Posiedon Win Text_24
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 5
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acfc19225eb9e2390800000000000000
+      internalID: -7841158492775657526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Posiedon Win Text_25
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 5
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07a882a92691e0940800000000000000
+      internalID: 5264172925726526064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Posiedon Win Text_26
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 5
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6728d8d625db3450800000000000000
+      internalID: 6069679285635393386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Posiedon Win Text_27
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 5
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1105b0234d5d2d570800000000000000
+      internalID: 8490083354896191505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Posiedon Win Text_28
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 0
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 645bc528fe1df89a0800000000000000
+      internalID: -6228528933015603898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Posiedon Win Text_29
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 0
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a5ef578de96b34a0800000000000000
+      internalID: -6612575158964066905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Posiedon Win Text_30
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 0
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bc40e38f27730f40800000000000000
+      internalID: 5693525399886122166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Posiedon Win Text_31
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 5
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57ac9e59dbc4e0e40800000000000000
+      internalID: 5624517361779985013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Posiedon Win Text_32
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 0
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b49bd109e23dce520800000000000000
+      internalID: 2732791270846871883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Posiedon Win Text_0: -1564287938638822032
+      Posiedon Win Text_1: -5410742244682413269
+      Posiedon Win Text_10: -2475811508676549786
+      Posiedon Win Text_11: 2851591405685230998
+      Posiedon Win Text_12: 1161358345061460284
+      Posiedon Win Text_13: -8743354233765821628
+      Posiedon Win Text_14: -3229456461913236734
+      Posiedon Win Text_15: 3232698247595409956
+      Posiedon Win Text_16: 2442588994925003118
+      Posiedon Win Text_17: 4264452029853133035
+      Posiedon Win Text_18: 5683330089334434070
+      Posiedon Win Text_19: -642319251654690993
+      Posiedon Win Text_2: -5518073089333928569
+      Posiedon Win Text_20: 3413439551020760661
+      Posiedon Win Text_21: 7803019154739255098
+      Posiedon Win Text_22: 8206576653293565589
+      Posiedon Win Text_23: -6058183001413100858
+      Posiedon Win Text_24: -7841158492775657526
+      Posiedon Win Text_25: 5264172925726526064
+      Posiedon Win Text_26: 6069679285635393386
+      Posiedon Win Text_27: 8490083354896191505
+      Posiedon Win Text_28: -6228528933015603898
+      Posiedon Win Text_29: -6612575158964066905
+      Posiedon Win Text_3: 3846218648006852856
+      Posiedon Win Text_30: 5693525399886122166
+      Posiedon Win Text_31: 5624517361779985013
+      Posiedon Win Text_32: 2732791270846871883
+      Posiedon Win Text_4: 6688402918346839556
+      Posiedon Win Text_5: 3060273080731588366
+      Posiedon Win Text_6: -544652283609392027
+      Posiedon Win Text_7: 5546687567711033801
+      Posiedon Win Text_8: 8529085383458421049
+      Posiedon Win Text_9: -6176226474068801139
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

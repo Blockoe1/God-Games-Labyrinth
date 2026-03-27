@@ -5319,7 +5319,7 @@ MonoBehaviour:
     - rid: 6611795284590708
       type: {class: DropGoldEffect, ns: GGL.Minotaur, asm: Assembly-CSharp}
       data:
-        dropProportion: 0.25
+        dropProportion: 0.5
 --- !u!212 &784318575360502659
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@
 //
 // Brief Description : Sets the current music track for a scene.
 *****************************************************************************/
+using GGL.Scoring;
 using UnityEngine;
 
 namespace GGL.Audio
@@ -21,6 +22,10 @@ namespace GGL.Audio
         {
             if (AudioManager.instance != null && AudioManager.instance.MusicManager != null)
             {
+                if (sceneMusic == MusicType.Victory)
+                {
+                    AudioManager.instance.MusicManager.SetVictor(GameplayScoreManager.Winner);
+                }
                 AudioManager.instance.MusicManager.SetMusic(sceneMusic);
             }    
         }

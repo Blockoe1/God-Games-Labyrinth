@@ -5096,6 +5096,7 @@ GameObject:
   - component: {fileID: 3520188249698541510}
   - component: {fileID: 5905039139881485816}
   - component: {fileID: 8950101222830632436}
+  - component: {fileID: 3294315352176275413}
   - component: {fileID: 4350987386890045512}
   - component: {fileID: 5562268597248787055}
   m_Layer: 6
@@ -5152,6 +5153,7 @@ MonoBehaviour:
   <attacker>k__BackingField: {fileID: 8163698570004376742}
   <rotation>k__BackingField: {fileID: 4685272650038533086}
   <screenShake>k__BackingField: {fileID: 5562268597248787055}
+  <jumper>k__BackingField: {fileID: 3294315352176275413}
   references:
     version: 2
     RefIds:
@@ -5172,7 +5174,6 @@ MonoBehaviour:
         - {fileID: 0}
         - {fileID: 0}
         - {fileID: 0}
-        patrolTarget: 0
     - rid: 2241602981746442322
       type: {class: AggroState, ns: GGL.Minotaur, asm: Assembly-CSharp}
       data:
@@ -5242,7 +5243,6 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-        maxJumpScaleMultiplier: 2
         jumpSizeCurve:
           serializedVersion: 2
           m_Curve:
@@ -5276,14 +5276,7 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-        jumpChargeTime: 1.5
         postJumpDelay: 0.5
-        landingTelegraph: {fileID: 0}
-        jumpHitbox: {fileID: 6203251917918860199}
-        disabledObjects:
-        - {fileID: 7953083175107892413}
-        landParticles: {fileID: 6624640764848345241}
-        screenShakeImpulse: 0.75
 --- !u!114 &464855989588843931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5560,6 +5553,27 @@ MonoBehaviour:
       m_Calls: []
   autoDepositTarget: {fileID: 4350987386890045512}
   id: {fileID: 5905039139881485816}
+--- !u!114 &3294315352176275413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137432236905573919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 277ba997049d3384aa9d70db269f1a2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GGL.Minotaur.MinotaurJumper
+  maxJumpScaleMultiplier: 2
+  jumpChargeTime: 1.5
+  landingTelegraph: {fileID: 0}
+  jumpHitbox: {fileID: 6203251917918860199}
+  disabledObjects:
+  - {fileID: 7953083175107892413}
+  landParticles: {fileID: 6624640764848345241}
+  screenShakeImpulse: 0.75
+  minotaur: {fileID: 5871052308712400146}
 --- !u!114 &4350987386890045512
 MonoBehaviour:
   m_ObjectHideFlags: 0

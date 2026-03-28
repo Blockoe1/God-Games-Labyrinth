@@ -14,24 +14,11 @@ namespace GGL.Minotaur
 {
     public class JumpState : MinotaurState
     {
-        #region CONSTS
-        private const float HITBOX_IMPACT_TIME = 0.25f;
-        #endregion
-
         [Header("Jump Settings")]
         [SerializeField] private float jumpSpeed;
         [SerializeField] private AnimationCurve jumpSpeedCurve;
-        [SerializeField] private float maxJumpScaleMultiplier;
         [SerializeField] private AnimationCurve jumpSizeCurve;
-        [Header("Timing")]
-        [SerializeField] private float jumpChargeTime = 2f;
         [SerializeField] private float postJumpDelay = 0.5f;
-        [Header("Visuals")]
-        [SerializeField] private GameObject landingTelegraph;
-        [SerializeField] private GameObject jumpHitbox;
-        [SerializeField] private GameObject[] disabledObjects;
-        [SerializeField] private ParticleSystem landParticles;
-        [SerializeField] private float screenShakeImpulse;
 
         private Vector2 jumpLocation;
         private int iterationNum;
@@ -53,23 +40,8 @@ namespace GGL.Minotaur
             Debug.Log("Jumping");
             minotaur.movement.Stop();
 
-            ToggleDisabledObjects(false);
-
-            // Initalize the landing telegraph.
-            landingTelegraph.SetActive(true);
-            landingTelegraph.transform.position = jumpLocation;
-
-            Vector2 toTarget = (jumpLocation - minotaur.movement.Rigidbody.position).normalized;
-            minotaur.rotation.SetRotation(toTarget);
+            
             base.OnStateEnter();
-        }
-
-        private void ToggleDisabledObjects(bool isEnabled)
-        {
-            foreach (var obj in disabledObjects)
-            {
-                obj.SetActive(isEnabled);
-            }
         }
 
         /// <summary>
@@ -86,56 +58,24 @@ namespace GGL.Minotaur
             }
 
 
-            yield return new WaitForSeconds(jumpChargeTime);
+            //yield return new WaitForSeconds(jumpChargeTime);
 
-            // Disable minotaur collision.
-            minotaur.movement.Rigidbody.excludeLayers = ~0;
-            minotaur.audioRelay.PlaySound(minotaur.dashSoundName);
+            //// Disable minotaur collision.
+            //minotaur.movement.Rigidbody.excludeLayers = ~0;
+            //minotaur.audioRelay.PlaySound(minotaur.dashSoundName);
 
-            // Jump logic.
-            Vector3 baseScale = minotaur.transform.localScale;
+            //// Jump logic.
+            //Vector3 baseScale = minotaur.transform.localScale;
             Vector2 startingPosition = minotaur.movement.Rigidbody.position;
             float jumpTime = Vector2.Distance(startingPosition, jumpLocation) / jumpSpeed;
-            float timer = 0;
-            while (timer < jumpTime)
-            {
-                float normalizedTime = timer / jumpTime;
-                minotaur.movement.Rigidbody.MovePosition(Vector2.Lerp(startingPosition, jumpLocation, 
-                    jumpSpeedCurve.Evaluate(normalizedTime)));
-                minotaur.transform.localScale = baseScale + 
-                    (baseScale * jumpSizeCurve.Evaluate(normalizedTime) * (maxJumpScaleMultiplier - 1));
-
-                timer += Time.fixedDeltaTime;
-                yield return new WaitForFixedUpdate();
-            }
-            minotaur.transform.localScale = baseScale;
-
-            // Re-Enable minotaur collision.
-            minotaur.movement.Rigidbody.excludeLayers = 0;
-
-            // Hitbox impact.
-            minotaur.screenShake.GenerateImpulse(screenShakeImpulse);
-            landingTelegraph.SetActive(false);
-            landParticles.Play();
-            minotaur.audioRelay.PlaySound(minotaur.crashSoundName);
-            jumpHitbox.SetActive(true);
-            yield return new WaitForSeconds(HITBOX_IMPACT_TIME);
-            jumpHitbox.SetActive(false);
+            yield return minotaur.jumper.PerformJump(jumpTime, jumpLocation, jumpSpeedCurve, jumpSizeCurve); 
+            
 
             yield return new WaitForSeconds(postJumpDelay);
 
             // Return to the patrol with vision active state after jumping.
             PatrolState state = parent.SetState<PatrolState>();
             state.ToggleVision(true);
-        }
-
-        /// <summary>
-        /// Cleans up the jump state.
-        /// </summary>
-        public override void OnStateExit()
-        {
-            base.OnStateExit();
-            ToggleDisabledObjects(true);
         }
     }
 }

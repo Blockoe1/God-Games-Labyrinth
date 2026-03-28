@@ -37,10 +37,7 @@ namespace GGL.Minotaur
         /// </summary>
         public override void OnStateEnter()
         {
-            Debug.Log("Jumping");
             minotaur.movement.Stop();
-
-            
             base.OnStateEnter();
         }
 

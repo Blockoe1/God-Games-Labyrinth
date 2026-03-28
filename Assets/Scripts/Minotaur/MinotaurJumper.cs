@@ -15,7 +15,7 @@ namespace GGL.Minotaur
     public class MinotaurJumper : MonoBehaviour
     {
         #region CONSTS
-        private const float HITBOX_IMPACT_TIME = 0.25f;
+        public const float HITBOX_IMPACT_TIME = 0.25f;
         #endregion
 
         [SerializeField] private float maxJumpScaleMultiplier;
@@ -46,21 +46,28 @@ namespace GGL.Minotaur
             AnimationCurve jumpSizeCurve)
         {
             return PerformJump(jumpTime, minotaur.movement.Rigidbody.position, targetPosition, jumpPositionCurve, 
-                jumpSizeCurve, jumpChargeTime);
+                jumpSizeCurve, jumpChargeTime, minotaur.dashSoundName);
         }
 
         public Coroutine PerformJump(float jumpTime, Vector2 targetPosition, AnimationCurve jumpPositionCurve,
     AnimationCurve jumpSizeCurve, float jumpChargeTime)
         {
             return PerformJump(jumpTime, minotaur.movement.Rigidbody.position, targetPosition, jumpPositionCurve,
-                jumpSizeCurve, jumpChargeTime);
+                jumpSizeCurve, jumpChargeTime, minotaur.dashSoundName);
+        }
+
+        public Coroutine PerformJump(float jumpTime, Vector2 targetPosition, AnimationCurve jumpPositionCurve,
+AnimationCurve jumpSizeCurve, float jumpChargeTime, string jumpSoundName)
+        {
+            return PerformJump(jumpTime, minotaur.movement.Rigidbody.position, targetPosition, jumpPositionCurve,
+                jumpSizeCurve, jumpChargeTime, jumpSoundName);
         }
 
         public Coroutine PerformJump(float jumpTime, Vector2 startPosition, Vector2 targetPosition, AnimationCurve jumpPositionCurve,
 AnimationCurve jumpSizeCurve)
         {
             return PerformJump(jumpTime, minotaur.movement.Rigidbody.position, targetPosition, jumpPositionCurve,
-                jumpSizeCurve, jumpChargeTime);
+                jumpSizeCurve, jumpChargeTime, minotaur.dashSoundName);
         }
         #endregion
 
@@ -74,7 +81,7 @@ AnimationCurve jumpSizeCurve)
         /// <param name="jumpSizeCurve"></param>
         /// <returns></returns>
         public Coroutine PerformJump(float jumpTime, Vector2 startPosition, Vector2 targetPosition, 
-            AnimationCurve jumpPositionCurve, AnimationCurve jumpSizeCurve, float jumpChargeTime)
+            AnimationCurve jumpPositionCurve, AnimationCurve jumpSizeCurve, float jumpChargeTime, string jumpSoundName)
         {
             // Initalize the landing telegraph.
             if (landingTelegraph != null)
@@ -89,11 +96,12 @@ AnimationCurve jumpSizeCurve)
 
 
             return StartCoroutine(JumpRoutine(jumpTime, startPosition, targetPosition, jumpPositionCurve, 
-                jumpSizeCurve, jumpChargeTime));
+                jumpSizeCurve, jumpChargeTime, jumpSoundName));
         }
 
         private IEnumerator JumpRoutine(float jumpTime, Vector2 startPosition, 
-            Vector2 targetPosition, AnimationCurve jumpPositionCurve, AnimationCurve jumpSizeCurve, float jumpChargeTime)
+            Vector2 targetPosition, AnimationCurve jumpPositionCurve, AnimationCurve jumpSizeCurve, 
+            float jumpChargeTime, string jumpSoundName)
         {
             ToggleDisabledObjects(false);
 
@@ -101,7 +109,7 @@ AnimationCurve jumpSizeCurve)
 
             // Disable minotaur collision.
             minotaur.movement.Rigidbody.excludeLayers = ~0;
-            minotaur.audioRelay.PlaySound(minotaur.dashSoundName);
+            minotaur.audioRelay.PlaySound(jumpSoundName);
             minotaur.movement.Stop();
 
             // Jump logic.

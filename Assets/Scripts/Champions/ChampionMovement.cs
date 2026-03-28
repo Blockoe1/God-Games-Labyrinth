@@ -21,13 +21,16 @@ namespace GGL.Champions
         private const string MOVE_ACTION_NAME = "Move";
         #endregion
 
+        [Header("Champion Settings")]
         [SerializeField] private float knockbackTime;
+        [SerializeField] private float turnDelay = 0.1f;
         [SerializeField] private bool inputCorrection;
 
         private InputAction moveAction;
 
         public event Action<bool> OnMove;
         private bool suspendInput;
+        private bool disableTurning;
 
         #region Component References
         [SerializeReference, ReadOnly] private PlayerInput input;
@@ -47,9 +50,21 @@ namespace GGL.Champions
         {
             set 
             {
+                
                 base.IsMoving = value;
                 OnMove?.Invoke(value);
             }
+        }
+
+        public override Vector2 Direction { get => base.Direction;
+            protected set 
+            {
+                if (disableTurning == true) { return; }
+                base.Direction = value;
+                // Set a delay so that direction cannot update immediately.
+                StartCoroutine(SuspendBool(turnDelay, true, (val) => disableTurning = val));
+            }
+             
         }
 
         /// <summary>
@@ -155,17 +170,33 @@ namespace GGL.Champions
         public override void ApplyKnockback(Vector2 direction, float force)
         {
             base.ApplyKnockback(direction, force);
-            StartCoroutine(SuspendInput(knockbackTime));
+            StartCoroutine(SuspendBool(knockbackTime, true, (val) =>  suspendInput = val, 
+                () => MoveAction_performed(new InputAction.CallbackContext())));
         }
 
-        private IEnumerator SuspendInput(float time)
+        /// <summary>
+        /// Sets a bool to a certain value then resets it after a delay.
+        /// </summary>
+        /// <param name="time"></param>
+        /// <param name="setter"></param>
+        /// <param name="callback"></param>
+        /// <returns></returns>
+        private IEnumerator SuspendBool(float time, bool value, Action<bool> setter, Action callback = null)
         {
-            if (suspendInput) { yield break; }
-            suspendInput = true;
+            setter(value);
             yield return new WaitForSeconds(time);
-            suspendInput = false;
-            // Check input after suspension.
-            MoveAction_performed(new InputAction.CallbackContext());
+            setter(!value);
+            callback?.Invoke();
         }
+
+        //private IEnumerator SuspendInput(float time)
+        //{
+        //    if (suspendInput) { yield break; }
+        //    suspendInput = true;
+        //    yield return new WaitForSeconds(time);
+        //    suspendInput = false;
+        //    // Check input after suspension.
+        //    MoveAction_performed(new InputAction.CallbackContext());
+        //}
     }
 }

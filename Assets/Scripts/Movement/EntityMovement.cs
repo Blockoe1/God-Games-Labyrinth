@@ -92,7 +92,7 @@ namespace GGL
                 }
             }
         }
-        public Vector2 Direction
+        public virtual Vector2 Direction
         { 
             get { return direction; }
             protected set 

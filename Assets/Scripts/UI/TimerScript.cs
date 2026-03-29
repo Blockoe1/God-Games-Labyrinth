@@ -28,6 +28,7 @@ namespace GGL
         [SerializeField] Volume volume;
         private Vignette vignette;
         [SerializeField] private float maxVignette;
+        [SerializeField] private AnimationCurve curve;
 
         [SerializeField] float currentTime;
 
@@ -103,7 +104,7 @@ namespace GGL
             {
                 text.gameObject.SetActive(true);
             }
-            
+
             while (currentTime > 0)
             {
                 yield return null;
@@ -116,7 +117,7 @@ namespace GGL
                 circleTimer.fillAmount = currentTime / 90;
                 OnTimerUpdate?.Invoke(currentTime, time);
                 //redFadeIn.GetComponent<Image>().color = new Vector4(1,0,0, ((15-currentTime)/100));
-                vignette.intensity.value = ((15 - currentTime) / 15) * maxVignette;
+                vignette.intensity.value = curve.Evaluate((15 - currentTime) / 15);
             }
             OnTimerComplete?.Invoke();
             SceneManager.LoadScene("WinScene");

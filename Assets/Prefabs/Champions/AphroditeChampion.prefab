@@ -124,6 +124,18 @@ PrefabInstance:
       propertyPath: team
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7271666163880501090, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.43921572
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271666163880501090, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.5529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271666163880501090, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.5764706
+      objectReference: {fileID: 0}
     - target: {fileID: 8074908796875090492, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
       propertyPath: inputCorrection
       value: 1

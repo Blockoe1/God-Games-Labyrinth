@@ -1,0 +1,949 @@
+fileFormatVersion: 2
+guid: 86673730f0c2321408a0310af521e68b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6772701768926125435
+    second: Accents_0
+  - first:
+      213: 1305111507969968484
+    second: Accents_1
+  - first:
+      213: 3948586323200982476
+    second: Accents_2
+  - first:
+      213: -1947281607197752521
+    second: Accents_3
+  - first:
+      213: 2394202016116327061
+    second: Accents_4
+  - first:
+      213: -4627044649654901621
+    second: Accents_5
+  - first:
+      213: -1836488043992472773
+    second: Accents_6
+  - first:
+      213: 300307876323412357
+    second: Accents_7
+  - first:
+      213: -1516007468082629487
+    second: Accents_8
+  - first:
+      213: 7103378449244933871
+    second: Accents_9
+  - first:
+      213: 7550960888588469587
+    second: Accents_10
+  - first:
+      213: 523005230042278800
+    second: Accents_11
+  - first:
+      213: 5554187499850907766
+    second: Accents_12
+  - first:
+      213: 3947032467832889513
+    second: Accents_13
+  - first:
+      213: -6563716702842552751
+    second: Accents_14
+  - first:
+      213: 9211559113510851270
+    second: Accents_15
+  - first:
+      213: -5193104098119900633
+    second: Accents_16
+  - first:
+      213: -4992628636882814100
+    second: Accents_17
+  - first:
+      213: -8821069468641189141
+    second: Accents_18
+  - first:
+      213: -7860619583286809825
+    second: Accents_19
+  - first:
+      213: -4471148369271763406
+    second: Accents_20
+  - first:
+      213: -8190622704937897999
+    second: Accents_21
+  - first:
+      213: 562003750504114300
+    second: Accents_22
+  - first:
+      213: 9021454294592343816
+    second: Accents_23
+  - first:
+      213: 4371135824523471966
+    second: Accents_24
+  - first:
+      213: -3542800075715852043
+    second: Accents_25
+  - first:
+      213: -8873853318612883542
+    second: Accents_26
+  - first:
+      213: -6973177530956458154
+    second: Accents_27
+  - first:
+      213: -7849212108003431493
+    second: Accents_28
+  - first:
+      213: -7493783429931855292
+    second: Accents_29
+  - first:
+      213: 3662897389313345213
+    second: Accents_30
+  - first:
+      213: 4190395616511273046
+    second: Accents_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Accents_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 205
+        width: 53
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7d508220687dfd50800000000000000
+      internalID: 6772701768926125435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accents_1
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 205
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46903d07000bc1210800000000000000
+      internalID: 1305111507969968484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accents_2
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 205
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccd3c5727523cc630800000000000000
+      internalID: 3948586323200982476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accents_3
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 205
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 733835502bdd9f4e0800000000000000
+      internalID: -1947281607197752521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accents_4
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 205
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59243237c0ae93120800000000000000
+      internalID: 2394202016116327061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accents_5
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 205
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b84a271086f69cfb0800000000000000
+      internalID: -4627044649654901621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accents_6
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 205
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b33a397aadb7386e0800000000000000
+      internalID: -1836488043992472773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accents_7
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 205
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58942832c68ea2400800000000000000
+      internalID: 300307876323412357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accents_8
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 205
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 194781c6d3f06fae0800000000000000
+      internalID: -1516007468082629487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accents_9
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 205
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: feec8647015449260800000000000000
+      internalID: 7103378449244933871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accents_10
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 205
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3550f25ebe66ac860800000000000000
+      internalID: 7550960888588469587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accents_11
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 205
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09b67585c76124700800000000000000
+      internalID: 523005230042278800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accents_12
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 205
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67047809a10741d40800000000000000
+      internalID: 5554187499850907766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accents_13
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 205
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a0ec120e1da6c630800000000000000
+      internalID: 3947032467832889513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accents_14
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 205
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15e75c05f6ef8e4a0800000000000000
+      internalID: -6563716702842552751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accents_15
+      rect:
+        serializedVersion: 2
+        x: 1046
+        y: 205
+        width: 53
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c29354753806df70800000000000000
+      internalID: 9211559113510851270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accents_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 53
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72220f546536ee7b0800000000000000
+      internalID: -5193104098119900633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accents_17
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 0
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6b3823f4be96bab0800000000000000
+      internalID: -4992628636882814100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accents_18
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 0
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be22996ed04459580800000000000000
+      internalID: -8821069468641189141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accents_19
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 0
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1be5b7e22879e290800000000000000
+      internalID: -7860619583286809825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accents_20
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 0
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23e4d7f4f3a43f1c0800000000000000
+      internalID: -4471148369271763406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accents_21
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 0
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ff6deeab00155e80800000000000000
+      internalID: -8190622704937897999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accents_22
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 0
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c782c37fe63acc700800000000000000
+      internalID: 562003750504114300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accents_23
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 0
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80f499a12e4a23d70800000000000000
+      internalID: 9021454294592343816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accents_24
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 0
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5ca4b58fd469ac30800000000000000
+      internalID: 4371135824523471966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accents_25
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 0
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f8cab80a1275dec0800000000000000
+      internalID: -3542800075715852043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accents_26
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 0
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa768232c6db9d480800000000000000
+      internalID: -8873853318612883542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accents_27
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 0
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 657da972bfb4a3f90800000000000000
+      internalID: -6973177530956458154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accents_28
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 0
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbba2c7bc2ff11390800000000000000
+      internalID: -7849212108003431493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accents_29
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 0
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 442143b9cabb00890800000000000000
+      internalID: -7493783429931855292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accents_30
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 0
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db64abac4c935d230800000000000000
+      internalID: 3662897389313345213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accents_31
+      rect:
+        serializedVersion: 2
+        x: 1046
+        y: 0
+        width: 53
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 658228e8c96472a30800000000000000
+      internalID: 4190395616511273046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Accents_0: 6772701768926125435
+      Accents_1: 1305111507969968484
+      Accents_10: 7550960888588469587
+      Accents_11: 523005230042278800
+      Accents_12: 5554187499850907766
+      Accents_13: 3947032467832889513
+      Accents_14: -6563716702842552751
+      Accents_15: 9211559113510851270
+      Accents_16: -5193104098119900633
+      Accents_17: -4992628636882814100
+      Accents_18: -8821069468641189141
+      Accents_19: -7860619583286809825
+      Accents_2: 3948586323200982476
+      Accents_20: -4471148369271763406
+      Accents_21: -8190622704937897999
+      Accents_22: 562003750504114300
+      Accents_23: 9021454294592343816
+      Accents_24: 4371135824523471966
+      Accents_25: -3542800075715852043
+      Accents_26: -8873853318612883542
+      Accents_27: -6973177530956458154
+      Accents_28: -7849212108003431493
+      Accents_29: -7493783429931855292
+      Accents_3: -1947281607197752521
+      Accents_30: 3662897389313345213
+      Accents_31: 4190395616511273046
+      Accents_4: 2394202016116327061
+      Accents_5: -4627044649654901621
+      Accents_6: -1836488043992472773
+      Accents_7: 300307876323412357
+      Accents_8: -1516007468082629487
+      Accents_9: 7103378449244933871
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

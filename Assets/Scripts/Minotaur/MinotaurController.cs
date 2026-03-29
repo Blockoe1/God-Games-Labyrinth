@@ -33,6 +33,7 @@ namespace GGL.Minotaur
         [field: SerializeReference, ReadOnly] internal MinotaurAttacker attacker { get; private set; }
         [field: SerializeReference, ReadOnly] internal MovementRotation rotation { get; private set; }
         [field: SerializeReference, ReadOnly] internal CinemachineImpulseSource screenShake { get; private set; }
+        [field: SerializeReference, ReadOnly] internal MinotaurJumper jumper { get; private set; }
         #endregion
 
         /// <summary>
@@ -46,6 +47,7 @@ namespace GGL.Minotaur
             audioRelay = GetComponent<AudioRelay>();
             rotation = GetComponent<MovementRotation>();
             screenShake = GetComponent<CinemachineImpulseSource>();
+            jumper = GetComponent<MinotaurJumper>();
             foreach(MinotaurState state in states)
             {
                 if (state == null) { continue; }

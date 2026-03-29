@@ -11,10 +11,10 @@ namespace GGL
     {
         [SerializeField] private TMP_Text timerText;
         
-        private bool zeusWin = false;
-        private bool poseidonWin = false;
-        private bool athenaWin = false;
-        private bool aphroditeWin = false;
+        //private bool zeusWin = false;
+        //private bool poseidonWin = false;
+        //private bool athenaWin = false;
+        //private bool aphroditeWin = false;
 
         [SerializeField] GameObject zeusNameGameObject;
         [SerializeField] GameObject zeusWinTextGameObject;

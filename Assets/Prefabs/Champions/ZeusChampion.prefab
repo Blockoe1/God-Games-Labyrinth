@@ -84,6 +84,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.9960785
       objectReference: {fileID: 0}
+    - target: {fileID: 8074908796875090492, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: inputCorrection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8650097738718565955, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
       propertyPath: m_DefaultActionMap
       value: ArcadePlayer 1

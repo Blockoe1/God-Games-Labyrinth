@@ -114,6 +114,41 @@ namespace GGL
         #endregion
 
         /// <summary>
+        /// Attempts to update the entity's current direction to match it's target direction.
+        /// </summary>
+        protected bool DirectionUpdate()
+        {
+            RaycastHit2D ray = Physics2D.Raycast(rb.position, TargetDirection, maxWallCheckDistance,
+                    GGLHelpers.MoveCheckMask | GGLHelpers.MazeMask);
+            Debug.DrawRay(rb.position, TargetDirection * maxWallCheckDistance, Color.green);
+            // If the raycast hit nothing, this is a valid direction.
+            if (!ray)
+            {
+                // Change direction if the target direction is this valid direction.
+                Direction = direction;
+                return true;
+            }
+            return false;
+
+            // Use a raycast to determine valid directions.
+            //foreach (var direction in MOVEMENT_DIRECTIONS)
+            //{
+            //    RaycastHit2D ray = Physics2D.Raycast(rb.position, direction, maxWallCheckDistance,
+            //        GGLHelpers.MoveCheckMask | GGLHelpers.MazeMask);
+            //    Debug.DrawRay(rb.position, direction * maxWallCheckDistance, Color.green);
+            //    // If the raycast hit nothing, this is a valid direction.
+            //    if (!ray)
+            //    {
+            //        if (TargetDirection == direction)
+            //        {
+            //            // Change direction if the target direction is this valid direction.
+            //            Direction = direction;
+            //        }
+            //    }
+            //}
+        }
+
+        /// <summary>
         /// Control movement in FixedUpdate
         /// </summary>
         /// <remarks>
@@ -122,24 +157,9 @@ namespace GGL
         /// </remarks>
         private void FixedUpdate()
         {
-            if (IsMoving)
+            if (IsMoving && Direction != TargetDirection)
             {
-                // Use a raycast to determine valid directions.
-                foreach (var direction in MOVEMENT_DIRECTIONS)
-                {
-                    RaycastHit2D ray = Physics2D.Raycast(rb.position, direction, maxWallCheckDistance, 
-                        GGLHelpers.MoveCheckMask | GGLHelpers.MazeMask);
-                    Debug.DrawRay(rb.position, direction * maxWallCheckDistance, Color.green);
-                    // If the raycast hit nothing, this is a valid direction.
-                    if (!ray)
-                    {
-                        if (TargetDirection == direction)
-                        {
-                            // Change direction if the target direction is this valid direction.
-                            Direction = direction;
-                        }
-                    }
-                }
+                DirectionUpdate();
             }
 
             OnFixedUpdate();

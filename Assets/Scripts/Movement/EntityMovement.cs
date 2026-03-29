@@ -125,7 +125,7 @@ namespace GGL
             if (!ray)
             {
                 // Change direction if the target direction is this valid direction.
-                Direction = direction;
+                Direction = TargetDirection;
                 return true;
             }
             return false;

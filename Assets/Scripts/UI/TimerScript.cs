@@ -55,7 +55,7 @@ namespace GGL
                 circleTimer.fillAmount = currentTime / 90;
                 OnTimerUpdate?.Invoke(currentTime, time);
             }
-            while (currentTime > 60)
+            while (currentTime > 63)
             {
                 yield return null;
                 currentTime -= Time.deltaTime;

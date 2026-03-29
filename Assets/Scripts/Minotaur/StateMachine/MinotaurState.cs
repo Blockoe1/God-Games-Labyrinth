@@ -24,6 +24,7 @@ namespace GGL.Minotaur
 
         #region Properties
         protected IStateHandler parent => parentState == null ? minotaur : parentState;
+        protected Color DebugColor => debugColor;
         #endregion
 
         /// <summary>

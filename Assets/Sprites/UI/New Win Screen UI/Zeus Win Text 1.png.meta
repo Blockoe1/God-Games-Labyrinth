@@ -1,100 +1,100 @@
 fileFormatVersion: 2
-guid: 86c251bf8b32e8640b2253a5b2fc9732
+guid: 00505b365e56f1e4685da99171265eff
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6513795584993998824
-    second: Zeus Win Text_0
+      213: 3381779733448539090
+    second: Zeus Win Text 1_0
   - first:
-      213: -6915325015840211236
-    second: Zeus Win Text_1
+      213: -4457981123648490788
+    second: Zeus Win Text 1_1
   - first:
-      213: -6690877979700913709
-    second: Zeus Win Text_2
+      213: -5867043456378593804
+    second: Zeus Win Text 1_2
   - first:
-      213: -4415519964472383479
-    second: Zeus Win Text_3
+      213: 3816423061855825140
+    second: Zeus Win Text 1_3
   - first:
-      213: 3398212325473901434
-    second: Zeus Win Text_4
+      213: -3043045547117156263
+    second: Zeus Win Text 1_4
   - first:
-      213: 7463428599650259499
-    second: Zeus Win Text_5
+      213: -6077205102627208602
+    second: Zeus Win Text 1_5
   - first:
-      213: -1048635003929021243
-    second: Zeus Win Text_6
+      213: 7981381701579310961
+    second: Zeus Win Text 1_6
   - first:
-      213: -7119792205593804258
-    second: Zeus Win Text_7
+      213: 6715512153888030790
+    second: Zeus Win Text 1_7
   - first:
-      213: -4487458372559789459
-    second: Zeus Win Text_8
+      213: 232871763385364856
+    second: Zeus Win Text 1_8
   - first:
-      213: 1165096308400711588
-    second: Zeus Win Text_9
+      213: 8131616033794060597
+    second: Zeus Win Text 1_9
   - first:
-      213: -5233628551991225597
-    second: Zeus Win Text_10
+      213: -6540961075834566602
+    second: Zeus Win Text 1_10
   - first:
-      213: 8572016544802645772
-    second: Zeus Win Text_11
+      213: -3877362008877480427
+    second: Zeus Win Text 1_11
   - first:
-      213: -7625732794440169805
-    second: Zeus Win Text_12
+      213: 2807778052670171665
+    second: Zeus Win Text 1_12
   - first:
-      213: -2631682554514040541
-    second: Zeus Win Text_13
+      213: 2576889477858348222
+    second: Zeus Win Text 1_13
   - first:
-      213: 4384665521955465167
-    second: Zeus Win Text_14
+      213: -2202566892726300877
+    second: Zeus Win Text 1_14
   - first:
-      213: -3841369651274887675
-    second: Zeus Win Text_15
+      213: 432369752116327535
+    second: Zeus Win Text 1_15
   - first:
-      213: -1484531822791695778
-    second: Zeus Win Text_16
+      213: -1038113743447315317
+    second: Zeus Win Text 1_16
   - first:
-      213: -7958640254821723398
-    second: Zeus Win Text_17
+      213: 7132082330173578410
+    second: Zeus Win Text 1_17
   - first:
-      213: -7531347237817893198
-    second: Zeus Win Text_18
+      213: 8271953049867942212
+    second: Zeus Win Text 1_18
   - first:
-      213: 3530474856399327495
-    second: Zeus Win Text_19
+      213: -9149502963412214504
+    second: Zeus Win Text 1_19
   - first:
-      213: -1309636025291444333
-    second: Zeus Win Text_20
+      213: -8275500846006162623
+    second: Zeus Win Text 1_20
   - first:
-      213: 7529689096997413793
-    second: Zeus Win Text_21
+      213: -8675287543221682859
+    second: Zeus Win Text 1_21
   - first:
-      213: -2946852697283496345
-    second: Zeus Win Text_22
+      213: -4345488177697031734
+    second: Zeus Win Text 1_22
   - first:
-      213: 8401489354563765291
-    second: Zeus Win Text_23
+      213: -486575513146461810
+    second: Zeus Win Text 1_23
   - first:
-      213: 3482528206695695453
-    second: Zeus Win Text_24
+      213: -6598158131728491546
+    second: Zeus Win Text 1_24
   - first:
-      213: -7066140797216198253
-    second: Zeus Win Text_25
+      213: -3146010015699283232
+    second: Zeus Win Text 1_25
   - first:
-      213: 8350591294584919670
-    second: Zeus Win Text_26
+      213: -4299767300045209954
+    second: Zeus Win Text 1_26
   - first:
-      213: 8634096361195201685
-    second: Zeus Win Text_27
+      213: -4310659546982331563
+    second: Zeus Win Text 1_27
   - first:
-      213: 5233496352228296419
-    second: Zeus Win Text_28
+      213: 6051196429447924434
+    second: Zeus Win Text 1_28
   - first:
-      213: 2650039904844092455
-    second: Zeus Win Text_29
+      213: 8960651388129700049
+    second: Zeus Win Text 1_29
   - first:
-      213: -984011488878492309
-    second: Zeus Win Text_30
+      213: -2646584062708789139
+    second: Zeus Win Text 1_30
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -136,7 +136,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -190,12 +190,34 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Zeus Win Text_0
+      name: Zeus Win Text 1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 7
-        width: 25
+        y: 3
+        width: 30
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dbb0d800ce7eee20800000000000000
+      internalID: 3381779733448539090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus Win Text 1_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 3
+        width: 22
         height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -205,18 +227,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 818cce05d695a95a0800000000000000
-      internalID: -6513795584993998824
+      spriteID: cd2f88599c11222c0800000000000000
+      internalID: -4457981123648490788
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zeus Win Text_1
+      name: Zeus Win Text 1_2
       rect:
         serializedVersion: 2
-        x: 31
-        y: 7
+        x: 60
+        y: 3
         width: 23
         height: 26
       alignment: 0
@@ -227,17 +249,39 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cdeb87c7984d700a0800000000000000
-      internalID: -6915325015840211236
+      spriteID: 4fd16c4bf03149ea0800000000000000
+      internalID: -5867043456378593804
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zeus Win Text_2
+      name: Zeus Win Text 1_3
       rect:
         serializedVersion: 2
-        x: 60
+        x: 93
+        y: 3
+        width: 15
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fc6682fd88a6f430800000000000000
+      internalID: 3816423061855825140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus Win Text 1_4
+      rect:
+        serializedVersion: 2
+        x: 147
         y: 3
         width: 23
         height: 33
@@ -249,18 +293,150 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3d991706de93523a0800000000000000
-      internalID: -6690877979700913709
+      spriteID: 9586fb8923ee4c5d0800000000000000
+      internalID: -3043045547117156263
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zeus Win Text_3
+      name: Zeus Win Text 1_5
       rect:
         serializedVersion: 2
-        x: 89
-        y: 7
+        x: 176
+        y: 3
+        width: 22
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 662c6b6582e69aba0800000000000000
+      internalID: -6077205102627208602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus Win Text 1_6
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 3
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1770073de5093ce60800000000000000
+      internalID: 7981381701579310961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus Win Text 1_7
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 3
+        width: 31
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 640805149ba423d50800000000000000
+      internalID: 6715512153888030790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus Win Text 1_8
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 3
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 871bdce82a35b3300800000000000000
+      internalID: 232871763385364856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus Win Text 1_9
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 3
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5317a2813bd49d070800000000000000
+      internalID: 8131616033794060597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus Win Text 1_10
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 3
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63849399e86d935a0800000000000000
+      internalID: -6540961075834566602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus Win Text 1_11
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 3
         width: 27
         height: 26
       alignment: 0
@@ -271,17 +447,325 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9086afa9cfbe8b2c0800000000000000
-      internalID: -4415519964472383479
+      spriteID: 516434bcbc7d03ac0800000000000000
+      internalID: -3877362008877480427
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zeus Win Text_4
+      name: Zeus Win Text 1_12
       rect:
         serializedVersion: 2
-        x: 122
+        x: 435
+        y: 3
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11a2b8d334b37f620800000000000000
+      internalID: 2807778052670171665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus Win Text 1_13
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 3
+        width: 22
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebc4031c353f2c320800000000000000
+      internalID: 2576889477858348222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus Win Text 1_14
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 3
+        width: 23
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33f430da419ee61e0800000000000000
+      internalID: -2202566892726300877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus Win Text 1_15
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 3
+        width: 23
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f64748eaff5100600800000000000000
+      internalID: 432369752116327535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus Win Text 1_16
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 3
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8c2f5dec01e791f0800000000000000
+      internalID: -1038113743447315317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus Win Text 1_17
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 3
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aac16d6871f3af260800000000000000
+      internalID: 7132082330173578410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus Win Text 1_18
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 3
+        width: 23
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4497610e871ebc270800000000000000
+      internalID: 8271953049867942212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus Win Text 1_19
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 3
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81d5e6ae78f660180800000000000000
+      internalID: -9149502963412214504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus Win Text 1_20
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 3
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14bab5773d3872d80800000000000000
+      internalID: -8275500846006162623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus Win Text 1_21
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 3
+        width: 26
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55d76ed61ff2b9780800000000000000
+      internalID: -8675287543221682859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus Win Text 1_22
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 3
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac975b89689b1b3c0800000000000000
+      internalID: -4345488177697031734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus Win Text 1_23
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 3
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e81708616265f39f0800000000000000
+      internalID: -486575513146461810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus Win Text 1_24
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 3
+        width: 31
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ebd7724322ae64a0800000000000000
+      internalID: -6598158131728491546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus Win Text 1_25
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 3
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e25c6a1f802754d0800000000000000
+      internalID: -3146010015699283232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus Win Text 1_26
+      rect:
+        serializedVersion: 2
+        x: 928
         y: 3
         width: 15
         height: 30
@@ -293,62 +777,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a7bd9330b10e82f20800000000000000
-      internalID: 3398212325473901434
+      spriteID: e9ef6f7fb682454c0800000000000000
+      internalID: -4299767300045209954
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zeus Win Text_5
+      name: Zeus Win Text 1_27
       rect:
         serializedVersion: 2
-        x: 143
-        y: 7
-        width: 26
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b2215a8b4cc639760800000000000000
-      internalID: 7463428599650259499
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zeus Win Text_6
-      rect:
-        serializedVersion: 2
-        x: 171
-        y: 0
-        width: 31
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5c435c315008271f0800000000000000
-      internalID: -1048635003929021243
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zeus Win Text_7
-      rect:
-        serializedVersion: 2
-        x: 229
-        y: 7
+        x: 949
+        y: 3
         width: 27
         height: 26
       alignment: 0
@@ -359,458 +799,40 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e128cf616ba613d90800000000000000
-      internalID: -7119792205593804258
+      spriteID: 55bc87a1bf57d24c0800000000000000
+      internalID: -4310659546982331563
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zeus Win Text_8
-      rect:
-        serializedVersion: 2
-        x: 262
-        y: 7
-        width: 23
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d62a83fb26859b1c0800000000000000
-      internalID: -4487458372559789459
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zeus Win Text_9
-      rect:
-        serializedVersion: 2
-        x: 287
-        y: 0
-        width: 26
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4a7e7576be04b2010800000000000000
-      internalID: 1165096308400711588
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zeus Win Text_10
-      rect:
-        serializedVersion: 2
-        x: 319
-        y: 7
-        width: 27
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 30398389f8a6e57b0800000000000000
-      internalID: -5233628551991225597
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zeus Win Text_11
-      rect:
-        serializedVersion: 2
-        x: 344
-        y: 7
-        width: 27
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c07abb981abe5f670800000000000000
-      internalID: 8572016544802645772
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zeus Win Text_12
-      rect:
-        serializedVersion: 2
-        x: 377
-        y: 0
-        width: 23
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3b6c8532d64fb2690800000000000000
-      internalID: -7625732794440169805
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zeus Win Text_13
-      rect:
-        serializedVersion: 2
-        x: 402
-        y: 0
-        width: 27
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3291990f8a26a7bd0800000000000000
-      internalID: -2631682554514040541
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zeus Win Text_14
-      rect:
-        serializedVersion: 2
-        x: 463
-        y: 7
-        width: 23
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fc7ee0faf0679dc30800000000000000
-      internalID: 4384665521955465167
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zeus Win Text_15
-      rect:
-        serializedVersion: 2
-        x: 492
-        y: 0
-        width: 23
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 50e4bc497a6b0bac0800000000000000
-      internalID: -3841369651274887675
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zeus Win Text_16
-      rect:
-        serializedVersion: 2
-        x: 521
-        y: 0
-        width: 23
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e52ecbc2c22e56be0800000000000000
-      internalID: -1484531822791695778
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zeus Win Text_17
-      rect:
-        serializedVersion: 2
-        x: 579
-        y: 0
-        width: 22
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: af21a3cdada3d8190800000000000000
-      internalID: -7958640254821723398
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zeus Win Text_18
-      rect:
-        serializedVersion: 2
-        x: 607
-        y: 7
-        width: 23
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2bebeb907974b7790800000000000000
-      internalID: -7531347237817893198
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zeus Win Text_19
-      rect:
-        serializedVersion: 2
-        x: 661
-        y: 7
-        width: 27
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 70151283d24cef030800000000000000
-      internalID: 3530474856399327495
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zeus Win Text_20
-      rect:
-        serializedVersion: 2
-        x: 694
-        y: 7
-        width: 23
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 39fe27749fc33dde0800000000000000
-      internalID: -1309636025291444333
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zeus Win Text_21
-      rect:
-        serializedVersion: 2
-        x: 719
-        y: 7
-        width: 30
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1a3a9a7f654de7860800000000000000
-      internalID: 7529689096997413793
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zeus Win Text_22
-      rect:
-        serializedVersion: 2
-        x: 751
-        y: 7
-        width: 23
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 766f30db51daa17d0800000000000000
-      internalID: -2946852697283496345
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zeus Win Text_23
-      rect:
-        serializedVersion: 2
-        x: 776
-        y: 0
-        width: 31
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b24cff21e06189470800000000000000
-      internalID: 8401489354563765291
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zeus Win Text_24
-      rect:
-        serializedVersion: 2
-        x: 838
-        y: 7
-        width: 23
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d540068e3fc645030800000000000000
-      internalID: 3482528206695695453
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zeus Win Text_25
-      rect:
-        serializedVersion: 2
-        x: 867
-        y: 0
-        width: 22
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3917809026600fd90800000000000000
-      internalID: -7066140797216198253
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zeus Win Text_26
-      rect:
-        serializedVersion: 2
-        x: 895
-        y: 0
-        width: 23
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 67614320a8243e370800000000000000
-      internalID: 8350591294584919670
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zeus Win Text_27
-      rect:
-        serializedVersion: 2
-        x: 957
-        y: 0
-        width: 15
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 594688525e872d770800000000000000
-      internalID: 8634096361195201685
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zeus Win Text_28
+      name: Zeus Win Text 1_28
       rect:
         serializedVersion: 2
         x: 982
-        y: 7
+        y: 0
+        width: 23
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2da0b5b871b2af350800000000000000
+      internalID: 6051196429447924434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeus Win Text 1_29
+      rect:
+        serializedVersion: 2
+        x: 1011
+        y: 3
         width: 23
         height: 26
       alignment: 0
@@ -821,19 +843,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3e6cedf343d11a840800000000000000
-      internalID: 5233496352228296419
+      spriteID: 1d8e49146f0aa5c70800000000000000
+      internalID: 8960651388129700049
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zeus Win Text_29
+      name: Zeus Win Text 1_30
       rect:
         serializedVersion: 2
-        x: 1011
-        y: 7
-        width: 22
+        x: 1040
+        y: 3
+        width: 25
         height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -843,30 +865,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 72497d0c045d6c420800000000000000
-      internalID: 2650039904844092455
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zeus Win Text_30
-      rect:
-        serializedVersion: 2
-        x: 1035
-        y: 0
-        width: 30
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b658e7ea3c61852f0800000000000000
-      internalID: -984011488878492309
+      spriteID: d60580231d1754bd0800000000000000
+      internalID: -2646584062708789139
       vertices: []
       indices: 
       edges: []
@@ -875,7 +875,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -885,37 +885,37 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Zeus Win Text_0: -6513795584993998824
-      Zeus Win Text_1: -6915325015840211236
-      Zeus Win Text_10: -5233628551991225597
-      Zeus Win Text_11: 8572016544802645772
-      Zeus Win Text_12: -7625732794440169805
-      Zeus Win Text_13: -2631682554514040541
-      Zeus Win Text_14: 4384665521955465167
-      Zeus Win Text_15: -3841369651274887675
-      Zeus Win Text_16: -1484531822791695778
-      Zeus Win Text_17: -7958640254821723398
-      Zeus Win Text_18: -7531347237817893198
-      Zeus Win Text_19: 3530474856399327495
-      Zeus Win Text_2: -6690877979700913709
-      Zeus Win Text_20: -1309636025291444333
-      Zeus Win Text_21: 7529689096997413793
-      Zeus Win Text_22: -2946852697283496345
-      Zeus Win Text_23: 8401489354563765291
-      Zeus Win Text_24: 3482528206695695453
-      Zeus Win Text_25: -7066140797216198253
-      Zeus Win Text_26: 8350591294584919670
-      Zeus Win Text_27: 8634096361195201685
-      Zeus Win Text_28: 5233496352228296419
-      Zeus Win Text_29: 2650039904844092455
-      Zeus Win Text_3: -4415519964472383479
-      Zeus Win Text_30: -984011488878492309
-      Zeus Win Text_4: 3398212325473901434
-      Zeus Win Text_5: 7463428599650259499
-      Zeus Win Text_6: -1048635003929021243
-      Zeus Win Text_7: -7119792205593804258
-      Zeus Win Text_8: -4487458372559789459
-      Zeus Win Text_9: 1165096308400711588
+      Zeus Win Text 1_0: 3381779733448539090
+      Zeus Win Text 1_1: -4457981123648490788
+      Zeus Win Text 1_10: -6540961075834566602
+      Zeus Win Text 1_11: -3877362008877480427
+      Zeus Win Text 1_12: 2807778052670171665
+      Zeus Win Text 1_13: 2576889477858348222
+      Zeus Win Text 1_14: -2202566892726300877
+      Zeus Win Text 1_15: 432369752116327535
+      Zeus Win Text 1_16: -1038113743447315317
+      Zeus Win Text 1_17: 7132082330173578410
+      Zeus Win Text 1_18: 8271953049867942212
+      Zeus Win Text 1_19: -9149502963412214504
+      Zeus Win Text 1_2: -5867043456378593804
+      Zeus Win Text 1_20: -8275500846006162623
+      Zeus Win Text 1_21: -8675287543221682859
+      Zeus Win Text 1_22: -4345488177697031734
+      Zeus Win Text 1_23: -486575513146461810
+      Zeus Win Text 1_24: -6598158131728491546
+      Zeus Win Text 1_25: -3146010015699283232
+      Zeus Win Text 1_26: -4299767300045209954
+      Zeus Win Text 1_27: -4310659546982331563
+      Zeus Win Text 1_28: 6051196429447924434
+      Zeus Win Text 1_29: 8960651388129700049
+      Zeus Win Text 1_3: 3816423061855825140
+      Zeus Win Text 1_30: -2646584062708789139
+      Zeus Win Text 1_4: -3043045547117156263
+      Zeus Win Text 1_5: -6077205102627208602
+      Zeus Win Text 1_6: 7981381701579310961
+      Zeus Win Text 1_7: 6715512153888030790
+      Zeus Win Text 1_8: 232871763385364856
+      Zeus Win Text 1_9: 8131616033794060597
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

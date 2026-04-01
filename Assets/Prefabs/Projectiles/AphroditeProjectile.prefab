@@ -8,6 +8,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.87735844
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2422041005422424016, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.b
       value: 0.9960785
@@ -92,6 +116,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 22100000, guid: 46b9aac01b06afe449184c2cf44094b3, type: 2}
+    - target: {fileID: 7008646813601176732, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

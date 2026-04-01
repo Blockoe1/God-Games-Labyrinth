@@ -437,16 +437,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5910951540994310343, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: InitialModule.rotation3D
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5910951540994310343, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5910951540994310343, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
       propertyPath: InitialModule.startSizeY.scalar
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 5910951540994310343, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
       propertyPath: InitialModule.startSizeZ.scalar
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 5910951540994310343, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
       propertyPath: InitialModule.startLifetime.scalar

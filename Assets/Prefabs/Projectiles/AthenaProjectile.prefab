@@ -29,8 +29,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
       propertyPath: TrailModule.inheritParticleColor
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.125
       objectReference: {fileID: 0}
     - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
       propertyPath: TrailModule.widthOverTrail.scalar
@@ -38,7 +46,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
       propertyPath: InitialModule.startColor.maxColor.a
@@ -58,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
       propertyPath: InheritVelocityModule.m_Curve.scalar
-      value: -0.5
+      value: -0.25
       objectReference: {fileID: 0}
     - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
       propertyPath: TrailModule.colorOverLifetime.maxColor.a

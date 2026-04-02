@@ -9,8 +9,8 @@
 using NaughtyAttributes;
 using System;
 using System.Collections;
-using System.Security.Authentication.ExtendedProtection;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 namespace GGL.Champions
@@ -20,6 +20,7 @@ namespace GGL.Champions
     public abstract class ChampionBehavior : MonoBehaviour
     {
         [SerializeField] private float cooldown;
+        [SerializeField] private UnityEvent OnCooldownExpire;
 
         private InputAction performAction;
         private bool isCooldown;
@@ -109,6 +110,7 @@ namespace GGL.Champions
             isCooldown = true;
             yield return new WaitForSeconds(cooldownTime);
             isCooldown = false;
+            OnCooldownExpire?.Invoke();
         }
     }
 }

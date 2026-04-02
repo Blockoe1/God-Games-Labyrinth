@@ -21,13 +21,16 @@ namespace GGL.Champions
         private const string MOVE_ACTION_NAME = "Move";
         #endregion
 
+        [Header("Champion Settings")]
         [SerializeField] private float knockbackTime;
+        [SerializeField] private float turnDelay = 0.1f;
         [SerializeField] private bool inputCorrection;
 
         private InputAction moveAction;
 
         public event Action<bool> OnMove;
         private bool suspendInput;
+        private bool disableTurning;
 
         #region Component References
         [SerializeReference, ReadOnly] private PlayerInput input;
@@ -50,6 +53,18 @@ namespace GGL.Champions
                 base.IsMoving = value;
                 OnMove?.Invoke(value);
             }
+        }
+
+        public override Vector2 Direction { get => base.Direction;
+            protected set 
+            {
+                if (disableTurning == true) { return; }
+                base.Direction = value;
+
+                // Set a delay so that direction cannot update immediately.
+                StartCoroutine(SuspendBool(turnDelay, true, (val) => disableTurning = val));
+            }
+             
         }
 
         /// <summary>
@@ -75,6 +90,14 @@ namespace GGL.Champions
         /// <param name="obj"></param>
         private void MoveAction_performed(InputAction.CallbackContext obj)
         {
+            InputUpdate();
+        }
+
+        /// <summary>
+        /// Updates the champion's target direction based on their movement input.
+        /// </summary>
+        private void InputUpdate()
+        {
             // Only take the X or Y Component for locked movement.
             if (!suspendInput)
             {
@@ -89,8 +112,10 @@ namespace GGL.Champions
                     // If the input is dingaonal in the opposite direction of Direction, reverse direction
                     if (input.x + Direction.x == 0 || input.y + Direction.y == 0)
                     {
+                        Vector2 newTarget = input + Direction;
                         TargetDirection = -Direction;
-
+                        DirectionUpdate();
+                        TargetDirection = newTarget;
                     }
                     // If the input is diagonal in the same direction as Direction, set TargetDirection to that
                     // parellel vector component.
@@ -101,6 +126,7 @@ namespace GGL.Champions
                 }
             }
         }
+
         private void MoveAction_canceled(InputAction.CallbackContext obj)
         {
             IsMoving = false;
@@ -140,7 +166,7 @@ namespace GGL.Champions
                     //        }
                     //    }
                     //}
-                    MoveAction_performed(new InputAction.CallbackContext());
+                    InputUpdate();
                 }
             }
 
@@ -155,17 +181,33 @@ namespace GGL.Champions
         public override void ApplyKnockback(Vector2 direction, float force)
         {
             base.ApplyKnockback(direction, force);
-            StartCoroutine(SuspendInput(knockbackTime));
+            StartCoroutine(SuspendBool(knockbackTime, true, (val) =>  suspendInput = val, 
+                InputUpdate));
         }
 
-        private IEnumerator SuspendInput(float time)
+        /// <summary>
+        /// Sets a bool to a certain value then resets it after a delay.
+        /// </summary>
+        /// <param name="time"></param>
+        /// <param name="setter"></param>
+        /// <param name="callback"></param>
+        /// <returns></returns>
+        private IEnumerator SuspendBool(float time, bool value, Action<bool> setter, Action callback = null)
         {
-            if (suspendInput) { yield break; }
-            suspendInput = true;
+            setter(value);
             yield return new WaitForSeconds(time);
-            suspendInput = false;
-            // Check input after suspension.
-            MoveAction_performed(new InputAction.CallbackContext());
+            setter(!value);
+            callback?.Invoke();
         }
+
+        //private IEnumerator SuspendInput(float time)
+        //{
+        //    if (suspendInput) { yield break; }
+        //    suspendInput = true;
+        //    yield return new WaitForSeconds(time);
+        //    suspendInput = false;
+        //    // Check input after suspension.
+        //    MoveAction_performed(new InputAction.CallbackContext());
+        //}
     }
 }

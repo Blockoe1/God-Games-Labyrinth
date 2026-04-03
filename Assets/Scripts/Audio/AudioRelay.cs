@@ -32,6 +32,7 @@ namespace GGL.Audio
         /// <param name="soundName"></param>
         public virtual void PlaySound(string soundName)
         {
+            if (soundName == "") { return; }
             //Debug.Log(FmodEvents.instance + "-" + AudioManager.instance);
             if (FmodEvents.instance != null && AudioManager.instance != null)
             {

@@ -49,7 +49,7 @@ MonoBehaviour:
   - {fileID: 1309305341803330743, guid: fdd1119c331f1424a8d81f2f657ceee2, type: 3}
   - {fileID: 3285001252188154445, guid: 2ce2f2eb1345a664d9e44909c3aa9f64, type: 3}
   - {fileID: 5067606692798499484, guid: f0a08f3edd1a8eb43a13a81e8de1f8a8, type: 3}
-  spawnAmount: 8
+  spawnAmount: 10
   spawnDelay: 3
   startingGoldAmount: 125
   skewSpread: 10

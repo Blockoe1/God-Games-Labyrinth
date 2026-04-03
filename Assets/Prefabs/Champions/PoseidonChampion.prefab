@@ -101,6 +101,10 @@ PrefabInstance:
       value: -418953969
       objectReference: {fileID: 0}
     - target: {fileID: 2227168641790858661, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
+      propertyPath: moveWithTransform
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2227168641790858661, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
       propertyPath: ShapeModule.arc.mode
       value: 1
       objectReference: {fileID: 0}

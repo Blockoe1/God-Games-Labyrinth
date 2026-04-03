@@ -7,8 +7,6 @@
 // Brief Description : Controls the minotaurs behaviour when it spawns.
 *****************************************************************************/
 using System.Collections;
-using TMPro;
-using UnityEditor.Rendering;
 using UnityEngine;
 
 namespace GGL.Minotaur
@@ -26,18 +24,13 @@ namespace GGL.Minotaur
 
         private SpriteRenderer minotaurSprite;
 
-        public override void GetComponents()
-        {
-            base.GetComponents();
-            minotaurSprite = minotaur.GetComponent<SpriteRenderer>();
-        }
-
         /// <summary>
         /// Set the minotaur invisible when it spawns.
         /// </summary>
         public override void OnStateEnter()
         {
             base.OnStateEnter();
+            minotaurSprite = minotaur.GetComponent<SpriteRenderer>();
             minotaurSprite.color = Color.clear;
         }
 

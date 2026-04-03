@@ -1,5 +1,4 @@
 using GGL.Scoring;
-using UnityEditor.Tilemaps;
 using UnityEngine;
 
 namespace GGL
@@ -13,9 +12,9 @@ namespace GGL
 
         void Update()
         {
-            if (GameplayScoreManager.GameScores[0] >= GameplayScoreManager.GameScores[1] &&
-                   GameplayScoreManager.GameScores[0] >= GameplayScoreManager.GameScores[2] &&
-                   GameplayScoreManager.GameScores[0] >= GameplayScoreManager.GameScores[3])
+            if (GameplayScoreManager.GameScores[0] > GameplayScoreManager.GameScores[1] &&
+                   GameplayScoreManager.GameScores[0] > GameplayScoreManager.GameScores[2] &&
+                   GameplayScoreManager.GameScores[0] > GameplayScoreManager.GameScores[3])
             {
                 if (!zeusCrown.activeSelf)
                 {
@@ -30,9 +29,9 @@ namespace GGL
                 }
             }
 
-            if (GameplayScoreManager.GameScores[1] >= GameplayScoreManager.GameScores[0] &&
-                GameplayScoreManager.GameScores[1] >= GameplayScoreManager.GameScores[2] &&
-                GameplayScoreManager.GameScores[1] >= GameplayScoreManager.GameScores[3])
+            if (GameplayScoreManager.GameScores[1] > GameplayScoreManager.GameScores[0] &&
+                GameplayScoreManager.GameScores[1] > GameplayScoreManager.GameScores[2] &&
+                GameplayScoreManager.GameScores[1] > GameplayScoreManager.GameScores[3])
             {
                 if (!poseidonCrown.activeSelf)
                 {
@@ -47,9 +46,9 @@ namespace GGL
                 }
             }
 
-            if (GameplayScoreManager.GameScores[2] >= GameplayScoreManager.GameScores[0] &&
-                GameplayScoreManager.GameScores[2] >= GameplayScoreManager.GameScores[1] &&
-                GameplayScoreManager.GameScores[2] >= GameplayScoreManager.GameScores[3])
+            if (GameplayScoreManager.GameScores[2] > GameplayScoreManager.GameScores[0] &&
+                GameplayScoreManager.GameScores[2] > GameplayScoreManager.GameScores[1] &&
+                GameplayScoreManager.GameScores[2] > GameplayScoreManager.GameScores[3])
             {
                 if (!athenaCrown.activeSelf)
                 {
@@ -64,9 +63,9 @@ namespace GGL
                 }
             }
 
-            if (GameplayScoreManager.GameScores[3] >= GameplayScoreManager.GameScores[0] &&
-               GameplayScoreManager.GameScores[3] >= GameplayScoreManager.GameScores[1] &&
-               GameplayScoreManager.GameScores[3] >= GameplayScoreManager.GameScores[2])
+            if (GameplayScoreManager.GameScores[3] > GameplayScoreManager.GameScores[0] &&
+               GameplayScoreManager.GameScores[3] > GameplayScoreManager.GameScores[1] &&
+               GameplayScoreManager.GameScores[3] > GameplayScoreManager.GameScores[2])
             {
                 if (!aphroditeCrown.activeSelf)
                 {

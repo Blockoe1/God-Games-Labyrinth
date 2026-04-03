@@ -1,0 +1,715 @@
+fileFormatVersion: 2
+guid: 08579de427582de43ba9bfe184979291
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7362825752331858561
+    second: Athena Win Text_0
+  - first:
+      213: -4476353529214359137
+    second: Athena Win Text_1
+  - first:
+      213: 3513469183313697732
+    second: Athena Win Text_2
+  - first:
+      213: 8875655463801183549
+    second: Athena Win Text_3
+  - first:
+      213: 311482833204098848
+    second: Athena Win Text_4
+  - first:
+      213: -27013398729306452
+    second: Athena Win Text_5
+  - first:
+      213: 2234341717023220037
+    second: Athena Win Text_6
+  - first:
+      213: 4535094820777726649
+    second: Athena Win Text_7
+  - first:
+      213: 9128959222382903669
+    second: Athena Win Text_8
+  - first:
+      213: 3600655994226057925
+    second: Athena Win Text_9
+  - first:
+      213: 3587424340473242389
+    second: Athena Win Text_10
+  - first:
+      213: -4540609957900361169
+    second: Athena Win Text_11
+  - first:
+      213: 7253800709854908970
+    second: Athena Win Text_12
+  - first:
+      213: 1553931894014320666
+    second: Athena Win Text_13
+  - first:
+      213: -456537460812098110
+    second: Athena Win Text_14
+  - first:
+      213: -7971829783710700630
+    second: Athena Win Text_15
+  - first:
+      213: 5255748474615755102
+    second: Athena Win Text_16
+  - first:
+      213: -5987212737066133883
+    second: Athena Win Text_17
+  - first:
+      213: 3465970812516718966
+    second: Athena Win Text_18
+  - first:
+      213: 132327010110008273
+    second: Athena Win Text_19
+  - first:
+      213: 173278003254576508
+    second: Athena Win Text_20
+  - first:
+      213: 3590373575159289621
+    second: Athena Win Text_21
+  - first:
+      213: -5775185001948548646
+    second: Athena Win Text_22
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Athena Win Text_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 36
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7d4929fcfcf1d990800000000000000
+      internalID: -7362825752331858561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena Win Text_1
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 0
+        width: 27
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f99ac129e2cc0e1c0800000000000000
+      internalID: -4476353529214359137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena Win Text_2
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cbd1b86b9952c030800000000000000
+      internalID: 3513469183313697732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena Win Text_3
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 0
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3ddf9c7e99ac2b70800000000000000
+      internalID: 8875655463801183549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena Win Text_4
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 0
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02733ca8cfb925400800000000000000
+      internalID: 311482833204098848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena Win Text_5
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 0
+        width: 37
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cae409cf47700aff0800000000000000
+      internalID: -27013398729306452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena Win Text_6
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 0
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 541610e14f9f10f10800000000000000
+      internalID: 2234341717023220037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena Win Text_7
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 0
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b29b2726b4efee30800000000000000
+      internalID: 4535094820777726649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena Win Text_8
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 0
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 571c823ab0490be70800000000000000
+      internalID: 9128959222382903669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena Win Text_9
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 0
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c2a936bc8918f130800000000000000
+      internalID: 3600655994226057925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena Win Text_10
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 24
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5136f704e6719c130800000000000000
+      internalID: 3587424340473242389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena Win Text_11
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 0
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f226fbbec438cf0c0800000000000000
+      internalID: -4540609957900361169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena Win Text_12
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 0
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a22d066305daaa460800000000000000
+      internalID: 7253800709854908970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena Win Text_13
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 0
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a10afd313dca09510800000000000000
+      internalID: 1553931894014320666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena Win Text_14
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 0
+        width: 27
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c5d2a5299d0aa9f0800000000000000
+      internalID: -456537460812098110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena Win Text_15
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 0
+        width: 27
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aab6b0c5c0f5e5190800000000000000
+      internalID: -7971829783710700630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena Win Text_16
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 0
+        width: 27
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e51f54a346b20f840800000000000000
+      internalID: 5255748474615755102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena Win Text_17
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 0
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5869a7cbcb529eca0800000000000000
+      internalID: -5987212737066133883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena Win Text_18
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 0
+        width: 37
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6795ee9271a991030800000000000000
+      internalID: 3465970812516718966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena Win Text_19
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 0
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dbebcfe6be16d100800000000000000
+      internalID: 132327010110008273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena Win Text_20
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 24
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c75c0670d6b976200800000000000000
+      internalID: 173278003254576508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena Win Text_21
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 0
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51791567eb193d130800000000000000
+      internalID: 3590373575159289621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Athena Win Text_22
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 0
+        width: 31
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad171b6c6db6adfa0800000000000000
+      internalID: -5775185001948548646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Athena Win Text_0: -7362825752331858561
+      Athena Win Text_1: -4476353529214359137
+      Athena Win Text_10: 3587424340473242389
+      Athena Win Text_11: -4540609957900361169
+      Athena Win Text_12: 7253800709854908970
+      Athena Win Text_13: 1553931894014320666
+      Athena Win Text_14: -456537460812098110
+      Athena Win Text_15: -7971829783710700630
+      Athena Win Text_16: 5255748474615755102
+      Athena Win Text_17: -5987212737066133883
+      Athena Win Text_18: 3465970812516718966
+      Athena Win Text_19: 132327010110008273
+      Athena Win Text_2: 3513469183313697732
+      Athena Win Text_20: 173278003254576508
+      Athena Win Text_21: 3590373575159289621
+      Athena Win Text_22: -5775185001948548646
+      Athena Win Text_3: 8875655463801183549
+      Athena Win Text_4: 311482833204098848
+      Athena Win Text_5: -27013398729306452
+      Athena Win Text_6: 2234341717023220037
+      Athena Win Text_7: 4535094820777726649
+      Athena Win Text_8: 9128959222382903669
+      Athena Win Text_9: 3600655994226057925
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -8,6 +8,86 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: TrailModule.mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: TrailModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: TrailModule.ribbonCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.0625
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.67058825
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.9607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.9607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: InitialModule.startSize.minMaxState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: InitialModule.startSizeY.minMaxState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: InitialModule.startSizeZ.minMaxState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: TrailModule.widthOverTrail.minScalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: TrailModule.widthOverTrail.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2422041005422424016, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 0.41176474
+      objectReference: {fileID: 0}
+    - target: {fileID: 2422041005422424016, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0.9960785
+      objectReference: {fileID: 0}
+    - target: {fileID: 2422041005422424016, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 0.9960785
+      objectReference: {fileID: 0}
+    - target: {fileID: 2422041005422424016, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.b
+      value: 0.6392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 2422041005422424016, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2422041005422424016, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3213785193852339848, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
       propertyPath: m_Name
       value: ZeusProjectile
@@ -68,6 +148,18 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 22100000, guid: 00a7630d260417a44945fe83a38351d7, type: 2}
+    - target: {fileID: 7008646813601176732, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7008646813601176732, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7008646813601176732, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

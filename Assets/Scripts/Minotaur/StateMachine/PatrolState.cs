@@ -23,7 +23,7 @@ namespace GGL.Minotaur
         private bool jumpOnPatrolExpire;
         [SerializeField, ReadOnly, AllowNesting] private GameObject[] champions;
 
-        [SerializeField] private int patrolTarget;
+        private int patrolTarget;
         private float patrolTimer;
         private bool isVisionEnabled; 
 

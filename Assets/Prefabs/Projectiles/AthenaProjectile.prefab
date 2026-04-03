@@ -8,6 +8,110 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: TrailModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: InheritVelocityModule.m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: InheritVelocityModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: TrailModule.inheritParticleColor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: TrailModule.widthOverTrail.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.50980395
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.49411765
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.99607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: InheritVelocityModule.m_Curve.scalar
+      value: -0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: TrailModule.colorOverLifetime.maxColor.a
+      value: 0.5882353
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: TrailModule.colorOverLifetime.maxColor.b
+      value: 0.50980395
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: TrailModule.colorOverLifetime.maxColor.g
+      value: 0.49411765
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353834847516569166, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: TrailModule.colorOverLifetime.maxColor.r
+      value: 0.99607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693514679263808010, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2422041005422424016, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 0.50980395
+      objectReference: {fileID: 0}
+    - target: {fileID: 2422041005422424016, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0.49411768
+      objectReference: {fileID: 0}
+    - target: {fileID: 2422041005422424016, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 0.9960785
+      objectReference: {fileID: 0}
+    - target: {fileID: 2422041005422424016, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.b
+      value: 0.69231516
+      objectReference: {fileID: 0}
+    - target: {fileID: 2422041005422424016, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.g
+      value: 0.68238986
+      objectReference: {fileID: 0}
+    - target: {fileID: 2422041005422424016, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3213785193852339848, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
       propertyPath: m_Name
       value: AthenaProjectile
@@ -64,6 +168,14 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 22100000, guid: 24dba2392fac6d44c940327c80d67179, type: 2}
+    - target: {fileID: 7008646813601176732, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7008646813601176732, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 8567519070637794710, guid: 0017d28a2844eb949aadc4197ff5c9d0, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 1

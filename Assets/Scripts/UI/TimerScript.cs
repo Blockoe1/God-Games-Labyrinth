@@ -1,7 +1,11 @@
 using System;
 using System.Collections;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -20,6 +24,11 @@ namespace GGL
         [SerializeField] Slider Timer4;
         [SerializeField] Image minotaurImage;
         [SerializeField] Image circleTimer;
+        [SerializeField] TMP_Text[] timerText;
+        [SerializeField] Volume volume;
+        private Vignette vignette;
+        [SerializeField] private float maxVignette;
+        [SerializeField] private AnimationCurve curve;
 
         [SerializeField] float currentTime;
 
@@ -30,6 +39,7 @@ namespace GGL
         {
             currentTime = time;
             StartCoroutine(Timer());
+            volume.profile.TryGet(out vignette);
         }
         
         IEnumerator Timer()
@@ -45,7 +55,7 @@ namespace GGL
                 circleTimer.fillAmount = currentTime / 90;
                 OnTimerUpdate?.Invoke(currentTime, time);
             }
-            while (currentTime > 60)
+            while (currentTime > 63)
             {
                 yield return null;
                 currentTime -= Time.deltaTime;
@@ -90,14 +100,24 @@ namespace GGL
                 circleTimer.fillAmount = currentTime / 90;
                 OnTimerUpdate?.Invoke(currentTime, time);
             }
+            foreach(var text in timerText)
+            {
+                text.gameObject.SetActive(true);
+            }
+
             while (currentTime > 0)
             {
                 yield return null;
                 currentTime -= Time.deltaTime;
-                //timerText.text = "" + time;
+                foreach (var text in timerText)
+                {
+                    text.text = "" + MathF.Ceiling(currentTime);
+                }
                 Timer4.value = (currentTime / 15);
                 circleTimer.fillAmount = currentTime / 90;
                 OnTimerUpdate?.Invoke(currentTime, time);
+                //redFadeIn.GetComponent<Image>().color = new Vector4(1,0,0, ((15-currentTime)/100));
+                vignette.intensity.value = curve.Evaluate((15 - currentTime) / 15);
             }
             OnTimerComplete?.Invoke();
             SceneManager.LoadScene("WinScene");

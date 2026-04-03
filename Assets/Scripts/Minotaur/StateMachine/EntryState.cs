@@ -7,8 +7,6 @@
 // Brief Description : Controls the minotaurs behaviour when it spawns.
 *****************************************************************************/
 using System.Collections;
-using TMPro;
-using UnityEditor.Rendering;
 using UnityEngine;
 
 namespace GGL.Minotaur

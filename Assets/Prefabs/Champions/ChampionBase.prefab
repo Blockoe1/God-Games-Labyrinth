@@ -15100,13 +15100,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb2346a2e2d32c54f8878b79d2a186d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GGL.Champions.ChampionDash
-  cooldown: 0.25
+  cooldown: 0.5
   OnCooldownExpire:
     m_PersistentCalls:
       m_Calls: []
   movement: {fileID: 8074908796875090492}
   id: {fileID: 108903021177686200}
-  dashSpeed: 30
+  dashSpeed: 16
   dashDistance: 3
   OnDashBegin:
     m_PersistentCalls:

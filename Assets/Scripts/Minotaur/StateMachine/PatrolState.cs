@@ -89,6 +89,7 @@ namespace GGL.Minotaur
                         JumpState jumpState = parent.GetState<JumpState>();
                         jumpState.Initialize(jumpLocation);
                         parent.SetState(jumpState);
+                        yield break;
                     }
                     else
                     {

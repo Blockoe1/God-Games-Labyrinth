@@ -78,6 +78,7 @@ namespace GGL.Minotaur
                 if (ray.collider.gameObject.CompareTag("Player"))
                 {
                     parent.SetState<ChargeState>();
+                    return;
                 }
             }
 

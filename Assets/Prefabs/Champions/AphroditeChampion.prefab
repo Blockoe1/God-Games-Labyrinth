@@ -338,7 +338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8650097738718565955, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
       propertyPath: m_DefaultActionMap
-      value: Arcade Player 4
+      value: 84cb9044-032d-4b26-b84e-b422e196196e
       objectReference: {fileID: 0}
     - target: {fileID: 9166878718391037268, guid: 154fb30d198d0414aa56c0e015ca00f9, type: 3}
       propertyPath: m_Controller

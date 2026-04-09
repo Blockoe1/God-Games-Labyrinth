@@ -396,7 +396,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Arcade Player 4
+  m_DefaultActionMap: 84cb9044-032d-4b26-b84e-b422e196196e
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &224477050
@@ -427,8 +427,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 224477048}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.27125, y: 0.74032, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: 0.27125, y: -0.74032, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -436,7 +436,7 @@ Transform:
   - {fileID: 667724646}
   - {fileID: 1319308452}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!114 &224477052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2720,7 +2720,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: ArcadePlayer 1
+  m_DefaultActionMap: 4a98ea16-8f15-4260-9a20-bf576a02e7b2
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &1268843518
@@ -2751,8 +2751,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1268843516}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.27125, y: 0.74032, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: 0.27125, y: -0.74032, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2760,7 +2760,7 @@ Transform:
   - {fileID: 1265956964}
   - {fileID: 529196724}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!114 &1268843520
 MonoBehaviour:
   m_ObjectHideFlags: 0
